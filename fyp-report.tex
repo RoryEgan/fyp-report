@@ -412,8 +412,8 @@ The recall is the ratio of correct positive examples to the number of positive p
 \vspace{0.5cm}
 \textbf{F-score and G-score}
 \linebreak
-Two other metrics can be derived from precision and recall, known as F-score and G-score. F-score is the harmonic mean of precision and recall, and is defined as $F = 2. \frac{\precision - recall}{\precision + \recall}$. The F-score can be thought of as representing the balance between the precision and the recall.
-
+Two other metrics can be derived from precision and recall, known as F-score and G-score. F-score is the harmonic mean of precision and recall, and is defined as 
+$F = 2. \frac{precision - recall}{precision + recall}$. The F-score can be thought of as representing the balance between the precision and the recall.
 \linebreak
 G-score is the geometric mean of precision and recall, and is defined as $G = \sqrt{precision - recall}$.
 
@@ -496,12 +496,39 @@ The initial attempts to setup tensorflow were carried out on a machine running W
 
 \subsubsection{Memory Issues}
 \begin{flushleft}
-Although the first two experiments ran without issues, problems were quickly encountered with the Cifar-10 experiment. In an attempt to improve accuracy results, two further layers of convolution and pooling were added. This led the out of memory (OOM) errors being thrown during training. This was caused by the graphical memory on the training machine being maxed out at the full 2GB. After extensive research around this area several attempts at rectifying the issues were carried out. The first attempt tried was reduction of batch size from 100 images, causing less of the dataset being loaded into memory. At a batch size of 4 images, the three layer network successfully trained. The issue with this approach however is that a smaller batch size causes the gradient estimate of the network to be less accurate, and Top-1 accuracy of the network dropped to 60.46\%. The second approach was to simply keep the number of layers low, resulting in a simpler network with less memory requirements. Both of these solutions were not viable for this project. Poor accuracy scores and an inability to train complex networks created an obvious demand for a more powerful training machine. Another point to note is image size disparities between the Cifar-10 dataset and the overall target dataset for this project, the Apollo self-driving car image dataset. A machine struggling with the 32x32 low resolution images of the Cifar-10 dataset would surely run into a host of issues with the 1920x1080 images of the target dataset. As such, it was decided that a much more advanced machine would be required. It was decided that Amazon Web Services (AWS) was the only way to quickly and easily access the required computational power demanded by this project.
+Although the first two experiments ran without issues, problems were quickly encountered when modifications were made to the Cifar-10 experiment. In an attempt to improve accuracy results, two further layers of convolution and pooling were added. This led the out of memory (OOM) errors being thrown during training. This was caused by the graphical memory on the training machine being maxed out at the full 2GB. After extensive research around this area several attempts at rectifying the issues were carried out. The first attempt tried was reduction of batch size from 100 images, causing less of the dataset being loaded into memory. At a batch size of 4 images, the three layer network successfully trained. The issue with this approach however is that a smaller batch size causes the gradient estimate of the network to be less accurate, and Top-1 accuracy of the network dropped to 60.46\%. The second approach was to simply keep the number of layers low, resulting in a simpler network with less memory requirements. Both of these solutions were not viable for this project. Poor accuracy scores and an inability to train complex networks created an obvious demand for a more powerful training machine. Another point to note is image size disparities between the Cifar-10 dataset and the overall target dataset for this project, the Apollo self-driving car image dataset. A machine struggling with the 32x32 low resolution images of the Cifar-10 dataset would surely run into a host of issues with the 1920x1080 images of the target dataset. As such, it was decided that a much more advanced machine would be required. It was decided that Amazon Web Services (AWS) was the only way to quickly and easily access the required computational power demanded by this project.
 \end{flushleft}
 
 \subsubsection{AWS Setup}
 \begin{flushleft}
-One of the many services offered by the AWS platform is Amazon Machine Images (AMI) for Deep Learning. These are virtual machine instances that launch with pre-installed pip deep learning frameworks such as tensorflow, keras etc. in different environments, as well as GPU acceleration. This allows development of models remotely from a client machine which can be then trained using the available GPU resources on the deep learning instance. These instances can be deployed and the desired environment (tensorflow in this case) activated. Jupyter notebooks can be run as normal on the AWS instance, and a rule is set up on the client machine to forward all requests on a certain port to the AWS instance. This allows the user to write code in a Jupyter notebook remotely on the AWS instance. The instance type chosen for this project was the p2.xlarge instance which contains 122GiB of memory, 16 virtual CPU cores and a Nvidia K80 GPU. The steps followed was from the official AWS documentation (\cite{aws}).
+One of the many services offered by the AWS platform is Amazon Machine Images (AMI) for Deep Learning. These are virtual machine instances that launch with pre-installed pip deep learning frameworks such as tensorflow, keras etc. in different environments, as well as GPU acceleration. This allows development of models remotely from a client machine which can be then trained using the available GPU resources on the deep learning instance. These instances can be deployed and the desired environment (tensorflow in this case) activated. Jupyter notebooks can be run as normal on the AWS instance, and a rule is set up on the client machine to forward all requests on a certain port to the AWS instance. This allows the user to write code in a Jupyter notebook remotely on the AWS instance. The instance type chosen for this project was the p2.xlarge instance which contains 122GiB of memory, 16 virtual CPU cores and a Nvidia K80 GPU. The steps followed was from the official AWS documentation.
+\end{flushleft}
+
+\subsubsection{Cifar-10 Further Experiments}
+\begin{flushleft}
+As mentioned above, further experiments were carried out on the Cifar-10 dataset in an attempt to improve the disappointing initial results. The base code provided as part of the tutorial (\cite{udemy}) was modified in the following ways:
+
+\vspace{0.5cm}
+\textbf{Convolution and Pooling Layers}
+\linebreak
+The first approach taken was to simply increase the complexity of the network, with extra layers of convolution and pooling being added until there was 6 layers of each respectively. Filters for the first three convolutional layers were set to 3 pixels to focus on smaller areas of the images, while filter size for the last three convolutional layers was set to 5 pixels in order to focus on larger abstractions. Interestingly, this did not have a significant impact on the accuracy score. This could be due to the fact that the Cifar-10 dataset, while more complex than the MNIST dataset, is not a particularly complex dataset overall and relatively few layers are required for learning.
+
+\vspace{0.5cm}
+\textbf{Dropout and Training Steps}
+\linebreak
+The next approach was to increase the hold probability, decreasing the dropout probability in an attempt to avoid under-learning by the network. This lead to an accuracy to bump to 68.84\%. Following this, the number of learning steps was increased to 20,000 as it was suspected that 5000 steps was too low, and the network was still under-learning. A peak accuracy of 71.75\% was reached, with accuracy failing to increase past 15,000 training steps. As such, it was decided that 15,000 would be kept as the overall number of training steps as it seemed to be the optimal value.
+
+\vspace{0.5cm}
+\textbf{Batch Size}
+\linebreak
+Increased batch size corresponded to increased accuracy, up to a point. Dropping batch size from 100 to 20 led to decreased accuracy, with the peak being 69.05\% at batch size 20 compared to a peak of 71.75\% at batch size 100. The batch size was increased to 200 and a peak accuracy score of 71.54\% was recorded, with training time taking 1676 seconds. It would appear that for this experiment, a batch size of 100 is optimal.
+
+
+\vspace{0.5cm}
+\textbf{Conclusions}
+\linebreak
+Increased complexity of the network did not have a huge impact on this experiment, however this is likely due to the simplicity of the dataset and more complex architectures should be required on more complex datasets. Training steps and batch size both make an impact on accuracy and training time, and their optimal values should be discovered through trial and error in future experiments.
+
 \end{flushleft}
 
 \section{Technology Investigation}

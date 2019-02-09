@@ -62,41 +62,43 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Canny Edge Detection}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Introduction to Convolutional Neural Networks}{21}
+\contentsline {section}{\numberline {2.4}Introduction to Convolutional Neural Networks}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Convolution Layer}{22}
+\contentsline {subsection}{\numberline {2.4.1}Convolution Layer}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Pooling Layer}{24}
+\contentsline {subsection}{\numberline {2.4.2}Pooling Layer}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}Evaluating the Classifier}{25}
+\contentsline {subsection}{\numberline {2.4.3}Evaluating the Classifier}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Top-1 and Top-5 Accuracy}{25}
+\contentsline {subsubsection}{Top-1 and Top-5 Accuracy}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Accuracy Issues}{25}
+\contentsline {subsubsection}{Accuracy Issues}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Confusion Matrix}{26}
+\contentsline {subsubsection}{Confusion Matrix}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Other Evaluation Metrics}{26}
+\contentsline {subsubsection}{Other Evaluation Metrics}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{K-Fold Cross-Validation}{27}
+\contentsline {subsubsection}{K-Fold Cross-Validation}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Tensorflow Introduction}{27}
+\contentsline {section}{\numberline {2.5}Tensorflow Introduction}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}MNIST Experiment}{27}
+\contentsline {subsection}{\numberline {2.5.1}MNIST Experiment}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Code Breakdown}{27}
+\contentsline {subsubsection}{Code Breakdown}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}CIFAR-10 Experiment}{29}
+\contentsline {subsection}{\numberline {2.5.2}CIFAR-10 Experiment}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.3}Initial Findings}{29}
+\contentsline {subsection}{\numberline {2.5.3}Initial Findings}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.4}Experiment Environments}{30}
+\contentsline {subsection}{\numberline {2.5.4}Experiment Environments}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Tensorflow Install}{30}
+\contentsline {subsubsection}{Tensorflow Install}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Memory Issues}{31}
+\contentsline {subsubsection}{Memory Issues}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{AWS Setup}{32}
+\contentsline {subsubsection}{AWS Setup}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cifar-10 Further Experiments}{31}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.6}Technology Investigation}{32}
 \defcounter {refsection}{0}\relax 

@@ -1,0 +1,475 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nyt/global}
+    \entry{arbelaez2011contour}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,hash=d19aeb8b8cfa243de387a3e46d05bcc6}{%
+           family={Arbelaez},
+           family_i={A\bibinitperiod},
+           given={Pablo},
+           given_i={P\bibinitperiod}}}%
+        {{uniquename=0,hash=d980bc6930f008a0fb5fa667785f2309}{%
+           family={Maire},
+           family_i={M\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=1550820d5f191534290531c76de235aa}{%
+           family={Fowlkes},
+           family_i={F\bibinitperiod},
+           given={Charless},
+           given_i={C\bibinitperiod}}}%
+        {{uniquename=0,hash=c75a5377b6dc5213831576e88ffe553c}{%
+           family={Malik},
+           family_i={M\bibinitperiod},
+           given={Jitendra},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{5755d523f37c7b5b09c8481e8a9e212c}
+      \strng{fullhash}{d3b96f811d57c254f7c28bdee0af926c}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on pattern analysis and machine intelligence}
+      \field{number}{5}
+      \field{title}{Contour detection and hierarchical image segmentation}
+      \field{volume}{33}
+      \field{year}{2011}
+      \field{pages}{898\bibrangedash 916}
+      \range{pages}{19}
+    \endentry
+    \entry{canny1986computational}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=fa344b67077711bfaa0525254de2977a}{%
+           family={Canny},
+           family_i={C\bibinitperiod},
+           given={John},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Ieee}%
+      }
+      \strng{namehash}{fa344b67077711bfaa0525254de2977a}
+      \strng{fullhash}{fa344b67077711bfaa0525254de2977a}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelyear}{1986}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on pattern analysis and machine intelligence}
+      \field{number}{6}
+      \field{title}{A computational approach to edge detection}
+      \field{year}{1986}
+      \field{pages}{679\bibrangedash 698}
+      \range{pages}{20}
+    \endentry
+    \entry{udemy}{online}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelyear}{2018}
+      \field{labelmonth}{13}
+      \field{labelday}{12}
+      \field{datelabelsource}{url}
+      \field{labeltitlesource}{title}
+      \field{title}{Complete Guide to Tensorflow for Deep Learning with Python}
+      \field{urlday}{12}
+      \field{urlmonth}{13}
+      \field{urlyear}{2018}
+      \verb{url}
+      \verb https://www.udemy.com/complete-guide-to-tensorflow-for-deep-learning-with-python/
+      \endverb
+    \endentry
+    \entry{domingos2012few}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=926269a097c38456f5b32d7efb1d1a80}{%
+           family={Domingos},
+           family_i={D\bibinitperiod},
+           given={Pedro},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{926269a097c38456f5b32d7efb1d1a80}
+      \strng{fullhash}{926269a097c38456f5b32d7efb1d1a80}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelyear}{2012}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{number}{10}
+      \field{title}{A few useful things to know about machine learning}
+      \field{volume}{55}
+      \field{year}{2012}
+      \field{pages}{78\bibrangedash 87}
+      \range{pages}{10}
+    \endentry
+    \entry{geron2017hands}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=e54e6c9ce5d233c7046a00f7b3faa6c0}{%
+           family={G\'{e}ron},
+           family_i={G\bibinitperiod},
+           given={Aur\'{e}lien},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {" O'Reilly Media, Inc."}%
+      }
+      \strng{namehash}{e54e6c9ce5d233c7046a00f7b3faa6c0}
+      \strng{fullhash}{e54e6c9ce5d233c7046a00f7b3faa6c0}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelyear}{2017}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Hands-on machine learning with Scikit-Learn and TensorFlow: concepts, tools, and techniques to build intelligent systems}
+      \field{year}{2017}
+    \endentry
+    \entry{youtube}{online}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=78b5ea672255ecbd7458f657dd1c1a34}{%
+           family={Hubel},
+           family_i={H\bibinitperiod},
+           given={David},
+           given_i={D\bibinitperiod}}}%
+        {{uniquename=0,hash=165882f66b245a912ba39b39609839ca}{%
+           family={Wiesel},
+           family_i={W\bibinitperiod},
+           given={Torsten},
+           given_i={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Youtube}%
+      }
+      \strng{namehash}{0224a4c4debd986ccbe235d957f75317}
+      \strng{fullhash}{0224a4c4debd986ccbe235d957f75317}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Hubel \& Wiesel - Cortical Neuron - V1}
+      \field{year}{2011}
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=8VdFf3egwfg
+      \endverb
+    \endentry
+    \entry{kotsiantis2007supervised}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=62dbc33fdcea8c51c76e5137e9921c97}{%
+           family={Kotsiantis},
+           family_i={K\bibinitperiod},
+           given={Sotiris\bibnamedelima B},
+           given_i={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{uniquename=0,hash=e27f5d25a0fbc743b362ecc272236dcc}{%
+           family={Zaharakis},
+           family_i={Z\bibinitperiod},
+           given={I},
+           given_i={I\bibinitperiod}}}%
+        {{uniquename=0,hash=9239d622bbca9a833cd7d08e9c00d154}{%
+           family={Pintelas},
+           family_i={P\bibinitperiod},
+           given={P},
+           given_i={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{87e80213e6e1f4b234257a1064b31898}
+      \strng{fullhash}{87e80213e6e1f4b234257a1064b31898}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelyear}{2007}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Emerging artificial intelligence applications in computer engineering}
+      \field{title}{Supervised machine learning: A review of classification techniques}
+      \field{volume}{160}
+      \field{year}{2007}
+      \field{pages}{3\bibrangedash 24}
+      \range{pages}{22}
+    \endentry
+    \entry{krizhevsky2012imagenet}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=c5e3a676e2ac1164b3afcd539c131fc9}{%
+           family={Krizhevsky},
+           family_i={K\bibinitperiod},
+           given={Alex},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           family_i={S\bibinitperiod},
+           given={Ilya},
+           given_i={I\bibinitperiod}}}%
+        {{uniquename=0,hash=5aeb1de9b6c6f00a078230c628e6f41c}{%
+           family={Hinton},
+           family_i={H\bibinitperiod},
+           given={Geoffrey\bibnamedelima E},
+           given_i={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{3ab31bf58af50e5ea6fa561177bf01a9}
+      \strng{fullhash}{3ab31bf58af50e5ea6fa561177bf01a9}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelyear}{2012}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in neural information processing systems}
+      \field{title}{Imagenet classification with deep convolutional neural networks}
+      \field{year}{2012}
+      \field{pages}{1097\bibrangedash 1105}
+      \range{pages}{9}
+    \endentry
+    \entry{lecun1995convolutional}{article}{}
+      \true{moreauthor}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           family_i={L\bibinitperiod},
+           given={Yann},
+           given_i={Y\bibinitperiod}}}%
+        {{uniquename=0,hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           family_i={B\bibinitperiod},
+           given={Yoshua},
+           given_i={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e4c6012409dc8dd9b2aa198a2059804}
+      \strng{fullhash}{ad0aba80f3615f4ef773a1edd8675db2}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{1995}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The handbook of brain theory and neural networks}
+      \field{number}{10}
+      \field{title}{Convolutional networks for images, speech, and time series}
+      \field{volume}{3361}
+      \field{year}{1995}
+      \field{pages}{1995}
+      \range{pages}{1}
+    \endentry
+    \entry{o2015introduction}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=f92af5765968c6de4c1e42d397224c9c}{%
+           family={O'Shea},
+           family_i={O\bibinitperiod},
+           given={Keiron},
+           given_i={K\bibinitperiod}}}%
+        {{uniquename=0,hash=b5da23fc726b6d32ee9a3247fa6663fc}{%
+           family={Nash},
+           family_i={N\bibinitperiod},
+           given={Ryan},
+           given_i={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{1e0b31097f3d41e61dd78e46b147642a}
+      \strng{fullhash}{1e0b31097f3d41e61dd78e46b147642a}
+      \field{sortinit}{O}
+      \field{sortinithash}{7803d2715d5e795e70382b084ab8d00e}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1511.08458}
+      \field{title}{An introduction to convolutional neural networks}
+      \field{year}{2015}
+    \endentry
+    \entry{rogers2016first}{book}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=2f6fd6b38926301817039137e1b1ff2c}{%
+           family={Rogers},
+           family_i={R\bibinitperiod},
+           given={Simon},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=29d5a93ca5a81c990256c62b097f65bb}{%
+           family={Girolami},
+           family_i={G\bibinitperiod},
+           given={Mark},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{bc7cbece0ade438ea9722faba50c5ae3}
+      \strng{fullhash}{bc7cbece0ade438ea9722faba50c5ae3}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{chapter}{2}
+      \field{title}{A first course in machine learning}
+      \field{year}{2016}
+    \endentry
+    \entry{rumelhart1985learning}{report}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=d198ae71c61c758b90826c452447133f}{%
+           family={Rumelhart},
+           family_i={R\bibinitperiod},
+           given={David\bibnamedelima E},
+           given_i={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{uniquename=0,hash=5aeb1de9b6c6f00a078230c628e6f41c}{%
+           family={Hinton},
+           family_i={H\bibinitperiod},
+           given={Geoffrey\bibnamedelima E},
+           given_i={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{uniquename=0,hash=f0fac00adb48128fc1f7750b2d8e7065}{%
+           family={Williams},
+           family_i={W\bibinitperiod},
+           given={Ronald\bibnamedelima J},
+           given_i={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {California Univ San Diego La Jolla Inst for Cognitive Science}%
+      }
+      \strng{namehash}{6c0c2652b5e4e9258c40ce50c5704c6b}
+      \strng{fullhash}{6c0c2652b5e4e9258c40ce50c5704c6b}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{1985}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning internal representations by error propagation}
+      \field{type}{techreport}
+      \field{year}{1985}
+    \endentry
+    \entry{Singh2016MinimumCM}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=d7988624378a338ff8f18e0f74dc98b1}{%
+           family={Singh},
+           family_i={S\bibinitperiod},
+           given={Vaibhav\bibnamedelima Kant},
+           given_i={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{uniquename=0,hash=02f86a84fecdc6f06c6c76adb049c086}{%
+           family={Pandey},
+           family_i={P\bibinitperiod},
+           given={Shweta},
+           given_i={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e39f8c8b509babb05095b108e438c1f7}
+      \strng{fullhash}{e39f8c8b509babb05095b108e438c1f7}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2016 3rd International Conference on Computing for Sustainable Global Development (INDIACom)}
+      \field{title}{Minimum configuration MLP for solving XOR problem}
+      \field{year}{2016}
+      \field{pages}{174\bibrangedash 179}
+      \range{pages}{6}
+    \endentry
+    \entry{srivastava2014dropout}{article}{}
+      \name{author}{5}{}{%
+        {{uniquename=0,hash=6a147afa4569ce6cf23c0436e65d8486}{%
+           family={Srivastava},
+           family_i={S\bibinitperiod},
+           given={Nitish},
+           given_i={N\bibinitperiod}}}%
+        {{uniquename=0,hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           family_i={H\bibinitperiod},
+           given={Geoffrey},
+           given_i={G\bibinitperiod}}}%
+        {{uniquename=0,hash=c5e3a676e2ac1164b3afcd539c131fc9}{%
+           family={Krizhevsky},
+           family_i={K\bibinitperiod},
+           given={Alex},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           family_i={S\bibinitperiod},
+           given={Ilya},
+           given_i={I\bibinitperiod}}}%
+        {{uniquename=0,hash=bd2be300d445e9f6db7808f9533e66cb}{%
+           family={Salakhutdinov},
+           family_i={S\bibinitperiod},
+           given={Ruslan},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {JMLR. org}%
+      }
+      \strng{namehash}{4d6dba595c04c09619c7c1c0038d5b6b}
+      \strng{fullhash}{2850768171a28ccacd146c300f66f57d}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Machine Learning Research}
+      \field{number}{1}
+      \field{title}{Dropout: a simple way to prevent neural networks from overfitting}
+      \field{volume}{15}
+      \field{year}{2014}
+      \field{pages}{1929\bibrangedash 1958}
+      \range{pages}{30}
+    \endentry
+    \entry{ziou1998edge}{article}{}
+      \true{moreauthor}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=2db98f78b92a898e2e232682716a8f50}{%
+           family={Ziou},
+           family_i={Z\bibinitperiod},
+           given={Djemel},
+           given_i={D\bibinitperiod}}}%
+        {{uniquename=0,hash=bedb7e17a147e41a49d19efe2e0cf276}{%
+           family={Tabbone},
+           family_i={T\bibinitperiod},
+           given={Salvatore},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {NAUKA/INTERPERIODICA PUBLISHING}%
+      }
+      \strng{namehash}{04b48defe0d6cc482257beb38cbc3c82}
+      \strng{fullhash}{24270a88ed893391a32933bf0b279d1f}
+      \field{sortinit}{Z}
+      \field{sortinithash}{fdda4caaa6b5fa63e0c081dcb159543a}
+      \field{labelyear}{1998}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognition and Image Analysis C/C of Raspoznavaniye Obrazov I Analiz Izobrazhenii}
+      \field{title}{Edge detection techniques-an overview}
+      \field{volume}{8}
+      \field{year}{1998}
+      \field{pages}{537\bibrangedash 559}
+      \range{pages}{23}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

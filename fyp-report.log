@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  5 FEB 2019 13:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  8 FEB 2019 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,33 +416,12 @@ Overfull \hbox (22.56699pt too wide) in paragraph at lines 96--119
 
 [5] [6] [7]
 Chapter 2.
-
-LaTeX Warning: Citation 'o2015introduction' on page 8 undefined on input line 1
-45.
-
 [8
 
-]
-
-LaTeX Warning: Citation 'krizhevsky2012imagenet' on page 9 undefined on input l
-ine 155.
-
-
-LaTeX Warning: Citation 'o2015introduction' on page 9 undefined on input line 1
-55.
-
-[9]
+] [9]
 Overfull \hbox (12.4678pt too wide) in paragraph at lines 158--158
 []\OT1/cmr/bx/n/17.28 Introduction to Neu-ral Net-works and Deep
  []
-
-
-LaTeX Warning: Citation 'geron2017hands' on page 10 undefined on input line 161
-.
-
-
-LaTeX Warning: Citation 'kotsiantis2007supervised' on page 10 undefined on inpu
-t line 165.
 
 <images/neuron.PNG, id=40, 287.57437pt x 167.12437pt>
 File: images/neuron.PNG Graphic file (type png)
@@ -452,10 +431,6 @@ Package pdftex.def Info: images/neuron.PNG used on input line 171.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Citation 'krizhevsky2012imagenet' on page 10 undefined on input 
-line 177.
 
 <images/functions.PNG, id=42, 539.76656pt x 143.03438pt>
 File: images/functions.PNG Graphic file (type png)
@@ -478,85 +453,34 @@ Package pdftex.def Info: images/linear.PNG used on input line 195.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./images/neuron.PNG> <./images/functions.PNG>] [12 <./images/linear.PNG>]
-
-LaTeX Warning: Citation 'Singh2016MinimumCM' on page 13 undefined on input line
- 222.
-
-
-LaTeX Warning: Citation 'o2015introduction' on page 13 undefined on input line 
-224.
-
 [13] <images/mlp.jpeg, id=60, 496.85625pt x 359.3425pt>
 File: images/mlp.jpeg Graphic file (type jpg)
  <use images/mlp.jpeg>
 Package pdftex.def Info: images/mlp.jpeg used on input line 232.
 (pdftex.def)             Requested size: 341.43306pt x 246.93768pt.
 
-[14 <./images/mlp.jpeg>]
-
-LaTeX Warning: Citation 'rumelhart1985learning' on page 15 undefined on input l
-ine 243.
-
-
-LaTeX Warning: Citation 'domingos2012few' on page 15 undefined on input line 24
-8.
-
-
-LaTeX Warning: Citation 'domingos2012few' on page 15 undefined on input line 24
-8.
-
-
-LaTeX Warning: Citation 'o2015introduction' on page 15 undefined on input line 
-248.
-
-
-LaTeX Warning: Citation 'srivastava2014dropout' on page 15 undefined on input l
-ine 248.
-
-[15] <images/pixels.png, id=67, 1031.855pt x 656.4525pt>
+[14 <./images/mlp.jpeg>] [15]
+<images/pixels.png, id=67, 1031.855pt x 656.4525pt>
 File: images/pixels.png Graphic file (type png)
-
-<use images/pixels.png>
+ <use images/pixels.png>
 Package pdftex.def Info: images/pixels.png used on input line 261.
 (pdftex.def)             Requested size: 341.43306pt x 217.21095pt.
 
-
-LaTeX Warning: Citation 'lecun1995convolutional' on page 16 undefined on input 
-line 267.
-
-[16 <./images/pixels.png>]
-
-LaTeX Warning: Citation 'youtube' on page 17 undefined on input line 271.
-
-
-LaTeX Warning: Citation 'arbelaez2011contour' on page 17 undefined on input lin
-e 276.
-
-
-LaTeX Warning: Citation 'ziou1998edge' on page 17 undefined on input line 276.
-
-
-LaTeX Warning: Citation 'ziou1998edge' on page 17 undefined on input line 281.
-
-[17]
-
-LaTeX Warning: Citation 'canny1986computational' on page 18 undefined on input 
-line 286.
-
-[18] [19] <images/directions.png, id=87, 116.435pt x 107.40125pt>
+[16 <./images/pixels.png>] [17] [18]
+<images/directions.png, id=84, 116.435pt x 107.40125pt>
 File: images/directions.png Graphic file (type png)
 
 <use images/directions.png>
 Package pdftex.def Info: images/directions.png used on input line 293.
 (pdftex.def)             Requested size: 227.62204pt x 209.98384pt.
- [20 <./images/directions.png>]
-<images/orientation.png, id=91, 116.435pt x 112.42pt>
+ [19 <./images/directions.png>]
+<images/orientation.png, id=88, 116.435pt x 112.42pt>
 File: images/orientation.png Graphic file (type png)
 
 <use images/orientation.png>
 Package pdftex.def Info: images/orientation.png used on input line 302.
 (pdftex.def)             Requested size: 227.62204pt x 219.7962pt.
- <images/canny.jpg, id=92, 734.745pt x 630.355pt>
+ <images/canny.jpg, id=89, 734.745pt x 630.355pt>
 File: images/canny.jpg Graphic file (type jpg)
 
 <use images/canny.jpg>
@@ -571,11 +495,7 @@ Overfull \hbox (9.57973pt too wide) in paragraph at lines 315--315
 []\OT1/cmr/bx/n/17.28 Introduction to Con-vo-lu-tional Neu-ral Net-
  []
 
-
-LaTeX Warning: Citation 'o2015introduction' on page 21 undefined on input line 
-317.
-
-<images/convo.png, id=93, 843.15pt x 250.9375pt>
+<images/convo.png, id=90, 843.15pt x 250.9375pt>
 File: images/convo.png Graphic file (type png)
  <use images/convo.png>
 Package pdftex.def Info: images/convo.png used on input line 323.
@@ -584,101 +504,42 @@ Package pdftex.def Info: images/convo.png used on input line 323.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21 <./images/orientation.png>] [22 <./images/canny.jpg>]
-<images/conv.png, id=100, 526.96875pt x 150.5625pt>
+[20 <./images/orientation.png>] [21 <./images/canny.jpg>]
+<images/conv.png, id=97, 526.96875pt x 150.5625pt>
 File: images/conv.png Graphic file (type png)
  <use images/conv.png>
 Package pdftex.def Info: images/conv.png used on input line 337.
 (pdftex.def)             Requested size: 341.43306pt x 97.5566pt.
 
-[23 <./images/convo.png> <./images/conv.png>]
-<images/pool.png, id=107, 551.81157pt x 199.49532pt>
+[22 <./images/convo.png> <./images/conv.png>]
+<images/pool.png, id=103, 551.81157pt x 199.49532pt>
 File: images/pool.png Graphic file (type png)
  <use images/pool.png>
 Package pdftex.def Info: images/pool.png used on input line 351.
 (pdftex.def)             Requested size: 341.43306pt x 123.44228pt.
 
-[24 <./images/pool.png>]
-
-LaTeX Warning: Citation 'rogers2016first' on page 25 undefined on input line 37
-9.
-
-[25]
+[23 <./images/pool.png>] [24]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 386.
 
-! Undefined control sequence.
-<argument> \precision 
-                      - recall
-l.415 ...precision - recall}{\precision + \recall}
-                                                  $. The F-score can be thou...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \precision 
-                      + \recall 
-l.415 ...precision - recall}{\precision + \recall}
-                                                  $. The F-score can be thou...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \precision + \recall 
-                                
-l.415 ...precision - recall}{\precision + \recall}
-                                                  $. The F-score can be thou...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.418 G
-       -score is the geometric mean of precision and recall, and is defined ...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[26]
-
-LaTeX Warning: Citation 'udemy' on page 27 undefined on input line 426.
-
-<images/helpers.png, id=119, 579.16376pt x 481.8pt>
+[25] <images/helpers.png, id=116, 579.16376pt x 481.8pt>
 File: images/helpers.png Graphic file (type png)
- <use images/helpers.png>
+
+<use images/helpers.png>
 Package pdftex.def Info: images/helpers.png used on input line 441.
 (pdftex.def)             Requested size: 341.43306pt x 284.03163pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[27] <images/layers.png, id=124, 584.1825pt x 287.0725pt>
+ [26]
+<images/layers.png, id=122, 584.1825pt x 287.0725pt>
 File: images/layers.png Graphic file (type png)
-
-<use images/layers.png>
+ <use images/layers.png>
 Package pdftex.def Info: images/layers.png used on input line 453.
 (pdftex.def)             Requested size: 341.43306pt x 167.79pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/training.png, id=125, 880.28876pt x 423.5825pt>
+<images/training.png, id=123, 880.28876pt x 423.5825pt>
 File: images/training.png Graphic file (type png)
 
 <use images/training.png>
@@ -688,12 +549,8 @@ Package pdftex.def Info: images/training.png used on input line 465.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[28 <./images/helpers.png>] [29 <./images/layers.png>] [30 <./images/training.p
-ng>]
-
-LaTeX Warning: Citation 'aws' on page 31 undefined on input line 504.
-
-[31] [32]
+[27 <./images/helpers.png>] [28 <./images/layers.png>] [29 <./images/training.p
+ng>] [30] [31] [32]
 Chapter 3.
 [33
 
@@ -703,51 +560,55 @@ Chapter 4.
 
 ]
 Chapter 5.
-
-LaTeX Warning: Empty bibliography on input line 526.
-
 [35
 
-] (./fyp-report.aux)
+]
+Overfull \hbox (8.02824pt too wide) in paragraph at lines 554--554
+\OT1/cmr/m/it/12 IEEE Trans-ac-tions on pat-tern anal-y-sis and ma-chine in-tel
+-li-gence \OT1/cmr/m/n/12 6, pp. 679{
+ []
+
+[36
+
+] [37] (./fyp-report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                fyp-report
-(biblatex)                and rerun LaTeX afterwards.
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
 
 Package logreq Info: Writing requests to 'fyp-report.run.xml'.
 \openout1 = `fyp-report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 7156 strings out of 494910
- 122837 string characters out of 6179835
- 515741 words of memory out of 5000000
- 10371 multiletter control sequences out of 15000+600000
- 8801 words of font info for 31 fonts, out of 8000000 for 9000
+ 7192 strings out of 494910
+ 123825 string characters out of 6179835
+ 515737 words of memory out of 5000000
+ 10405 multiletter control sequences out of 15000+600000
+ 9317 words of font info for 33 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 44i,8n,32p,2563b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,8n,46p,2570b,955s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb>
-Output written on fyp-report.pdf (37 pages, 1330164 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
+pfb>
+Output written on fyp-report.pdf (39 pages, 1371423 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 203 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
