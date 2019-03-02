@@ -402,25 +402,34 @@ There are a number of different metrics of evaluation that can be used other tha
 \vspace{0.5cm}
 \textbf{Precision}
 \linebreak
-The precision is the number of correct positive predictions compared to the actual number of positive examples. It can be represented by the formula $precision = \frac{\#TP}{\#TP + \#FP}$.
+The precision is the number of correct positive predictions compared to the actual number of positive examples. It can be represented by the formula $precision = \frac{\#TP}{\#TP + \#FP}$. This is a good metric to evaluate when there is a high cost associated with a false positive. For example, an email spam detector must have high precision in order to avoid mistakenly classifying legitimate emails as spam. 
 
 \vspace{0.5cm}
 \textbf{Recall}
 \linebreak
-The recall is the ratio of correct positive examples to the number of positive predictions, and can be represented as $recall = \frac{\#TP}{\#TP + \#FN}$.
+The recall is the ratio of correct positive examples to the number of positive predictions, and can be represented as $recall = \frac{\#TP}{\#TP + \#FN}$. Recall is an important metric when there is a high cost associated with false negatives and as mentioned above are an extremely important metric for this project.
 
 \vspace{0.5cm}
-\textbf{F-score and G-score}
+\textbf{F-score}
 \linebreak
-Two other metrics can be derived from precision and recall, known as F-score and G-score. F-score is the harmonic mean of precision and recall, and is defined as 
-$F = 2. \frac{precision - recall}{precision + recall}$. The F-score can be thought of as representing the balance between the precision and the recall.
-\linebreak
-G-score is the geometric mean of precision and recall, and is defined as $G = \sqrt{precision - recall}$.
-
+Another metric can be derived from precision and recall, known as F-score. F-score is the harmonic mean of precision and recall, and is defined as 
+$F = 2. \frac{precision - recall}{precision + recall}$. The F-score can be thought of as representing the balance between the precision and the recall. Although this is an important metric overall, it does not take precedence in this project, where a good recall score is of utmost importance.
 \end{flushleft}
 
-\subsubsection{K-Fold Cross-Validation}
+\subsubsection{AUC-ROC Curve}
+\begin{flushleft}
+The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is another method of classifier evaluation, enabling the visualisation of results from a classification problem. The ROC curve is used to plot the true positve rate against the false positive rate, resulting in a probability curve, while the AUC represents how well the model distinguishes between classes. The higher the AUC, the better the model is. This is visualised in Fig \ref{fig:aucroc}.
+\end{flushleft}
 
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{aucroc}
+	\caption{AUC-ROC Visualised}
+	\label{fig:aucroc}
+\end{figure}
+
+\newpage
 \section{Tensorflow Introduction}
 
 This section is dedicated to the background work done in order to gain an understanding of how to implement CNN's using tensorflow. The experiments illustrated in this section were carried out during the completion of the Complete Guide to TensorFlow for Deep Learning with Python course on Udemy (\cite{udemy}). This section consists of two experiments carried out on the MNIST and CIFAR-10 datasets. The first experiment is sample code provided as part of the course to illustrate the concepts learned during the course. The second experiment is an exercise for the course carried out to implement an understanding of these concepts.
@@ -506,37 +515,197 @@ One of the many services offered by the AWS platform is Amazon Machine Images (A
 
 \subsubsection{Cifar-10 Further Experiments}
 \begin{flushleft}
-As mentioned above, further experiments were carried out on the Cifar-10 dataset in an attempt to improve the disappointing initial results. The base code provided as part of the tutorial (\cite{udemy}) was modified in the following ways:
+As mentioned above, further experiments were carried out on the Cifar-10 dataset in an attempt to improve the disappointing initial results. The base code provided as part of the tutorial (\cite{udemy}) was modified in a range of different ways in order to maximise results. In order to evaluate the network properly the following metrics were recorded:
+
+\begin{enumerate}
+  \item Peak Top-1 accuracy
+  \item Precision
+  \item Recall
+  \item Training time
+\end{enumerate}
+
+The baseline of these metrics achieved by the simple network provided from the tutorial are shown in the table below, with the accuracy, precision and recall being graphed in Fig \ref{fig:baseline}. Interestingly enough, the accuracy and recall values for this experiment were identical throughout all of the training steps. This does not necessarily mean that there is an issue, however it is very unusual. A focus for the following experiments was to investigate what changes, if any, would cause these values to diverge.
+\end{flushleft}
 
 \vspace{0.5cm}
-\textbf{Convolution and Pooling Layers}
-\linebreak
-The first approach taken was to simply increase the complexity of the network, with extra layers of convolution and pooling being added until there was 6 layers of each respectively. Filters for the first three convolutional layers were set to 3 pixels to focus on smaller areas of the images, while filter size for the last three convolutional layers was set to 5 pixels in order to focus on larger abstractions. Interestingly, this did not have a significant impact on the accuracy score. This could be due to the fact that the Cifar-10 dataset, while more complex than the MNIST dataset, is not a particularly complex dataset overall and relatively few layers are required for learning.
+\begin{tabular}{llll}
+                                          & Initial Experiment                 &                                &                              \\ \hline
+\multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
+\multicolumn{1}{|l|}{70.16\%}             & \multicolumn{1}{l|}{220s}          & \multicolumn{1}{l|}{71.67\%}   & \multicolumn{1}{l|}{70.16\%} \\ \hline
+\end{tabular}
 
 \vspace{0.5cm}
-\textbf{Dropout and Training Steps}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{baseline-graph}
+	\caption{Baseline Plot}
+	\label{fig:baseline}
+\end{figure}
+
+\begin{flushleft}
+\vspace{0.5cm}
+\textbf{Experiment 1: Training Steps}
 \linebreak
-The next approach was to increase the hold probability, decreasing the dropout probability in an attempt to avoid under-learning by the network. This lead to an accuracy to bump to 68.84\%. Following this, the number of learning steps was increased to 20,000 as it was suspected that 5000 steps was too low, and the network was still under-learning. A peak accuracy of 71.75\% was reached, with accuracy failing to increase past 15,000 training steps. As such, it was decided that 15,000 would be kept as the overall number of training steps as it seemed to be the optimal value.
+Before investigating the effects of altering the network architecture, the optimal number of training steps was investigated. This parameter was investigated first as it has a large effect on training time. A network that does not have enough training steps will underlearn, whereby it does not learn all possible parameters. However having too many training steps will lead to increased training time with no increase in accuracy. The initial experiment carried out 5000 training steps, so this was doubled to 10,000 steps in an attempt to see if this would boost accuracy, precision and recall. The results are displayed in the table below and plotted in Fig \ref{fig:experiment-1}. All three metrics levelled off at around the 5000 step mark, with no significant increases reported. It would therefore appear that 5000 training steps is the optimal value.
 
 \vspace{0.5cm}
-\textbf{Batch Size}
-\linebreak
-Increased batch size corresponded to increased accuracy, up to a point. Dropping batch size from 100 to 20 led to decreased accuracy, with the peak being 69.05\% at batch size 20 compared to a peak of 71.75\% at batch size 100. The batch size was increased to 200 and a peak accuracy score of 71.54\% was recorded, with training time taking 1676 seconds. It would appear that for this experiment, a batch size of 100 is optimal.
-
+\begin{tabular}{llll}
+                                           & Experiment 1                       &                                                             \\ \hline
+\multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
+\multicolumn{1}{|l|}{70.46\%}             & \multicolumn{1}{l|}{466s}          & \multicolumn{1}{l|}{70.71\%}   & \multicolumn{1}{l|}{70.46\%} \\ \hline
+\end{tabular}
 
 \vspace{0.5cm}
-\textbf{Conclusions}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{experiment-1}
+	\caption{10,000 Training Steps}
+	\label{fig:experiment-1}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+\vspace{0.5cm}
+\textbf{Experiment 2: Convolution and Pooling Layers}
 \linebreak
-Increased complexity of the network did not have a huge impact on this experiment, however this is likely due to the simplicity of the dataset and more complex architectures should be required on more complex datasets. Training steps and batch size both make an impact on accuracy and training time, and their optimal values should be discovered through trial and error in future experiments.
+The next experiment undertaken was to increase the number of convolution and pooling layers. For this experiment only one extra layer of convolution and pooling was added. As can be shown in the results displayed in the table below as well in Fig \ref{fig:experiment-2}, this did not yield any significant results.
+
+\vspace{0.5cm}
+\begin{tabular}{llll}
+                                          & Experiment 2                       &                                &                              \\ \hline
+\multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
+\multicolumn{1}{|l|}{70.38\%}             & \multicolumn{1}{l|}{192s}          & \multicolumn{1}{l|}{70.82\%}   & \multicolumn{1}{l|}{70.38\%} \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{experiment-2}
+	\caption{Experiment 2}
+	\label{fig:experiment-2}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+\vspace{0.5cm}
+\textbf{Experiment 3: Fully Connected Layers}
+\linebreak
+As the extra layers of convolution and pooling had failed to yield any benefits, the next step taken was to increase the number of fully connected layers in the network. One extra fully connected layer was added as well as a dropout layer. The reasoning behind this experiment was to investigate the possibility that the network was performing poorly with the class predictions. The images in the Cifar-10 dataset consist of non-occluded blurred objects with one class of object present per image. As such it was reasoned that only a small number of convolution and pooling layers were required to extract feature maps from the images, and increased numbers of fully-connected layers would be more important. Dissapointingly, the results of this experiment were a marginal drop in accuracy, precision and recall.
+
+\vspace{0.5cm}
+\begin{tabular}{llll}
+                                          & Experiment 3                       &                                &                              \\ \hline
+\multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
+\multicolumn{1}{|l|}{69.52\%}             & \multicolumn{1}{l|}{161s}          & \multicolumn{1}{l|}{69.67\%}   & \multicolumn{1}{l|}{69.52\%} \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{experiment-3}
+	\caption{Experiment 3}
+	\label{fig:experiment-3}
+\end{figure}
+\end{flushleft}
+
+\newpage
+\begin{flushleft}
+\vspace{0.5cm}
+\textbf{Experiment 4: Convolution, Pooling and Fully Connected Layers}
+\linebreak
+As Experiments 3 and 4 had failed to yield better results, 2 extra layers of convolution and pooling were added in conjunction with an extra fully-connected layer. As can be seen from the results table and Fig \ref{fig:experiment-4}, results actually went down marginally.
+
+\vspace{0.5cm}
+\begin{tabular}{llll}
+                                          & \multicolumn{1}{c}{Experiment 4}   &                                &                             \\ \hline
+\multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall} \\ \hline
+\multicolumn{1}{|l|}{67.3\%}              & \multicolumn{1}{l|}{276s}          & \multicolumn{1}{l|}{68.56\%}   & \multicolumn{1}{l|}{67.3\%} \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{experiment-4}
+	\caption{Experiment 4}
+	\label{fig:experiment-4}
+\end{figure}
+\end{flushleft}
+
+\newpage
+\begin{flushleft}
+\vspace{0.5cm}
+\textbf{Experiment 5: Extra Dropout Layers}
+\linebreak
+Following the failure of experiment 4 to improve results, 2 extra layers of dropout with a probability of 0.25 were added to the experiment 4 architecture after the 2nd and 4th pooling layers in an attempt to tale any potential overfitting. Dropout is not typically implemented in modern convolutional networks, however as the purpose of these experiments is purely to investigate the effects of different techniques it was implemented for this experiment. Although the results summarised in the table below and Fig \ref{fig:experiment-5} do not show any meaningful increase in accuracy either, the accuracy curve from this experiment as well as experiment 4 suggest that the network is underlearning as the curves do not level off as much as in previous results. This implied that the network may simply need more time to train. Interestingly, during this experiment the accuracy and recall metrics diverged from one another, as can be oserved in Fig \ref{fig:experiment-5}. This would seem to imply that the network may have been overfitting slightly.
+
+\vspace{0.5cm}
+\begin{tabular}{llll}
+                                          & \multicolumn{1}{c}{Experiment 5}   &                                &                              \\ \hline
+\multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
+\multicolumn{1}{|l|}{60.47\%}             & \multicolumn{1}{l|}{425s}          & \multicolumn{1}{l|}{60.60\%}   & \multicolumn{1}{l|}{60.57\%} \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{experiment-5}
+	\caption{Experiment 5}
+	\label{fig:experiment-5}
+\end{figure}
+\end{flushleft}
+
+\newpage
+\begin{flushleft}
+\vspace{0.5cm}
+\textbf{Experiment 6: Increased Training Steps}
+\linebreak
+The observations in experiments 4 and 5 suggested that the network might simply need more time to train. In experiment 1 it was concluded that 5000 training steps would be sufficient, however this experiment was carried out using the simple baseline network architecture. It was therefore a mistake to assume that 5000 training steps would be sufficient for all following experiments. The number of training steps was increased drastically to 25,000, with the architecture remaining the same as in experiment 5. Although training time was significantly increased, all metrics gained a slight increase with accuracy peaking at 73.25\%, a decent improvement from the initial results.
+
+\vspace{0.5cm}
+\begin{tabular}{llll}
+                                          & \multicolumn{1}{c}{Experiment 6}   &                                &                              \\ \hline
+\multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
+\multicolumn{1}{|l|}{73.54\%}             & \multicolumn{1}{l|}{1778s}         & \multicolumn{1}{l|}{74.03\%}   & \multicolumn{1}{l|}{73.48\%} \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{experiment-6}
+	\caption{Experiment 6}
+	\label{fig:experiment-6}
+\end{figure}
 
 \end{flushleft}
 
-\section{Technology Investigation}
+\newpage
+\vspace{0.5cm}
+\textbf{Confusion Matrix}
+\linebreak
+The confusion matrix is outlined in Fig \ref{fig:cm}.
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{cm}
+	\caption{Confusion matrix}
+	\label{fig:cm}
+\end{figure} 
+
+\begin{flushleft}
+\vspace{0.5cm}
+\textbf{Conclusions}
+\linebreak
+These experiments conclude with a small yet significant increase in accuracy, precision and recall scores from the final experiment. Adding just extra layers of convolution and pooling without adding extra fully-connected layers did not result in improvements, and vice versa. Upon creation of a more complex network architecture with dropout layers results actually went down slightly. However, observation of the metric graphs showed that the network was possibly underlearning, and a drastic increase in training steps led to positive results. Accuracy, precision and recall all seemed to increase in proportion with one another for these experiments, however this is generally not guaranteed for all networks. Datasets containing more classes or high levels of class imbalance would typically not result in such regular accuracy, precision and recall metrics. If there is anything to take from these experiments moving forward with this project, it is that simply adding one or two extra layers is not sufficient to gain satisfactory results - adding multiple layers of convolution, pooling and fully-connected layers should be investigated in conjunction with each other in future experiments. As the unusual accuracy and recall results also demonstrate, it may also be beneficial to introduce dropout or some other form of regularisation in networks that are not obviously overfitting. Although the increases in performance shown are slight, I am confident that further increasing the complexity of the network and increasing training times can lead to further increases.
+
+\end{flushleft}
 
 \newpage
 \chapter{Empirical Studies}
-\section{Convolutional Neural Network Architectures}
-\section{Image Processing Techniques}
+\begin{flushleft}
+The following sections will investigate the effects of retraining various different network architectures using transfer learning, as well as investigate the effects of parameter tuning upon these networks. Transfer learning is a popular technique in Machine Learning whereby an already trained model is applied to new data. As mentioned earlier, CNN's use their lower layers to extract primitive features such as edges, the middle layers detect shapes from these edges and the final layers learn the task specific abstractions of these shapes. In transfer learning the last layers of the network are retrained using data from the target domain, allowing the insights that have been learned from the original data to be applied to the new data. This helps to avoid training models from scratch on unseen yet related datasets. Transfer learning is a very popular field within Machine Learning, as it can help drastically cut down on training times, as well as enabling better results on smaller datasets.
+\end{flushleft}
+\section{Inception V3 Retraining}
 
 \newpage
 \chapter{Classifier Implementation}

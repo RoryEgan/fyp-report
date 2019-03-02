@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  8 FEB 2019 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  2 MAR 2019 16:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -523,76 +523,171 @@ Package pdftex.def Info: images/pool.png used on input line 351.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 386.
 
-[25] <images/helpers.png, id=116, 579.16376pt x 481.8pt>
-File: images/helpers.png Graphic file (type png)
+[25] <images/aucroc.png, id=115, 407.5225pt x 331.2375pt>
+File: images/aucroc.png Graphic file (type png)
 
-<use images/helpers.png>
-Package pdftex.def Info: images/helpers.png used on input line 441.
+<use images/aucroc.png>
+Package pdftex.def Info: images/aucroc.png used on input line 427.
+(pdftex.def)             Requested size: 341.43306pt x 277.53pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26] [27 <./images/aucroc.png>]
+<images/helpers.png, id=124, 579.16376pt x 481.8pt>
+File: images/helpers.png Graphic file (type png)
+ <use images/helpers.png>
+Package pdftex.def Info: images/helpers.png used on input line 450.
 (pdftex.def)             Requested size: 341.43306pt x 284.03163pt.
- [26]
-<images/layers.png, id=122, 584.1825pt x 287.0725pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/layers.png, id=125, 584.1825pt x 287.0725pt>
 File: images/layers.png Graphic file (type png)
  <use images/layers.png>
-Package pdftex.def Info: images/layers.png used on input line 453.
+Package pdftex.def Info: images/layers.png used on input line 462.
 (pdftex.def)             Requested size: 341.43306pt x 167.79pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/training.png, id=123, 880.28876pt x 423.5825pt>
+<images/training.png, id=126, 880.28876pt x 423.5825pt>
 File: images/training.png Graphic file (type png)
 
 <use images/training.png>
-Package pdftex.def Info: images/training.png used on input line 465.
+Package pdftex.def Info: images/training.png used on input line 474.
 (pdftex.def)             Requested size: 341.43306pt x 164.29164pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[27 <./images/helpers.png>] [28 <./images/layers.png>] [29 <./images/training.p
-ng>] [30] [31] [32]
+[28] [29 <./images/helpers.png>] [30 <./images/layers.png>] [31 <./images/train
+ing.png>] [32] <images/baseline-graph.png, id=143, 595.22375pt x 315.1775pt>
+File: images/baseline-graph.png Graphic file (type png)
+
+<use images/baseline-graph.png>
+Package pdftex.def Info: images/baseline-graph.png used on input line 540.
+(pdftex.def)             Requested size: 341.43306pt x 180.79282pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[33] <images/experiment-1.png, id=147, 597.23125pt x 322.20375pt>
+File: images/experiment-1.png Graphic file (type png)
+
+<use images/experiment-1.png>
+Package pdftex.def Info: images/experiment-1.png used on input line 561.
+(pdftex.def)             Requested size: 341.43306pt x 184.20377pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/experiment-2.png, id=148, 596.2275pt x 319.1925pt>
+File: images/experiment-2.png Graphic file (type png)
+
+<use images/experiment-2.png>
+Package pdftex.def Info: images/experiment-2.png used on input line 583.
+(pdftex.def)             Requested size: 341.43306pt x 182.78906pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34 <./images/baseline-graph.png>]
+<images/experiment-3.png, id=152, 595.22375pt x 320.19624pt>
+File: images/experiment-3.png Graphic file (type png)
+
+<use images/experiment-3.png>
+Package pdftex.def Info: images/experiment-3.png used on input line 605.
+(pdftex.def)             Requested size: 341.43306pt x 183.67168pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[35 <./images/experiment-1.png>]
+<images/experiment-4.png, id=157, 597.23125pt x 319.1925pt>
+File: images/experiment-4.png Graphic file (type png)
+
+<use images/experiment-4.png>
+Package pdftex.def Info: images/experiment-4.png used on input line 628.
+(pdftex.def)             Requested size: 341.43306pt x 182.48222pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[36 <./images/experiment-2.png>]
+<images/experiment-5.png, id=161, 602.25pt x 322.20375pt>
+File: images/experiment-5.png Graphic file (type png)
+
+<use images/experiment-5.png>
+Package pdftex.def Info: images/experiment-5.png used on input line 651.
+(pdftex.def)             Requested size: 341.43306pt x 182.67476pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[37 <./images/experiment-3.png>]
+<images/experiment-6.png, id=165, 595.22375pt x 318.18875pt>
+File: images/experiment-6.png Graphic file (type png)
+
+<use images/experiment-6.png>
+Package pdftex.def Info: images/experiment-6.png used on input line 674.
+(pdftex.def)             Requested size: 341.43306pt x 182.52013pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[38 <./images/experiment-4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 683--686
+[]\OT1/cmr/bx/n/12 Confusion Ma-trix
+ []
+
+<images/cm.png, id=169, 355.3275pt x 174.6525pt>
+File: images/cm.png Graphic file (type png)
+ <use images/cm.png>
+Package pdftex.def Info: images/cm.png used on input line 690.
+(pdftex.def)             Requested size: 341.43306pt x 167.82706pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[39 <./images/experiment-5.png>] [40 <./images/experiment-6.png>] [41 <./images
+/cm.png>]
 Chapter 3.
-[33
+[42
 
 ]
 Chapter 4.
-[34
+[43
 
 ]
 Chapter 5.
-[35
+[44
 
 ]
-Overfull \hbox (8.02824pt too wide) in paragraph at lines 554--554
+Overfull \hbox (8.02824pt too wide) in paragraph at lines 723--723
 \OT1/cmr/m/it/12 IEEE Trans-ac-tions on pat-tern anal-y-sis and ma-chine in-tel
 -li-gence \OT1/cmr/m/n/12 6, pp. 679{
  []
 
-[36
+[45
 
-] [37] (./fyp-report.aux)
+] [46] (./fyp-report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
 
 Package logreq Info: Writing requests to 'fyp-report.run.xml'.
 \openout1 = `fyp-report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 7192 strings out of 494910
- 123825 string characters out of 6179835
- 515737 words of memory out of 5000000
- 10405 multiletter control sequences out of 15000+600000
+ 7283 strings out of 494910
+ 125447 string characters out of 6179835
+ 516036 words of memory out of 5000000
+ 10488 multiletter control sequences out of 15000+600000
  9317 words of font info for 33 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 44i,8n,46p,2570b,955s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,8n,46p,2570b,953s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
@@ -601,14 +696,13 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
-pfb>
-Output written on fyp-report.pdf (39 pages, 1371423 bytes).
+amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt12.pfb>
+Output written on fyp-report.pdf (48 pages, 1501184 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 236 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
