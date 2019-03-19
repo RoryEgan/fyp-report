@@ -68,54 +68,80 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Pooling Layer}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}Evaluating the Classifier}{24}
+\contentsline {subsection}{\numberline {2.4.3}Relevant Architectures}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Top-1 and Top-5 Accuracy}{24}
+\contentsline {subsubsection}{MobileNet}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Accuracy Issues}{24}
+\contentsline {subsubsection}{Inception}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Confusion Matrix}{25}
+\contentsline {subsection}{\numberline {2.4.4}Evaluating the Classifier}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Other Evaluation Metrics}{25}
+\contentsline {subsubsection}{Top-1 and Top-5 Accuracy}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{AUC-ROC Curve}{26}
+\contentsline {subsubsection}{Accuracy Issues}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Tensorflow Introduction}{27}
+\contentsline {subsubsection}{Confusion Matrix}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}MNIST Experiment}{28}
+\contentsline {subsubsection}{Other Evaluation Metrics}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Code Breakdown}{28}
+\contentsline {subsubsection}{AUC-ROC Curve}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}CIFAR-10 Experiment}{29}
+\contentsline {subsection}{\numberline {2.4.5}Transfer Learning}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.3}Initial Findings}{29}
+\contentsline {section}{\numberline {2.5}Tensorflow Introduction}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.4}Experiment Environments}{30}
+\contentsline {subsection}{\numberline {2.5.1}MNIST Experiment}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Tensorflow Install}{31}
+\contentsline {subsubsection}{Code Breakdown}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Memory Issues}{31}
+\contentsline {subsection}{\numberline {2.5.2}CIFAR-10 Experiment}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{AWS Setup}{32}
+\contentsline {subsection}{\numberline {2.5.3}Initial Findings}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Cifar-10 Further Experiments}{33}
+\contentsline {subsection}{\numberline {2.5.4}Experiment Environments}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Tensorflow Install}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Memory Issues}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{AWS Setup}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cifar-10 Further Experiments}{34}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Empirical Studies}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Inception V3 Retraining}{42}
+\contentsline {section}{\numberline {3.1}SSD MobileNet V1 Experiments}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Classifier Implementation}{43}
+\contentsline {subsection}{\numberline {3.1.1}Full Dataset Retraining Experiment}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Requirements}{43}
+\contentsline {subsubsection}{Objectives}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}System Design}{43}
+\contentsline {subsubsection}{Setup}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Implementation}{43}
+\contentsline {subsubsection}{Results}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Analysis}{43}
+\contentsline {subsection}{\numberline {3.1.2}Partial Dataset Retraining Experiment}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Final Conclusion}{44}
+\contentsline {subsubsection}{Objectives}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Review of Research}{44}
+\contentsline {subsubsection}{Setup}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Reflections on Implementation}{44}
+\contentsline {subsubsection}{Results}{44}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Faster RCNN Inception V2 Experiments}{46}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Classifier Implementation}{49}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Requirements}{49}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}System Design}{49}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Implementation}{49}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Analysis}{49}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Final Conclusion}{50}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Review of Research}{50}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Reflections on Implementation}{50}

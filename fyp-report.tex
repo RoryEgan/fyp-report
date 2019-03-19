@@ -354,6 +354,24 @@ The pooling layer performs downsampling to extract key important features and re
 \end{figure}
 
 \newpage
+\subsection{Relevant Architectures}
+\begin{flushleft}
+This section will outline some important CNN architectures that are commonly used. These architectures will later be implemented and investigated during the Empirical Studies section.
+\end{flushleft}
+
+\subsubsection{MobileNet}
+\begin{flushleft}
+Following the success of AlexNet in 2012, CNNs followed a general trend towards deeper and more computationally expensive architectures. However, increased network complexity does not guarantee increased network performance (\cite{szegedy2016rethinking}), and in computationally limited platforms such as smartphones and self-driving cars tasks need to be carried out quickly with a low computational overhead. The MobileNet architecture arose out of this demand for more lightweight and efficient architectures (\cite{howard2017mobilenets}). MobileNet differs from conventional CNN architectures in that it makes use of depthwise seperable convolutions in the place of regular convolutions. A depthwise seperable convolution consists of two operations - a depthwise convolution followed by a pointwise convolution.
+
+A standard convolution works on the spatial dimension of the feature maps as well as the input and output channels.
+\end{flushleft}
+
+\subsubsection{Inception}
+\begin{flushleft}
+In a similar vein to the MobileNet architecture, the Inception architecture arose from a desire to create more complex networks to increase performance, without leading to the issues presented by simply stacking more layers into a  network. At the current time there are four main versions of the Inception architecture, with each improving slightly over the preceding version. The core concept behind the creation of this network was that important objects or regions within a given image can vary greatly depending on the distance between the object and the camera. Due to this variance, selection of the correct kernel size is difficult. A larger kernel size is suitable for the larger objects, however this will not suffice for the smaller objects. Rather than simply adding extra layers, a possible solution is to have multiple filters operate on the same level, creating a "wider" rather than "deeper" architecture. This was the driving concept behind the creation of the Inception v1 (also known as GoogLeNet) architecture.
+\end{flushleft}
+
+\newpage
 \subsection{Evaluating the Classifier}
 \begin{flushleft}
 There are various techniques which can be used to evaluate the operation of a classifier. Some of the more prevalent ones, many of which will be seen throughout the rest of this report, are explained below.
@@ -428,6 +446,11 @@ The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is ano
 	\caption{AUC-ROC Visualised}
 	\label{fig:aucroc}
 \end{figure}
+
+\subsection{Transfer Learning}
+\begin{flushleft}
+Transfer learning is a popular technique in Machine Learning whereby an already trained model is applied to new data. As mentioned earlier, CNN's use their lower layers to extract primitive features such as edges, the middle layers detect shapes from these edges and the final layers learn the task specific abstractions of these shapes. In transfer learning the last layers of the network are retrained using data from the target domain, allowing the insights that have been learned from the original data to be applied to the new data. This helps to avoid training models from scratch on unseen yet related datasets. Transfer learning is a very popular field within Machine Learning, as it can help drastically cut down on training times, as well as enabling better results on smaller datasets.
+\end{flushleft}
 
 \newpage
 \section{Tensorflow Introduction}
@@ -613,7 +636,7 @@ As the extra layers of convolution and pooling had failed to yield any benefits,
 \vspace{0.5cm}
 \textbf{Experiment 4: Convolution, Pooling and Fully Connected Layers}
 \linebreak
-As Experiments 3 and 4 had failed to yield better results, 2 extra layers of convolution and pooling were added in conjunction with an extra fully-connected layer. As can be seen from the results table and Fig \ref{fig:experiment-4}, results actually went down marginally.
+As Experiments 2 and 3 had failed to yield better results, 2 extra layers of convolution and pooling were added in conjunction with an extra fully-connected layer. As can be seen from the results table and Fig \ref{fig:experiment-4}, results actually went down marginally.
 
 \vspace{0.5cm}
 \begin{tabular}{llll}
@@ -636,7 +659,7 @@ As Experiments 3 and 4 had failed to yield better results, 2 extra layers of con
 \vspace{0.5cm}
 \textbf{Experiment 5: Extra Dropout Layers}
 \linebreak
-Following the failure of experiment 4 to improve results, 2 extra layers of dropout with a probability of 0.25 were added to the experiment 4 architecture after the 2nd and 4th pooling layers in an attempt to tale any potential overfitting. Dropout is not typically implemented in modern convolutional networks, however as the purpose of these experiments is purely to investigate the effects of different techniques it was implemented for this experiment. Although the results summarised in the table below and Fig \ref{fig:experiment-5} do not show any meaningful increase in accuracy either, the accuracy curve from this experiment as well as experiment 4 suggest that the network is underlearning as the curves do not level off as much as in previous results. This implied that the network may simply need more time to train. Interestingly, during this experiment the accuracy and recall metrics diverged from one another, as can be oserved in Fig \ref{fig:experiment-5}. This would seem to imply that the network may have been overfitting slightly.
+Following the failure of experiment 4 to improve results, 2 extra layers of dropout with a probability of 0.25 were added to the experiment 4 architecture after the 2nd and 4th pooling layers in an attempt to tale any potential overfitting. Although the results summarised in the table below and Fig \ref{fig:experiment-5} do not show any meaningful increase in accuracy either, the accuracy curve from this experiment as well as experiment 4 suggest that the network is underlearning as the curves do not level off as much as in previous results. This implied that the network may simply need more time to train. Interestingly, during this experiment the accuracy and recall metrics diverged from one another, as can be observed in Fig \ref{fig:experiment-5}. This would seem to imply that the network may have been overfitting slightly.
 
 \vspace{0.5cm}
 \begin{tabular}{llll}
@@ -678,36 +701,112 @@ The observations in experiments 4 and 5 suggested that the network might simply 
 
 \end{flushleft}
 
-\newpage
-\vspace{0.5cm}
-\textbf{Confusion Matrix}
-\linebreak
-The confusion matrix is outlined in Fig \ref{fig:cm}.
-
-\vspace{0.5cm}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=12cm]{cm}
-	\caption{Confusion matrix}
-	\label{fig:cm}
-\end{figure} 
-
 \begin{flushleft}
 \vspace{0.5cm}
 \textbf{Conclusions}
 \linebreak
-These experiments conclude with a small yet significant increase in accuracy, precision and recall scores from the final experiment. Adding just extra layers of convolution and pooling without adding extra fully-connected layers did not result in improvements, and vice versa. Upon creation of a more complex network architecture with dropout layers results actually went down slightly. However, observation of the metric graphs showed that the network was possibly underlearning, and a drastic increase in training steps led to positive results. Accuracy, precision and recall all seemed to increase in proportion with one another for these experiments, however this is generally not guaranteed for all networks. Datasets containing more classes or high levels of class imbalance would typically not result in such regular accuracy, precision and recall metrics. If there is anything to take from these experiments moving forward with this project, it is that simply adding one or two extra layers is not sufficient to gain satisfactory results - adding multiple layers of convolution, pooling and fully-connected layers should be investigated in conjunction with each other in future experiments. As the unusual accuracy and recall results also demonstrate, it may also be beneficial to introduce dropout or some other form of regularisation in networks that are not obviously overfitting. Although the increases in performance shown are slight, I am confident that further increasing the complexity of the network and increasing training times can lead to further increases.
-
+These experiments conclude with a small yet significant increase in accuracy, precision and recall scores from the final experiment. These experiments were focused mainly upon the effects of network architecture rather than the effects of parameter tuning. Empirical studies in later sections will focus more on the effects of parameter tuning. Adding just extra layers of convolution and pooling without adding extra fully-connected layers did not result in improvements, and vice versa. Upon creation of a more complex network architecture with dropout layers results actually went down slightly. However, observation of the metric graphs showed that the network was possibly underlearning, and a drastic increase in training steps led to positive results. Accuracy, precision and recall all seemed to increase in proportion with one another for these experiments, however this is generally not guaranteed for all networks. Datasets containing more classes or high levels of class imbalance would typically not result in such regular accuracy, precision and recall metrics. If there is anything to take from these experiments moving forward with this project, it is that simply adding one or two extra layers is not sufficient to gain satisfactory results - adding multiple layers of convolution, pooling and fully-connected layers should be investigated in conjunction with each other in future experiments. As the unusual accuracy and recall results also demonstrate, it may also be beneficial to introduce dropout or some other form of regularisation in networks that are not obviously overfitting. Although the increases in performance shown are slight, I am confident that further increasing the complexity of the network and increasing training times can lead to further increases.
 \end{flushleft}
 
 \newpage
 \chapter{Empirical Studies}
 \begin{flushleft}
-The following sections will investigate the effects of retraining various different network architectures using transfer learning, as well as investigate the effects of parameter tuning upon these networks. Transfer learning is a popular technique in Machine Learning whereby an already trained model is applied to new data. As mentioned earlier, CNN's use their lower layers to extract primitive features such as edges, the middle layers detect shapes from these edges and the final layers learn the task specific abstractions of these shapes. In transfer learning the last layers of the network are retrained using data from the target domain, allowing the insights that have been learned from the original data to be applied to the new data. This helps to avoid training models from scratch on unseen yet related datasets. Transfer learning is a very popular field within Machine Learning, as it can help drastically cut down on training times, as well as enabling better results on smaller datasets.
+The following sections will investigate the effects of retraining various different network architectures using transfer learning, as well as investigate the effects of parameter tuning upon these networks. Models were retrained using the Tensorflow Object Detection API, with the steps followed being from a tutorial made available on GitHub (\cite{tutorial}). All of the pretrained models utilised in the following sections have been trained on the COCO (Common Objects in Context) dataset. The COCO dataset consists of 164,000 images populated with 90 classes of objects. The dataset was chosen for pretraining for this project as contains 8 classes of vehicle. This should allow greater generalisation and lead to better results when the models are retrained using the BDD100k images.
 \end{flushleft}
-\section{Inception V3 Retraining}
+
+\section{SSD MobileNet V1 Experiments}
+\subsection{Full Dataset Retraining Experiment}
+\subsubsection{Objectives}
+\begin{flushleft}
+Initial attempts at retraining the SSD MobileNet V1 were carried out using the full 10k subset of the bdd100k dataset, containing 10,000 images annotated with 10 classes. The objective for this experiment was to retrain the MobileNet model with the new bdd100k data. With training times being a concern when dealing with large datasets, the MobileNet architecture was selected to be retrained first due to its quick training times. This main objective for this first experiment was to investigate how models would handle the large amount of data presented by the bdd100k dataset and to gain some understanding of how the object detection API works. 
+\end{flushleft}
+
+\subsubsection{Setup}
+\begin{flushleft}
+The tensorflow object detection API only accepts datasets in the tfrecord format, a binary file format for data storage. This requires parsing the images and their labels and writing them into tfrecord format. Luckily, an open source parser for the bdd100k dataset has been made available on GitHub (\cite{parser}). This tool was used to parse all images within the 10k section of the bdd100k dataset, resulting in a tfrecord file containing the data for the full 10,000 images and their annotations.
+\end{flushleft}
+
+\subsubsection{Results}
+\begin{flushleft}
+The results for this experiment were disappointing, albeit not unexpected. As can be seen if Fig \ref{fig:mobilenet-full-dataset-loss}, loss values were extremely high, and did not follow any steady downward trend. Total training time to 10,000 steps took 2 hours and 48 minutes. These poor results were expected due to the very large and highly complex dataset. Fig \ref{fig:noisy} provides an example of this - the nighttime conditions combined with slight motion blur creates a very noisy image on which to make predictions. With the dataset consisting in large part of images with similar levels of variance and noise, training times for the full dataset would likely be untenable. As such, investigation into a different approach was required.
+\end{flushleft}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{noisy}
+	\caption{Example of an extremely noisy image}
+	\label{fig:noisy}
+\end{figure}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{mobilenet-full-dataset-loss}
+	\caption{Loss values for full dataset}
+	\label{fig:mobilenet-full-dataset-loss}
+\end{figure}
+
+\subsection{Partial Dataset Retraining Experiment}
+\subsubsection{Objectives}
+\begin{flushleft}
+Following the failure to produce adequate results on the full dataset, it was determined that an approach of drastic data reduction was required in order to investigate training on a problem domain of reduced complexity. The objective for this experiment was therefore to retrain the MobileNet V1 architecture again, this time with a much simpler dataset and with less classes required for detection. In order to achieve this, a subgroup of images would need to be extracted from the dataset and labelled manually.
+\end{flushleft}
+
+\subsubsection{Setup}
+\begin{flushleft}
+It was determined that 200 total images would be selected to be manually labelled from the bdd100k dataset, with 160 being utilised for training and 40 for testing. Classes labelled for detection were reduced in number to just 3 - cars, traffic lights and pedestrians. These classes were chosen as they are commonly present in most images in the dataset and are all unrelated to each other. The images selected were all images taken with good lighting, no motion blur and no inclement weather present. The images were annotated using the open source LabelImg tool, before being converted to tfrecord format. Training was then carried out exactly the same as the above experiment, this time with the reduced dataset.
+\end{flushleft}
+
+\subsubsection{Results}
+\begin{flushleft}
+Although far from perfect, results from this experiment were much more encouraging. As evidenced in Fig \ref{fig:loss-smalldata-5k}, loss quickly declined before settling to values just below 2. Mean average precision (\ref{fig:map-smalldata-5k}) and average recall (\ref{fig:ar-smalldata-5k}), although slighly erratic, appeared to settle into an upward trend as training progressed. The model can be seen in action at 500 training steps in Fig \ref{fig:class-smalldata-500} and then at 5000 training steps in Fig \ref{fig:class-smalldata-5k}. The improvement in the model is clearly apparent in these two images. These results are far from perfect however, and will need to be improved upon. Although the model at 5000 steps detects far more than it did at 500 steps, there are still several of the more occluded cars present in the image not being detected. As mentioned, mean average precision and recall did seem to be improving, however neither value increased to above 0.3, which is comparatively poor results. As such, further experimentation is required.
+\end{flushleft}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{loss-smalldata-5k}
+	\caption{Loss values for reduced dataset}
+	\label{fig:loss-smalldata-5k}
+\end{figure}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{map-smalldata-5k}
+	\caption{Mean average precision (mAP) values for reduced dataset}
+	\label{fig:map-smalldata-5k}
+\end{figure}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{ar-smalldata-5k}
+	\caption{Average recall (ar) values for reduced dataset}
+	\label{fig:ar-smalldata-5k}
+\end{figure}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{class-smalldata-500}
+	\caption{Object detector in action at 500 steps}
+	\label{fig:class-smalldata-500}
+\end{figure}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{classes-smalldata-5k}
+	\caption{Object detector in action at 5000 steps}
+	\label{fig:class-smalldata-5k}
+\end{figure}
 
 \newpage
+\section{Faster RCNN Inception V2 Experiments}
+
+
 \chapter{Classifier Implementation}
 \section{Requirements}
 \section{System Design}

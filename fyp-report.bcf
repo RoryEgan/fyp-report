@@ -2070,9 +2070,13 @@
     <bcf:citekey order="18">ziou1998edge</bcf:citekey>
     <bcf:citekey order="19">canny1986computational</bcf:citekey>
     <bcf:citekey order="20">o2015introduction</bcf:citekey>
-    <bcf:citekey order="21">rogers2016first</bcf:citekey>
-    <bcf:citekey order="22">udemy</bcf:citekey>
-    <bcf:citekey order="23">udemy</bcf:citekey>
+    <bcf:citekey order="21">szegedy2016rethinking</bcf:citekey>
+    <bcf:citekey order="22">howard2017mobilenets</bcf:citekey>
+    <bcf:citekey order="23">rogers2016first</bcf:citekey>
+    <bcf:citekey order="24">udemy</bcf:citekey>
+    <bcf:citekey order="25">udemy</bcf:citekey>
+    <bcf:citekey order="26">tutorial</bcf:citekey>
+    <bcf:citekey order="27">parser</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt/global" type="entry" sortscheme="nyt" sortnamekeyscheme="global">
   <bcf:sorting>

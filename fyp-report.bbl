@@ -103,6 +103,22 @@
       \verb https://www.udemy.com/complete-guide-to-tensorflow-for-deep-learning-with-python/
       \endverb
     \endentry
+    \entry{parser}{online}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelyear}{2018}
+      \field{labelmonth}{01}
+      \field{labelday}{03}
+      \field{datelabelsource}{url}
+      \field{labeltitlesource}{title}
+      \field{title}{Convert the Berkeley Deepdrive dataset to a TFRecord file}
+      \field{urlday}{03}
+      \field{urlmonth}{01}
+      \field{urlyear}{2018}
+      \verb{url}
+      \verb https://github.com/meyerjo/deepdrive_dataset_tfrecord
+      \endverb
+    \endentry
     \entry{domingos2012few}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=926269a097c38456f5b32d7efb1d1a80}{%
@@ -150,6 +166,61 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Hands-on machine learning with Scikit-Learn and TensorFlow: concepts, tools, and techniques to build intelligent systems}
+      \field{year}{2017}
+    \endentry
+    \entry{howard2017mobilenets}{article}{}
+      \name{author}{8}{}{%
+        {{uniquename=0,hash=afbcbe8d7528e46d09536c63d15f8937}{%
+           family={Howard},
+           family_i={H\bibinitperiod},
+           given={Andrew\bibnamedelima G},
+           given_i={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{uniquename=0,hash=d767e8e4d733bcf728bcdf2c193462f7}{%
+           family={Zhu},
+           family_i={Z\bibinitperiod},
+           given={Menglong},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=31960f03389184b7f052f5b197cc9fdf}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Bo},
+           given_i={B\bibinitperiod}}}%
+        {{uniquename=0,hash=6cbb997a11c6922af719c32863261918}{%
+           family={Kalenichenko},
+           family_i={K\bibinitperiod},
+           given={Dmitry},
+           given_i={D\bibinitperiod}}}%
+        {{uniquename=0,hash=47ad65c82b1de7d642988df185d7d8ea}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Weijun},
+           given_i={W\bibinitperiod}}}%
+        {{uniquename=0,hash=7dcb9c6d4d4251a7e32b502d03c9354b}{%
+           family={Weyand},
+           family_i={W\bibinitperiod},
+           given={Tobias},
+           given_i={T\bibinitperiod}}}%
+        {{uniquename=0,hash=8f221f2afb0b5a3d95b3e97101924922}{%
+           family={Andreetto},
+           family_i={A\bibinitperiod},
+           given={Marco},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=c707ec5b5997dc408a14a34a8380166c}{%
+           family={Adam},
+           family_i={A\bibinitperiod},
+           given={Hartwig},
+           given_i={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{1c9164ee927d05ae2f91feda20d1ace3}
+      \strng{fullhash}{79c1456e1800f6227f7e0f330efe55e2}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelyear}{2017}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1704.04861}
+      \field{title}{Mobilenets: Efficient convolutional neural networks for mobile vision applications}
       \field{year}{2017}
     \endentry
     \entry{youtube}{online}{}
@@ -436,6 +507,64 @@
       \field{year}{2014}
       \field{pages}{1929\bibrangedash 1958}
       \range{pages}{30}
+    \endentry
+    \entry{szegedy2016rethinking}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{uniquename=0,hash=ed568d9c3bb059e6bf22899fbf170f86}{%
+           family={Szegedy},
+           family_i={S\bibinitperiod},
+           given={Christian},
+           given_i={C\bibinitperiod}}}%
+        {{uniquename=0,hash=8051922e7bd286f884bfbd1023ef62f5}{%
+           family={Vanhoucke},
+           family_i={V\bibinitperiod},
+           given={Vincent},
+           given_i={V\bibinitperiod}}}%
+        {{uniquename=0,hash=5543e82359e26b035efc009cb3efff9d}{%
+           family={Ioffe},
+           family_i={I\bibinitperiod},
+           given={Sergey},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=9b81f43a31f185cea38a7a03620764eb}{%
+           family={Shlens},
+           family_i={S\bibinitperiod},
+           given={Jon},
+           given_i={J\bibinitperiod}}}%
+        {{uniquename=0,hash=5f1430f41772f4a524875e509005837c}{%
+           family={Wojna},
+           family_i={W\bibinitperiod},
+           given={Zbigniew},
+           given_i={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{80f8e6bfc3aff3e75b2807a6f6962740}
+      \strng{fullhash}{c417fe1f0815ac3cb9624bfc45d0cc3b}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
+      \field{title}{Rethinking the inception architecture for computer vision}
+      \field{year}{2016}
+      \field{pages}{2818\bibrangedash 2826}
+      \range{pages}{9}
+    \endentry
+    \entry{tutorial}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelyear}{2018}
+      \field{labelmonth}{01}
+      \field{labelday}{03}
+      \field{datelabelsource}{url}
+      \field{labeltitlesource}{title}
+      \field{title}{TensorFlow Object Detection Model Training}
+      \field{urlday}{03}
+      \field{urlmonth}{01}
+      \field{urlyear}{2018}
+      \verb{url}
+      \verb https://gist.github.com/douglasrizzo/c70e186678f126f1b9005ca83d8bd2ce
+      \endverb
     \endentry
     \entry{ziou1998edge}{article}{}
       \true{moreauthor}
