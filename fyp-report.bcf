@@ -2050,33 +2050,39 @@
     <bcf:datasource type="file" datatype="bibtex">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">o2015introduction</bcf:citekey>
-    <bcf:citekey order="2">krizhevsky2012imagenet</bcf:citekey>
-    <bcf:citekey order="3">o2015introduction</bcf:citekey>
-    <bcf:citekey order="4">geron2017hands</bcf:citekey>
-    <bcf:citekey order="5">kotsiantis2007supervised</bcf:citekey>
+    <bcf:citekey order="1">yu2018bdd100k</bcf:citekey>
+    <bcf:citekey order="2">yu2018bdd100k</bcf:citekey>
+    <bcf:citekey order="3">udemy</bcf:citekey>
+    <bcf:citekey order="4">yu2018bdd100k</bcf:citekey>
+    <bcf:citekey order="5">o2015introduction</bcf:citekey>
     <bcf:citekey order="6">krizhevsky2012imagenet</bcf:citekey>
-    <bcf:citekey order="7">Singh2016MinimumCM</bcf:citekey>
-    <bcf:citekey order="8">o2015introduction</bcf:citekey>
-    <bcf:citekey order="9">rumelhart1985learning</bcf:citekey>
-    <bcf:citekey order="10">domingos2012few</bcf:citekey>
-    <bcf:citekey order="11">domingos2012few</bcf:citekey>
+    <bcf:citekey order="7">o2015introduction</bcf:citekey>
+    <bcf:citekey order="8">geron2017hands</bcf:citekey>
+    <bcf:citekey order="9">kotsiantis2007supervised</bcf:citekey>
+    <bcf:citekey order="10">krizhevsky2012imagenet</bcf:citekey>
+    <bcf:citekey order="11">Singh2016MinimumCM</bcf:citekey>
     <bcf:citekey order="12">o2015introduction</bcf:citekey>
-    <bcf:citekey order="13">srivastava2014dropout</bcf:citekey>
-    <bcf:citekey order="14">lecun1995convolutional</bcf:citekey>
-    <bcf:citekey order="15">youtube</bcf:citekey>
-    <bcf:citekey order="16">arbelaez2011contour</bcf:citekey>
-    <bcf:citekey order="17">ziou1998edge</bcf:citekey>
-    <bcf:citekey order="18">ziou1998edge</bcf:citekey>
-    <bcf:citekey order="19">canny1986computational</bcf:citekey>
-    <bcf:citekey order="20">o2015introduction</bcf:citekey>
-    <bcf:citekey order="21">szegedy2016rethinking</bcf:citekey>
-    <bcf:citekey order="22">howard2017mobilenets</bcf:citekey>
-    <bcf:citekey order="23">rogers2016first</bcf:citekey>
-    <bcf:citekey order="24">udemy</bcf:citekey>
-    <bcf:citekey order="25">udemy</bcf:citekey>
-    <bcf:citekey order="26">tutorial</bcf:citekey>
-    <bcf:citekey order="27">parser</bcf:citekey>
+    <bcf:citekey order="13">rumelhart1985learning</bcf:citekey>
+    <bcf:citekey order="14">domingos2012few</bcf:citekey>
+    <bcf:citekey order="15">domingos2012few</bcf:citekey>
+    <bcf:citekey order="16">o2015introduction</bcf:citekey>
+    <bcf:citekey order="17">srivastava2014dropout</bcf:citekey>
+    <bcf:citekey order="18">lecun1995convolutional</bcf:citekey>
+    <bcf:citekey order="19">youtube</bcf:citekey>
+    <bcf:citekey order="20">arbelaez2011contour</bcf:citekey>
+    <bcf:citekey order="21">ziou1998edge</bcf:citekey>
+    <bcf:citekey order="22">ziou1998edge</bcf:citekey>
+    <bcf:citekey order="23">canny1986computational</bcf:citekey>
+    <bcf:citekey order="24">o2015introduction</bcf:citekey>
+    <bcf:citekey order="25">szegedy2016rethinking</bcf:citekey>
+    <bcf:citekey order="26">howard2017mobilenets</bcf:citekey>
+    <bcf:citekey order="27">rogers2016first</bcf:citekey>
+    <bcf:citekey order="28">yu2018bdd100k</bcf:citekey>
+    <bcf:citekey order="29">udemy</bcf:citekey>
+    <bcf:citekey order="30">udemy</bcf:citekey>
+    <bcf:citekey order="31">tutorial</bcf:citekey>
+    <bcf:citekey order="32">lin2014microsoft</bcf:citekey>
+    <bcf:citekey order="33">parser</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt/global" type="entry" sortscheme="nyt" sortnamekeyscheme="global">
   <bcf:sorting>

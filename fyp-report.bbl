@@ -348,6 +348,66 @@
       \field{pages}{1995}
       \range{pages}{1}
     \endentry
+    \entry{lin2014microsoft}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{uniquename=0,hash=08f925fe4692d130a1d7cb7d94483351}{%
+           family={Lin},
+           family_i={L\bibinitperiod},
+           given={Tsung-Yi},
+           given_i={T\bibinithyphendelim Y\bibinitperiod}}}%
+        {{uniquename=0,hash=d980bc6930f008a0fb5fa667785f2309}{%
+           family={Maire},
+           family_i={M\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=044d1db5259b74e4975282f599d8e767}{%
+           family={Belongie},
+           family_i={B\bibinitperiod},
+           given={Serge},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=797fc3624ba315db58eef7279ace5bf3}{%
+           family={Hays},
+           family_i={H\bibinitperiod},
+           given={James},
+           given_i={J\bibinitperiod}}}%
+        {{uniquename=0,hash=e52876f830a8a20786ff3e4d7dd6f083}{%
+           family={Perona},
+           family_i={P\bibinitperiod},
+           given={Pietro},
+           given_i={P\bibinitperiod}}}%
+        {{uniquename=0,hash=aedcd3831845183e070aef16857d83ea}{%
+           family={Ramanan},
+           family_i={R\bibinitperiod},
+           given={Deva},
+           given_i={D\bibinitperiod}}}%
+        {{uniquename=0,hash=ecd149fdcb3e0503881d49e545744c3d}{%
+           family={Doll\'{a}r},
+           family_i={D\bibinitperiod},
+           given={Piotr},
+           given_i={P\bibinitperiod}}}%
+        {{uniquename=0,hash=694996fef95cacf597b1af2ccb94f5f5}{%
+           family={Zitnick},
+           family_i={Z\bibinitperiod},
+           given={C\bibnamedelima Lawrence},
+           given_i={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
+      \strng{fullhash}{787ebd22897590584ed03c1c01f06749}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{European conference on computer vision}
+      \field{title}{Microsoft coco: Common objects in context}
+      \field{year}{2014}
+      \field{pages}{740\bibrangedash 755}
+      \range{pages}{16}
+    \endentry
     \entry{o2015introduction}{article}{}
       \name{author}{2}{}{%
         {{uniquename=0,hash=f92af5765968c6de4c1e42d397224c9c}{%
@@ -565,6 +625,56 @@
       \verb{url}
       \verb https://gist.github.com/douglasrizzo/c70e186678f126f1b9005ca83d8bd2ce
       \endverb
+    \endentry
+    \entry{yu2018bdd100k}{article}{}
+      \name{author}{7}{}{%
+        {{uniquename=0,hash=7d644ffcde545cbf48ce06126689b74c}{%
+           family={Yu},
+           family_i={Y\bibinitperiod},
+           given={Fisher},
+           given_i={F\bibinitperiod}}}%
+        {{uniquename=0,hash=c93885ce64107dd06ced5179f7f1e589}{%
+           family={Xian},
+           family_i={X\bibinitperiod},
+           given={Wenqi},
+           given_i={W\bibinitperiod}}}%
+        {{uniquename=0,hash=da6c79f9546ad88a2e796febc7e145da}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Yingying},
+           given_i={Y\bibinitperiod}}}%
+        {{uniquename=0,hash=ad0d24bb008c9b37c59a3279f34cd576}{%
+           family={Liu},
+           family_i={L\bibinitperiod},
+           given={Fangchen},
+           given_i={F\bibinitperiod}}}%
+        {{uniquename=0,hash=93ded727814a1d9051da8a7ed6bd274c}{%
+           family={Liao},
+           family_i={L\bibinitperiod},
+           given={Mike},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=8f1c0df53b87aa308e99e41904c28b1d}{%
+           family={Madhavan},
+           family_i={M\bibinitperiod},
+           given={Vashisht},
+           given_i={V\bibinitperiod}}}%
+        {{uniquename=0,hash=90180e1a30742e0d15328bfe637c2ef4}{%
+           family={Darrell},
+           family_i={D\bibinitperiod},
+           given={Trevor},
+           given_i={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc2a6fc8dcf01707f6150fb813b13113}
+      \strng{fullhash}{921843a0369716ec74fc1f0a9c2d47d1}
+      \field{sortinit}{Y}
+      \field{sortinithash}{3cbc1e3d286284cedb5e5218a3248f94}
+      \field{labelyear}{2018}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1805.04687}
+      \field{title}{BDD100K: A diverse driving video database with scalable annotation tooling}
+      \field{year}{2018}
     \endentry
     \entry{ziou1998edge}{article}{}
       \true{moreauthor}

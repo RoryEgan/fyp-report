@@ -44,7 +44,7 @@
  \end{titlepage}
  
 \begin{abstract}
-This project will be a research-oriented project centred around the use of Convolutional Neural Networks for object detection in images from the perspective of a self-driving car. The concept of self-driving cars is a rapidly expanding field, with significant investments having taken place over the past several years in this area. Many companies have chosen to use cameras as one of the primary sensors deployed on their prototype cars in conjunction with other sensors such as LIDAR, radar etc. to allow a vehicle to understand its environment and orient itself appropriately. This project will focus on the way these cameras can allow the vehicle to classify different objects in its environment. An important challenge within the field of machine vision in self-driving cars is reliably classifying multiple objects at once within an image. The current standard Machine Learning class of algorithms for object classification are CNN’s (Convolutional Neural Networks). This project will use Convolutional Neural Networks as well as some Computer Vision techniques to analyse colourised 2D images that depict typical scenes presented to a self-driving car and classify the different objects within them. The initial goal is to research and outline the basics of how Convolutional Neural Networks operate, then choose a particular Convolutional Neural Network paradigm and train a classifier using this paradigm. The classifier should be able to reliably classify major obstacles that are important to the function of a self-driving car such as other vehicles, pedestrians etc. The classifier should aim to be robust to adverse conditions creating noise within the images such as rain, snow etc. This project should then investigate the effects of parameter tuning and the consequences this reflects in the accuracy of the model.
+This project will be a research-oriented project centred around the use of Convolutional Neural Networks for object detection in images from the perspective of a self-driving car. The concept of self-driving cars is a rapidly expanding field, with significant investments having taken place over the past several years in this area. Many companies have chosen to use cameras as one of the primary sensors deployed on their prototype cars in conjunction with other sensors such as LIDAR, radar etc. to allow a vehicle to understand its environment and orient itself appropriately. This project will focus on the way these cameras can allow the vehicle to classify different objects in its environment. An important challenge within the field of machine vision in self-driving cars is reliably classifying multiple objects at once within an image. The current standard Machine Learning class of algorithms for object classification are CNN’s (Convolutional Neural Networks). This project will use CNN's as well as some Computer Vision techniques to analyse colourised 2D images that depict typical scenes presented to a self-driving car and classify the different objects within them. The initial goal is to research and outline the basics of how CNN's operate, then choose a particular CNN paradigm and train a classifier using this paradigm. The classifier should be able to reliably classify major obstacles that are important to the function of a self-driving car such as other vehicles, pedestrians etc. The classifier should aim to be robust to adverse conditions creating noise within the images such as rain, snow etc. This project should then investigate the effects of parameter tuning and the consequences this reflects in the accuracy of the model.
 \end{abstract}
  
 \newpage
@@ -62,7 +62,7 @@ A more complex problem however is the concept of object detection. If in the pre
 \end{flushleft}
 
 \begin{flushleft}
-This class of machine Learning algorithm is particularly useful in the field of self-driving cars. A self-driving car will typically be provided images which contain multiple objects, all of which must be correctly classified in order for the vehicle to function safely.
+This class of Machine Learning algorithm is particularly useful in the field of self-driving cars. A self-driving car will typically be provided images which contain multiple objects, all of which must be correctly classified in order for the vehicle to function safely.
 \end{flushleft}
 
 \begin{flushleft}
@@ -77,22 +77,43 @@ The overall aim of this project is to leverage CNN's to train an object classifi
 \vspace{0.5cm}
 \subsection{Primary Objectives}
 \subsubsection{Utilise a Convolutional Neural Network for Object Classification}
-The core concept of this project is the use of Convolutional Neural Networks in the classification of objects within images. As such, the primary objective for this project is to research and implement a Convolutional Neural Network that will return an acceptable level of accuracy on the testing data. The success metric for this objective is to have a working classifier that can classify all the different objects labelled in the dataset to a reasonable degree of accuracy. As there is no significant degree of research available on the dataset, there is no hard accuracy level that could be defined as a target. However any overall accuracy above 50\% will be considered acceptable for this project.
-\subsubsection{Adjust and tune the Neural Network}
-There are many different approaches that can be taken with regards to achieving the highest accuracy for an object classifier. Part of the project will involve researching and documenting several of these techniques. Once this has been done, a primary objective for this project will be to investigate how different approaches change the accuracy of the classifier. The success metric for this objective will be to have carried out several different approaches to the architecture and parameters of the classifier in order to improve its performance and to have the results documented.
+The core concept of this project is the use of CNN's for the detection of certain objects present within driving-based images. As such, the primary objective for this project is to research and implement a CNN that will return an acceptable level of accuracy on the testing data. The Berkeley Deep Drive dataset utilised by this project has a related paper in which object detection experiments are run on the dataset and performance metrics from these experiments are recorded (\cite{yu2018bdd100k}). A major objective for this project therefore is to achieve similar results to those achieved in this paper. As an understanding of how CNN's are evaluated is required in order to properly expand upon the results obtained in the paper, the results will be discussed further in a later section.
+\subsubsection{Understanding of Convolutional Neural Networks}
+As this is a primarily research based project, one of the main objectives is to gain a deep understanding of how CNN's operate. The following sections of this report should demonstrate a depth of knowledge around the theory of how CNN's work, as well as demonstrate an ability to put these theories into practice. The section on Empirical Studies in particular should demonstrate an ability to forensically examine the results produced from CNN's and provide insight into how these results are achieved.
 \vspace{0.5cm}
 \subsection{Secondary Objectives}
-\subsubsection{Investigate and document the concepts behind Convolutional Neural Networks}
-As this is a research-based project, a large amount of the work involved will be around the investigation of how Convolutional Neural Networks operate and the different approaches that one can take when designing a Convolutional Neural Network. The success metric for this objective will be the ability to make an educated choice when tuning and adjusting the classifier, as well as having documented this research.
-\subsubsection{Investigate and gain an understanding of Computer Vision techniques and concepts and how they apply to the accuracy of the Neural Network}
-When working with any kind of image classifier that takes in real-world image data, an important part of the process of creating a classifier is to apply Computer Vision techniques to transform the images in order to give the image classifier an easier time achieving high accuracy. The success metric for this objective is to research, document and apply different techniques that can be used to preprocess the images that are then provided to the classifier.
-\section{Contribution}
-\section{Methodologies}
+\subsubsection{Provide a Visual Interaction With The Trained Convolutional Neural Network}
+\begin{flushleft}
+Once CNN's have been trained to acceptable accuracy levels during the Empirical Studies section, a basic application should be implemented in order for users to observe the CNN in action upon testing data. To this end, a Flask application is to be developed that will allow users to upload images upon which object detection will take place. As the Berkeley Deep Drive dataset contains videos as well as images, object detection should take place on a small number of test videos in order to provide users an example of how a CNN operates in real-time.
+\end{flushleft}
 
+\section{Contribution}
+\begin{flushleft}
+Although results of applying a CNN to the Berkeley Deep Drive dataset have been published in (\cite{yu2018bdd100k}), the authors of this study only used one particular architecture of CNN to obtain their results. This report outlines results obtained using two different types of CNN architecture across a range of different types of experiment. As the Berkeley Deep Drive dataset is a newly released dataset from 2018, a large body of research has yet  to be carried out on the dataset. As such, this report may be of some small use to aid in avoiding some of the problems encountered during this project.
+\end{flushleft}
+
+\section{Methodologies}
+\begin{flushleft}
+\begin{enumerate}
+\item Define the Research Area: The first step in this project was to define which problem domain to base this FYP around. As an avid SCUBA diver, the initial area I investigated was the field of fish classification in images and videos collected from Irish waters. This area appealed to me as I wanted to investigate the possibility of collecting the dataset myself using underwater camera equipment. However I quickly abandoned this area for several reasons:
+\begin{enumerate}
+\item Equipment: Underwater camera equipment that is capable of taking high resolution images and videos is extremely expensive. Due to the strenuous nature of diving in rough Irish waters, equipment with excellent stabilisation software would be required in order to reliably obtain non-blurred images.
+\item Domain Knowledge: As I am not an expert in the field of fish identification, I would be unable to reliably annotate species present in the training images. This would require enlisting the help of a third-party expert in the field of fish species.
+\item Time Constraints: There are no datasets currently available that contain annotated fish species in underwater images or videos in Northern Atlantic waters. As such, the full dataset would need to be collated and annotated myself. With time constraints present for this project, it would not be feasible to carry out all this work in time to reach project deadlines.
+\end{enumerate}
+With these issues present for my initial choice of problem domain, I decided to instead focus on the area of road images as there have been several large-scale annotated datasets released in recent years that I could leverage. Moreover, being due to start at Jaguar Land Rover as a graduate I decided that this project could serve as an excellent introduction into the problems faced by automotive companies in the field of Machine Vision.
+\item Background Research: The next step was to carry out a literature review around the topic of Neural Computing, specifically CNN's. Papers dealing specifically with the challenges presented during object detection were the main focus of the literature review. In an attempt to demonstrate an understanding of how CNN's operate, the literature review has been summarised in the following sections of this report.
+\item Gain a hands-on knowledge of tensorflow: As tensorflow was the tool utilised to implement CNN's during this project, a Udemy tutorial was first followed in an attempt to gain an understanding of using tensorflow in a hands-on manner (\cite{udemy}).
+\item Carry out Empirical Studies: Empirical Studies were a major point of focus for this project. Experimentation was carried out on the Berkeley Deep Drive dataset using a range of different types of CNN. Results from these experiments were documented and investigated in order to gain an understanding of what techniques work best for the dataset. The results from the experiments were then compared to results carried out in (\cite{yu2018bdd100k}).
+\item Build an application: Once Empirical Studies have been carried out and CNN's have been trained on the Berkeley Deep Drive dataset to a satisfactory degree, a prototype application should be built to allow users to observe the Object Detection taking place.
+\end{enumerate}
+\end{flushleft}
+
+\newpage
 \section{Project Plan}
 \subsection{Table}
 \vspace{1.5cm}
-\begin{table}[]
+
 \begin{tabular}{|l|l|l|}
 \hline
 Chapter                   & Section                  & Est. Completion Date \\ \hline
@@ -116,7 +137,7 @@ Classifier Implementation & Requirements             & 14/12/2018 - wk13    \\ \
 Final Conclusion          & Review of Research       &                      \\ \hline
                           & Reflections              &                      \\ \hline                          
 \end{tabular}
-\end{table}
+
 
 \newpage
 \section{Motivations}
@@ -127,7 +148,7 @@ I am also very interested in self-driving cars due to the far-reaching safety im
 \end{flushleft}
 
 \newpage
-\chapter{Background Research - 10 Pages}
+\chapter{Background Research}
 \section{Introduction to Machine Learning}
 \begin{flushleft}
 A general definition of Machine Learning:
@@ -221,7 +242,7 @@ In the paper mentioned above, "Perceptrons: An Introduction to Computational Geo
 \begin{flushleft}
 A Multilayer Perceptron (MLP) consists of an input layer, an output layer and one or more hidden layers, as seen in \ref{fig:mlp}. MLP's are feedforward neural networks. The MLP architecture solves the Xor problem by introducing linear seperability (\cite{Singh2016MinimumCM}).
 
-Deep Learning is when there is more than one hidden layer present in a network (\cite{o2015introduction}). MLP's encounter issues when attempting to carry out classification tasks on large input images. As will be explained later, each pixel of an input image must correspond to an input node in the network. As every node is connected to every other node in it's preceding layer, large images quickly require a large amount of nodes in the network. A small image of size 28x28 such as the images found in the MNIST dataset will require a network with 784 input nodes. Images sourced from the Apollo dataset are of 1920x1280, which would require an input layer consisting of 2457600 nodes. This will quickly cause issues due to overfitting and network training time.
+Deep Learning is when there is more than one hidden layer present in a network (\cite{o2015introduction}). MLP's encounter issues when attempting to carry out classification tasks on large input images. As will be explained later, each pixel of an input image must correspond to an input node in the network. As every node is connected to every other node in it's preceding layer, large images quickly require a large amount of nodes in the network. A small image of size 28x28 such as the images found in the MNIST dataset will require a network with 784 input nodes. Images sourced from the Berkeley Deep Drive dataset are of size 1280x720, which would require an input layer consisting of 928080 nodes. This will quickly cause issues due to overfitting and network training time.
 
 Learning takes place in a MLP through changing the connection weights for each perceptron in the network based on the error between the expected and true output of each perceptron. This is carried out through a concept known as backpropagation.
 \end{flushleft}
@@ -452,6 +473,25 @@ The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is ano
 Transfer learning is a popular technique in Machine Learning whereby an already trained model is applied to new data. As mentioned earlier, CNN's use their lower layers to extract primitive features such as edges, the middle layers detect shapes from these edges and the final layers learn the task specific abstractions of these shapes. In transfer learning the last layers of the network are retrained using data from the target domain, allowing the insights that have been learned from the original data to be applied to the new data. This helps to avoid training models from scratch on unseen yet related datasets. Transfer learning is a very popular field within Machine Learning, as it can help drastically cut down on training times, as well as enabling better results on smaller datasets.
 \end{flushleft}
 
+\subsection{Berkeley Deep Drive}
+\subsubsection{Dataset}
+\begin{flushleft}
+As mentioned previously in this report, the dataset utilised for this project is the Berkeley Deep Drive dataset, a "large-scale diverse driving video dataset", also known as the BDD100K dataset. Released in 2018, the dataset consists of 100,000 1280x720 annotated images and 100,000 720p 30fps video sequences (\cite{yu2018bdd100k}). The video was collected from a number of locations throughout the United States and consists of a range of weather conditions including sunny, overcast, and rainy. The data consists of a mixture of both daytime and nighttime driving conditions. The images section of the dataset has been created by selecting and annotating the frame at the 10th second of every video. Annotated objects range across 10 different classes - bus, light, sign, person, bike, truck, motor, car, train and rider. The number of instances of each of these annotations are displayed in Fig \ref{fig:annotations}.
+\end{flushleft}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{annotations}
+	\caption{source: https://bair.berkeley.edu/blog/2018/05/30/bdd/}
+	\label{fig:annotations}
+\end{figure}
+
+\subsubsection{Related Results}
+\begin{flushleft}
+The paper released with the BDD100K dataset contains a list of results from experiments carried out on the dataset. The experiments focused on the performance of a CNN on different domains within the dataset. For example, a Faster-RCNN was trained on daytime images and then its performance on nighttime images was tested and the discrepancies recorded. The performance metrics recorded from these experiments allow some basis upon which the CNN's trained in this project can be evaluated against.
+\end{flushleft}
+
 \newpage
 \section{Tensorflow Introduction}
 
@@ -528,7 +568,7 @@ The initial attempts to setup tensorflow were carried out on a machine running W
 
 \subsubsection{Memory Issues}
 \begin{flushleft}
-Although the first two experiments ran without issues, problems were quickly encountered when modifications were made to the Cifar-10 experiment. In an attempt to improve accuracy results, two further layers of convolution and pooling were added. This led the out of memory (OOM) errors being thrown during training. This was caused by the graphical memory on the training machine being maxed out at the full 2GB. After extensive research around this area several attempts at rectifying the issues were carried out. The first attempt tried was reduction of batch size from 100 images, causing less of the dataset being loaded into memory. At a batch size of 4 images, the three layer network successfully trained. The issue with this approach however is that a smaller batch size causes the gradient estimate of the network to be less accurate, and Top-1 accuracy of the network dropped to 60.46\%. The second approach was to simply keep the number of layers low, resulting in a simpler network with less memory requirements. Both of these solutions were not viable for this project. Poor accuracy scores and an inability to train complex networks created an obvious demand for a more powerful training machine. Another point to note is image size disparities between the Cifar-10 dataset and the overall target dataset for this project, the Apollo self-driving car image dataset. A machine struggling with the 32x32 low resolution images of the Cifar-10 dataset would surely run into a host of issues with the 1920x1080 images of the target dataset. As such, it was decided that a much more advanced machine would be required. It was decided that Amazon Web Services (AWS) was the only way to quickly and easily access the required computational power demanded by this project.
+Although the first two experiments ran without issues, problems were quickly encountered when modifications were made to the Cifar-10 experiment. In an attempt to improve accuracy results, two further layers of convolution and pooling were added. This led the out of memory (OOM) errors being thrown during training. This was caused by the graphical memory on the training machine being maxed out at the full 2GB. Several attempts at rectifying the issues were carried out. The first attempt tried was reduction of batch size from 100 images, causing less of the dataset being loaded into memory. At a batch size of 4 images, the three layer network successfully trained. The issue with this approach however is that a smaller batch size causes the gradient estimate of the network to be less accurate, and Top-1 accuracy of the network dropped to 60.46\%. The second approach was to simply keep the number of layers low, resulting in a simpler network with less memory requirements. Both of these solutions were not viable for this project. Poor accuracy scores and an inability to train complex networks created an obvious demand for a more powerful training machine. Another point to note is image size disparities between the Cifar-10 dataset and the overall target dataset for this project, the Berkeley Deep Drive dataset. A machine struggling with the 32x32 low resolution images of the Cifar-10 dataset would surely run into a host of issues with the 1280x720 images of the target dataset. As such, it was decided that a much more advanced machine would be required. It was decided that utilising Amazon Web Services (AWS) products was the only way to quickly and easily access the required computational power demanded by this project.
 \end{flushleft}
 
 \subsubsection{AWS Setup}
@@ -711,10 +751,14 @@ These experiments conclude with a small yet significant increase in accuracy, pr
 \newpage
 \chapter{Empirical Studies}
 \begin{flushleft}
-The following sections will investigate the effects of retraining various different network architectures using transfer learning, as well as investigate the effects of parameter tuning upon these networks. Models were retrained using the Tensorflow Object Detection API, with the steps followed being from a tutorial made available on GitHub (\cite{tutorial}). All of the pretrained models utilised in the following sections have been trained on the COCO (Common Objects in Context) dataset. The COCO dataset consists of 164,000 images populated with 90 classes of objects. The dataset was chosen for pretraining for this project as contains 8 classes of vehicle. This should allow greater generalisation and lead to better results when the models are retrained using the BDD100k images.
+The following sections will investigate the effects of retraining various different network architectures using transfer learning and investigate the effects of parameter tuning upon these networks. Models were retrained using the Tensorflow Object Detection API, with the steps followed being from a tutorial made available on GitHub (\cite{tutorial}). All of the pretrained models utilised in the following sections have been trained on the COCO (Common Objects in Context) dataset, a dataset provided by Microsoft. Although the COCO dataset is updated every year, it currently consists of 164,000 images populated with 90 classes of objects. The dataset was chosen for this project as it contains 8 different classes of vehicle and displays objects in real-life contexts, with potential for occlusion and general noise in the images (\cite{lin2014microsoft}). Many other datasets instead provide an "iconic" view of objects, whereby the object appears centrally and unobstructed in the image. As the bdd100k dataset images are drawn from real-world scenarios from the perspective of a car, using the COCO dataset as the initial training dataset should allow the retrained models to generalise better to the bdd100k data than datasets with less variance in the images.
 \end{flushleft}
 
 \section{SSD MobileNet V1 Experiments}
+\begin{flushleft}
+The SSD MobileNet V1 architecture was selected for the first experiments due to its speed.
+\end{flushleft}
+
 \subsection{Full Dataset Retraining Experiment}
 \subsubsection{Objectives}
 \begin{flushleft}
@@ -728,7 +772,7 @@ The tensorflow object detection API only accepts datasets in the tfrecord format
 
 \subsubsection{Results}
 \begin{flushleft}
-The results for this experiment were disappointing, albeit not unexpected. As can be seen if Fig \ref{fig:mobilenet-full-dataset-loss}, loss values were extremely high, and did not follow any steady downward trend. Total training time to 10,000 steps took 2 hours and 48 minutes. These poor results were expected due to the very large and highly complex dataset. Fig \ref{fig:noisy} provides an example of this - the nighttime conditions combined with slight motion blur creates a very noisy image on which to make predictions. With the dataset consisting in large part of images with similar levels of variance and noise, training times for the full dataset would likely be untenable. As such, investigation into a different approach was required.
+After 5000 training steps, the results for this experiment were disappointing albeit not unexpected. As can be seen in Fig \ref{fig:mobilenet-full-dataset-loss}, loss values were extremely high, and did not follow any steady downward trend. Total training time to 10,000 steps took 2 hours and 48 minutes. These poor results were expected due to the very large and highly complex dataset. Fig \ref{fig:noisy} provides an example of this - the nighttime conditions combined with slight motion blur creates a very noisy image on which to make predictions. With the dataset consisting in large part of images with similar levels of variance and noise, training times for the full dataset would likely be untenable. As such, investigation into a different approach was required.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -805,13 +849,31 @@ Although far from perfect, results from this experiment were much more encouragi
 
 \newpage
 \section{Faster RCNN Inception V2 Experiments}
+\begin{flushleft}
+Following the relatively poor results of the MobileNet experiments, the Faster RCNN Inception V2 architecture was utilised.
+\end{flushleft}
 
+\subsection{Initial Experiment}
+\subsubsection{Objectives}
+\begin{flushleft}
 
-\chapter{Classifier Implementation}
-\section{Requirements}
-\section{System Design}
+\end{flushleft}
+
+\newpage
+\chapter{Application Implementation}
+\begin{flushleft}
+In order to provide an interaction with the models trained during the Empirical Studies section, a lightweight Flask application was created. This application was developed to allow users to upload images to a simple public-facing website and observe object detection taking place on the uploaded images.
+\end{flushleft}
+
+\section{AWS Instance}
+\begin{flushleft}
+As the AWS Deep Learning AMI that was used to train the models was still in use, it was decided to simply use this virtual machine for the deployment of the application. All AWS EC2 instances are provided with a public-facing IP address by default, so the only work required on the instance was editing its security roles to allow HTTP requests to the instance for all IP addresses.
+\end{flushleft}
+
 \section{Implementation}
-\section{Analysis}
+\begin{flushleft}
+The first step for the implementation of this prototype was providing some way for the trained model to annotate the provided images.
+\end{flushleft}
 
 \newpage
 \chapter{Final Conclusion}
