@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  4 APR 2019 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  5 APR 2019 12:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -438,9 +438,6 @@ File: images/linear.PNG Graphic file (type png)
 Package pdftex.def Info: images/linear.PNG used on input line 216.
 (pdftex.def)             Requested size: 341.43306pt x 319.13707pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [13 <./images/functions.PNG>] [14 <./images/linear.PNG>] [15]
 <images/mlp.jpeg, id=67, 496.85625pt x 359.3425pt>
 File: images/mlp.jpeg Graphic file (type jpg)
@@ -476,10 +473,6 @@ File: images/canny.jpg Graphic file (type jpg)
 Package pdftex.def Info: images/canny.jpg used on input line 331.
 (pdftex.def)             Requested size: 341.43306pt x 292.92929pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Overfull \hbox (9.57973pt too wide) in paragraph at lines 336--336
 []\OT1/cmr/bx/n/17.28 Introduction to Con-vo-lu-tional Neu-ral Net-
  []
@@ -490,24 +483,20 @@ File: images/convo.png Graphic file (type png)
 Package pdftex.def Info: images/convo.png used on input line 344.
 (pdftex.def)             Requested size: 341.43306pt x 101.61763pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[22 <./images/orientation.png>] [23 <./images/canny.jpg>]
-<images/conv.png, id=105, 526.96875pt x 150.5625pt>
+[22 <./images/orientation.png>] [23 <./images/canny.jpg> <./images/convo.png>]
+<images/conv.png, id=106, 526.96875pt x 150.5625pt>
 File: images/conv.png Graphic file (type png)
  <use images/conv.png>
 Package pdftex.def Info: images/conv.png used on input line 358.
 (pdftex.def)             Requested size: 341.43306pt x 97.5566pt.
 
-[24 <./images/convo.png> <./images/conv.png>]
-<images/pool.png, id=111, 551.81157pt x 199.49532pt>
+[24 <./images/conv.png>] <images/pool.png, id=111, 551.81157pt x 199.49532pt>
 File: images/pool.png Graphic file (type png)
- <use images/pool.png>
+
+<use images/pool.png>
 Package pdftex.def Info: images/pool.png used on input line 372.
 (pdftex.def)             Requested size: 341.43306pt x 123.44228pt.
-
-[25 <./images/pool.png>] [26] [27]
+ [25 <./images/pool.png>] [26] [27]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 425.
@@ -518,11 +507,7 @@ File: images/aucroc.png Graphic file (type png)
 <use images/aucroc.png>
 Package pdftex.def Info: images/aucroc.png used on input line 466.
 (pdftex.def)             Requested size: 341.43306pt x 277.53pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[29] [30 <./images/aucroc.png>]
+ [29] [30 <./images/aucroc.png>]
 <images/annotations.png, id=134, 739.76375pt x 228.855pt>
 File: images/annotations.png Graphic file (type png)
 
@@ -536,9 +521,6 @@ File: images/helpers.png Graphic file (type png)
 Package pdftex.def Info: images/helpers.png used on input line 513.
 (pdftex.def)             Requested size: 341.43306pt x 284.03163pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [32] <images/layers.png, id=142, 584.1825pt x 287.0725pt>
 File: images/layers.png Graphic file (type png)
 
@@ -546,21 +528,15 @@ File: images/layers.png Graphic file (type png)
 Package pdftex.def Info: images/layers.png used on input line 525.
 (pdftex.def)             Requested size: 341.43306pt x 167.79pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 <images/training.png, id=143, 880.28876pt x 423.5825pt>
 File: images/training.png Graphic file (type png)
 
 <use images/training.png>
 Package pdftex.def Info: images/training.png used on input line 537.
 (pdftex.def)             Requested size: 341.43306pt x 164.29164pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[33 <./images/helpers.png>] [34 <./images/layers.png>] [35 <./images/training.p
-ng>] [36] <images/baseline-graph.png, id=157, 595.22375pt x 315.1775pt>
+ [33 <./images/helpers.png>] [34 <./images/layers.png> <./images/training.png>]
+ [35] [36]
+<images/baseline-graph.png, id=157, 595.22375pt x 315.1775pt>
 File: images/baseline-graph.png Graphic file (type png)
 
 <use images/baseline-graph.png>
@@ -580,164 +556,296 @@ File: images/experiment-2.png Graphic file (type png)
 <use images/experiment-2.png>
 Package pdftex.def Info: images/experiment-2.png used on input line 646.
 (pdftex.def)             Requested size: 341.43306pt x 182.78906pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[39 <./images/experiment-1.png>]
+ [39 <./images/experiment-1.png>]
 <images/experiment-3.png, id=169, 595.22375pt x 320.19624pt>
 File: images/experiment-3.png Graphic file (type png)
 
 <use images/experiment-3.png>
 Package pdftex.def Info: images/experiment-3.png used on input line 668.
 (pdftex.def)             Requested size: 341.43306pt x 183.67168pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[40 <./images/experiment-2.png>]
+ [40 <./images/experiment-2.png>]
 <images/experiment-4.png, id=173, 597.23125pt x 319.1925pt>
 File: images/experiment-4.png Graphic file (type png)
 
 <use images/experiment-4.png>
 Package pdftex.def Info: images/experiment-4.png used on input line 691.
 (pdftex.def)             Requested size: 341.43306pt x 182.48222pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[41 <./images/experiment-3.png>]
+ [41 <./images/experiment-3.png>]
 <images/experiment-5.png, id=178, 602.25pt x 322.20375pt>
 File: images/experiment-5.png Graphic file (type png)
 
 <use images/experiment-5.png>
 Package pdftex.def Info: images/experiment-5.png used on input line 714.
 (pdftex.def)             Requested size: 341.43306pt x 182.67476pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[42 <./images/experiment-4.png>]
+ [42 <./images/experiment-4.png>]
 <images/experiment-6.png, id=182, 595.22375pt x 318.18875pt>
 File: images/experiment-6.png Graphic file (type png)
 
 <use images/experiment-6.png>
 Package pdftex.def Info: images/experiment-6.png used on input line 737.
 (pdftex.def)             Requested size: 341.43306pt x 182.52013pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[43 <./images/experiment-5.png>] [44 <./images/experiment-6.png>]
+ [43 <./images/experiment-5.png>] [44 <./images/experiment-6.png>]
 Chapter 3.
 [45
 
-] <images/noisy.png, id=192, 872.25874pt x 489.83pt>
+] [46] <images/noisy.png, id=195, 872.25874pt x 489.83pt>
 File: images/noisy.png Graphic file (type png)
- <use images/noisy.png>
+
+<use images/noisy.png>
 Package pdftex.def Info: images/noisy.png used on input line 781.
 (pdftex.def)             Requested size: 341.43306pt x 191.7355pt.
+ <images/street.jpg, id=196, 1284.8pt x 722.7pt>
+File: images/street.jpg Graphic file (type jpg)
 
+<use images/street.jpg>
+Package pdftex.def Info: images/street.jpg used on input line 789.
+(pdftex.def)             Requested size: 341.43306pt x 192.05493pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/mobilenet-full-dataset-loss.png, id=193, 878.28125pt x 416.55624pt>
+<images/mobilenet-full-dataset-loss.png, id=197, 878.28125pt x 416.55624pt>
 File: images/mobilenet-full-dataset-loss.png Graphic file (type png)
 
 <use images/mobilenet-full-dataset-loss.png>
 Package pdftex.def Info: images/mobilenet-full-dataset-loss.png used on input l
-ine 789.
+ine 797.
 (pdftex.def)             Requested size: 341.43306pt x 161.94142pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[46] [47 <./images/noisy.png>]
-<images/loss-smalldata-5k.png, id=201, 890.32625pt x 403.5075pt>
+ [47 <./images/noisy.png>] [48 <./images/street.jpg> <./images/mobilenet-full-d
+ataset-loss.png>]
+<images/loss-smalldata-5k.png, id=206, 890.32625pt x 403.5075pt>
 File: images/loss-smalldata-5k.png Graphic file (type png)
 
 <use images/loss-smalldata-5k.png>
-Package pdftex.def Info: images/loss-smalldata-5k.png used on input line 813.
+Package pdftex.def Info: images/loss-smalldata-5k.png used on input line 821.
 (pdftex.def)             Requested size: 341.43306pt x 154.73824pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/map-smalldata-5k.png, id=202, 890.32625pt x 402.50375pt>
+<images/map-smalldata-5k.png, id=207, 890.32625pt x 402.50375pt>
 File: images/map-smalldata-5k.png Graphic file (type png)
 
 <use images/map-smalldata-5k.png>
-Package pdftex.def Info: images/map-smalldata-5k.png used on input line 821.
+Package pdftex.def Info: images/map-smalldata-5k.png used on input line 829.
 (pdftex.def)             Requested size: 341.43306pt x 154.35332pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/ar-smalldata-5k.png, id=203, 899.36pt x 411.5375pt>
+<images/ar-smalldata-5k.png, id=208, 899.36pt x 411.5375pt>
 File: images/ar-smalldata-5k.png Graphic file (type png)
 
 <use images/ar-smalldata-5k.png>
-Package pdftex.def Info: images/ar-smalldata-5k.png used on input line 829.
+Package pdftex.def Info: images/ar-smalldata-5k.png used on input line 837.
 (pdftex.def)             Requested size: 341.43306pt x 156.23517pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/class-smalldata-500.png, id=204, 930.47626pt x 596.2275pt>
+<images/class-smalldata-500.png, id=209, 930.47626pt x 596.2275pt>
 File: images/class-smalldata-500.png Graphic file (type png)
 
 <use images/class-smalldata-500.png>
-Package pdftex.def Info: images/class-smalldata-500.png used on input line 837.
+Package pdftex.def Info: images/class-smalldata-500.png used on input line 845.
 
 (pdftex.def)             Requested size: 426.79134pt x 273.47647pt.
-
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 837--838
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/classes-smalldata-5k.png, id=205, 937.5025pt x 601.24625pt>
-File: images/classes-smalldata-5k.png Graphic file (type png)
-
-<use images/classes-smalldata-5k.png>
-Package pdftex.def Info: images/classes-smalldata-5k.png used on input line 845
-.
-(pdftex.def)             Requested size: 426.79134pt x 273.70508pt.
 
 Overfull \hbox (36.79134pt too wide) in paragraph at lines 845--846
  [][] 
  []
 
+[49] <images/classes-smalldata-5k.png, id=213, 937.5025pt x 601.24625pt>
+File: images/classes-smalldata-5k.png Graphic file (type png)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use images/classes-smalldata-5k.png>
+Package pdftex.def Info: images/classes-smalldata-5k.png used on input line 854
+.
+(pdftex.def)             Requested size: 426.79134pt x 273.70508pt.
 
-[48 <./images/mobilenet-full-dataset-loss.png>] [49 <./images/loss-smalldata-5k
-.png> <./images/map-smalldata-5k.png>] [50 <./images/ar-smalldata-5k.png> <./im
-ages/class-smalldata-500.png>] [51 <./images/classes-smalldata-5k.png>]
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 854--855
+ [][] 
+ []
+
+[50 <./images/loss-smalldata-5k.png> <./images/map-smalldata-5k.png>] [51 <./im
+ages/ar-smalldata-5k.png> <./images/class-smalldata-500.png>] [52 <./images/cla
+sses-smalldata-5k.png>]
+<images/loss-mobilenet-2.png, id=223, 895.345pt x 413.545pt>
+File: images/loss-mobilenet-2.png Graphic file (type png)
+
+<use images/loss-mobilenet-2.png>
+Package pdftex.def Info: images/loss-mobilenet-2.png used on input line 879.
+(pdftex.def)             Requested size: 426.79134pt x 197.13002pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 879--880
+ [][] 
+ []
+
+<images/precision-mobilenet-2.png, id=224, 920.43875pt x 452.69125pt>
+File: images/precision-mobilenet-2.png Graphic file (type png)
+
+<use images/precision-mobilenet-2.png>
+Package pdftex.def Info: images/precision-mobilenet-2.png used on input line 88
+7.
+(pdftex.def)             Requested size: 426.79134pt x 209.9052pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 887--888
+ [][] 
+ []
+
+<images/recall-mobilenet-2.png, id=225, 899.36pt x 407.5225pt>
+File: images/recall-mobilenet-2.png Graphic file (type png)
+
+<use images/recall-mobilenet-2.png>
+Package pdftex.def Info: images/recall-mobilenet-2.png used on input line 895.
+(pdftex.def)             Requested size: 426.79134pt x 193.38864pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 895--896
+ [][] 
+ []
+
+[53 <./images/loss-mobilenet-2.png>] [54 <./images/precision-mobilenet-2.png> <
+./images/recall-mobilenet-2.png>]
+<images/loss-inception.png, id=233, 879.285pt x 409.53pt>
+File: images/loss-inception.png Graphic file (type png)
+
+<use images/loss-inception.png>
+Package pdftex.def Info: images/loss-inception.png used on input line 925.
+(pdftex.def)             Requested size: 426.79134pt x 198.77803pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 925--926
+ [][] 
+ []
+
+<images/precision-inception.png, id=234, 873.2625pt x 412.54124pt>
+File: images/precision-inception.png Graphic file (type png)
+
+<use images/precision-inception.png>
+Package pdftex.def Info: images/precision-inception.png used on input line 933.
+
+(pdftex.def)             Requested size: 426.79134pt x 201.61821pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 933--934
+ [][] 
+ []
+
+<images/recall-inception.png, id=235, 872.25874pt x 409.53pt>
+File: images/recall-inception.png Graphic file (type png)
+
+<use images/recall-inception.png>
+Package pdftex.def Info: images/recall-inception.png used on input line 941.
+(pdftex.def)             Requested size: 426.79134pt x 200.37775pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 941--942
+ [][] 
+ []
+
+[55]
+Overfull \vbox (0.56287pt too high) has occurred while \output is active []
+
+
+[56 <./images/loss-inception.png> <./images/precision-inception.png>] [57 <./im
+ages/recall-inception.png>]
+<images/no-ckpt-loss.png, id=245, 882.29625pt x 411.5375pt>
+File: images/no-ckpt-loss.png Graphic file (type png)
+
+<use images/no-ckpt-loss.png>
+Package pdftex.def Info: images/no-ckpt-loss.png used on input line 964.
+(pdftex.def)             Requested size: 426.79134pt x 199.07425pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 964--965
+ [][] 
+ []
+
+<images/no-ckpt-val-loss.png, id=246, 907.39pt x 418.56375pt>
+File: images/no-ckpt-val-loss.png Graphic file (type png)
+
+<use images/no-ckpt-val-loss.png>
+Package pdftex.def Info: images/no-ckpt-val-loss.png used on input line 972.
+(pdftex.def)             Requested size: 426.79134pt x 196.87187pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 972--973
+ [][] 
+ []
+
+<images/no-ckpt-precision.png, id=247, 862.22125pt x 412.54124pt>
+File: images/no-ckpt-precision.png Graphic file (type png)
+
+<use images/no-ckpt-precision.png>
+Package pdftex.def Info: images/no-ckpt-precision.png used on input line 980.
+(pdftex.def)             Requested size: 426.79134pt x 204.1991pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 980--981
+ [][] 
+ []
+
+<images/no-ckpt-recall.png, id=248, 861.2175pt x 413.545pt>
+File: images/no-ckpt-recall.png Graphic file (type png)
+
+<use images/no-ckpt-recall.png>
+Package pdftex.def Info: images/no-ckpt-recall.png used on input line 988.
+(pdftex.def)             Requested size: 426.79134pt x 204.94203pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 988--989
+ [][] 
+ []
+
+[58 <./images/no-ckpt-loss.png>]
+Overfull \hbox (87.98741pt too wide) in paragraph at lines 999--1008
+[][] 
+ []
+
+[59 <./images/no-ckpt-val-loss.png> <./images/no-ckpt-precision.png>] [60 <./im
+ages/no-ckpt-recall.png>]
 Chapter 4.
-[52
+[61
 
-]
+] <images/index.png, id=262, 1304.875pt x 318.18875pt>
+File: images/index.png Graphic file (type png)
+
+<use images/index.png>
+Package pdftex.def Info: images/index.png used on input line 1028.
+(pdftex.def)             Requested size: 426.79134pt x 104.0704pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 1028--1029
+ [][] 
+ []
+
+<images/flask.png, id=263, 872.25874pt x 477.785pt>
+File: images/flask.png Graphic file (type png)
+ <use images/flask.png>
+Package pdftex.def Info: images/flask.png used on input line 1041.
+(pdftex.def)             Requested size: 426.79134pt x 233.77405pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 1041--1042
+ [][] 
+ []
+
+<images/flask-2.png, id=264, 833.1125pt x 382.42876pt>
+File: images/flask-2.png Graphic file (type png)
+
+<use images/flask-2.png>
+Package pdftex.def Info: images/flask-2.png used on input line 1049.
+(pdftex.def)             Requested size: 426.79134pt x 195.91138pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 1049--1050
+ [][] 
+ []
+
+[62 <./images/index.png>] [63 <./images/flask.png> <./images/flask-2.png>]
 Chapter 5.
-[53
+[64
 
-]
-Overfull \hbox (8.02824pt too wide) in paragraph at lines 884--884
+] [65]
+Overfull \hbox (8.02824pt too wide) in paragraph at lines 1066--1066
 \OT1/cmr/m/it/12 IEEE Trans-ac-tions on pat-tern anal-y-sis and ma-chine in-tel
 -li-gence \OT1/cmr/m/n/12 6, pp. 679{
  []
 
 
-Overfull \hbox (19.68826pt too wide) in paragraph at lines 884--884
+Overfull \hbox (19.68826pt too wide) in paragraph at lines 1066--1066
 \OT1/cmr/m/n/12 net-works for mo-bile vi-sion ap-pli-ca-tions''. In: \OT1/cmr/m
 /it/12 arXiv preprint arXiv:1704.04861\OT1/cmr/m/n/12 . 
  []
 
-[54
+[66
 
-] [55] (./fyp-report.aux)
+]
+Overfull \hbox (2.49539pt too wide) in paragraph at lines 1066--1066
+[][]\OT1/cmr/m/n/12 tensorflow (2019). \OT1/cmr/m/it/12 Ob-ject De-tec-tion Dem
+o\OT1/cmr/m/n/12 . ten-sor-flow. \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : $\OT1/cm
+tt/m/n/12 https : / / github .
+ []
+
+[67] (./fyp-report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -746,10 +854,10 @@ Package logreq Info: Writing requests to 'fyp-report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 7348 strings out of 494910
- 127118 string characters out of 6179835
- 515280 words of memory out of 5000000
- 10545 multiletter control sequences out of 15000+600000
+ 7440 strings out of 494910
+ 129375 string characters out of 6179835
+ 515498 words of memory out of 5000000
+ 10624 multiletter control sequences out of 15000+600000
  9317 words of font info for 33 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  44i,8n,46p,2570b,955s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -764,10 +872,10 @@ s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
 amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb>
-Output written on fyp-report.pdf (57 pages, 2394034 bytes).
+Output written on fyp-report.pdf (69 pages, 3021253 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 324 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

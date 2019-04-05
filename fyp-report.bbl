@@ -610,6 +610,29 @@
       \field{pages}{2818\bibrangedash 2826}
       \range{pages}{9}
     \endentry
+    \entry{tensorflowcode}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2c39bc19b761ac36dc046245d1d47fe6}{%
+           family={tensorflow},
+           family_i={t\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {tensorflow}%
+      }
+      \strng{namehash}{2c39bc19b761ac36dc046245d1d47fe6}
+      \strng{fullhash}{2c39bc19b761ac36dc046245d1d47fe6}
+      \field{sortinit}{t}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelyear}{2019}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Object Detection Demo}
+      \field{year}{2019}
+      \verb{url}
+      \verb https://github.com/tensorflow/models/blob/master/research/object_detection/object_detection_tutorial.ipynb
+      \endverb
+    \endentry
     \entry{tutorial}{online}{}
       \field{sortinit}{T}
       \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
