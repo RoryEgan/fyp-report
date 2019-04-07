@@ -1,179 +1,193 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{6}
+\contentsline {chapter}{\numberline {1}Introduction}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Overview of Problem Area}{6}
+\contentsline {section}{\numberline {1.1}Overview of Problem Area}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Objectives}{9}
+\contentsline {section}{\numberline {1.2}Objectives}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Primary Objectives}{9}
+\contentsline {subsection}{\numberline {1.2.1}Primary Objectives}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Utilise a Convolutional Neural Network for Object Classification}{9}
+\contentsline {subsubsection}{Utilise a Convolutional Neural Network for Object Classification}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Understanding of Convolutional Neural Networks}{9}
+\contentsline {subsubsection}{Understanding of Convolutional Neural Networks}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}Secondary Objectives}{10}
+\contentsline {subsection}{\numberline {1.2.2}Secondary Objectives}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Provide a Visual Interaction With The Trained Convolutional Neural Network}{10}
+\contentsline {subsubsection}{Provide a Visual Interaction With The Trained Convolutional Neural Network}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Contribution}{10}
+\contentsline {section}{\numberline {1.3}Contribution}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Methodologies}{10}
+\contentsline {section}{\numberline {1.4}Methodologies}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Project Plan}{13}
+\contentsline {section}{\numberline {1.5}Project Plan}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.1}Table}{13}
+\contentsline {subsection}{\numberline {1.5.1}Table}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.6}Motivations}{14}
+\contentsline {section}{\numberline {1.6}Motivations}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Background Research}{15}
+\contentsline {chapter}{\numberline {2}Background Research}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Introduction to Machine Learning}{15}
+\contentsline {section}{\numberline {2.1}Introduction to Machine Learning}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Supervised Learning}{15}
+\contentsline {subsection}{\numberline {2.1.1}Supervised Learning}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Unsupervised Learning}{16}
+\contentsline {subsection}{\numberline {2.1.2}Unsupervised Learning}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.3}History of Neural Computing}{16}
+\contentsline {subsection}{\numberline {2.1.3}History of Neural Computing}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Introduction to Neural Networks and Deep Learning}{17}
+\contentsline {section}{\numberline {2.2}Introduction to Neural Networks and Deep Learning}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Input Nodes}{19}
+\contentsline {subsection}{\numberline {2.2.1}Input Nodes}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Hidden Nodes}{19}
+\contentsline {subsection}{\numberline {2.2.2}Hidden Nodes}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Output Nodes}{19}
+\contentsline {subsection}{\numberline {2.2.3}Output Nodes}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.4}XOR Problem}{20}
+\contentsline {subsection}{\numberline {2.2.4}XOR Problem}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.5}Multilayer Perceptron}{20}
+\contentsline {subsection}{\numberline {2.2.5}Multilayer Perceptron}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.6}Gradient Descent and Backpropagation}{21}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.7}Overfitting}{22}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.8}Multilayer Perceptron for Image Tasks}{22}
+\contentsline {subsection}{\numberline {2.2.6}Gradient Descent and Backpropagation}{22}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Introduction to Computer Vision}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Edge Detection}{24}
+\contentsline {subsection}{\numberline {2.3.1}Noise and Occlusion}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Approaches}{24}
+\contentsline {subsection}{\numberline {2.3.2}Edge Detection}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Noise and Variance}{25}
+\contentsline {subsubsection}{Approaches}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Introduction to Convolutional Neural Networks}{26}
+\contentsline {section}{\numberline {2.4}Multilayer Perceptron for Image Tasks}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Convolution Layer}{27}
+\contentsline {section}{\numberline {2.5}Introduction to Convolutional Neural Networks}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Pooling Layer}{28}
+\contentsline {subsection}{\numberline {2.5.1}Convolution Layer}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}Relevant Architectures}{29}
+\contentsline {subsection}{\numberline {2.5.2}Pooling Layer}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{MobileNet}{29}
+\contentsline {subsection}{\numberline {2.5.3}Relevant Architectures}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Inception}{29}
+\contentsline {subsubsection}{MobileNet}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.4}Evaluating the Classifier}{30}
+\contentsline {subsubsection}{Inception}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Top-1 and Top-5 Accuracy}{30}
+\contentsline {subsection}{\numberline {2.5.4}Evaluating the Classifier}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Accuracy Issues}{30}
+\contentsline {subsubsection}{Top-1 and Top-5 Accuracy}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Confusion Matrix}{31}
+\contentsline {subsubsection}{Accuracy Issues}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Other Evaluation Metrics}{31}
+\contentsline {subsubsection}{Confusion Matrix}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{AUC-ROC Curve}{32}
+\contentsline {subsubsection}{Other Evaluation Metrics}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.5}Transfer Learning}{32}
+\contentsline {subsubsection}{AUC-ROC Curve}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.6}Berkeley Deep Drive}{33}
+\contentsline {subsection}{\numberline {2.5.5}Transfer Learning}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Dataset}{33}
+\contentsline {section}{\numberline {2.6}Berkeley Deep Drive}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Related Results}{34}
+\contentsline {subsubsection}{Dataset}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Tensorflow Introduction}{35}
+\contentsline {subsubsection}{Related Results}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}MNIST Experiment}{35}
+\contentsline {section}{\numberline {2.7}Overfitting}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Code Breakdown}{35}
+\contentsline {section}{\numberline {2.8}Tensorflow Introduction}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}CIFAR-10 Experiment}{37}
+\contentsline {subsection}{\numberline {2.8.1}MNIST Experiment}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.3}Initial Findings}{38}
+\contentsline {subsubsection}{Code Breakdown}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.4}Experiment Environments}{38}
+\contentsline {subsection}{\numberline {2.8.2}CIFAR-10 Experiment}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Tensorflow Install}{38}
+\contentsline {subsection}{\numberline {2.8.3}Initial Findings}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Memory Issues}{39}
+\contentsline {subsection}{\numberline {2.8.4}Experiment Environments}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{AWS Setup}{40}
+\contentsline {subsubsection}{Tensorflow Install}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Cifar-10 Further Experiments}{40}
+\contentsline {subsubsection}{Memory Issues}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Empirical Studies}{48}
+\contentsline {subsubsection}{AWS Setup}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}SSD MobileNet V1 Experiments}{48}
+\contentsline {chapter}{\numberline {3}Cifar-10 Further Experimentation}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Full Dataset Retraining Experiment}{49}
+\contentsline {section}{\numberline {3.1}Experiment 1: Training Steps}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Objectives}{49}
+\contentsline {section}{\numberline {3.2}Experiment 2: Convolution and Pooling Layers}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup}{49}
+\contentsline {section}{\numberline {3.3}Experiment 3: Fully Connected Layers}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Results}{49}
+\contentsline {section}{\numberline {3.4}Experiment 4: Convolution, Pooling and Fully Connected Layers}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Partial Dataset Retraining Experiment 1}{50}
+\contentsline {section}{\numberline {3.5}Experiment 5: Extra Dropout Layers}{50}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Objectives}{50}
+\contentsline {section}{\numberline {3.6}Experiment 6: Increased Training Steps}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup}{51}
+\contentsline {section}{\numberline {3.7}Conclusions}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Results}{52}
+\contentsline {chapter}{\numberline {4}Empirical Studies}{54}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}Partial Dataset Retraining Experiment 2}{53}
+\contentsline {section}{\numberline {4.1}SSD MobileNet V1 Experiments}{54}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Objectives}{53}
+\contentsline {subsection}{\numberline {4.1.1}Full Dataset Retraining Experiment}{55}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Objectives}{55}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Setup}{55}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Results}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Faster RCNN Inception V2 Experiments}{57}
+\contentsline {subsection}{\numberline {4.1.2}Partial Dataset Retraining Experiment 1}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Initial Experiment}{58}
+\contentsline {subsubsection}{Objectives}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Objectives}{58}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup}{58}
+\contentsline {subsubsection}{Setup}{57}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Results}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}No Pretraining Experiment}{59}
+\contentsline {subsection}{\numberline {4.1.3}Partial Dataset Retraining Experiment 2}{59}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Objectives}{59}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup}{60}
+\contentsline {subsubsection}{Setup}{61}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Results}{61}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Empirical Studies Results}{62}
+\contentsline {section}{\numberline {4.2}Faster RCNN Inception V2 Experiments}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Application Implementation}{64}
+\contentsline {subsection}{\numberline {4.2.1}Initial Experiment}{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}AWS Instance}{64}
+\contentsline {subsubsection}{Objectives}{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Implementation}{64}
+\contentsline {subsubsection}{Setup}{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Code Snippets}{65}
+\contentsline {subsubsection}{Results}{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Final Conclusion and Discussion}{67}
+\contentsline {subsection}{\numberline {4.2.2}No Pretraining Experiment}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Summary}{67}
+\contentsline {subsubsection}{Objectives}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Reflections}{68}
+\contentsline {subsubsection}{Setup}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Future Work}{68}
+\contentsline {subsubsection}{Results}{67}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Empirical Studies Results}{68}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Application Implementation}{70}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}AWS Instance}{70}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Implementation}{70}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Code Snippets}{71}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Final Conclusion and Discussion}{73}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Summary}{73}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Reflections}{74}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Future Work}{74}

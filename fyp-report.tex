@@ -205,17 +205,13 @@ Unsupervised Learning algorithms differ from Supervised Learning algorithms in t
 
 \subsection{History of Neural Computing}
 \begin{flushleft}
-Neural Networks are not a new concept - they were first proposed in 1943 by neurophysicists in the form of a primitive electrical circuit. The concept was studied up until the 1960's until it fell out of favour with researchers. Bold claims had been made by many researchers about the vast potential of the field, however a failure to back up these claims led to widespread skepticism about the true potential of Neural Computing. The area was in part hampered by the technology of the time - processing power available to researchers was very low. Additionally, in 1969 a paper was published introducing the XOR problem, which will be explained in later section. The paper stated that the research being carried out at the time on Neural Networks was fundamentally flawed and that the field would not experience any major successes (\cite{minsky1969introduction}). A revival was seen in the 1980's, when the concept of using multiple layers of neurons to create a network began to emerge, and the issues presented by the XOR problem were solved. From 1989 to 1994 Yann LeCun developed the LeNet architecture, one of the first examples of a CNN, which was used to recognise handwritten postal addresses. In around the 2010 the field of Deep Learning (explained below) experienced a surge in popularity, primarily due to the increase in processing power made available through GPU's. In 2012, Alex Krizevsky won the ImageNet competition, a popular image recognition competition. The architecture he used, known as AlexNet, achieved an error rate of ~15\%, which was approximately 10\% better than the closest competition at the time. His architecture essentially scaled up the LeNet architecture into a larger, more complex network (\cite{krizhevsky2012imagenet}). This architecture caused a widespread adoption of CNN's within image based Machine Learning, and CNN's are now the de facto standard for many image processing tasks(\cite{o2015introduction}).
+Neural Networks are not a new concept - they were first proposed in 1943 by neurophysicists in the form of a primitive electrical circuit. The concept was studied up until the 1960's until it fell out of favour with researchers. Bold claims had been made by many researchers about the vast potential of the field, however a failure to back up these claims led to widespread skepticism about the true potential of Neural Computing. The area was in part hampered by the technology of the time - processing power available to researchers was very low. Additionally, in 1969 a paper was published introducing the XOR problem, which will be explained in later section. The paper stated that the research being carried out at the time on Neural Networks was fundamentally flawed and that the field would not experience any major successes (\cite{minsky1969introduction}). A revival was seen in the 1980's, when the concept of using multiple layers of neurons to create a network began to emerge, and the issues presented by the XOR problem were solved. From 1989 to 1994 Yann LeCun developed the LeNet architecture, one of the first examples of a CNN, which was used to recognise handwritten postal addresses. In around the 2010 the field of Deep Learning (explained below) experienced a surge in popularity, primarily due to the increase in processing power made available through GPU's. In 2012, Alex Krizevsky won the ImageNet competition, a popular image recognition competition. The architecture he used, known as AlexNet, achieved an error rate of ~15\%, which was approximately 10\% better than the closest competition at the time. His architecture essentially scaled up the LeNet architecture into a larger, more complex network (\cite{krizhevsky2012imagenet}). This architecture caused a widespread adoption of CNN's within image based Machine Learning, and CNN's are now the de facto standard for many image processing tasks (\cite{o2015introduction}).
 \end{flushleft}
 
 \section{Introduction to Neural Networks and Deep Learning}
 
 \begin{flushleft}
-Artificial Neural Networks (ANN's) are a particular Machine Learning paradigm modelled after the neural pathways present in the brain. The building blocks for every Neural Network is the perceptron or node, an artificial neuron. It receives inputs with weights associated with them that show the importance of each input relative to the others. The node applies a particular activation function to the weighted sums of the input, and an output is generated, as shown in Figure \ref{fig:neuron} (\cite{geron2017hands}). The Perceptron Traini
-\end{flushleft}
-
-\begin{flushleft}
-A single Perceptron is only able to classify linearly separable data (\cite{kotsiantis2007supervised}). In order to classify data that is not linearly separable, techniques such as Multilayer Perceptrons must be used. These will be explained in a following section. Linear separability refers to the ability for a single line to separate all members of a given class A from all members of a given class B. This is illustrated in Figure \ref{fig:linear}. The two classes present in the diagram can be easily seperated by finding an ideal line between the two classes.
+Artificial Neural Networks (ANN's) are a particular Supervised Machine Learning paradigm modelled after the neural pathways present in the brain. The building blocks for every Neural Network are called perceptrons or nodes, and can be thought of as artificial neurons. A perceptron receives inputs with weights associated with them that show the importance of each input relative to the others. The perceptron applies a particular activation function with a bias attached to the weighted sums of the input, and an output is generated, as shown in Figure \ref{fig:neuron} (\cite{geron2017hands}). The Perceptron Training Algorithm determines what weights are selected in order to produce the correct output.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -225,6 +221,10 @@ A single Perceptron is only able to classify linearly separable data (\cite{kots
 	\caption{An Artificial Neuron}
 	\label{fig:neuron}
 \end{figure}
+
+\begin{flushleft}
+A single Perceptron is only able to classify linearly separable data (\cite{kotsiantis2007supervised}). In order to classify data that is not linearly separable, techniques such as Multilayer Perceptrons must be used. These will be explained in a following section. Linear separability refers to the ability for a single line to separate all members of a given class A from all members of a given class B. This is illustrated in Figure \ref{fig:linear}. The two classes present in the diagram can be easily seperated by finding an ideal line between the two classes.
+\end{flushleft}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
@@ -272,9 +272,11 @@ In the paper mentioned above, "Perceptrons: An Introduction to Computational Geo
 
 \subsection{Multilayer Perceptron}
 \begin{flushleft}
-A Multilayer Perceptron (MLP) consists of an input layer, an output layer and one or more hidden layers, as seen in \ref{fig:mlp}. MLP's are feedforward neural networks. The MLP architecture solves the Xor problem by introducing linear seperability (\cite{Singh2016MinimumCM}).
+A Multilayer Perceptron (MLP) consists of an input layer, an output layer and one or more hidden layers, as seen in \ref{fig:mlp}. MLP's are feedforward neural networks, with the output of each node in the network serving as the input for every single node in the next layer. This concept of having each node taking inputs from every single node in the preceding layer is referred to as "fully-connected" layers.
 
-Deep Learning is when there is more than one hidden layer present in a network (\cite{o2015introduction}). MLP's encounter issues when attempting to carry out classification tasks on large input images. As will be explained later, each pixel of an input image must correspond to an input node in the network. As every node is connected to every other node in it's preceding layer, large images quickly require a large amount of nodes in the network. A small image of size 28x28 such as the images found in the MNIST dataset will require a network with 784 input nodes. Images sourced from the Berkeley Deep Drive dataset are of size 1280x720, which would require an input layer consisting of 928080 nodes. This will quickly cause issues due to overfitting and network training time.
+ The MLP architecture solves the Xor problem by introducing linear seperability (\cite{Singh2016MinimumCM}).
+
+Deep Learning is when there is more than one hidden layer present in a network (\cite{o2015introduction}). 
 
 Learning takes place in a MLP through changing the connection weights for each perceptron in the network based on the error between the expected and true output of each perceptron. This is carried out through a concept known as backpropagation.
 \end{flushleft}
@@ -296,19 +298,9 @@ Every time the weights must be updated, the derivative of the cost function with
 The backpropagation algorithm works in conjunction with this by starting at the output layer of the network and stepping back through all the layers, updating the weights for each neuron as it goes (\cite{rumelhart1985learning}). This is in an attempt to minimise the overall error. These steps should allow the network to reduce its error and converge on an optimal solution over time as the network trains.
 \end{flushleft}
 
-\subsection{Overfitting}
-\begin{flushleft}
-An important point to consider when training any Machine Learning model is how well the model generalises to new data (\cite{domingos2012few}). An algorithm should be able to apply concepts learned from the training data to any previously unseen data in the problem domain in order to make accurate predictions. Overfitting is the concept of a model learning the details and noise in the training domain too well, and thus failing to provide accurate predictions on new data. Overfitting tends to occur when a model learns noise and randomness in the training data as concepts that it attempts to apply to data in the problem domain. These concepts will not apply to the new data however, and poor accuracy generally results. Although a noisy dataset will increase the severity of overfitting, it is not simply a result of a noisy dataset and can occur in any dataset (\cite{domingos2012few}). Within the field of Neural Networks, a common approach to avoid severe overfitting is to keep the network architecture relatively simple. The less parameters required to train the model, the lower the overall chance that the network will overfit and fail to generalise (\cite{o2015introduction}). However, this approach is not always feasible when dealing with large and complex datasets, and other approaches must also be taken. Another popular method to reduce overfitting is the introduction of dropout in the network. Dropout is when nodes are randomly dropped from the network along with their connections (\cite{srivastava2014dropout}). This serves to constrain the adaptation of the network while it trains in order to prevent the model from over-learning the training data.
-\end{flushleft}
-
-\subsection{Multilayer Perceptron for Image Tasks}
-\begin{flushleft}
-Prior to the popularisation of the CNN, MLP's were the standard for image based problems. However, there are several issues that make the MLP quite unsuitable for this type of problem.
-\end{flushleft}
-
 \section{Introduction to Computer Vision}
 \begin{flushleft}
-Images are represented as matrices of values, with each value corresponding to a pixel in the image. Images can be broadly broken down into two groups, grayscale and colour. A grayscale image will be represented as a 2D array of values ranging from 0 to 255, with each value representing the intensity of that pixel, as seen in Figure \ref{fig:pixels}. A value of 0 represents black and a value of 255 represents white. In grayscale images, each pixel therefore represents one colour channel (gray). In colour images however we have multiple different channels for red, green and blue. In order to represent this, a colour image will be represented as a 3D array of pixel values, with each pixel having 3 values between 0 and 255 associated with it. These three values represent the intensity of the three colour channels at that pixel. The idea is that a CNN should be able to receive these image representations as input data and return values for the probabilities of different classes.
+Images are represented as matrices of values, with each value corresponding to a pixel in the image. Images can be broadly broken down into two groups, grayscale and colour. A grayscale image will be represented as a 2D array of values ranging from 0 to 255, with each value representing the intensity of that pixel, as seen in Figure \ref{fig:pixels}. A value of 0 represents black and a value of 255 represents white. In grayscale images, each pixel therefore represents one colour channel (gray). In colour images however we have multiple different channels for red, green and blue. In order to represent this, a colour image will be represented as a 3D array of pixel values, with each pixel having 3 values between 0 and 255 associated with it. These three values represent the intensity of the three colour channels at that pixel. The idea is that a Neural Network should be able to receive these image representations as input data and return values for the probabilities of different classes.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -319,15 +311,8 @@ Images are represented as matrices of values, with each value corresponding to a
 	\label{fig:pixels}
 \end{figure}
 
-\begin{flushleft}
-When humans look at an image of say, a dog, we automatically extract the features that make a dog unique in order to allow us to recognise it. For example, we may see a tail, fur and a snout and recognise that we are looking at a dog. At an extremely high level this what a CNN will do - it will look for certain low-level features such as curves and edges and build these up into more abstract concepts such as a leg or a tail in order to classify the object (\cite{lecun1995convolutional}).
-\end{flushleft}
-
-\begin{flushleft}
-Interestingly enough, CNN's do take some inspiration from how the brain processes images. The visual cortex of the brain contains many fields that are sensitive to different specific elements of the input. Some groups of neurons will only respond when certain elements of the input are present, for example certain vertical edges, and other groups of neurons will respond to different elements, such as horizontal edges (\cite{youtube}). The concept of distinct groups of neurons looking for certain features is one that has translated very well into Computer Vision through the use of CNN's.
-\end{flushleft}
-
-\subsection{Noise and Variance}
+\newpage
+\subsection{Noise and Occlusion}
 \begin{flushleft}
 Within any image dataset that contains images extracted from real-life scenarios, two commonly used terms are noise and variance. Image noise is the presence of random variation in pixel colour and intensity within images, typically produced by the sensor taking the image. Within the Berkeley Deep Drive dataset, a common source of noise is motion blur produced by the camera taking a picture while the test car is in motion. This type of image noise can be observed in Fig \ref{fig:noiseimg}. A proliferance of noisy images within a dataset should be avoided if possible, as an overly noisy dataset will cause classifier performance to suffer (\cite{xiao2015learning}).
 \end{flushleft}
@@ -340,6 +325,20 @@ Within any image dataset that contains images extracted from real-life scenarios
 	\label{fig:noiseimg}
 \end{figure}
 
+\newpage
+\begin{flushleft}
+Occlusions within an image are when a particular object is covered in some way, making it only partially visible. This is problematic for classification as it hides some features of the object, making it more difficult for the classify to determine what class the object belongs to. In the Berkeley Deep Drive dataset this is typically present in long rows of cars occluding each other as seen in Fig \ref{fig:occlusion}.
+\end{flushleft}
+
+\vspace{0.5cm}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=12cm]{occlusion}
+	\caption{Image containing occluded cars}
+	\label{fig:occlusion}
+\end{figure}
+
+\newpage
 \subsection{Edge Detection}
 \begin{flushleft}
 Edge detection is the ability to recognise object boundaries within an image, with most edge detection techniques using changes in pixel intensities to identify potential edges (\cite{arbelaez2011contour}). Although edge detection may appear straightforward in concept, in practice it can be a difficult task. Input images typically suffer from noise due to focal blur, as well as blur caused by shadows. This can cause smoothing in the variations in pixel intensity at edge points, and make it difficult to define what actually is an edge (\cite{ziou1998edge}). The magnitude of a gradient will determine if a point in the image is an edge or not - a high gradient implies that an edge is likely present. The direction of a gradient shows how the edge is oriented within the image.
@@ -350,19 +349,35 @@ Edge detection is the ability to recognise object boundaries within an image, wi
 There is a multitude of different techniques used for edge detection that can be split into two categories, search based and zero-crossing based. Search based techniques work by computing gradient edge strength, then searching for the direction of the edge by computing the gradient orientation. The Sobel operator, mentioned below in the explanation of the Canny edge detector, is an example of this type of technique. Zero-crossing based techniques differ in that they search for zero-crossing points on a second-order derivative function calculated from the image. Generally smoothing is applied to the image prior to any of these technques (\cite{ziou1998edge}).
 \end{flushleft}
 
-\newpage
-\section{Introduction to Convolutional Neural Networks}
+\section{Multilayer Perceptron for Image Tasks}
 \begin{flushleft}
-Convolutional Neural Networks have recently become the standard Neural Network used within the field of image-based Machine Learning tasks (\cite{o2015introduction}). They follow essentially the same architecture as a standard Multi Layer Perceptron, except that they include extra layers of Convolution and Pooling. When these layers of Convolution and Pooling are stacked with the Fully-Connected layers of the MLP, a CNN architecture has been formed. Once Convolution and Pooling has been performed the fully-connected layer will compute the overall class scores, resulting in a final output of 1x1xn, where n is the number of possible classes.
-\end{flushleft}
+Prior to the popularisation of the CNN, MLP's were the standard for image based problems. However, there are several issues that make the MLP quite unsuitable for this type of problem.
 
 \vspace{0.5cm}
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=12cm]{convo}
-	\caption{CNN Architecture}
-	\label{fig:convo}
-\end{figure}
+The main issue with MLP's is the manner in which they receive input data. As mentioned above, pixel representations of colour images consist of 3D arrays of pixel values. In order for this data to be passed into an MLP, it must be "flattened" into a 2D vector - as each input node in the MLP accepts a single pixel value (\cite{ben1999fast}). This disregards the spatial characteristics of the image, as the image has been transformed into a large vector of pixel values. This is a very inefficient way of processing images, as it stands to reason that the spatial relationships between pixels are important ie. if two pixels are close together it is likely that they are related in some way (\cite{lecun1989backpropagation}). This lack of consideration for spatial relationships means that an MLP must be given training data that consists of labelled classes in a range of different positions and levels of occlusion within the training images in order for it to reliably identify the classes when it is applied to unseen data, rather than being able to identify a class regardless of its position within an image. Although an MLP may perform adequately upon very simple target domains, more complex tasks will require a large amount of training data in order to produce a reliable classifier (\cite{ghaith}).
+
+\vspace{0.5cm}
+MLP's also encounter other issues when attempting to carry out classification tasks on large input images. As mentioned, each pixel of an input image must correspond to an input node in the network. As every node is connected to every other node in its preceding layer, large images quickly require a large amount of nodes in the network. A small image of size 28x28 pixels such as the images found in the MNIST dataset will require a network with 784 input nodes. Images sourced from the Berkeley Deep Drive dataset are of size 1280x720 pixels, which would require an input layer consisting of 928080 nodes. This means that an MLP that takes in large input images requires a huge number of parameters. Computing all of these parameters naturally leads to extremely long training times.
+
+\vspace{0.5cm}
+So, it should now be clear that the manner in which MLP's handle image related tasks could be much more efficient. It is with these issues in mind that CNN's were developed (\cite{lecun1989backpropagation}).
+\end{flushleft}
+
+
+\newpage
+\section{Introduction to Convolutional Neural Networks}
+
+\begin{flushleft}
+When humans look at an image of say, a dog, we automatically extract the features that make a dog unique in order to allow us to recognise it. For example, we may see a tail, fur and a snout and recognise that we are looking at a dog. At an extremely high level this what a CNN will do - it will look for certain low-level features such as curves and edges and build these up into more abstract concepts such as a leg or a tail in order to classify the object (\cite{lecun1995convolutional}).
+\end{flushleft}
+
+\begin{flushleft}
+Interestingly enough, CNN's do take some inspiration from how the brain processes images. The visual cortex of the brain contains many fields that are sensitive to different specific elements of the input. Some groups of neurons will only respond when certain elements of the input are present, for example certain vertical edges, and other groups of neurons will respond to different elements, such as horizontal edges (\cite{youtube}). The concept of distinct groups of neurons looking for certain features is one that has translated very well into Computer Vision through the use of CNN's. The most important aspect of CNN's that improve their suitability for image related problems is the manner in which they detect classes regardless of their position within an image (\cite{albawi2017understanding}) ie. a CNN trained to detect faces does not pay any regard to where faces are located spatially within an image, it simply recognises faces regardless of their position.
+\end{flushleft}
+
+\begin{flushleft}
+Convolutional Neural Networks have recently become the standard Neural Network used within the field of image-based Machine Learning tasks (\cite{o2015introduction}). They follow essentially the same architecture as a standard MLP, except that they include extra layers of Convolution and Pooling. When these layers of Convolution and Pooling are stacked with the Fully-Connected layers of the MLP, a CNN architecture has been formed. Once Convolution and Pooling has been performed a fully-connected layer will compute the overall class scores, resulting in a final output of 1x1xn, where n is the number of possible classes.
+\end{flushleft}
 
 \newpage
 \subsection{Convolution Layer}
@@ -390,6 +405,14 @@ The pooling layer performs downsampling to extract key important features and re
 	\includegraphics[width=12cm]{pool}
 	\caption{Pooling Layer}
 	\label{fig:pool}
+\end{figure}
+
+\vspace{0.5cm}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=12cm]{convo}
+	\caption{CNN Architecture}
+	\label{fig:convo}
 \end{figure}
 
 \newpage
@@ -486,12 +509,13 @@ The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is ano
 	\label{fig:aucroc}
 \end{figure}
 
+\newpage
 \subsection{Transfer Learning}
 \begin{flushleft}
 Transfer learning is a popular technique in Machine Learning whereby an already trained model is retrained on some limited set of new data whilst keeping most of the learned parameters from the original training data. As mentioned earlier, CNN's use their lower layers to extract primitive features such as edges, the middle layers detect shapes from these edges and the final layers learn the task specific abstractions of these shapes. Thus, it is only the final layers that are specific to the classes of the training dataset, with the preceding layers being more general (\cite{yosinski2014transferable}). In transfer learning a base network is trained on a base set of data, after which the learned features of this network are repurposed to a second network which is then trained on the target dataset. In essence, the initial layers of a neural network can be viewed of as feature extractors, and these feature extractors tend to be quite versatile across different datasets (\cite{tan2018survey}). In order for transfer learning to be effective, the original and target datasets must have some degree of similarity in order for the originally learned features to be effective when applied to the target dataset. Transfer learning is a very popular field within Machine Learning, as it can help drastically cut down on training times, as well as enable better results on smaller datasets (\cite{tan2018survey}). The bulk of the experiments carried out in the Empirical Studies section of this report leverage transfer learning in order to cut down on training times.
 \end{flushleft}
 
-\subsection{Berkeley Deep Drive}
+\section{Berkeley Deep Drive}
 \subsubsection{Dataset}
 \begin{flushleft}
 As mentioned previously in this report, the dataset utilised for this project is the Berkeley Deep Drive dataset, a "large-scale diverse driving video dataset", also known as the BDD100K dataset. Released in 2018, the dataset consists of 100,000 1280x720 annotated images and 100,000 720p 30fps video sequences (\cite{yu2018bdd100k}). The video was collected from a number of locations throughout the United States and consists of a range of weather conditions including sunny, overcast, and rainy. The data consists of a mixture of both daytime and nighttime driving conditions. The images section of the dataset has been created by selecting and annotating the frame at the 10th second of every video. Annotated objects range across 10 different classes - bus, light, sign, person, bike, truck, motor, car, train and rider. The number of instances of each of these annotations are displayed in Fig \ref{fig:annotations}.
@@ -508,6 +532,11 @@ As mentioned previously in this report, the dataset utilised for this project is
 \subsubsection{Related Results}
 \begin{flushleft}
 The paper released with the BDD100K dataset contains a list of results from experiments carried out on the dataset. The experiments focused on the performance of a CNN on different domains within the dataset. For example, a Faster-RCNN was trained on daytime images and then its performance on nighttime images was tested and the discrepancies recorded. The performance metrics recorded from these experiments allow some basis upon which the CNN's trained in this project can be evaluated against.
+\end{flushleft}
+
+\section{Overfitting}
+\begin{flushleft}
+An important point to consider when training any Machine Learning model is how well the model generalises to new data (\cite{domingos2012few}). An algorithm should be able to apply concepts learned from the training data to any previously unseen data in the problem domain in order to make accurate predictions. Overfitting is the concept of a model learning the details and noise in the training domain too well, and thus failing to provide accurate predictions on new data. Overfitting tends to occur when a model learns noise and randomness in the training data as concepts that it attempts to apply to data in the problem domain. These concepts will not apply to the new data however, and poor accuracy generally results. Although a noisy dataset will increase the severity of overfitting, it is not simply a result of a noisy dataset and can occur in any dataset (\cite{domingos2012few}). Within the field of Neural Networks, a common approach to avoid severe overfitting is to keep the network architecture relatively simple. The less parameters required to train the model, the lower the overall chance that the network will overfit and fail to generalise (\cite{o2015introduction}). However, this approach is not always feasible when dealing with large and complex datasets, and other approaches must also be taken. Another popular method to reduce overfitting is the introduction of dropout in the network. Dropout is when nodes are randomly dropped from the network along with their connections (\cite{srivastava2014dropout}). This serves to constrain the adaptation of the network while it trains in order to prevent the model from over-learning the training data.
 \end{flushleft}
 
 \newpage
@@ -594,7 +623,7 @@ Although the first two experiments ran without issues, problems were quickly enc
 One of the many services offered by the AWS platform is Amazon Machine Images (AMI) for Deep Learning. These are virtual machine instances that launch with pre-installed pip deep learning frameworks such as tensorflow, keras etc. in different environments, as well as GPU acceleration. This allows development of models remotely from a client machine which can be then trained using the available GPU resources on the deep learning instance. These instances can be deployed and the desired environment (tensorflow in this case) activated. Jupyter notebooks can be run as normal on the AWS instance, and a rule is set up on the client machine to forward all requests on a certain port to the AWS instance. This allows the user to write code in a Jupyter notebook remotely on the AWS instance. The instance type chosen for this project was the p2.xlarge instance which contains 122GiB of memory, 16 virtual CPU cores and a Nvidia K80 GPU. The steps followed was from the official AWS documentation.
 \end{flushleft}
 
-\subsubsection{Cifar-10 Further Experiments}
+\chapter{Cifar-10 Further Experimentation}
 \begin{flushleft}
 As mentioned above, further experiments were carried out on the Cifar-10 dataset in an attempt to improve the disappointing initial results. The base code provided as part of the tutorial (\cite{udemy}) was modified in a range of different ways in order to maximise results. In order to evaluate the network properly the following metrics were recorded:
 
@@ -625,8 +654,7 @@ The baseline of these metrics achieved by the simple network provided from the t
 
 \begin{flushleft}
 \vspace{0.5cm}
-\textbf{Experiment 1: Training Steps}
-\linebreak
+\section{Experiment 1: Training Steps}
 Before investigating the effects of altering the network architecture, the optimal number of training steps was investigated. This parameter was investigated first as it has a large effect on training time. A network that does not have enough training steps will underlearn, whereby it does not learn all possible parameters. However having too many training steps will lead to increased training time with no increase in accuracy. The initial experiment carried out 5000 training steps, so this was doubled to 10,000 steps in an attempt to see if this would boost accuracy, precision and recall. The results are displayed in the table below and plotted in Fig \ref{fig:experiment-1}. All three metrics levelled off at around the 5000 step mark, with no significant increases reported. It would therefore appear that 5000 training steps is the optimal value.
 
 \vspace{0.5cm}
@@ -647,8 +675,7 @@ Before investigating the effects of altering the network architecture, the optim
 
 \begin{flushleft}
 \vspace{0.5cm}
-\textbf{Experiment 2: Convolution and Pooling Layers}
-\linebreak
+\section{Experiment 2: Convolution and Pooling Layers}
 The next experiment undertaken was to increase the number of convolution and pooling layers. For this experiment only one extra layer of convolution and pooling was added. As can be shown in the results displayed in the table below as well in Fig \ref{fig:experiment-2}, this did not yield any significant results.
 
 \vspace{0.5cm}
@@ -669,8 +696,7 @@ The next experiment undertaken was to increase the number of convolution and poo
 
 \begin{flushleft}
 \vspace{0.5cm}
-\textbf{Experiment 3: Fully Connected Layers}
-\linebreak
+\section{Experiment 3: Fully Connected Layers}
 As the extra layers of convolution and pooling had failed to yield any benefits, the next step taken was to increase the number of fully connected layers in the network. One extra fully connected layer was added as well as a dropout layer. The reasoning behind this experiment was to investigate the possibility that the network was performing poorly with the class predictions. The images in the Cifar-10 dataset consist of non-occluded blurred objects with one class of object present per image. As such it was reasoned that only a small number of convolution and pooling layers were required to extract feature maps from the images, and increased numbers of fully-connected layers would be more important. Dissapointingly, the results of this experiment were a marginal drop in accuracy, precision and recall.
 
 \vspace{0.5cm}
@@ -692,8 +718,7 @@ As the extra layers of convolution and pooling had failed to yield any benefits,
 \newpage
 \begin{flushleft}
 \vspace{0.5cm}
-\textbf{Experiment 4: Convolution, Pooling and Fully Connected Layers}
-\linebreak
+\section{Experiment 4: Convolution, Pooling and Fully Connected Layers}
 As Experiments 2 and 3 had failed to yield better results, 2 extra layers of convolution and pooling were added in conjunction with an extra fully-connected layer. As can be seen from the results table and Fig \ref{fig:experiment-4}, results actually went down marginally.
 
 \vspace{0.5cm}
@@ -715,8 +740,7 @@ As Experiments 2 and 3 had failed to yield better results, 2 extra layers of con
 \newpage
 \begin{flushleft}
 \vspace{0.5cm}
-\textbf{Experiment 5: Extra Dropout Layers}
-\linebreak
+\section{Experiment 5: Extra Dropout Layers}
 Following the failure of experiment 4 to improve results, 2 extra layers of dropout with a probability of 0.25 were added to the experiment 4 architecture after the 2nd and 4th pooling layers in an attempt to tale any potential overfitting. Although the results summarised in the table below and Fig \ref{fig:experiment-5} do not show any meaningful increase in accuracy either, the accuracy curve from this experiment as well as experiment 4 suggest that the network is underlearning as the curves do not level off as much as in previous results. This implied that the network may simply need more time to train. Interestingly, during this experiment the accuracy and recall metrics diverged from one another, as can be observed in Fig \ref{fig:experiment-5}. This would seem to imply that the network may have been overfitting slightly.
 
 \vspace{0.5cm}
@@ -738,8 +762,7 @@ Following the failure of experiment 4 to improve results, 2 extra layers of drop
 \newpage
 \begin{flushleft}
 \vspace{0.5cm}
-\textbf{Experiment 6: Increased Training Steps}
-\linebreak
+\section{Experiment 6: Increased Training Steps}
 The observations in experiments 4 and 5 suggested that the network might simply need more time to train. In experiment 1 it was concluded that 5000 training steps would be sufficient, however this experiment was carried out using the simple baseline network architecture. It was therefore a mistake to assume that 5000 training steps would be sufficient for all following experiments. The number of training steps was increased drastically to 25,000, with the architecture remaining the same as in experiment 5. Although training time was significantly increased, all metrics gained a slight increase with accuracy peaking at 73.25\%, a decent improvement from the initial results.
 
 \vspace{0.5cm}
@@ -761,15 +784,14 @@ The observations in experiments 4 and 5 suggested that the network might simply 
 
 \begin{flushleft}
 \vspace{0.5cm}
-\textbf{Conclusions}
-\linebreak
+\section{Conclusions}
 These experiments conclude with a small yet significant increase in accuracy, precision and recall scores from the final experiment. These experiments were focused mainly upon the effects of network architecture rather than the effects of parameter tuning. Empirical studies in later sections will focus more on the effects of parameter tuning. Adding just extra layers of convolution and pooling without adding extra fully-connected layers did not result in improvements, and vice versa. Upon creation of a more complex network architecture with dropout layers results actually went down slightly. However, observation of the metric graphs showed that the network was possibly underlearning, and a drastic increase in training steps led to positive results. Accuracy, precision and recall all seemed to increase in proportion with one another for these experiments, however this is generally not guaranteed for all networks. Datasets containing more classes or high levels of class imbalance would typically not result in such regular accuracy, precision and recall metrics. If there is anything to take from these experiments moving forward with this project, it is that simply adding one or two extra layers is not sufficient to gain satisfactory results - adding multiple layers of convolution, pooling and fully-connected layers should be investigated in conjunction with each other in future experiments. As the unusual accuracy and recall results also demonstrate, it may also be beneficial to introduce dropout or some other form of regularisation in networks that are not obviously overfitting. Although the increases in performance shown are slight, I am confident that further increasing the complexity of the network and increasing training times can lead to further increases.
 \end{flushleft}
 
 \newpage
 \chapter{Empirical Studies}
 \begin{flushleft}
-The following sections will investigate the effects of retraining various different network architectures using transfer learning and investigate the effects of parameter tuning upon these networks. Models were retrained using the Tensorflow Object Detection API, with the steps followed being from a tutorial made available on GitHub (\cite{tutorial}). All of the pretrained models utilised in the following sections have been trained on the COCO (Common Objects in Context) dataset, a dataset provided by Microsoft. Although the COCO dataset is updated every year, it currently consists of 164,000 images populated with 90 classes of objects. The dataset was chosen for this project as it contains 8 different classes of vehicle and displays objects in real-life contexts, with potential for occlusion and general noise in the images (\cite{lin2014microsoft}). Many other datasets instead provide an "iconic" view of objects, whereby the object appears centrally and unobstructed in the image. As the BDD100K dataset images are drawn from real-world scenarios from the perspective of a car, using the COCO dataset as the initial training dataset should allow the retrained models to generalise better to the BDD100K data than datasets with less variance in the images.
+The following sections will primarily investigate the effects of retraining various different network architectures using transfer learning. Models were retrained using the Tensorflow Object Detection API, with the steps followed being from a tutorial made available on GitHub (\cite{tutorial}). All of the pretrained models utilised in the following sections have been trained on the COCO (Common Objects in Context) dataset, a dataset provided by Microsoft. Although the COCO dataset is updated every year, it currently consists of 164,000 images populated with 90 classes of objects. The dataset was chosen for this project as it contains 8 different classes of vehicle and displays objects in real-life contexts, with potential for occlusion and general noise in the images (\cite{lin2014microsoft}). Many other datasets instead provide an "iconic" view of objects, whereby the object appears centrally and unobstructed in the image. As the BDD100K dataset images are drawn from real-world scenarios from the perspective of a car, using the COCO dataset as the initial training dataset should allow the retrained models to generalise better to the BDD100K data than datasets with less variance in the images.
 \end{flushleft}
 
 \section{SSD MobileNet V1 Experiments}

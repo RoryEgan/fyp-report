@@ -19,6 +19,41 @@
 
 \refsection{0}
   \sortlist[entry]{nyt/global}
+    \entry{albawi2017understanding}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=a92a8d7d47ce475bde1f4d0c575e3415}{%
+           family={Albawi},
+           family_i={A\bibinitperiod},
+           given={Saad},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=72e018060ae2e7053cf8581bc8899aaf}{%
+           family={Mohammed},
+           family_i={M\bibinitperiod},
+           given={Tareq\bibnamedelima Abed},
+           given_i={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{uniquename=0,hash=c2f9de2eb7b3ac9408b9e418ef2a1e39}{%
+           family={Al-Zawi},
+           family_i={A\bibinithyphendelim Z\bibinitperiod},
+           given={Saad},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{076f3dfec088a294e0bf16b66e904ea6}
+      \strng{fullhash}{076f3dfec088a294e0bf16b66e904ea6}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelyear}{2017}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 International Conference on Engineering and Technology (ICET)}
+      \field{title}{Understanding of a convolutional neural network}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+    \endentry
     \entry{arbelaez2011contour}{article}{}
       \name{author}{4}{}{%
         {{uniquename=0,hash=d19aeb8b8cfa243de387a3e46d05bcc6}{%
@@ -60,6 +95,39 @@
       \field{year}{2011}
       \field{pages}{898\bibrangedash 916}
       \range{pages}{19}
+    \endentry
+    \entry{ben1999fast}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=3f6550ded3f0799126dfade1b0b7d95e}{%
+           family={Ben-Yacoub},
+           family_i={B\bibinithyphendelim Y\bibinitperiod},
+           given={Souheil},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=a06081be097dc48770143fc428e394e4}{%
+           family={Fasel},
+           family_i={F\bibinitperiod},
+           given={B},
+           given_i={B\bibinitperiod}}}%
+        {{uniquename=0,hash=9975cfec4fa2216a3ca2d1efd1fcb702}{%
+           family={Luettin},
+           family_i={L\bibinitperiod},
+           given={Juergen},
+           given_i={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{bc56d90103d6836880ccd1c65bfc73d2}
+      \strng{fullhash}{bc56d90103d6836880ccd1c65bfc73d2}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{1999}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. Second International Conference on Audio and Video-based Biometric Person Authentication (AVBPA'99)}
+      \field{number}{CONF}
+      \field{title}{Fast face detection using MLP and FFT}
+      \field{year}{1999}
+      \field{pages}{31\bibrangedash 36}
+      \range{pages}{6}
     \endentry
     \entry{rsadistraction}{article}{}
       \name{author}{1}{}{%
@@ -424,6 +492,63 @@
       \field{pages}{1097\bibrangedash 1105}
       \range{pages}{9}
     \endentry
+    \entry{lecun1989backpropagation}{article}{}
+      \name{author}{7}{uniquelist=2}{%
+        {{uniquename=0,hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           family_i={L\bibinitperiod},
+           given={Yann},
+           given_i={Y\bibinitperiod}}}%
+        {{uniquename=0,hash=824ee0660bd2a40e283a9b8266f0868b}{%
+           family={Boser},
+           family_i={B\bibinitperiod},
+           given={Bernhard},
+           given_i={B\bibinitperiod}}}%
+        {{uniquename=0,hash=4f138434f743ff4d54b0b36a04662329}{%
+           family={Denker},
+           family_i={D\bibinitperiod},
+           given={John\bibnamedelima S},
+           given_i={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{uniquename=0,hash=0444ce878492140cb17d6d4f19c2b24d}{%
+           family={Henderson},
+           family_i={H\bibinitperiod},
+           given={Donnie},
+           given_i={D\bibinitperiod}}}%
+        {{uniquename=0,hash=c7bc0308fb8e079f2047db72dd7c95b4}{%
+           family={Howard},
+           family_i={H\bibinitperiod},
+           given={Richard\bibnamedelima E},
+           given_i={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{uniquename=0,hash=494b3ee863ae780ea5237c5b09b80c0e}{%
+           family={Hubbard},
+           family_i={H\bibinitperiod},
+           given={Wayne},
+           given_i={W\bibinitperiod}}}%
+        {{uniquename=0,hash=b7a89d8a740f5bbb650540485cfdad43}{%
+           family={Jackel},
+           family_i={J\bibinitperiod},
+           given={Lawrence\bibnamedelima D},
+           given_i={L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{1d734043c159f94568a3ca66a93ab3a2}
+      \strng{fullhash}{cdebc607b0e13f04de96cfbda9d85d7b}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{1989}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neural computation}
+      \field{number}{4}
+      \field{title}{Backpropagation applied to handwritten zip code recognition}
+      \field{volume}{1}
+      \field{year}{1989}
+      \field{pages}{541\bibrangedash 551}
+      \range{pages}{11}
+    \endentry
     \entry{lecun1995convolutional}{article}{}
       \true{moreauthor}
       \name{author}{2}{}{%
@@ -600,6 +725,31 @@
       \field{journaltitle}{arXiv preprint arXiv:1511.08458}
       \field{title}{An introduction to convolutional neural networks}
       \field{year}{2015}
+    \endentry
+    \entry{ghaith}{thesis}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=366acc04ca59e1da934fe5c250697c38}{%
+           family={Al-Qudah},
+           family_i={A\bibinithyphendelim Q\bibinitperiod},
+           given={Ghaith\bibnamedelima Ahmad},
+           given_i={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Middle East University for Graduate Studies}%
+      }
+      \strng{namehash}{366acc04ca59e1da934fe5c250697c38}
+      \strng{fullhash}{366acc04ca59e1da934fe5c250697c38}
+      \field{sortinit}{Q}
+      \field{sortinithash}{15867262911a166ca2270ec58a0e3fe9}
+      \field{labelyear}{2009}
+      \field{labelmonth}{5}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{A Multi-Layer Perceptron Neural Network Based-Model for Face Detection}
+      \field{type}{mathesis}
+      \field{year}{2009}
     \endentry
     \entry{rogers2016first}{book}{}
       \name{author}{2}{}{%
