@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  5 APR 2019 12:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  7 APR 2019 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -400,452 +400,453 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `fyp-report.toc'.
 
- [2]
-Chapter 1.
-[3
+ [2] (./fyp-report.lof [3
 
-] [4] [5] [6] [7]
-Overfull \hbox (22.56699pt too wide) in paragraph at lines 117--140
+])
+\tf@lof=\write5
+\openout5 = `fyp-report.lof'.
+
+ [4] (./fyp-report.lot)
+\tf@lot=\write6
+\openout6 = `fyp-report.lot'.
+
+
+[5
+
+]
+Chapter 1.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
+ [6
+
+] [7] [8] [9]
+[10] [11] [12]
+Overfull \hbox (7.26161pt too wide) in paragraph at lines 150--172
 [] 
  []
 
-[8] [9]
+[13] [14]
 Chapter 2.
-[10
+[15
 
 ]
-Overfull \hbox (12.4678pt too wide) in paragraph at lines 179--179
+Overfull \hbox (12.4678pt too wide) in paragraph at lines 211--211
 []\OT1/cmr/bx/n/17.28 Introduction to Neu-ral Net-works and Deep
  []
 
-[11] <images/neuron.PNG, id=48, 287.57437pt x 167.12437pt>
+[16] <images/neuron.PNG, id=64, 287.57437pt x 167.12437pt>
 File: images/neuron.PNG Graphic file (type png)
 
 <use images/neuron.PNG>
-Package pdftex.def Info: images/neuron.PNG used on input line 192.
+Package pdftex.def Info: images/neuron.PNG used on input line 224.
 (pdftex.def)             Requested size: 341.43306pt x 198.43163pt.
- [12 <./images/neuron.PNG>]
-<images/functions.PNG, id=54, 539.76656pt x 143.03438pt>
+ <images/linear.PNG, id=66, 184.43906pt x 172.39406pt>
+File: images/linear.PNG Graphic file (type png)
+
+<use images/linear.PNG>
+Package pdftex.def Info: images/linear.PNG used on input line 232.
+(pdftex.def)             Requested size: 227.62204pt x 212.75629pt.
+
+<images/functions.PNG, id=67, 539.76656pt x 143.03438pt>
 File: images/functions.PNG Graphic file (type png)
 
 <use images/functions.PNG>
-Package pdftex.def Info: images/functions.PNG used on input line 204.
+Package pdftex.def Info: images/functions.PNG used on input line 244.
 (pdftex.def)             Requested size: 341.43306pt x 90.47878pt.
-
-<images/linear.PNG, id=55, 184.43906pt x 172.39406pt>
-File: images/linear.PNG Graphic file (type png)
- <use images/linear.PNG>
-Package pdftex.def Info: images/linear.PNG used on input line 216.
-(pdftex.def)             Requested size: 341.43306pt x 319.13707pt.
-
-[13 <./images/functions.PNG>] [14 <./images/linear.PNG>] [15]
-<images/mlp.jpeg, id=67, 496.85625pt x 359.3425pt>
+ [17] [18 <./images/neuron.PNG> <./images/linear.PNG>] [19 <./images/functions.
+PNG>]
+<images/mlp.jpeg, id=81, 496.85625pt x 359.3425pt>
 File: images/mlp.jpeg Graphic file (type jpg)
  <use images/mlp.jpeg>
-Package pdftex.def Info: images/mlp.jpeg used on input line 253.
+Package pdftex.def Info: images/mlp.jpeg used on input line 285.
 (pdftex.def)             Requested size: 341.43306pt x 246.93768pt.
 
-[16 <./images/mlp.jpeg>] [17]
-<images/pixels.png, id=75, 1031.855pt x 656.4525pt>
+[20] [21 <./images/mlp.jpeg>] [22]
+<images/pixels.png, id=91, 1031.855pt x 656.4525pt>
 File: images/pixels.png Graphic file (type png)
  <use images/pixels.png>
-Package pdftex.def Info: images/pixels.png used on input line 282.
+Package pdftex.def Info: images/pixels.png used on input line 317.
 (pdftex.def)             Requested size: 341.43306pt x 217.21095pt.
 
-[18 <./images/pixels.png>] [19] [20]
-<images/directions.png, id=91, 116.435pt x 107.40125pt>
-File: images/directions.png Graphic file (type png)
+[23 <./images/pixels.png>] [24]
+<images/noise.png, id=100, 1185.42876pt x 693.59125pt>
+File: images/noise.png Graphic file (type png)
+ <use images/noise.png>
+Package pdftex.def Info: images/noise.png used on input line 348.
+(pdftex.def)             Requested size: 341.43306pt x 199.77106pt.
 
-<use images/directions.png>
-Package pdftex.def Info: images/directions.png used on input line 314.
-(pdftex.def)             Requested size: 227.62204pt x 209.98384pt.
- [21 <./images/directions.png>]
-<images/orientation.png, id=95, 116.435pt x 112.42pt>
-File: images/orientation.png Graphic file (type png)
-
-<use images/orientation.png>
-Package pdftex.def Info: images/orientation.png used on input line 323.
-(pdftex.def)             Requested size: 227.62204pt x 219.7962pt.
- <images/canny.jpg, id=96, 734.745pt x 630.355pt>
-File: images/canny.jpg Graphic file (type jpg)
-
-<use images/canny.jpg>
-Package pdftex.def Info: images/canny.jpg used on input line 331.
-(pdftex.def)             Requested size: 341.43306pt x 292.92929pt.
-
-Overfull \hbox (9.57973pt too wide) in paragraph at lines 336--336
+[25 <./images/noise.png>]
+Overfull \hbox (9.57973pt too wide) in paragraph at lines 354--354
 []\OT1/cmr/bx/n/17.28 Introduction to Con-vo-lu-tional Neu-ral Net-
  []
 
-<images/convo.png, id=97, 843.15pt x 250.9375pt>
+<images/convo.png, id=104, 843.15pt x 250.9375pt>
 File: images/convo.png Graphic file (type png)
  <use images/convo.png>
-Package pdftex.def Info: images/convo.png used on input line 344.
+Package pdftex.def Info: images/convo.png used on input line 362.
 (pdftex.def)             Requested size: 341.43306pt x 101.61763pt.
 
-[22 <./images/orientation.png>] [23 <./images/canny.jpg> <./images/convo.png>]
-<images/conv.png, id=106, 526.96875pt x 150.5625pt>
+[26 <./images/convo.png>] <images/conv.png, id=109, 526.96875pt x 150.5625pt>
 File: images/conv.png Graphic file (type png)
- <use images/conv.png>
-Package pdftex.def Info: images/conv.png used on input line 358.
+
+<use images/conv.png>
+Package pdftex.def Info: images/conv.png used on input line 376.
 (pdftex.def)             Requested size: 341.43306pt x 97.5566pt.
-
-[24 <./images/conv.png>] <images/pool.png, id=111, 551.81157pt x 199.49532pt>
+ [27 <./images/conv.png>]
+<images/pool.png, id=114, 551.81157pt x 199.49532pt>
 File: images/pool.png Graphic file (type png)
-
-<use images/pool.png>
-Package pdftex.def Info: images/pool.png used on input line 372.
+ <use images/pool.png>
+Package pdftex.def Info: images/pool.png used on input line 390.
 (pdftex.def)             Requested size: 341.43306pt x 123.44228pt.
- [25 <./images/pool.png>] [26] [27]
+
+[28 <./images/pool.png>] [29] [30]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 425.
+               Default added (so using `tbp') on input line 443.
 
-[28] <images/aucroc.png, id=125, 407.5225pt x 331.2375pt>
+[31] <images/aucroc.png, id=132, 407.5225pt x 331.2375pt>
 File: images/aucroc.png Graphic file (type png)
 
 <use images/aucroc.png>
-Package pdftex.def Info: images/aucroc.png used on input line 466.
+Package pdftex.def Info: images/aucroc.png used on input line 484.
 (pdftex.def)             Requested size: 341.43306pt x 277.53pt.
- [29] [30 <./images/aucroc.png>]
-<images/annotations.png, id=134, 739.76375pt x 228.855pt>
+ [32] [33 <./images/aucroc.png>]
+<images/annotations.png, id=140, 739.76375pt x 228.855pt>
 File: images/annotations.png Graphic file (type png)
 
 <use images/annotations.png>
-Package pdftex.def Info: images/annotations.png used on input line 485.
+Package pdftex.def Info: images/annotations.png used on input line 503.
 (pdftex.def)             Requested size: 341.43306pt x 105.62726pt.
- [31 <./images/annotations.png>]
-<images/helpers.png, id=138, 579.16376pt x 481.8pt>
+ [34 <./images/annotations.png>]
+<images/helpers.png, id=144, 579.16376pt x 481.8pt>
 File: images/helpers.png Graphic file (type png)
  <use images/helpers.png>
-Package pdftex.def Info: images/helpers.png used on input line 513.
+Package pdftex.def Info: images/helpers.png used on input line 531.
 (pdftex.def)             Requested size: 341.43306pt x 284.03163pt.
 
-[32] <images/layers.png, id=142, 584.1825pt x 287.0725pt>
+[35] <images/layers.png, id=149, 584.1825pt x 287.0725pt>
 File: images/layers.png Graphic file (type png)
 
 <use images/layers.png>
-Package pdftex.def Info: images/layers.png used on input line 525.
+Package pdftex.def Info: images/layers.png used on input line 543.
 (pdftex.def)             Requested size: 341.43306pt x 167.79pt.
 
-<images/training.png, id=143, 880.28876pt x 423.5825pt>
+<images/training.png, id=150, 880.28876pt x 423.5825pt>
 File: images/training.png Graphic file (type png)
 
 <use images/training.png>
-Package pdftex.def Info: images/training.png used on input line 537.
+Package pdftex.def Info: images/training.png used on input line 555.
 (pdftex.def)             Requested size: 341.43306pt x 164.29164pt.
- [33 <./images/helpers.png>] [34 <./images/layers.png> <./images/training.png>]
- [35] [36]
-<images/baseline-graph.png, id=157, 595.22375pt x 315.1775pt>
+ [36 <./images/helpers.png>] [37 <./images/layers.png> <./images/training.png>]
+ [38] [39]
+<images/baseline-graph.png, id=163, 595.22375pt x 315.1775pt>
 File: images/baseline-graph.png Graphic file (type png)
 
 <use images/baseline-graph.png>
-Package pdftex.def Info: images/baseline-graph.png used on input line 603.
+Package pdftex.def Info: images/baseline-graph.png used on input line 621.
 (pdftex.def)             Requested size: 341.43306pt x 180.79282pt.
- [37]
-<images/experiment-1.png, id=161, 597.23125pt x 322.20375pt>
+ [40]
+<images/experiment-1.png, id=167, 597.23125pt x 322.20375pt>
 File: images/experiment-1.png Graphic file (type png)
 
 <use images/experiment-1.png>
-Package pdftex.def Info: images/experiment-1.png used on input line 624.
+Package pdftex.def Info: images/experiment-1.png used on input line 642.
 (pdftex.def)             Requested size: 341.43306pt x 184.20377pt.
- [38 <./images/baseline-graph.png>]
-<images/experiment-2.png, id=165, 596.2275pt x 319.1925pt>
+ [41 <./images/baseline-graph.png>]
+<images/experiment-2.png, id=172, 596.2275pt x 319.1925pt>
 File: images/experiment-2.png Graphic file (type png)
 
 <use images/experiment-2.png>
-Package pdftex.def Info: images/experiment-2.png used on input line 646.
+Package pdftex.def Info: images/experiment-2.png used on input line 664.
 (pdftex.def)             Requested size: 341.43306pt x 182.78906pt.
- [39 <./images/experiment-1.png>]
-<images/experiment-3.png, id=169, 595.22375pt x 320.19624pt>
+ [42 <./images/experiment-1.png>]
+<images/experiment-3.png, id=176, 595.22375pt x 320.19624pt>
 File: images/experiment-3.png Graphic file (type png)
 
 <use images/experiment-3.png>
-Package pdftex.def Info: images/experiment-3.png used on input line 668.
+Package pdftex.def Info: images/experiment-3.png used on input line 686.
 (pdftex.def)             Requested size: 341.43306pt x 183.67168pt.
- [40 <./images/experiment-2.png>]
-<images/experiment-4.png, id=173, 597.23125pt x 319.1925pt>
+ [43 <./images/experiment-2.png>]
+<images/experiment-4.png, id=180, 597.23125pt x 319.1925pt>
 File: images/experiment-4.png Graphic file (type png)
 
 <use images/experiment-4.png>
-Package pdftex.def Info: images/experiment-4.png used on input line 691.
+Package pdftex.def Info: images/experiment-4.png used on input line 709.
 (pdftex.def)             Requested size: 341.43306pt x 182.48222pt.
- [41 <./images/experiment-3.png>]
-<images/experiment-5.png, id=178, 602.25pt x 322.20375pt>
+ [44 <./images/experiment-3.png>]
+<images/experiment-5.png, id=184, 602.25pt x 322.20375pt>
 File: images/experiment-5.png Graphic file (type png)
 
 <use images/experiment-5.png>
-Package pdftex.def Info: images/experiment-5.png used on input line 714.
+Package pdftex.def Info: images/experiment-5.png used on input line 732.
 (pdftex.def)             Requested size: 341.43306pt x 182.67476pt.
- [42 <./images/experiment-4.png>]
-<images/experiment-6.png, id=182, 595.22375pt x 318.18875pt>
+ [45 <./images/experiment-4.png>]
+<images/experiment-6.png, id=188, 595.22375pt x 318.18875pt>
 File: images/experiment-6.png Graphic file (type png)
 
 <use images/experiment-6.png>
-Package pdftex.def Info: images/experiment-6.png used on input line 737.
+Package pdftex.def Info: images/experiment-6.png used on input line 755.
 (pdftex.def)             Requested size: 341.43306pt x 182.52013pt.
- [43 <./images/experiment-5.png>] [44 <./images/experiment-6.png>]
+ [46 <./images/experiment-5.png>] [47 <./images/experiment-6.png>]
 Chapter 3.
-[45
+[48
 
-] [46] <images/noisy.png, id=195, 872.25874pt x 489.83pt>
+] [49] <images/noisy.png, id=203, 872.25874pt x 489.83pt>
 File: images/noisy.png Graphic file (type png)
 
 <use images/noisy.png>
-Package pdftex.def Info: images/noisy.png used on input line 781.
+Package pdftex.def Info: images/noisy.png used on input line 799.
 (pdftex.def)             Requested size: 341.43306pt x 191.7355pt.
- <images/street.jpg, id=196, 1284.8pt x 722.7pt>
+ <images/street.jpg, id=204, 1284.8pt x 722.7pt>
 File: images/street.jpg Graphic file (type jpg)
 
 <use images/street.jpg>
-Package pdftex.def Info: images/street.jpg used on input line 789.
+Package pdftex.def Info: images/street.jpg used on input line 807.
 (pdftex.def)             Requested size: 341.43306pt x 192.05493pt.
 
-<images/mobilenet-full-dataset-loss.png, id=197, 878.28125pt x 416.55624pt>
+<images/mobilenet-full-dataset-loss.png, id=205, 878.28125pt x 416.55624pt>
 File: images/mobilenet-full-dataset-loss.png Graphic file (type png)
 
 <use images/mobilenet-full-dataset-loss.png>
 Package pdftex.def Info: images/mobilenet-full-dataset-loss.png used on input l
-ine 797.
+ine 815.
 (pdftex.def)             Requested size: 341.43306pt x 161.94142pt.
- [47 <./images/noisy.png>] [48 <./images/street.jpg> <./images/mobilenet-full-d
+ [50 <./images/noisy.png>] [51 <./images/street.jpg> <./images/mobilenet-full-d
 ataset-loss.png>]
-<images/loss-smalldata-5k.png, id=206, 890.32625pt x 403.5075pt>
+<images/loss-smalldata-5k.png, id=212, 890.32625pt x 403.5075pt>
 File: images/loss-smalldata-5k.png Graphic file (type png)
 
 <use images/loss-smalldata-5k.png>
-Package pdftex.def Info: images/loss-smalldata-5k.png used on input line 821.
+Package pdftex.def Info: images/loss-smalldata-5k.png used on input line 839.
 (pdftex.def)             Requested size: 341.43306pt x 154.73824pt.
 
-<images/map-smalldata-5k.png, id=207, 890.32625pt x 402.50375pt>
+<images/map-smalldata-5k.png, id=213, 890.32625pt x 402.50375pt>
 File: images/map-smalldata-5k.png Graphic file (type png)
 
 <use images/map-smalldata-5k.png>
-Package pdftex.def Info: images/map-smalldata-5k.png used on input line 829.
+Package pdftex.def Info: images/map-smalldata-5k.png used on input line 847.
 (pdftex.def)             Requested size: 341.43306pt x 154.35332pt.
 
-<images/ar-smalldata-5k.png, id=208, 899.36pt x 411.5375pt>
+<images/ar-smalldata-5k.png, id=214, 899.36pt x 411.5375pt>
 File: images/ar-smalldata-5k.png Graphic file (type png)
 
 <use images/ar-smalldata-5k.png>
-Package pdftex.def Info: images/ar-smalldata-5k.png used on input line 837.
+Package pdftex.def Info: images/ar-smalldata-5k.png used on input line 855.
 (pdftex.def)             Requested size: 341.43306pt x 156.23517pt.
 
-<images/class-smalldata-500.png, id=209, 930.47626pt x 596.2275pt>
+<images/class-smalldata-500.png, id=215, 930.47626pt x 596.2275pt>
 File: images/class-smalldata-500.png Graphic file (type png)
 
 <use images/class-smalldata-500.png>
-Package pdftex.def Info: images/class-smalldata-500.png used on input line 845.
+Package pdftex.def Info: images/class-smalldata-500.png used on input line 863.
 
 (pdftex.def)             Requested size: 426.79134pt x 273.47647pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 845--846
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 863--864
  [][] 
  []
 
-[49] <images/classes-smalldata-5k.png, id=213, 937.5025pt x 601.24625pt>
+[52] <images/classes-smalldata-5k.png, id=219, 937.5025pt x 601.24625pt>
 File: images/classes-smalldata-5k.png Graphic file (type png)
 
 <use images/classes-smalldata-5k.png>
-Package pdftex.def Info: images/classes-smalldata-5k.png used on input line 854
+Package pdftex.def Info: images/classes-smalldata-5k.png used on input line 872
 .
 (pdftex.def)             Requested size: 426.79134pt x 273.70508pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 854--855
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 872--873
  [][] 
  []
 
-[50 <./images/loss-smalldata-5k.png> <./images/map-smalldata-5k.png>] [51 <./im
-ages/ar-smalldata-5k.png> <./images/class-smalldata-500.png>] [52 <./images/cla
+[53 <./images/loss-smalldata-5k.png> <./images/map-smalldata-5k.png>] [54 <./im
+ages/ar-smalldata-5k.png> <./images/class-smalldata-500.png>] [55 <./images/cla
 sses-smalldata-5k.png>]
-<images/loss-mobilenet-2.png, id=223, 895.345pt x 413.545pt>
+<images/loss-mobilenet-2.png, id=230, 895.345pt x 413.545pt>
 File: images/loss-mobilenet-2.png Graphic file (type png)
 
 <use images/loss-mobilenet-2.png>
-Package pdftex.def Info: images/loss-mobilenet-2.png used on input line 879.
+Package pdftex.def Info: images/loss-mobilenet-2.png used on input line 897.
 (pdftex.def)             Requested size: 426.79134pt x 197.13002pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 879--880
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 897--898
  [][] 
  []
 
-<images/precision-mobilenet-2.png, id=224, 920.43875pt x 452.69125pt>
+<images/precision-mobilenet-2.png, id=231, 920.43875pt x 452.69125pt>
 File: images/precision-mobilenet-2.png Graphic file (type png)
 
 <use images/precision-mobilenet-2.png>
-Package pdftex.def Info: images/precision-mobilenet-2.png used on input line 88
-7.
+Package pdftex.def Info: images/precision-mobilenet-2.png used on input line 90
+5.
 (pdftex.def)             Requested size: 426.79134pt x 209.9052pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 887--888
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 905--906
  [][] 
  []
 
-<images/recall-mobilenet-2.png, id=225, 899.36pt x 407.5225pt>
+<images/recall-mobilenet-2.png, id=232, 899.36pt x 407.5225pt>
 File: images/recall-mobilenet-2.png Graphic file (type png)
 
 <use images/recall-mobilenet-2.png>
-Package pdftex.def Info: images/recall-mobilenet-2.png used on input line 895.
+Package pdftex.def Info: images/recall-mobilenet-2.png used on input line 913.
 (pdftex.def)             Requested size: 426.79134pt x 193.38864pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 895--896
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 913--914
  [][] 
  []
 
-[53 <./images/loss-mobilenet-2.png>] [54 <./images/precision-mobilenet-2.png> <
+[56 <./images/loss-mobilenet-2.png>] [57 <./images/precision-mobilenet-2.png> <
 ./images/recall-mobilenet-2.png>]
-<images/loss-inception.png, id=233, 879.285pt x 409.53pt>
+<images/loss-inception.png, id=239, 879.285pt x 409.53pt>
 File: images/loss-inception.png Graphic file (type png)
 
 <use images/loss-inception.png>
-Package pdftex.def Info: images/loss-inception.png used on input line 925.
+Package pdftex.def Info: images/loss-inception.png used on input line 943.
 (pdftex.def)             Requested size: 426.79134pt x 198.77803pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 925--926
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 943--944
  [][] 
  []
 
-<images/precision-inception.png, id=234, 873.2625pt x 412.54124pt>
+<images/precision-inception.png, id=240, 873.2625pt x 412.54124pt>
 File: images/precision-inception.png Graphic file (type png)
 
 <use images/precision-inception.png>
-Package pdftex.def Info: images/precision-inception.png used on input line 933.
+Package pdftex.def Info: images/precision-inception.png used on input line 951.
 
 (pdftex.def)             Requested size: 426.79134pt x 201.61821pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 933--934
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 951--952
  [][] 
  []
 
-<images/recall-inception.png, id=235, 872.25874pt x 409.53pt>
+<images/recall-inception.png, id=241, 872.25874pt x 409.53pt>
 File: images/recall-inception.png Graphic file (type png)
 
 <use images/recall-inception.png>
-Package pdftex.def Info: images/recall-inception.png used on input line 941.
+Package pdftex.def Info: images/recall-inception.png used on input line 959.
 (pdftex.def)             Requested size: 426.79134pt x 200.37775pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 941--942
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 959--960
  [][] 
  []
 
-[55]
+[58]
 Overfull \vbox (0.56287pt too high) has occurred while \output is active []
 
 
-[56 <./images/loss-inception.png> <./images/precision-inception.png>] [57 <./im
+[59 <./images/loss-inception.png> <./images/precision-inception.png>] [60 <./im
 ages/recall-inception.png>]
-<images/no-ckpt-loss.png, id=245, 882.29625pt x 411.5375pt>
+<images/no-ckpt-loss.png, id=252, 882.29625pt x 411.5375pt>
 File: images/no-ckpt-loss.png Graphic file (type png)
 
 <use images/no-ckpt-loss.png>
-Package pdftex.def Info: images/no-ckpt-loss.png used on input line 964.
+Package pdftex.def Info: images/no-ckpt-loss.png used on input line 982.
 (pdftex.def)             Requested size: 426.79134pt x 199.07425pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 964--965
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 982--983
  [][] 
  []
 
-<images/no-ckpt-val-loss.png, id=246, 907.39pt x 418.56375pt>
+<images/no-ckpt-val-loss.png, id=253, 907.39pt x 418.56375pt>
 File: images/no-ckpt-val-loss.png Graphic file (type png)
 
 <use images/no-ckpt-val-loss.png>
-Package pdftex.def Info: images/no-ckpt-val-loss.png used on input line 972.
+Package pdftex.def Info: images/no-ckpt-val-loss.png used on input line 990.
 (pdftex.def)             Requested size: 426.79134pt x 196.87187pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 972--973
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 990--991
  [][] 
  []
 
-<images/no-ckpt-precision.png, id=247, 862.22125pt x 412.54124pt>
+<images/no-ckpt-precision.png, id=254, 862.22125pt x 412.54124pt>
 File: images/no-ckpt-precision.png Graphic file (type png)
 
 <use images/no-ckpt-precision.png>
-Package pdftex.def Info: images/no-ckpt-precision.png used on input line 980.
+Package pdftex.def Info: images/no-ckpt-precision.png used on input line 998.
 (pdftex.def)             Requested size: 426.79134pt x 204.1991pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 980--981
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 998--999
  [][] 
  []
 
-<images/no-ckpt-recall.png, id=248, 861.2175pt x 413.545pt>
+<images/no-ckpt-recall.png, id=255, 861.2175pt x 413.545pt>
 File: images/no-ckpt-recall.png Graphic file (type png)
 
 <use images/no-ckpt-recall.png>
-Package pdftex.def Info: images/no-ckpt-recall.png used on input line 988.
+Package pdftex.def Info: images/no-ckpt-recall.png used on input line 1006.
 (pdftex.def)             Requested size: 426.79134pt x 204.94203pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 988--989
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 1006--1007
  [][] 
  []
 
-[58 <./images/no-ckpt-loss.png>]
-Overfull \hbox (87.98741pt too wide) in paragraph at lines 999--1008
+[61 <./images/no-ckpt-loss.png>]
+Overfull \hbox (87.98741pt too wide) in paragraph at lines 1017--1026
 [][] 
  []
 
-[59 <./images/no-ckpt-val-loss.png> <./images/no-ckpt-precision.png>] [60 <./im
+[62 <./images/no-ckpt-val-loss.png> <./images/no-ckpt-precision.png>] [63 <./im
 ages/no-ckpt-recall.png>]
 Chapter 4.
-[61
+[64
 
-] <images/index.png, id=262, 1304.875pt x 318.18875pt>
+] <images/index.png, id=268, 1304.875pt x 318.18875pt>
 File: images/index.png Graphic file (type png)
 
 <use images/index.png>
-Package pdftex.def Info: images/index.png used on input line 1028.
+Package pdftex.def Info: images/index.png used on input line 1046.
 (pdftex.def)             Requested size: 426.79134pt x 104.0704pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 1028--1029
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 1046--1047
  [][] 
  []
 
-<images/flask.png, id=263, 872.25874pt x 477.785pt>
+<images/flask.png, id=269, 872.25874pt x 477.785pt>
 File: images/flask.png Graphic file (type png)
  <use images/flask.png>
-Package pdftex.def Info: images/flask.png used on input line 1041.
+Package pdftex.def Info: images/flask.png used on input line 1059.
 (pdftex.def)             Requested size: 426.79134pt x 233.77405pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 1041--1042
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 1059--1060
  [][] 
  []
 
-<images/flask-2.png, id=264, 833.1125pt x 382.42876pt>
+<images/flask-2.png, id=270, 833.1125pt x 382.42876pt>
 File: images/flask-2.png Graphic file (type png)
 
 <use images/flask-2.png>
-Package pdftex.def Info: images/flask-2.png used on input line 1049.
+Package pdftex.def Info: images/flask-2.png used on input line 1067.
 (pdftex.def)             Requested size: 426.79134pt x 195.91138pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 1049--1050
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 1067--1068
  [][] 
  []
 
-[62 <./images/index.png>] [63 <./images/flask.png> <./images/flask-2.png>]
+[65 <./images/index.png>] [66 <./images/flask.png> <./images/flask-2.png>]
 Chapter 5.
-[64
+[67
 
-] [65]
-Overfull \hbox (8.02824pt too wide) in paragraph at lines 1066--1066
-\OT1/cmr/m/it/12 IEEE Trans-ac-tions on pat-tern anal-y-sis and ma-chine in-tel
--li-gence \OT1/cmr/m/n/12 6, pp. 679{
- []
-
-
-Overfull \hbox (19.68826pt too wide) in paragraph at lines 1066--1066
+] [68]
+Overfull \hbox (19.68826pt too wide) in paragraph at lines 1084--1084
 \OT1/cmr/m/n/12 net-works for mo-bile vi-sion ap-pli-ca-tions''. In: \OT1/cmr/m
 /it/12 arXiv preprint arXiv:1704.04861\OT1/cmr/m/n/12 . 
  []
 
-[66
+[69
 
-]
-Overfull \hbox (2.49539pt too wide) in paragraph at lines 1066--1066
+] [70]
+Overfull \hbox (2.49539pt too wide) in paragraph at lines 1084--1084
 [][]\OT1/cmr/m/n/12 tensorflow (2019). \OT1/cmr/m/it/12 Ob-ject De-tec-tion Dem
 o\OT1/cmr/m/n/12 . ten-sor-flow. \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : $\OT1/cm
 tt/m/n/12 https : / / github .
  []
 
-[67] (./fyp-report.aux)
+[71] (./fyp-report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -854,28 +855,27 @@ Package logreq Info: Writing requests to 'fyp-report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 7440 strings out of 494910
- 129375 string characters out of 6179835
- 515498 words of memory out of 5000000
- 10624 multiletter control sequences out of 15000+600000
+ 7489 strings out of 494910
+ 130192 string characters out of 6179835
+ 515800 words of memory out of 5000000
+ 10666 multiletter control sequences out of 15000+600000
  9317 words of font info for 33 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 44i,8n,46p,2570b,955s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,8n,46p,2024b,955s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mtt12.pfb>
-Output written on fyp-report.pdf (69 pages, 3021253 bytes).
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmtt12.pfb>
+Output written on fyp-report.pdf (73 pages, 3558913 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
+ 332 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -44,33 +44,63 @@
  \end{titlepage}
  
 \begin{abstract}
-This project will be a research-oriented project centred around the use of Convolutional Neural Networks for object detection in images from the perspective of a self-driving car. The concept of self-driving cars is a rapidly expanding field, with significant investments having taken place over the past several years in this area. Many companies have chosen to use cameras as one of the primary sensors deployed on their prototype cars in conjunction with other sensors such as LIDAR, radar etc. to allow a vehicle to understand its environment and orient itself appropriately. This project will focus on the way these cameras can allow the vehicle to classify different objects in its environment. An important challenge within the field of machine vision in self-driving cars is reliably classifying multiple objects at once within an image. The current standard Machine Learning class of algorithms for object classification are CNN’s (Convolutional Neural Networks). This project will use CNN's as well as some Computer Vision techniques to analyse colourised 2D images that depict typical scenes presented to a self-driving car and classify the different objects within them. The initial goal is to research and outline the basics of how CNN's operate, then choose a particular CNN paradigm and train a classifier using this paradigm. The classifier should be able to reliably classify major obstacles that are important to the function of a self-driving car such as other vehicles, pedestrians etc. The classifier should aim to be robust to adverse conditions creating noise within the images such as rain, snow etc. This project should then investigate the effects of parameter tuning and the consequences this reflects in the accuracy of the model.
+This project will be a research-oriented project centred around the use of Convolutional Neural Networks (CNN's) for object detection in images from the perspective of a self-driving car. The area of self-driving cars is a rapidly expanding field, with significant investments having taken place over the past several years. Many companies have chosen to use cameras as one of the primary sensors deployed on their prototype cars in conjunction with several other sensors to allow a vehicle to understand its environment and orient itself appropriately. This project will focus on the way these cameras can allow the vehicle to detect different objects in its environment. An important challenge within the field of machine vision in self-driving cars is reliably classifying multiple objects at once within an image. The current standard Machine Learning class of algorithms for object classification are CNN’s. This project will investigate the use of CNN's to analyse colourised 2D images that depict typical scenes presented to a self-driving car and classify the different objects within them. The initial goal is to research and outline the basics of how CNN's operate, then choose a particular CNN paradigm and train an object detector using this paradigm. The CNN should be able to reliably classify major obstacles that are important to the function of a self-driving car such as other vehicles, pedestrians etc. The classifier should aim to be robust to adverse conditions creating variation within the images such as rain, snow etc. This project will also investigate several different types of CNN and document the differences in the ensuing results.
 \end{abstract}
  
 \newpage
 \tableofcontents
+
+\newpage
+\listoffigures
+
+\newpage
+\listoftables
  
 \newpage
-\chapter{Overview}
-\section{Introduction to Problem Area}
+\chapter{Introduction}
+\section{Overview of Problem Area}
 \begin{flushleft}
-This project deals with the area of classifying multiple objects within an image, specifically from the perspective of images presented to a self-driving car. A typical use case for a Machine Learning algorithm within the field of Computer Vision is image classification, whereby an image is presented to an algorithm and the algorithm decides which class that the image belongs to from a set of classes. For example, if an algorithm that is trained to tell the difference between dogs and cats is provided an image of a dog or a cat it should return a label for the image of either dog or cat. 
+Although driver assistance features such as lane assist, parking assist etc. are prevalent in much of the luxury car market today, a truly self-driving car has yet to be brought to market. A truly self-driving car is a wheeled, autonomous robot that is capable of travelling between destinations without human intervention based on information received from automotive sensors, regardless of road or weather conditions (\cite{zhao2018key}). Autonomous vehicles are discussed in the context of levels of autonomy, with each level representing a step closer to fully autonomous capabilities. The most widely accepted definition for the differing levels of autonomy was published by SAE international, with six distinct levels being distinguised by the level of driver attentiveness and involvement required (\cite{sae2016taxonomy}). This publication breaks down the levels of autonomy as follows:
+
+\begin{itemize}
+\item Level 0: System may issue warnings, however no sustained vehicle control is present.
+\item Level 1: Control of the vehicle is shared between the driver and the system - for example adaptive cruise control.
+\item Level 2: System is capable of taking full control of the vehicle under certain conditions such as highway driving, however the driver must be prepared to intervene at any moment.
+\item Level 3: Driver is capable of taking their attention away from driving, however they must be capable of intervening when the system alerts.
+\item Level 4: Similar to level 3, however less driver attention is required. Inside of specific "geofenced" areas and favourable weather conditions, the vehicle is capable of driving in an autonomous manner. However, the vehicle must be able to abort the trip if driver does not take control when the system alerts them - ie. park the car at the side of the road.
+\item Level 5: Full autonomy, no human intervention required at any point during the trip.
+\end{itemize}
 \end{flushleft}
 
+\vspace{0.5cm}
 \begin{flushleft}
-A more complex problem however is the concept of object detection. If in the previous example an image that contains both a cat and a dog is supplied to the algorithm, it will typically label the image with the label that corresponds to the most prominent object within the image. A Machine Learning algorithm for object detection must be able to take in this image and correctly label both the dog and the cat within the image.
+The technologies present within a self-driving car can be split into four distinct categories - environment perception, car navigation, path planning, and car control (\cite{zhao2018key}). The technologies focused on in this project relate to the perception module, which handles how the vehicle perceives its surrounding environment, allowing the vehicle to make informed control and planning decisions. The perception module generally consists of several different types of sensors with the main types consisting of radar, LIDAR and camera systems. These sensors operate as follows:
+\begin{itemize}
+\item Camera: Standard camera units, typically producing 30 or 60 frames per second.
+\item Radar: Standing for Radio Detection and Ranging, it works by generating high-frequency radio waves which bounce back off objects and are then processed. The Doppler effect allows radar units to measure the speed of objects, allowing a self-driving car to calculate the relative velocities of other vehicles (\cite{kocic2018sensors}).
+\item LIDAR: Standing for Light Detection and Ranging, LIDAR is a relatively new form of sensor. Operates in a broadly similar manner to a radar unit, however it uses an infared laser beam in the place of radio waves. Most LIDAR units consist of a swivelling device, allowing them to create a 3D map of objects around the vehicle.
+\end{itemize}
+
+\vspace{0.5cm}
+Although each of these sensors has their own distinct advantages and disadvantages, this project focuses on the information created by camera sensors. The reason for this is due to the fact that cameras are widely accepted as a major part of any autonomous car system currently being developed (\cite{kocic2018sensors}). The reasons for camera sensors being so prevalent within the industry are as follows:
+\begin{itemize}
+\item Cost: Cameras are among the least expensive sensors available to automotive manufacturers. A major concern with other sensors such as LIDAR is the availability of sensors that are cheap enough to feasibly be mounted on production cars.
+\item Colour: Cameras are capable of returning colour information, which is an important part of many detection tasks.
+\item Power: Cameras typically require very little power input in order to run.
+\end{itemize}
+
+\vspace{0.5cm}
+Their cost effectiveness and colourised output ensure that cameras are likely to remain an integral part of autonomous vehicle systems for years to come. Due to the immaturity and cost of LIDAR technologies, Tesla have controversially decided to eschew LIDAR sensors altogether in favour of camera, radar and ultrasonic sensors, with certain arguments being put forth that cameras will replace LIDAR entirely in the future (\cite{harris2015cheaper}). Regardless of which particular configuration of sensors are utilised in different autonomous vehicle solutions, cameras remain the main sensor utilised by most manufacturers (\cite{kocic2018sensors}). As such, it was decided that this project would focus on image data that has been generated from cameras.
 \end{flushleft}
 
+\vspace{0.5cm}
 \begin{flushleft}
-This class of Machine Learning algorithm is particularly useful in the field of self-driving cars. A self-driving car will typically be provided images which contain multiple objects, all of which must be correctly classified in order for the vehicle to function safely.
+Once data has been generated by a sensor, it must be acted upon in some way by the autonomous system. The different ways in which the system will act upon the received data is determined through the "learned" experience available to the system in the form of some type of Machine Learning algorithm (\cite{surden2016technological}). The standard type of Machine Learning algorithm that is utilised for image based problems is the Neural Network, a class of Machine Learning algorithm modelled off the neural pathways of the brain. Within this class of algorithm, a class known as Convolutional Neural Networks (CNN's) has become increasingly popular. Both Neural Networks and CNN's will be explained further in this paper.
 \end{flushleft}
 
+\vspace{0.5cm}
 \begin{flushleft}
-The standard type of Machine Learning algorithm that is utilised for image based problems is the Neural Network, a class of Machine Learning algorithm modelled off the neural pathways of the brain. Within this class of algorithm, a class known as Convolutional Neural Networks (CNN's) has become increasingly popular. Both Neural Networks and CNN's will be explained further in this paper.
-\end{flushleft}
-
-\begin{flushleft}
-The overall aim of this project is to leverage CNN's to train an object classifier on a dataset extracted from cameras mounted on cars that consists of images containing multiple different objects such as pedestrians, vehicles etc.
+The overall aim of this project is to leverage CNN's to train an object detector on a dataset extracted from cameras mounted on cars that consists of images containing multiple different objects such as pedestrians, vehicles and traffic lights.
 \end{flushleft}
 
 \section{Objectives}
@@ -101,7 +131,7 @@ Although results of applying a CNN to the Berkeley Deep Drive dataset have been 
 \item Domain Knowledge: As I am not an expert in the field of fish identification, I would be unable to reliably annotate species present in the training images. This would require enlisting the help of a third-party expert in the field of fish species.
 \item Time Constraints: There are no datasets currently available that contain annotated fish species in underwater images or videos in Northern Atlantic waters. As such, the full dataset would need to be collated and annotated myself. With time constraints present for this project, it would not be feasible to carry out all this work in time to reach project deadlines.
 \end{enumerate}
-With these issues present for my initial choice of problem domain, I decided to instead focus on the area of road images as there have been several large-scale annotated datasets released in recent years that I could leverage. Moreover, being due to start at Jaguar Land Rover as a graduate I decided that this project could serve as an excellent introduction into the problems faced by automotive companies in the field of Machine Vision.
+With these issues present for my initial choice of problem domain, I decided to instead focus on the area of road images as there have been several large-scale annotated datasets released in recent years that I could leverage. Moreover, after receiving a graduate offer from Jaguar Land Rover I decided that this project could serve as an excellent introduction into the problems faced by automotive companies in the field of Computer Vision.
 \item Background Research: The next step was to carry out a literature review around the topic of Neural Computing, specifically CNN's. Papers dealing specifically with the challenges presented during object detection were the main focus of the literature review. In an attempt to demonstrate an understanding of how CNN's operate, the literature review has been summarised in the following sections of this report.
 \item Gain a hands-on knowledge of tensorflow: As tensorflow was the tool utilised to implement CNN's during this project, a Udemy tutorial was first followed in an attempt to gain an understanding of using tensorflow in a hands-on manner (\cite{udemy}).
 \item Carry out Empirical Studies: Empirical Studies were a major point of focus for this project. Experimentation was carried out on the Berkeley Deep Drive dataset using a range of different types of CNN. Results from these experiments were documented and investigated in order to gain an understanding of what techniques work best for the dataset. The results from the experiments were then compared to results carried out in (\cite{yu2018bdd100k}).
@@ -111,40 +141,42 @@ With these issues present for my initial choice of problem domain, I decided to 
 
 \newpage
 \section{Project Plan}
+\begin{flushleft}
+The following table outlines the delivery dates agreed upon with my supervisor for the sections of this report along with the implementation of the demo day product. Athough it was not followed strictly, it provides a general overview of how this project progressed over time.
+\end{flushleft}
 \subsection{Table}
 \vspace{1.5cm}
 
 \begin{tabular}{|l|l|l|}
 \hline
 Chapter                   & Section                  & Est. Completion Date \\ \hline
-Introduction              & Intro to Problem Area    & 12/10/2018 - wk5     \\ \hline
-                          & Motivations              & 12/10/2018 - wk5     \\ \hline
-                          & Objectives               & 05/10/2018 - wk4     \\ \hline
-                          & Contribution             & End?                 \\ \hline
-                          & Methodologies            & 12/10/2018 - wk5     \\ \hline
-                          & Project Plan             & 05/10/2018 - wk4     \\ \hline
-Background Research       & Intro to ML              & 19/10/2018 - wk6     \\ \hline
-                          & Intro to Neural Networks & 26/10/2018 - wk7     \\ \hline
-                          & Intro to CNN's           & 26/10/2018 - wk7     \\ \hline
-                          & Intro to Computer Vision & 02/11/2018 - wk8     \\ \hline
-                          & Technology Investigation & 19/10/2018 - wk6     \\ \hline
-Empirical Studies         & CNN Architectures        & 16/11/2018 - wk10    \\ \hline
-                          & Image Processing         & 30/11/2018 - wk11    \\ \hline                   
-Classifier Implementation & Requirements             & 14/12/2018 - wk13    \\ \hline
-                          & System Design            &                      \\ \hline  
-                          & Implementation           &                      \\ \hline
-                          & Analysis                 &                      \\ \hline           
-Final Conclusion          & Review of Research       &                      \\ \hline
-                          & Reflections              &                      \\ \hline                          
+Introduction              & Overview of Problem Area & 12/10/2018           \\ \hline
+                          & Motivations              & 12/10/2018           \\ \hline
+                          & Objectives               & 05/10/2018           \\ \hline
+                          & Contribution             & 05/04/2019           \\ \hline
+                          & Methodologies            & 05/04/2019           \\ \hline
+                          & Project Plan             & 05/10/2018           \\ \hline
+Background Research       & Intro to ML              & 19/10/2018           \\ \hline
+                          & Intro to Neural Networks & 26/10/2018           \\ \hline
+                          & Intro to CNN's           & 26/10/2018           \\ \hline
+                          & Intro to Computer Vision & 03/11/2018           \\ \hline
+                          & Tensorflow Tutorial      & 19/10/2018           \\ \hline          
+Empirical Studies         & MobileNet Architecture   & 25/01/2019           \\ \hline
+                          & Inception Architecture   & 25/02/2019           \\ \hline                   
+Application Impl.         & Flask App                & 28/03/2019           \\ \hline
+                          & Object Detector Script   & 28/03/2019           \\ \hline         
+Final Conclusion          & Summary                  & 08/04/2019           \\ \hline
+                          & Reflections              & 08/04/2019           \\ \hline
+                          & Future Work              & 08/04/2019           \\ \hline                          
 \end{tabular}
 
 
 \newpage
 \section{Motivations}
 \begin{flushleft}
-The main motivation behind this project for me is working within the field of self-driving cars. I find this particular area fascinating due to the broad range of technologies present within these cars. I have previously worked a summer internship at Jaguar Land Rover in Shannon working within the ADAS (driver assitance) team. I was exposed to a broad range of different technologies, from Computer Vision and Machine Learning based teams to Big Data pipelines concerned with offboarding data from test cars. This internship and the potential to work with the company further down the line has really motivated me to further my study within this field. I have found that these technologies are much more interesting to me than many more conventional potential areas of work. With ever increasing amounts of automotive manufacturers investigating this field, I feel like a final year project focusing on self-driving cars could be very beneficial to my career going forward.
+The main motivation behind this project for me is working within the field of self-driving cars. I find this particular area fascinating due to the broad range of technologies present within these cars. I have previously worked a summer internship at Jaguar Land Rover in Shannon working within the ADAS (driver assistance) team. I was exposed to a broad range of different technologies, from Computer Vision and Machine Learning based teams to Big Data pipelines concerned with offboarding data from test cars. This internship and the receipt of an offer to return to the company as a graduate has motivated me to further my study within this field. I have found that these technologies are much more interesting to me than many more conventional potential areas of work. With ever increasing amounts of automotive manufacturers investigating this field, I feel like a final year project focusing on self-driving cars could be very beneficial to my career going forward.
 
-I am also very interested in self-driving cars due to the far-reaching safety implications of the technology. Hundreds of people die on Irish roads every year, with driver error being the primary cause of fatalities. Self-driving cars have to potential to save countless lives in the future, and I find it very motivating to work within a field that has the potential to produce very tangible positive changes in the daily lives of many people.
+I am also very interested in self-driving cars due to the far-reaching safety implications of the technology. Hundreds of people die on Irish roads every year, with driver error being the primary cause of fatalities. Driver distraction has been reported as the cause of one in seven accidents that take place in Ireland (\cite{rsadistraction}). Self-driving cars have the potential to significantly increase road safety once fully autonomous capability has been reached (\cite{milakis2017policy}), and I find it very motivating to work within a field that genuinely has the potential to save lives. Outside of the direct safety implications of self-driving cars, they have also shown the potential to have positive environmental effects through a reduction of fuel wastage (\cite{greenblatt2015autonomous}). I believe that this technology is certainly a field in which I can leave a positive and lasting impression on the world.
 \end{flushleft}
 
 \newpage
@@ -173,7 +205,7 @@ Unsupervised Learning algorithms differ from Supervised Learning algorithms in t
 
 \subsection{History of Neural Computing}
 \begin{flushleft}
-Neural Networks are not a new concept - they were first proposed in 1943 by neurophysicists in the form of a primitive electrical circuit. The concept was studied up until the 1960's until it fell out of favour with researchers. Bold claims had been made by many researchers about the vast potential of the field, however a failure to back up these claims led to widespread skepticism about the true potential of Neural Computing. The area was in part hampered by the technology of the time - processing power available to researchers was very low. Additionally, in 1969 a paper entitled "Perceptrons: An Introduction to Computational Geometry" was published introducing the XOR problem, which will be explained later. The paper stated that the research being carried out at the time on Neural Networks was fundamentally flawed and that the field would not experience any major successes. A revival was seen in the 1980's, when the concept of using multiple layers of neurons to create a network began to emerge, and the issues presented by the XOR problem were solved. From 1989 to 1994 Yann LeCun developed the LeNet architecture, one of the first examples of a CNN, which was used to recognise handwritten postal addresses. In around the 2010 the field of Deep Learning (explained below) experienced a surge in popularity, primarily due to the increase in processing power made available through GPU's. In 2012, Alex Krizevsky won the ImageNet competition, a popular image recognition competition. The architecture he used, known as AlexNet, achieved an error rate of ~15\%, which was approximately 10\% better than the closest competition at the time. His architecture essentially scaled up the LeNet architecture into a larger, more complex network (\cite{krizhevsky2012imagenet}). This architecture caused a widespread adoption of CNN's within image based Machine Learning, and CNN's are now the de facto standard for many image processing tasks(\cite{o2015introduction}).
+Neural Networks are not a new concept - they were first proposed in 1943 by neurophysicists in the form of a primitive electrical circuit. The concept was studied up until the 1960's until it fell out of favour with researchers. Bold claims had been made by many researchers about the vast potential of the field, however a failure to back up these claims led to widespread skepticism about the true potential of Neural Computing. The area was in part hampered by the technology of the time - processing power available to researchers was very low. Additionally, in 1969 a paper was published introducing the XOR problem, which will be explained in later section. The paper stated that the research being carried out at the time on Neural Networks was fundamentally flawed and that the field would not experience any major successes (\cite{minsky1969introduction}). A revival was seen in the 1980's, when the concept of using multiple layers of neurons to create a network began to emerge, and the issues presented by the XOR problem were solved. From 1989 to 1994 Yann LeCun developed the LeNet architecture, one of the first examples of a CNN, which was used to recognise handwritten postal addresses. In around the 2010 the field of Deep Learning (explained below) experienced a surge in popularity, primarily due to the increase in processing power made available through GPU's. In 2012, Alex Krizevsky won the ImageNet competition, a popular image recognition competition. The architecture he used, known as AlexNet, achieved an error rate of ~15\%, which was approximately 10\% better than the closest competition at the time. His architecture essentially scaled up the LeNet architecture into a larger, more complex network (\cite{krizhevsky2012imagenet}). This architecture caused a widespread adoption of CNN's within image based Machine Learning, and CNN's are now the de facto standard for many image processing tasks(\cite{o2015introduction}).
 \end{flushleft}
 
 \section{Introduction to Neural Networks and Deep Learning}
@@ -183,7 +215,7 @@ Artificial Neural Networks (ANN's) are a particular Machine Learning paradigm mo
 \end{flushleft}
 
 \begin{flushleft}
-A single Perceptron is only able to classify linearly separable data (\cite{kotsiantis2007supervised}). In order to classify data that is not linearly separable, techniques such as Multilayer Perceptrons must be used. These will be explained in a following section. Linear separability refers to the ability for a single line to separate all members of a given class A from all members of a given class B. This is illustrated in Figure \ref{fig:linear}.
+A single Perceptron is only able to classify linearly separable data (\cite{kotsiantis2007supervised}). In order to classify data that is not linearly separable, techniques such as Multilayer Perceptrons must be used. These will be explained in a following section. Linear separability refers to the ability for a single line to separate all members of a given class A from all members of a given class B. This is illustrated in Figure \ref{fig:linear}. The two classes present in the diagram can be easily seperated by finding an ideal line between the two classes.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -192,6 +224,14 @@ A single Perceptron is only able to classify linearly separable data (\cite{kots
 	\includegraphics[width=12cm]{neuron}
 	\caption{An Artificial Neuron}
 	\label{fig:neuron}
+\end{figure}
+
+\vspace{0.5cm}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=8cm]{linear}
+	\caption{Linearly Separable Data}
+	\label{fig:linear}
 \end{figure}
 
 \begin{flushleft}
@@ -209,14 +249,6 @@ There are several different types of activation function, however every activati
 \begin{flushleft}
 A Neural Network consists of a series of interconnected layers of these artificial neurons, with the output of each layer of neurons serving as input for the next layer of neurons. The simplest and most common type of Neural Network is the feedforward neural network. It consists of multiple layers of neurons, with connections to all of the neurons in the preceding layer. Each connection or edge has a weight associated with it. There are three types of nodes - input nodes, hidden nodes and output nodes. As the name suggests, data in a feedforward neural network only moves forward through the network - into the input layer, through the hidden layers and then on to the output layer.
 \end{flushleft}
-
-\vspace{0.5cm}
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=12cm]{linear}
-	\caption{Linearly Separable Data}
-	\label{fig:linear}
-\end{figure}
 
 \subsection{Input Nodes}
 \begin{flushleft}
@@ -267,11 +299,14 @@ The backpropagation algorithm works in conjunction with this by starting at the 
 \subsection{Overfitting}
 \begin{flushleft}
 An important point to consider when training any Machine Learning model is how well the model generalises to new data (\cite{domingos2012few}). An algorithm should be able to apply concepts learned from the training data to any previously unseen data in the problem domain in order to make accurate predictions. Overfitting is the concept of a model learning the details and noise in the training domain too well, and thus failing to provide accurate predictions on new data. Overfitting tends to occur when a model learns noise and randomness in the training data as concepts that it attempts to apply to data in the problem domain. These concepts will not apply to the new data however, and poor accuracy generally results. Although a noisy dataset will increase the severity of overfitting, it is not simply a result of a noisy dataset and can occur in any dataset (\cite{domingos2012few}). Within the field of Neural Networks, a common approach to avoid severe overfitting is to keep the network architecture relatively simple. The less parameters required to train the model, the lower the overall chance that the network will overfit and fail to generalise (\cite{o2015introduction}). However, this approach is not always feasible when dealing with large and complex datasets, and other approaches must also be taken. Another popular method to reduce overfitting is the introduction of dropout in the network. Dropout is when nodes are randomly dropped from the network along with their connections (\cite{srivastava2014dropout}). This serves to constrain the adaptation of the network while it trains in order to prevent the model from over-learning the training data.
-
 \end{flushleft}
 
-\section{Introduction to Machine Vision}
+\subsection{Multilayer Perceptron for Image Tasks}
+\begin{flushleft}
+Prior to the popularisation of the CNN, MLP's were the standard for image based problems. However, there are several issues that make the MLP quite unsuitable for this type of problem.
+\end{flushleft}
 
+\section{Introduction to Computer Vision}
 \begin{flushleft}
 Images are represented as matrices of values, with each value corresponding to a pixel in the image. Images can be broadly broken down into two groups, grayscale and colour. A grayscale image will be represented as a 2D array of values ranging from 0 to 255, with each value representing the intensity of that pixel, as seen in Figure \ref{fig:pixels}. A value of 0 represents black and a value of 255 represents white. In grayscale images, each pixel therefore represents one colour channel (gray). In colour images however we have multiple different channels for red, green and blue. In order to represent this, a colour image will be represented as a 3D array of pixel values, with each pixel having 3 values between 0 and 255 associated with it. These three values represent the intensity of the three colour channels at that pixel. The idea is that a CNN should be able to receive these image representations as input data and return values for the probabilities of different classes.
 \end{flushleft}
@@ -289,50 +324,33 @@ When humans look at an image of say, a dog, we automatically extract the feature
 \end{flushleft}
 
 \begin{flushleft}
-Interestingly enough, CNN's do take some inspiration from how the brain processes images. The visual cortex of the brain contains many fields that are sensitive to different specific elements of the input. Some groups of neurons will only respond when certain elements of the input are present, for example certain vertical edges, and other groups of neurons will respond to different elements, such as horizontal edges (\cite{youtube}). The concept of distinct groups of neurons looking for certain features is one that has translated very well into Machine Vision through the use of CNN's.
+Interestingly enough, CNN's do take some inspiration from how the brain processes images. The visual cortex of the brain contains many fields that are sensitive to different specific elements of the input. Some groups of neurons will only respond when certain elements of the input are present, for example certain vertical edges, and other groups of neurons will respond to different elements, such as horizontal edges (\cite{youtube}). The concept of distinct groups of neurons looking for certain features is one that has translated very well into Computer Vision through the use of CNN's.
 \end{flushleft}
+
+\subsection{Noise and Variance}
+\begin{flushleft}
+Within any image dataset that contains images extracted from real-life scenarios, two commonly used terms are noise and variance. Image noise is the presence of random variation in pixel colour and intensity within images, typically produced by the sensor taking the image. Within the Berkeley Deep Drive dataset, a common source of noise is motion blur produced by the camera taking a picture while the test car is in motion. This type of image noise can be observed in Fig \ref{fig:noiseimg}. A proliferance of noisy images within a dataset should be avoided if possible, as an overly noisy dataset will cause classifier performance to suffer (\cite{xiao2015learning}).
+\end{flushleft}
+
+\vspace{0.5cm}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=12cm]{noise}
+	\caption{Image noise produced by motion blur}
+	\label{fig:noiseimg}
+\end{figure}
 
 \subsection{Edge Detection}
 \begin{flushleft}
-Edge detection is the ability to recognise object boundaries within an image, with most edge detection techniques using changes in pixel intensities to identify potential edges (\cite{arbelaez2011contour}). Although edge detection may appear straightforward in concept, in practice it can be a difficult task. Input images typically suffer from focal blur due to a finite point-of-field, as well as blur caused by shadows. This can cause smoothing in the variations in pixel intensity at edge points, and make it difficult to define what actually is an edge (\cite{ziou1998edge}). The magnitude of a gradient will determine if a point in the image is an edge or not - a high gradient implies that an edge is likely present. The direction of a gradient shows how the edge is oriented within the image.
+Edge detection is the ability to recognise object boundaries within an image, with most edge detection techniques using changes in pixel intensities to identify potential edges (\cite{arbelaez2011contour}). Although edge detection may appear straightforward in concept, in practice it can be a difficult task. Input images typically suffer from noise due to focal blur, as well as blur caused by shadows. This can cause smoothing in the variations in pixel intensity at edge points, and make it difficult to define what actually is an edge (\cite{ziou1998edge}). The magnitude of a gradient will determine if a point in the image is an edge or not - a high gradient implies that an edge is likely present. The direction of a gradient shows how the edge is oriented within the image.
 \end{flushleft}
 
 \subsubsection{Approaches}
 \begin{flushleft}
-There is a multitude of different techniques used for edge detection that can be split into two categories, search based and zero-crossing based. Search based techniques work by computing gradient edge strength, then searching for the direction of the edge by computing the gradient orientation. The Sobel operator, mentioned below in the explanation of the Canny edge detector, is an example of this type of technique. Zero-crossing based techniques differ in that they search for zero-crossing points on a second-order derivative function calculated from the image. Generally smooting is applied to the image prior to any of these technques (\cite{ziou1998edge}).
-\end{flushleft}
-
-\subsubsection{Canny Edge Detection}
-\begin{flushleft}
-Although the Canny edge detector is just one technique used for edge detection, it is one of the more prolific techniques used, and serves as a good example to illustrate the concepts used in edge detection. It consists of multiple stages. The first stage, preprocessing, involves smoothing the image to help reduce noise. Next, the gradient magnitudes and directions are calculated throughout the image via the use of the standard sobel edge detector. The magnitude of the gradient is calculated as $m=\sqrt{G_x^2+G_y^2}$ and the direction of the gradient is calculated as $0=arctan\left(\begin{array}{c}\frac{G_y}{G_x}\end{array}\right)$, where $G_x$ and $G_y$ are the derivatives of the x and y coordinates of the point under investigation. Once these are calculated the edge detection begins through the process of nonmaximum supression - if a pixel is not at maximum value it is supressed. The orientation of the pixel is placed into one of four bins representing the four possible directions the edge could be present within as illustrated in Figure \ref{fig:directions}. The possible edge directions at the grey pixel point could be either north to south (represented by the green pixels), east to west (represented by the blue pixels) or one of the diagonal directions (represented by the yellow and red pixels). Nonmaximum suppression is then applied to these four different possible areas. If the gradient orientation is at a value such as the one represented in Figure \ref{fig:orientation}, then the edge is moving diagonally perpendicular to the gradient direction. To check if a pixel belongs to an edge, its value is checked against its neighbours along the same orientation to see if the gradient is maximum and if it is above a defined threshold. If so, the pixel is marked as an edge. After this process of nonmaximum suppression, thin edges that may be broken at points are left. An edge thresholding process called hysteresis is used to fill in these broken points (\cite{canny1986computational}). Hysteresis counters the "streaking" effect of broken lines by setting both an upper and lower threshold for pixel gradient magnitudes. Values above the upper limit are accepted and values below the lower limit are rejected. Values which lie between the two limits are accepted if they lie between two points above the upper limit, reducing the overall gaps exhibited in the line. An example of Canny edge detection being used in a road environment is shown in Figure \ref{fig:canny}.
+There is a multitude of different techniques used for edge detection that can be split into two categories, search based and zero-crossing based. Search based techniques work by computing gradient edge strength, then searching for the direction of the edge by computing the gradient orientation. The Sobel operator, mentioned below in the explanation of the Canny edge detector, is an example of this type of technique. Zero-crossing based techniques differ in that they search for zero-crossing points on a second-order derivative function calculated from the image. Generally smoothing is applied to the image prior to any of these technques (\cite{ziou1998edge}).
 \end{flushleft}
 
 \newpage
-\vspace{0.5cm}
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=8cm]{directions}
-	\caption{Possible Edge Directions}
-	\label{fig:directions}
-\end{figure}
-
-\newpage
-\vspace{0.5cm}
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=8cm]{orientation}
-	\caption{Orientation Value}
-	\label{fig:orientation}
-\end{figure}
-
-\vspace{0.5cm}
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=12cm]{canny}
-	\caption{Canny Edge Detection}
-	\label{fig:canny}
-\end{figure}
-
 \section{Introduction to Convolutional Neural Networks}
 \begin{flushleft}
 Convolutional Neural Networks have recently become the standard Neural Network used within the field of image-based Machine Learning tasks (\cite{o2015introduction}). They follow essentially the same architecture as a standard Multi Layer Perceptron, except that they include extra layers of Convolution and Pooling. When these layers of Convolution and Pooling are stacked with the Fully-Connected layers of the MLP, a CNN architecture has been formed. Once Convolution and Pooling has been performed the fully-connected layer will compute the overall class scores, resulting in a final output of 1x1xn, where n is the number of possible classes.
@@ -470,7 +488,7 @@ The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is ano
 
 \subsection{Transfer Learning}
 \begin{flushleft}
-Transfer learning is a popular technique in Machine Learning whereby an already trained model is applied to new data. As mentioned earlier, CNN's use their lower layers to extract primitive features such as edges, the middle layers detect shapes from these edges and the final layers learn the task specific abstractions of these shapes. In transfer learning the last layers of the network are retrained using data from the target domain, allowing the insights that have been learned from the original data to be applied to the new data. This helps to avoid training models from scratch on unseen yet related datasets. Transfer learning is a very popular field within Machine Learning, as it can help drastically cut down on training times, as well as enabling better results on smaller datasets.
+Transfer learning is a popular technique in Machine Learning whereby an already trained model is retrained on some limited set of new data whilst keeping most of the learned parameters from the original training data. As mentioned earlier, CNN's use their lower layers to extract primitive features such as edges, the middle layers detect shapes from these edges and the final layers learn the task specific abstractions of these shapes. Thus, it is only the final layers that are specific to the classes of the training dataset, with the preceding layers being more general (\cite{yosinski2014transferable}). In transfer learning a base network is trained on a base set of data, after which the learned features of this network are repurposed to a second network which is then trained on the target dataset. In essence, the initial layers of a neural network can be viewed of as feature extractors, and these feature extractors tend to be quite versatile across different datasets (\cite{tan2018survey}). In order for transfer learning to be effective, the original and target datasets must have some degree of similarity in order for the originally learned features to be effective when applied to the target dataset. Transfer learning is a very popular field within Machine Learning, as it can help drastically cut down on training times, as well as enable better results on smaller datasets (\cite{tan2018survey}). The bulk of the experiments carried out in the Empirical Studies section of this report leverage transfer learning in order to cut down on training times.
 \end{flushleft}
 
 \subsection{Berkeley Deep Drive}

@@ -1,18 +1,19 @@
 [0] Config.pm:340> INFO - This is Biber 2.4
 [0] Config.pm:343> INFO - Logfile is 'fyp-report.blg'
-[62] biber:287> INFO - === Thu Apr  4, 2019, 15:23:42
-[172] Biber.pm:348> INFO - Reading 'fyp-report.bcf'
-[339] Biber.pm:742> INFO - Found 22 citekeys in bib section 0
-[346] Biber.pm:3151> INFO - Processing section 0
-[382] Biber.pm:3308> INFO - Looking for bibtex format file 'references.bib' for section 0
-[414] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
-[443] bibtex.pm:974> INFO - Found BibTeX data source 'references.bib'
-[934] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[935] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[935] Biber.pm:3028> INFO - Sorting list 'nyt/global' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[935] Biber.pm:3032> INFO - No sort tailoring available for locale 'en-US'
-[981] bbl.pm:519> INFO - Writing 'fyp-report.bbl' with encoding 'ascii'
-[1015] Utils.pm:147> WARN - The entry 'geron2017hands' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[1071] Utils.pm:147> WARN - The entry 'lin2014microsoft' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[1157] bbl.pm:615> INFO - Output to fyp-report.bbl
-[1158] Biber.pm:109> INFO - WARNINGS: 2
+[44] biber:287> INFO - === Sun Apr  7, 2019, 15:28:42
+[154] Biber.pm:348> INFO - Reading 'fyp-report.bcf'
+[323] Biber.pm:742> INFO - Found 33 citekeys in bib section 0
+[332] Biber.pm:3151> INFO - Processing section 0
+[373] Biber.pm:3308> INFO - Looking for bibtex format file 'references.bib' for section 0
+[423] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[466] bibtex.pm:974> INFO - Found BibTeX data source 'references.bib'
+[1176] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1176] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1176] Biber.pm:3028> INFO - Sorting list 'nyt/global' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[1176] Biber.pm:3032> INFO - No sort tailoring available for locale 'en-US'
+[1249] bbl.pm:519> INFO - Writing 'fyp-report.bbl' with encoding 'ascii'
+[1283] Utils.pm:147> WARN - The entry 'geron2017hands' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[1331] Utils.pm:147> WARN - The entry 'kocic2018sensors' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[1369] Utils.pm:147> WARN - The entry 'lin2014microsoft' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[1522] bbl.pm:615> INFO - Output to fyp-report.bbl
+[1522] Biber.pm:109> INFO - WARNINGS: 3
