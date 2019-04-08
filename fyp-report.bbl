@@ -54,6 +54,28 @@
       \field{pages}{1\bibrangedash 6}
       \range{pages}{6}
     \endentry
+    \entry{amit20022d}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=55ea6f00ecc15c00507dc98e36677266}{%
+           family={Amit},
+           family_i={A\bibinitperiod},
+           given={Yali},
+           given_i={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{55ea6f00ecc15c00507dc98e36677266}
+      \strng{fullhash}{55ea6f00ecc15c00507dc98e36677266}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelyear}{2002}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{2D object detection and recognition: Models, algorithms, and networks}
+      \field{year}{2002}
+    \endentry
     \entry{arbelaez2011contour}{article}{}
       \name{author}{4}{}{%
         {{uniquename=0,hash=d19aeb8b8cfa243de387a3e46d05bcc6}{%
@@ -536,6 +558,26 @@
       \verb{url}
       \verb https://docs.aws.amazon.com/dlami/latest/devguide/launch-config.html/
       \endverb
+    \endentry
+    \entry{learned2011introduction}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=fbac801e1af54245c2dde9400a8d565b}{%
+           family={Learned-Miller},
+           family_i={L\bibinithyphendelim M\bibinitperiod},
+           given={Erik\bibnamedelima G},
+           given_i={E\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{fbac801e1af54245c2dde9400a8d565b}
+      \strng{fullhash}{fbac801e1af54245c2dde9400a8d565b}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{University of Massachusetts, Amherst}
+      \field{title}{Introduction to computer vision}
+      \field{year}{2011}
     \endentry
     \entry{lecun1989backpropagation}{article}{}
       \name{author}{7}{uniquelist=2}{%
@@ -1123,6 +1165,37 @@
       \verb https://gist.github.com/douglasrizzo/c70e186678f126f1b9005ca83d8bd2ce
       \endverb
     \endentry
+    \entry{verschae2015object}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=1f411f4a016ff0462d8cd966d41dd52b}{%
+           family={Verschae},
+           family_i={V\bibinitperiod},
+           given={Rodrigo},
+           given_i={R\bibinitperiod}}}%
+        {{uniquename=0,hash=fcbdcb02d56bffd351b7329a496a82f5}{%
+           family={Ruiz-del-Solar},
+           family_i={R\bibinithyphendelim d\bibinithyphendelim S\bibinitperiod},
+           given={Javier},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers}%
+      }
+      \strng{namehash}{d9591122be220ad05ea7cdf05683336d}
+      \strng{fullhash}{d9591122be220ad05ea7cdf05683336d}
+      \field{sortinit}{V}
+      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Robotics and AI}
+      \field{title}{Object detection: current and future directions}
+      \field{volume}{2}
+      \field{year}{2015}
+      \field{pages}{29}
+      \range{pages}{1}
+    \endentry
     \entry{xiao2015learning}{inproceedings}{}
       \name{author}{5}{}{%
         {{uniquename=0,hash=41028368e6169b6177f4b66947f5eed0}{%
@@ -1254,7 +1327,7 @@
     \endentry
     \entry{zhao2018key}{article}{}
       \name{author}{3}{}{%
-        {{uniquename=0,hash=d86efede5d71a7c444ba25e30ca62a67}{%
+        {{uniquename=1,hash=d86efede5d71a7c444ba25e30ca62a67}{%
            family={Zhao},
            family_i={Z\bibinitperiod},
            given={Jianfeng},
@@ -1288,6 +1361,44 @@
       \field{year}{2018}
       \field{pages}{2\bibrangedash 20}
       \range{pages}{19}
+    \endentry
+    \entry{zhao2019object}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=1,hash=dd8a99db4576468b122bf3d2c834a631}{%
+           family={Zhao},
+           family_i={Z\bibinitperiod},
+           given={Zhong-Qiu},
+           given_i={Z\bibinithyphendelim Q\bibinitperiod}}}%
+        {{uniquename=0,hash=05fe66e8b4eb6dd8303e7517398cb8ca}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Peng},
+           given_i={P\bibinitperiod}}}%
+        {{uniquename=0,hash=1ce486a3108697c732439bdbeb76a77c}{%
+           family={Xu},
+           family_i={X\bibinitperiod},
+           given={Shou-tao},
+           given_i={S\bibinithyphendelim t\bibinitperiod}}}%
+        {{uniquename=0,hash=a425d40644d310de2ce5bb61aee8b039}{%
+           family={Wu},
+           family_i={W\bibinitperiod},
+           given={Xindong},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{3829c329a225de8b4e2bde308d383cb1}
+      \strng{fullhash}{ea2f82fac2dbb78de883e932683f8421}
+      \field{sortinit}{Z}
+      \field{sortinithash}{fdda4caaa6b5fa63e0c081dcb159543a}
+      \field{labelyear}{2019}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on neural networks and learning systems}
+      \field{title}{Object detection with deep learning: A review}
+      \field{year}{2019}
     \endentry
     \entry{ziou1998edge}{article}{}
       \true{moreauthor}

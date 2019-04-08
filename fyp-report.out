@@ -1,0 +1,81 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Overview of Problem Area}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Objectives}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.2.1}{Primary Objectives}{section.1.2}% 4
+\BOOKMARK [2][-]{subsection.1.2.2}{Secondary Objectives}{section.1.2}% 5
+\BOOKMARK [1][-]{section.1.3}{Contribution}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.4}{Methodologies}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.5}{Motivations}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Background Research}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Autonomous Vehicles Overview}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Introduction to Machine Learning}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.1}{Supervised Learning}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.2}{Unsupervised Learning}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.3}{History of Neural Computing}{section.2.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Introduction to Neural Networks and Deep Learning}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.3.1}{Input Nodes}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.2}{Hidden Nodes}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.3}{Output Nodes}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.4}{XOR Problem}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.5}{Multilayer Perceptron}{section.2.3}% 20
+\BOOKMARK [2][-]{subsection.2.3.6}{Gradient Descent and Backpropagation}{section.2.3}% 21
+\BOOKMARK [1][-]{section.2.4}{Computer Vision}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.4.1}{Noise and Occlusion}{section.2.4}% 23
+\BOOKMARK [2][-]{subsection.2.4.2}{Edge Detection}{section.2.4}% 24
+\BOOKMARK [3][-]{section*.8}{Approaches}{subsection.2.4.2}% 25
+\BOOKMARK [2][-]{subsection.2.4.3}{Multilayer Perceptron for Image Tasks}{section.2.4}% 26
+\BOOKMARK [1][-]{section.2.5}{Introduction to Convolutional Neural Networks}{chapter.2}% 27
+\BOOKMARK [2][-]{subsection.2.5.1}{Convolution Layer}{section.2.5}% 28
+\BOOKMARK [2][-]{subsection.2.5.2}{Pooling Layer}{section.2.5}% 29
+\BOOKMARK [2][-]{subsection.2.5.3}{Relevant Architectures}{section.2.5}% 30
+\BOOKMARK [3][-]{section*.9}{MobileNet}{subsection.2.5.3}% 31
+\BOOKMARK [3][-]{section*.10}{Inception}{subsection.2.5.3}% 32
+\BOOKMARK [2][-]{subsection.2.5.4}{Evaluating the Classifier}{section.2.5}% 33
+\BOOKMARK [3][-]{section*.11}{Top-1 and Top-5 Accuracy}{subsection.2.5.4}% 34
+\BOOKMARK [3][-]{section*.12}{Accuracy Issues}{subsection.2.5.4}% 35
+\BOOKMARK [3][-]{section*.13}{Confusion Matrix}{subsection.2.5.4}% 36
+\BOOKMARK [3][-]{section*.14}{Other Evaluation Metrics}{subsection.2.5.4}% 37
+\BOOKMARK [3][-]{section*.15}{AUC-ROC Curve}{subsection.2.5.4}% 38
+\BOOKMARK [3][-]{section*.16}{Loss}{subsection.2.5.4}% 39
+\BOOKMARK [2][-]{subsection.2.5.5}{Transfer Learning}{section.2.5}% 40
+\BOOKMARK [1][-]{section.2.6}{Berkeley Deep Drive}{chapter.2}% 41
+\BOOKMARK [2][-]{section*.17}{Dataset}{section.2.6}% 42
+\BOOKMARK [3][-]{section*.18}{Related Results}{section*.17}% 43
+\BOOKMARK [1][-]{section.2.7}{Overfitting}{chapter.2}% 44
+\BOOKMARK [1][-]{section.2.8}{Tensorflow Introduction and Environment Setup}{chapter.2}% 45
+\BOOKMARK [2][-]{subsection.2.8.1}{MNIST Experiment}{section.2.8}% 46
+\BOOKMARK [2][-]{subsection.2.8.2}{CIFAR-10 Experiment}{section.2.8}% 47
+\BOOKMARK [2][-]{subsection.2.8.3}{Initial Findings}{section.2.8}% 48
+\BOOKMARK [2][-]{subsection.2.8.4}{Environment Setup and Issues}{section.2.8}% 49
+\BOOKMARK [3][-]{section*.20}{Tensorflow Install}{subsection.2.8.4}% 50
+\BOOKMARK [3][-]{section*.21}{Memory Issues}{subsection.2.8.4}% 51
+\BOOKMARK [3][-]{section*.22}{AWS Setup}{subsection.2.8.4}% 52
+\BOOKMARK [0][-]{chapter.3}{Cifar-10 Further Experimentation}{}% 53
+\BOOKMARK [1][-]{section.3.1}{Experiment 1: Training Steps}{chapter.3}% 54
+\BOOKMARK [1][-]{section.3.2}{Experiment 2: Convolution and Pooling Layers}{chapter.3}% 55
+\BOOKMARK [1][-]{section.3.3}{Experiment 3: Fully Connected Layers}{chapter.3}% 56
+\BOOKMARK [1][-]{section.3.4}{Experiment 4: Convolution, Pooling and Fully Connected Layers}{chapter.3}% 57
+\BOOKMARK [1][-]{section.3.5}{Experiment 5: Extra Dropout Layers}{chapter.3}% 58
+\BOOKMARK [1][-]{section.3.6}{Experiment 6: Increased Training Steps}{chapter.3}% 59
+\BOOKMARK [1][-]{section.3.7}{Conclusions}{chapter.3}% 60
+\BOOKMARK [0][-]{chapter.4}{Empirical Studies}{}% 61
+\BOOKMARK [1][-]{section.4.1}{SSD MobileNet V1 Experiments}{chapter.4}% 62
+\BOOKMARK [2][-]{subsection.4.1.1}{Experiment 1: Full Dataset Retraining}{section.4.1}% 63
+\BOOKMARK [2][-]{subsection.4.1.2}{Experiment 2: Partial Dataset Retraining}{section.4.1}% 64
+\BOOKMARK [2][-]{subsection.4.1.3}{Experiment 3: Expanded Partial Dataset Retraining}{section.4.1}% 65
+\BOOKMARK [2][-]{subsection.4.1.4}{Real-time Detection}{section.4.1}% 66
+\BOOKMARK [1][-]{section.4.2}{Faster RCNN Inception V2 Experiments}{chapter.4}% 67
+\BOOKMARK [2][-]{subsection.4.2.1}{Experiment 1: Pretrained Model Experiment}{section.4.2}% 68
+\BOOKMARK [2][-]{subsection.4.2.2}{Experiment 2: No Pretraining Experiment}{section.4.2}% 69
+\BOOKMARK [2][-]{subsection.4.2.3}{Real-time Detection}{section.4.2}% 70
+\BOOKMARK [1][-]{section.4.3}{Empirical Studies Cost and Results}{chapter.4}% 71
+\BOOKMARK [0][-]{chapter.5}{Application Implementation}{}% 72
+\BOOKMARK [1][-]{section.5.1}{AWS Instance}{chapter.5}% 73
+\BOOKMARK [1][-]{section.5.2}{Implementation}{chapter.5}% 74
+\BOOKMARK [1][-]{section.5.3}{Code Snippets}{chapter.5}% 75
+\BOOKMARK [0][-]{chapter.6}{Final Conclusion and Discussion}{}% 76
+\BOOKMARK [1][-]{section.6.1}{Summary}{chapter.6}% 77
+\BOOKMARK [1][-]{section.6.2}{Reflections}{chapter.6}% 78
+\BOOKMARK [1][-]{section.6.3}{Future Work}{chapter.6}% 79
+\BOOKMARK [0][-]{Appendix.a.A}{Project Plan}{}% 80
+\BOOKMARK [0][-]{Appendix.a.B}{Poster}{}% 81

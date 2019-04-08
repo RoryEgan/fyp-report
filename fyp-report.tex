@@ -1,7 +1,17 @@
 \documentclass[12pt]{report}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{appendix}
+\usepackage{pdfpages}
 \usepackage[backend=biber, style=authoryear, natbib=true]{biblatex}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+colorlinks=true,
+linktoc=all,
+linkcolor=black,
+citecolor=black,
+}
+\setcounter{tocdepth}{3}
 \addbibresource{references.bib}
 \DeclareCiteCommand{\parencite}
   {\ifentrytype{online}{\bibopenparen}{\bibopenbracket}%
@@ -12,14 +22,14 @@
   {\usebibmacro{postnote}%
    \ifentrytype{online}{\bibcloseparen}{\bibclosebracket}}
 \graphicspath{{images/}}
-
+\pagenumbering{gobble}
 \begin{document}
  \begin{titlepage}
    \begin{center}
         \vspace*{0.5cm}
 
         \begin{Huge}
-        \textbf{Object Classification in Road Images}
+        \textbf{Object Detection in Road Images}
         \end{Huge}
         
         \vspace{0.5cm}
@@ -44,12 +54,15 @@
   \end{center}
  \end{titlepage}
  
+\clearpage
+
 \begin{abstract}
 This project will be a research-oriented project centred around the use of Convolutional Neural Networks (CNN's) for object detection in images from the perspective of a self-driving car. The area of self-driving cars is a rapidly expanding field, with significant investments having taken place over the past several years. Many companies have chosen to use cameras as one of the primary sensors deployed on their prototype cars in conjunction with several other sensors to allow a vehicle to understand its environment and orient itself appropriately. This project will focus on the way these cameras can allow the vehicle to detect different objects in its environment. An important challenge within the field of machine vision in self-driving cars is reliably classifying multiple objects at once within an image. The current standard Machine Learning class of algorithms for object classification are CNN’s. This project will investigate the use of CNN's to analyse colourised 2D images that depict typical scenes presented to a self-driving car and classify the different objects within them. The initial goal is to research and outline the basics of how CNN's operate, then choose a particular CNN paradigm and train an object detector using this paradigm. The CNN should be able to reliably classify major obstacles that are important to the function of a self-driving car such as other vehicles, pedestrians etc. The classifier should aim to be robust to adverse conditions creating variation within the images such as rain, snow etc. This project will also investigate several different types of CNN and document the differences in the ensuing results.
 \end{abstract}
-
-\renewcommand{\abstractname}{Acknowledgements}
-\begin{abstract}
+\clearpage
+\pagenumbering{Roman}
+\section*{Acknowledgements}
+\begin{flushleft}
 First and foremost, I would like to thank my project supervisor, J.J. Collins. I initially came to him in 3rd year with a plan to base my final year project around the subject of Object Detection and Convolutional Neural Networks, and his guidance and knowledge have been instrumental in shaping this project ever since. He has been an exemplary project supervisor, making himself available whenever possible to help.
 \linebreak
 \linebreak
@@ -66,23 +79,95 @@ I have many thanks due to my family and girlfriend, without their continued supp
 \linebreak
 \linebreak
 Lastly, I would like to thank all of the CSIS staff who have provided guidance and support to me during my time at UL. Without them, none of this would have been possible.
-\end{abstract}
-
+\end{flushleft}
+\clearpage
  
-\newpage
 \tableofcontents
-
-\newpage
 \listoffigures
-
-\newpage
 \listoftables
- 
-\newpage
+
+\clearpage
+
+\pagenumbering{arabic}
 \chapter{Introduction}
 \section{Overview of Problem Area}
 \begin{flushleft}
-Although driver assistance features such as lane assist, parking assist etc. are prevalent in much of the luxury car market today, a truly self-driving car has yet to be brought to market. A truly self-driving car is a wheeled, autonomous robot that is capable of travelling between destinations without human intervention based on information received from automotive sensors, regardless of road or weather conditions (\cite{zhao2018key}). Autonomous vehicles are discussed in the context of levels of autonomy, with each level representing a step closer to fully autonomous capabilities. The most widely accepted definition for the differing levels of autonomy was published by SAE international, with six distinct levels being distinguised by the level of driver attentiveness and involvement required (\cite{sae2016taxonomy}). This publication breaks down the levels of autonomy as follows:
+Object detection is the process of locating and identifying different types of objects within images (\cite{verschae2015object}), and is an area of much research in the field of Computer Vision. To gain an understanding of what makes this a difficult task for a computer, one must first understand how images are interpreted by computers. Images are represented as matrices of values, with each value corresponding to a pixel in the image (\cite{learned2011introduction}). Images can be broadly broken down into two groups, grayscale and colour. A grayscale image will be represented as a 2D array of values ranging from 0 to 255, with each value representing the intensity of that pixel, as seen in Figure \ref{fig:pixels}. A value of 0 represents black and a value of 255 represents white. In grayscale images, each pixel therefore represents one colour channel (gray). In colour images however we have multiple different channels for red, green and blue. In order to represent this, a colour image will be represented as a 3D array of pixel values, with each pixel having 3 values between 0 and 255 associated with it. These three values represent the intensity of the three colour channels at that pixel.
+\end{flushleft}
+
+\vspace{0.5cm}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=12cm]{pixels}
+	\caption{Pixel Representation of Grayscale Image}
+	\label{fig:pixels}
+\end{figure}
+
+\clearpage
+\begin{flushleft}
+The overall goal for object detection algorithms is that they should be able to receive these image representations as input data and return values for the probabilities of different classes existing within the image, as well as provide some information as to where the algorithm predicts that the objects are located, typically in the form of a bounding box (\cite{amit20022d}). This can be seen visualised in Fig \ref{fig:detection}. The overall aim of this project is to train an object detection algorithm that works on a set of images extracted from cameras mounted on cars, containing multiple different objects such as pedestrians, vehicles and traffic lights.
+\end{flushleft}
+
+\vspace{0.5cm}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=14cm]{detection}
+	\caption{Object Detector in action}
+	\label{fig:detection}
+\end{figure}
+
+\begin{flushleft}
+There are many factors that influence the degree to which an object detector is successful. When dealing with images that are extracted from real-life scenarios issues such as illumination and camera focus can cause an image to appear blurry or distorted. As can be seen in Fig \ref{fig:detection} above, objects within images can become partially or fully obscured by other objects. Objects can also change depending on their distance from the camera, further compunding these issues. This means that it can become very difficult to perform object detection to a high degree of certainty upon real-life data (\cite{zhao2019object}). Thankfully, a relatively new form of Machine Learning algorithm known as the Convolutional Neural Network (CNN) has recently risen to prominance that has proven to be quite robust to these complex image-based tasks. This project is based upon the investigation of how CNN's perform upon real-life image data in the context of scenes such as those presented to a self-driving car.
+\end{flushleft}
+
+\section{Objectives}
+\vspace{0.5cm}
+\subsection{Primary Objectives}
+\subsubsection*{Utilise a CNN for Object Classification}
+The core concept of this project is the use of CNN's for the detection of certain objects present within driving-based images. As such, the primary objective for this project is to research and implement a CNN that will return an acceptable level of accuracy on the testing data. The Berkeley Deep Drive dataset utilised by this project has a related paper in which object detection experiments are run on the dataset and performance metrics from these experiments are recorded (\cite{yu2018bdd100k}). A major objective for this project therefore is to achieve similar results to those achieved in this paper. As an understanding of how CNN's are evaluated is required in order to properly expand upon the results obtained in the paper, the results will be discussed further in a later section.
+\subsubsection*{Provide a Visual Interaction With The Trained CNN}
+\begin{flushleft}
+Once CNN's have been trained to acceptable accuracy levels during the Empirical Studies section, a basic application should be implemented in order for users to observe the CNN in action upon testing data. To this end, a Flask application is to be developed that will allow users to upload images upon which object detection will take place. As the Berkeley Deep Drive dataset contains videos as well as images, object detection should take place on a small number of test videos in order to provide users an example of how a CNN operates in real-time.
+\end{flushleft}
+\subsection{Secondary Objectives}
+\subsubsection*{Understanding of CNN's}
+As this is a primarily research based project, one of the main objectives is to gain a deep understanding of how CNN's operate. The following sections of this report should demonstrate a depth of knowledge around the theory of how CNN's work, as well as demonstrate an ability to put these theories into practice. The section on Empirical Studies in particular should demonstrate an ability to forensically examine the results produced from CNN's and provide insight into how these results are achieved.
+\vspace{0.5cm}
+
+\section{Contribution}
+\begin{flushleft}
+Although results of applying a CNN to the Berkeley Deep Drive dataset have been published in (\cite{yu2018bdd100k}), the authors of this study only used one particular architecture of CNN to obtain their results. This report outlines results obtained using two different types of CNN architecture across a range of different types of experiment. As the Berkeley Deep Drive dataset is a newly released dataset from 2018, a large body of research has yet  to be carried out on the dataset. As such, this report may be of some small use to aid in avoiding some of the problems encountered during this project.
+\end{flushleft}
+
+\section{Methodologies}
+\begin{flushleft}
+\begin{enumerate}
+\item Define the Research Area: The first step in this project was to define which problem domain to base this FYP around. As an avid SCUBA diver, the initial area I investigated was the field of fish classification in images and videos collected from Irish waters. This area appealed to me as I wanted to investigate the possibility of collecting the dataset myself using underwater camera equipment. However I quickly abandoned this area for several reasons:
+\begin{enumerate}
+\item Equipment: Underwater camera equipment that is capable of taking high resolution images and videos is extremely expensive. Due to the strenuous nature of diving in rough Irish waters, equipment with excellent stabilisation software would be required in order to reliably obtain non-blurred images.
+\item Domain Knowledge: As I am not an expert in the field of fish identification, I would be unable to reliably annotate species present in the training images. This would require enlisting the help of a third-party expert in the field of fish species.
+\item Time Constraints: There are no datasets currently available that contain annotated fish species in underwater images or videos in Northern Atlantic waters. As such, the full dataset would need to be collated and annotated myself. With time constraints present for this project, it would not be feasible to carry out all this work in time to reach project deadlines.
+\end{enumerate}
+With these issues present for my initial choice of problem domain, I decided to instead focus on the area of road images as there have been several large-scale annotated datasets released in recent years that I could leverage. Moreover, after receiving a graduate offer from Jaguar Land Rover I decided that this project could serve as an excellent introduction into the problems faced by automotive companies in the field of Computer Vision.
+\item Background Research: The next step was to carry out a literature review around the topic of Neural Computing, specifically CNN's. Papers dealing specifically with the challenges presented during object detection were the main focus of the literature review. In an attempt to demonstrate an understanding of how CNN's operate, the literature review has been summarised in the following sections of this report.
+\item Gain a hands-on knowledge of tensorflow: As tensorflow was the tool utilised to implement CNN's during this project, a Udemy tutorial was first followed in an attempt to gain an understanding of using tensorflow in a hands-on manner (\cite{udemy}).
+\item Carry out Empirical Studies: Empirical Studies were a major point of focus for this project. Experimentation was carried out on the Berkeley Deep Drive dataset using a range of different types of CNN. Results from these experiments were documented and investigated in order to gain an understanding of what techniques work best for the dataset. The results from the experiments were then compared to results carried out in (\cite{yu2018bdd100k}).
+\item Build an application: Once Empirical Studies had been carried out and CNN's had been trained on the Berkeley Deep Drive dataset to a satisfactory degree, a prototype application was built to allow users to observe the Object Detection taking place.
+\end{enumerate}
+\end{flushleft}
+
+\section{Motivations}
+\begin{flushleft}
+The main motivation behind this project for me is working within the field of self-driving cars. I find this particular area fascinating due to the broad range of technologies present within these cars. I have previously worked a summer internship at Jaguar Land Rover in Shannon working within the ADAS (driver assistance) team. I was exposed to a broad range of different technologies, from Computer Vision and Machine Learning based teams to Big Data pipelines concerned with offboarding data from test cars. This internship and the receipt of an offer to return to the company as a graduate has motivated me to further my study within this field. I have found that these technologies are much more interesting to me than many more conventional potential areas of work. With ever increasing amounts of automotive manufacturers investigating this field, I feel like a final year project focusing on self-driving cars could be very beneficial to my career going forward.
+
+I am also very interested in self-driving cars due to the far-reaching safety implications of the technology. Hundreds of people die on Irish roads every year, with driver error being the primary cause of fatalities. Driver distraction has been reported as the cause of one in seven accidents that take place in Ireland (\cite{rsadistraction}). Self-driving cars have the potential to significantly increase road safety once fully autonomous capability has been reached (\cite{milakis2017policy}), and I find it very motivating to work within a field that genuinely has the potential to save lives. Outside of the direct safety implications of self-driving cars, they have also shown the potential to have positive environmental effects through a reduction of fuel wastage (\cite{greenblatt2015autonomous}). I believe that this technology is certainly a field in which I can leave a positive and lasting impression on the world.
+\end{flushleft}
+
+\newpage
+\chapter{Background Research}
+\section{Autonomous Vehicles Overview}
+\begin{flushleft}
+Before the areas of Machine Learning and CNN's are discussed, it is important to first put into context why these areas matter to an autonomous vehicle. Although driver assistance features such as lane assist, parking assist etc. are prevalent in much of the luxury car market today, a truly self-driving car has yet to be brought to market. A truly self-driving car is a wheeled, autonomous robot that is capable of travelling between destinations without human intervention based on information received from automotive sensors, regardless of road or weather conditions (\cite{zhao2018key}). Autonomous vehicles are discussed in the context of levels of autonomy, with each level representing a step closer to fully autonomous capabilities. The most widely accepted definition for the differing levels of autonomy was published by SAE international, with six distinct levels being distinguised by the level of driver attentiveness and involvement required (\cite{sae2016taxonomy}). This publication breaks down the levels of autonomy as follows:
 
 \begin{itemize}
 \item Level 0: System may issue warnings, however no sustained vehicle control is present.
@@ -117,92 +202,9 @@ Their cost effectiveness and colourised output ensure that cameras are likely to
 
 \vspace{0.5cm}
 \begin{flushleft}
-Once data has been generated by a sensor, it must be acted upon in some way by the autonomous system. The different ways in which the system will act upon the received data is determined through the "learned" experience available to the system in the form of some type of Machine Learning algorithm (\cite{surden2016technological}). The standard type of Machine Learning algorithm that is utilised for image based problems is the Neural Network, a class of Machine Learning algorithm modelled off the neural pathways of the brain. Within this class of algorithm, a class known as Convolutional Neural Networks (CNN's) has become increasingly popular. Both Neural Networks and CNN's will be explained further in this paper.
+Once data has been generated by a sensor, it must be acted upon in some way by the autonomous system. The different ways in which the system will act upon the received data is determined through the "learned" experience available to the system in the form of some type of Machine Learning algorithm (\cite{surden2016technological}). The standard type of Machine Learning algorithm that is utilised for image based problems is the Neural Network, a class of Machine Learning algorithm modelled off the neural pathways of the brain. Within this class of algorithm, a CNN's have become increasingly popular due to their suitability for tackling image based problems. Both Neural Networks and CNN's will be explained further in this paper, however it should now be apparent what role a CNN performs within the overall architecture of an autonomous vehicle.
 \end{flushleft}
 
-\vspace{0.5cm}
-\begin{flushleft}
-The overall aim of this project is to leverage CNN's to train an object detector on a dataset extracted from cameras mounted on cars that consists of images containing multiple different objects such as pedestrians, vehicles and traffic lights.
-\end{flushleft}
-
-\section{Objectives}
-\vspace{0.5cm}
-\subsection{Primary Objectives}
-\subsubsection{Utilise a Convolutional Neural Network for Object Classification}
-The core concept of this project is the use of CNN's for the detection of certain objects present within driving-based images. As such, the primary objective for this project is to research and implement a CNN that will return an acceptable level of accuracy on the testing data. The Berkeley Deep Drive dataset utilised by this project has a related paper in which object detection experiments are run on the dataset and performance metrics from these experiments are recorded (\cite{yu2018bdd100k}). A major objective for this project therefore is to achieve similar results to those achieved in this paper. As an understanding of how CNN's are evaluated is required in order to properly expand upon the results obtained in the paper, the results will be discussed further in a later section.
-\subsubsection{Understanding of Convolutional Neural Networks}
-As this is a primarily research based project, one of the main objectives is to gain a deep understanding of how CNN's operate. The following sections of this report should demonstrate a depth of knowledge around the theory of how CNN's work, as well as demonstrate an ability to put these theories into practice. The section on Empirical Studies in particular should demonstrate an ability to forensically examine the results produced from CNN's and provide insight into how these results are achieved.
-\vspace{0.5cm}
-\subsection{Secondary Objectives}
-\subsubsection{Provide a Visual Interaction With The Trained Convolutional Neural Network}
-\begin{flushleft}
-Once CNN's have been trained to acceptable accuracy levels during the Empirical Studies section, a basic application should be implemented in order for users to observe the CNN in action upon testing data. To this end, a Flask application is to be developed that will allow users to upload images upon which object detection will take place. As the Berkeley Deep Drive dataset contains videos as well as images, object detection should take place on a small number of test videos in order to provide users an example of how a CNN operates in real-time.
-\end{flushleft}
-
-\section{Contribution}
-\begin{flushleft}
-Although results of applying a CNN to the Berkeley Deep Drive dataset have been published in (\cite{yu2018bdd100k}), the authors of this study only used one particular architecture of CNN to obtain their results. This report outlines results obtained using two different types of CNN architecture across a range of different types of experiment. As the Berkeley Deep Drive dataset is a newly released dataset from 2018, a large body of research has yet  to be carried out on the dataset. As such, this report may be of some small use to aid in avoiding some of the problems encountered during this project.
-\end{flushleft}
-
-\section{Methodologies}
-\begin{flushleft}
-\begin{enumerate}
-\item Define the Research Area: The first step in this project was to define which problem domain to base this FYP around. As an avid SCUBA diver, the initial area I investigated was the field of fish classification in images and videos collected from Irish waters. This area appealed to me as I wanted to investigate the possibility of collecting the dataset myself using underwater camera equipment. However I quickly abandoned this area for several reasons:
-\begin{enumerate}
-\item Equipment: Underwater camera equipment that is capable of taking high resolution images and videos is extremely expensive. Due to the strenuous nature of diving in rough Irish waters, equipment with excellent stabilisation software would be required in order to reliably obtain non-blurred images.
-\item Domain Knowledge: As I am not an expert in the field of fish identification, I would be unable to reliably annotate species present in the training images. This would require enlisting the help of a third-party expert in the field of fish species.
-\item Time Constraints: There are no datasets currently available that contain annotated fish species in underwater images or videos in Northern Atlantic waters. As such, the full dataset would need to be collated and annotated myself. With time constraints present for this project, it would not be feasible to carry out all this work in time to reach project deadlines.
-\end{enumerate}
-With these issues present for my initial choice of problem domain, I decided to instead focus on the area of road images as there have been several large-scale annotated datasets released in recent years that I could leverage. Moreover, after receiving a graduate offer from Jaguar Land Rover I decided that this project could serve as an excellent introduction into the problems faced by automotive companies in the field of Computer Vision.
-\item Background Research: The next step was to carry out a literature review around the topic of Neural Computing, specifically CNN's. Papers dealing specifically with the challenges presented during object detection were the main focus of the literature review. In an attempt to demonstrate an understanding of how CNN's operate, the literature review has been summarised in the following sections of this report.
-\item Gain a hands-on knowledge of tensorflow: As tensorflow was the tool utilised to implement CNN's during this project, a Udemy tutorial was first followed in an attempt to gain an understanding of using tensorflow in a hands-on manner (\cite{udemy}).
-\item Carry out Empirical Studies: Empirical Studies were a major point of focus for this project. Experimentation was carried out on the Berkeley Deep Drive dataset using a range of different types of CNN. Results from these experiments were documented and investigated in order to gain an understanding of what techniques work best for the dataset. The results from the experiments were then compared to results carried out in (\cite{yu2018bdd100k}).
-\item Build an application: Once Empirical Studies had been carried out and CNN's had been trained on the Berkeley Deep Drive dataset to a satisfactory degree, a prototype application was built to allow users to observe the Object Detection taking place.
-\end{enumerate}
-\end{flushleft}
-
-\newpage
-\section{Project Plan}
-\begin{flushleft}
-The following table outlines the delivery dates agreed upon with my supervisor for the sections of this report along with the implementation of the demo day product. Athough it was not followed strictly, it provides a general overview of how this project progressed over time.
-\end{flushleft}
-\subsection{Project Target Dates}
-\begin{table}[ht!]
-\begin{tabular}{|l|l|l|}
-\hline
-Chapter                   & Section                  & Est. Completion Date \\ \hline
-Introduction              & Overview of Problem Area & 12/10/2018           \\ \hline
-                          & Motivations              & 12/10/2018           \\ \hline
-                          & Objectives               & 05/10/2018           \\ \hline
-                          & Contribution             & 05/04/2019           \\ \hline
-                          & Methodologies            & 05/04/2019           \\ \hline
-                          & Project Plan             & 05/10/2018           \\ \hline
-Background Research       & Intro to ML              & 19/10/2018           \\ \hline
-                          & Intro to Neural Networks & 26/10/2018           \\ \hline
-                          & Intro to CNN's           & 26/10/2018           \\ \hline
-                          & Intro to Computer Vision & 03/11/2018           \\ \hline
-                          & Tensorflow Tutorial      & 19/10/2018           \\ \hline          
-Empirical Studies         & MobileNet Architecture   & 25/01/2019           \\ \hline
-                          & Inception Architecture   & 25/02/2019           \\ \hline                   
-Application Impl.         & Flask App                & 28/03/2019           \\ \hline
-                          & Object Detector Script   & 28/03/2019           \\ \hline         
-Final Conclusion          & Summary                  & 08/04/2019           \\ \hline
-                          & Reflections              & 08/04/2019           \\ \hline
-                          & Future Work              & 08/04/2019           \\ \hline                          
-\end{tabular}
-\caption{Delivery dates for project milestones}
-\end{table}
-
-\newpage
-\section{Motivations}
-\begin{flushleft}
-The main motivation behind this project for me is working within the field of self-driving cars. I find this particular area fascinating due to the broad range of technologies present within these cars. I have previously worked a summer internship at Jaguar Land Rover in Shannon working within the ADAS (driver assistance) team. I was exposed to a broad range of different technologies, from Computer Vision and Machine Learning based teams to Big Data pipelines concerned with offboarding data from test cars. This internship and the receipt of an offer to return to the company as a graduate has motivated me to further my study within this field. I have found that these technologies are much more interesting to me than many more conventional potential areas of work. With ever increasing amounts of automotive manufacturers investigating this field, I feel like a final year project focusing on self-driving cars could be very beneficial to my career going forward.
-
-I am also very interested in self-driving cars due to the far-reaching safety implications of the technology. Hundreds of people die on Irish roads every year, with driver error being the primary cause of fatalities. Driver distraction has been reported as the cause of one in seven accidents that take place in Ireland (\cite{rsadistraction}). Self-driving cars have the potential to significantly increase road safety once fully autonomous capability has been reached (\cite{milakis2017policy}), and I find it very motivating to work within a field that genuinely has the potential to save lives. Outside of the direct safety implications of self-driving cars, they have also shown the potential to have positive environmental effects through a reduction of fuel wastage (\cite{greenblatt2015autonomous}). I believe that this technology is certainly a field in which I can leave a positive and lasting impression on the world.
-\end{flushleft}
-
-\newpage
-\chapter{Background Research}
 \section{Introduction to Machine Learning}
 \begin{flushleft}
 A general definition of Machine Learning:
@@ -320,20 +322,7 @@ Every time the weights must be updated, the derivative of the cost function with
 The backpropagation algorithm works in conjunction with this by starting at the output layer of the network and stepping back through all the layers, updating the weights for each neuron as it goes (\cite{rumelhart1985learning}). This is in an attempt to minimise the overall error. These steps should allow the network to reduce its error and converge on an optimal solution over time as the network trains.
 \end{flushleft}
 
-\section{Introduction to Computer Vision}
-\begin{flushleft}
-Images are represented as matrices of values, with each value corresponding to a pixel in the image. Images can be broadly broken down into two groups, grayscale and colour. A grayscale image will be represented as a 2D array of values ranging from 0 to 255, with each value representing the intensity of that pixel, as seen in Figure \ref{fig:pixels}. A value of 0 represents black and a value of 255 represents white. In grayscale images, each pixel therefore represents one colour channel (gray). In colour images however we have multiple different channels for red, green and blue. In order to represent this, a colour image will be represented as a 3D array of pixel values, with each pixel having 3 values between 0 and 255 associated with it. These three values represent the intensity of the three colour channels at that pixel. The idea is that a Neural Network should be able to receive these image representations as input data and return values for the probabilities of different classes.
-\end{flushleft}
-
-\vspace{0.5cm}
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=12cm]{pixels}
-	\caption{Pixel Representation of Grayscale Image}
-	\label{fig:pixels}
-\end{figure}
-
-\newpage
+\section{Computer Vision}
 \subsection{Noise and Occlusion}
 \begin{flushleft}
 Within any image dataset that contains images extracted from real-life scenarios, two commonly used terms are noise and occlusion. Image noise is the presence of random variation in pixel colour and intensity within images, typically produced by the sensor taking the image. Within the Berkeley Deep Drive dataset, a common source of noise is motion blur produced by the camera taking a picture while the test car is in motion. This type of image noise can be observed in Fig \ref{fig:noiseimg}. A proliferance of noisy images within a dataset should be avoided if possible, as an overly noisy dataset will cause classifier performance to suffer (\cite{xiao2015learning}).
@@ -371,7 +360,7 @@ Edge detection is the ability to recognise object boundaries within an image, wi
 There is a multitude of different techniques used for edge detection that can be split into two categories, search based and zero-crossing based. Search based techniques work by computing gradient edge strength, then searching for the direction of the edge by computing the gradient orientation. The Sobel operator is an example of this type of technique (\cite{gupta2013sobel}). Zero-crossing based techniques differ in that they search for zero-crossing points on a second-order derivative function calculated from the image. Generally smoothing is applied to the image prior to any of these technques (\cite{ziou1998edge}).
 \end{flushleft}
 
-\section{Multilayer Perceptron for Image Tasks}
+\subsection{Multilayer Perceptron for Image Tasks}
 \begin{flushleft}
 Prior to the popularisation of the CNN, MLP's were the standard for image based problems. However, there are several issues that make the MLP quite unsuitable for this type of problem.
 
@@ -386,25 +375,22 @@ So, it should now be clear that the manner in which MLP's handle image related t
 \end{flushleft}
 
 
-\newpage
 \section{Introduction to Convolutional Neural Networks}
-
 \begin{flushleft}
 When humans look at an image of say, a dog, we automatically extract the features that make a dog unique in order to allow us to recognise it. For example, we may see a tail, fur and a snout and recognise that we are looking at a dog. At an extremely high level this what a CNN will do - it will look for certain low-level features such as curves and edges and build these up into more abstract concepts such as a leg or a tail in order to classify the object (\cite{lecun1995convolutional}).
 \end{flushleft}
 
 \begin{flushleft}
-Interestingly enough, CNN's do take some inspiration from how the brain processes images. The visual cortex of the brain contains many fields that are sensitive to different specific elements of the input. Some groups of neurons will only respond when certain elements of the input are present, for example certain vertical edges, and other groups of neurons will respond to different elements, such as horizontal edges (\cite{youtube}). The concept of distinct groups of neurons looking for certain features is one that has translated very well into Computer Vision through the use of CNN's. The most important aspect of CNN's that improve their suitability for image related problems is the manner in which they detect classes regardless of their position within an image (\cite{albawi2017understanding}) ie. a CNN trained to detect faces does not pay any regard to where faces are located spatially within an image, it simply recognises faces regardless of their position.
+Interestingly enough, CNN's do take some inspiration from how the brain processes images. The visual cortex of the brain contains many fields that are sensitive to different specific elements of the input. Some groups of neurons will only respond when certain elements of the input are present, for example certain vertical edges, and other groups of neurons will respond to different elements, such as horizontal edges (\cite{youtube}). The concept of distinct groups of neurons looking for certain features is one that has translated very well into Computer Vision through the use of CNN's. The most important aspect of CNN's that improve their suitability for image related problems is the manner in which they detect classes regardless of their position within an image (\cite{albawi2017understanding}) ie. a CNN trained to detect faces does not pay any regard to where instances of faces are located within an image, it simply recognises them. The main point of note when trying to understand what distinguises CNN's from traditional Machine Learning approaches is that they preserve the matrices that the images are represented as, preserving the relationships between pixels rather than simply unpacking the images into long vectors. Instead, they observe groups of pixel values within the matrices in order to process the data contained within them. They do this through special types of layers known as Convolution and Pooling layers.
 \end{flushleft}
 
 \begin{flushleft}
-Convolutional Neural Networks have recently become the standard Neural Network used within the field of image-based Machine Learning tasks (\cite{o2015introduction}). They follow essentially the same architecture as a standard MLP, except that they include extra layers of Convolution and Pooling. When these layers of Convolution and Pooling are stacked with the Fully-Connected layers of the MLP, a CNN architecture has been formed. Once Convolution and Pooling has been performed a fully-connected layer will compute the overall class scores, resulting in a final output of 1x1xn, where n is the number of possible classes.
+CNN's have recently become the standard Neural Network used within the field of image-based Machine Learning tasks (\cite{o2015introduction}). They follow essentially the same architecture as a standard MLP, except that they include extra layers of Convolution and Pooling. When these layers of Convolution and Pooling are stacked with the Fully-Connected layers of the MLP, a CNN architecture has been formed. Once Convolution and Pooling has been performed a fully-connected layer will compute the overall class scores, resulting in a final output of 1x1xn, where n is the number of possible classes.
 \end{flushleft}
 
-\newpage
 \subsection{Convolution Layer}
 \begin{flushleft}
-There are three important points of note regarding the Convolution layer: the input image, the feature detector and the feature map. The input image is the image which the CNN is given. The feature detector is a matrix (usually 3x3 or 7x7), also called the kernel or filter, which is multiplied with the matrix values of the input image to create the feature map. The aim of this is to capture important features of the image, maintaining these important features while losing some unimportant elements and reducing overall image size. The way this works is the feature detector slides over the whole image. The particular point on the image that the feature detector is over is known as the receptive field. The parameter known as the stride is the value of the number of pixels by which the feature detector slides over the input image. For example, a stride of 2 will slide the feature detector over the input image jumping 2 pixels at a time. As the feature detector slides around the input image, the pixel values of the feature detector are multiplied against the pixel values of the input image. These multiplications are all summed to give a single value, as shown in Figure \ref{fig:conv}. The higher the value, the higher the likelihood that the particular feature represented in the feature detector is present in that section of the input image. The feature detector then slides on to carry out this process for every section of the input image.
+There are three important points of note regarding the Convolution layer. These are the input image, the feature detector and the feature map. The input image is the image which the CNN is given. The feature detector is a matrix (usually 3x3 or 7x7), also called the kernel or filter, which is multiplied against matrix values of regions within the input image to create what is known as a feature map, with the aim of capturing only important features of the input image. The way this works is the feature detector slides or "convolves" over the whole image. The particular point on the image that the feature detector is analysing is known as the receptive field. The parameter known as the stride is the value of the number of pixels by which the feature detector convolves over the input image. For example, a stride of 2 will convolve the feature detector over the input image jumping 2 pixels at a time. As the feature detector convolves around the input image, the pixel values of the feature detector are multiplied against the pixel values of the receptive field. These multiplications are all summed to give a single value, as shown in Figure \ref{fig:conv}. The higher the value, the higher the likelihood that the particular feature represented in the feature detector is present in the receptive field. The feature detector then continues to carry out this process for every section of the input image. The output of this process is a new 2D array of potentially important features of the input image. A benefit of this process is that the layers of a CNN do not need to be fully-connected, rather they need only connected to neurons close to them in a principle known as local connectivity - the input of a neuron is received from a small local group of pixels. Local connectivity is made possible due to the fact that the CNN does not alter the structure of the image as in an MLP, instead related pixels remain close together.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -455,7 +441,6 @@ A standard convolution works on the spatial dimension of the feature maps as wel
 In a similar vein to the MobileNet architecture, the Inception architecture arose from a desire to create more complex networks to increase performance, without leading to the issues presented by simply stacking more layers into a  network. At the current time there are four main versions of the Inception architecture, with each improving slightly over the preceding version. The core concept behind the creation of this network was that important objects or regions within a given image can vary greatly depending on the distance between the object and the camera. Due to this variance, selection of the correct kernel size is difficult. A larger kernel size is suitable for the larger objects, however this will not suffice for the smaller objects. Rather than simply adding extra layers, a possible solution is to have multiple filters operate on the same level, creating a "wider" rather than "deeper" architecture. This was the driving concept behind the creation of the Inception v1 (also known as GoogLeNet) architecture.
 \end{flushleft}
 
-\newpage
 \subsection{Evaluating the Classifier}
 \begin{flushleft}
 There are various techniques which can be used to evaluate the operation of a classifier. Some of the more prevalent ones, many of which will be seen throughout the rest of this report, are explained below.
@@ -532,12 +517,12 @@ The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is ano
 	\label{fig:aucroc}
 \end{figure}
 
+\clearpage
 \subsubsection{Loss}
 \begin{flushleft}
 As mentioned above, Neural Networks utilise a loss function in order to evaluate the predictions the network makes in relation the known values in the training data. The loss of a network can be graphed to infer how well the model is adjusting to learn the parameters of the training data, with the loss generally lowering over each training iteration.
 \end{flushleft}
 
-\newpage
 \subsection{Transfer Learning}
 \begin{flushleft}
 Transfer learning is a popular technique in Machine Learning whereby an already trained model is retrained on some limited set of new data whilst keeping most of the learned parameters from the original training data. As mentioned earlier, CNN's use their lower layers to extract primitive features such as edges, the middle layers detect shapes from these edges and the final layers learn the task specific abstractions of these shapes. Thus, it is only the final layers that are specific to the classes of the training dataset, with the preceding layers being more general (\cite{yosinski2014transferable}). In transfer learning a base network is trained on a base set of data, after which the learned features of this network are repurposed to a second network which is then trained on the target dataset. In essence, the initial layers of a neural network can be viewed of as feature extractors, and these feature extractors tend to be quite versatile across different datasets (\cite{tan2018survey}). In order for transfer learning to be effective, the original and target datasets must have some degree of similarity in order for the originally learned features to be effective when applied to the target dataset. Transfer learning is a very popular field within Machine Learning, as it can help drastically cut down on training times, as well as enable better results on smaller datasets (\cite{tan2018survey}). The bulk of the experiments carried out in the Empirical Studies section of this report leverage transfer learning in order to cut down on training times.
@@ -568,7 +553,7 @@ An important point to consider when training any Machine Learning model is how w
 \end{flushleft}
 
 \newpage
-\section{Tensorflow Introduction}
+\section{Tensorflow Introduction and Environment Setup}
 
 This section is dedicated to the background work done in order to gain an understanding of how to implement CNN's using tensorflow. The experiments illustrated in this section were carried out during the completion of the Complete Guide to TensorFlow for Deep Learning with Python course on Udemy (\cite{udemy}). This section consists of two experiments carried out on the MNIST and CIFAR-10 datasets. The first experiment is sample code provided as part of the course to illustrate the concepts learned during the course. The second experiment is an exercise for the course carried out to implement an understanding of these concepts.
 
@@ -576,7 +561,7 @@ This section is dedicated to the background work done in order to gain an unders
 
 The first experiment carried out was the implementation of a very simple CNN. The architecture of the CNN consisted of two layers of Convolution, two pooling layers and a fully-connected layer. After carrying out 5000 training steps with a batch size of 50, a final Top-1 accuracy of 98.75\% was achieved.
 
-\subsubsection{Code Breakdown}
+\subsubsection*{Code Breakdown}
 
 \begin{flushleft}
 The functions displayed in Figure \ref{fig:helpers} are all helper functions. The init\_weights function initialises the random weights for fully connected or convolution layers, with the shaper of the layer passed in as a parameter. The init\_bias function performs the same operation for the bias. The conv2d function creates a convolution using a built in function from tensorflow. The max\_pool\_2by2 function creates a max pooling layer, also using built in tensorflow functions. The convolutional\_layer function uses the conv2d function to return an actual convolutional layer with a ReLu activation function. Lastly, the normal\_full\_layer returns a normal fully connected layer.
@@ -625,9 +610,9 @@ The second experiment was carried out on the CIFAR-10 dataset, and the architect
 
 The first two experiments were carried out using CNN's of the same architecture, however an accuracy discrepancy of 26.75\% was observed. Both datasets contain images labelled into 10 classes. The differences arise in the dataset size and image complexity. Firstly, the CIFAR-10 dataset contains 50,000 training images, whereas the MNSIT dataset contains 60,000 training images. The images in the MNSIT dataset are grayscale, whereas images in the CIFAR-10 dataset consist of 3 colour channels. The images in the CIFAR-10 dataset are also of a higher complexity compared to the handwritten digits in the MNIST dataset. The CIFAR-10 images contain more complex real-world images with noisy backgrounds. These disprepancies between the datasets may explain the disprepancies in the accuracy achieved by the classifiers.
 
-\subsection{Experiment Environments}
+\subsection{Environment Setup and Issues}
 \begin{flushleft}
-Initial environment setup to carry out the below experiments proved quite challenging. During the first attempts at carrying out the experiments, tensorflow was erroneously installed to run using the training machines CPU. This lead to untenable training times for the experiments. Although the training times were not recorded precisely, each experiment took over a day to finish training, during which time the training machine was rendered essentially unusable due to the high load on its CPU. There were two main take-aways from the initial iterations:
+Initial environment setup to carry out the above experiments proved quite challenging. During the first attempts at carrying out the experiments, tensorflow was erroneously installed to run using the training machines CPU. This lead to untenable training times for the experiments. Although the training times were not recorded precisely, each experiment took over a day to finish training, during which time the training machine was rendered essentially unusable due to the high load on its CPU. There were two main take-aways from the initial iterations:
 
 \begin{enumerate}
   \item Tensorflow should be installed properly to use the GPU in order to manage training times.
@@ -834,8 +819,23 @@ The observations in experiments 4 and 5 suggested that the network might simply 
 \begin{flushleft}
 \vspace{0.5cm}
 \section{Conclusions}
-These experiments conclude with a small yet significant increase in accuracy, precision and recall scores from the final experiment. These experiments were focused mainly upon the effects of network architecture rather than the effects of parameter tuning. Empirical studies in later sections will focus more on the effects of parameter tuning. Adding just extra layers of convolution and pooling without adding extra fully-connected layers did not result in improvements, and vice versa. Upon creation of a more complex network architecture with dropout layers results actually went down slightly. However, observation of the metric graphs showed that the network was possibly underlearning, and a drastic increase in training steps led to positive results. Accuracy, precision and recall all seemed to increase in proportion with one another for these experiments, however this is generally not guaranteed for all networks. Datasets containing more classes or high levels of class imbalance would typically not result in such regular accuracy, precision and recall metrics. If there is anything to take from these experiments moving forward with this project, it is that simply adding one or two extra layers is not sufficient to gain satisfactory results - adding multiple layers of convolution, pooling and fully-connected layers should be investigated in conjunction with each other in future experiments. As the unusual accuracy and recall results also demonstrate, it may also be beneficial to introduce dropout or some other form of regularisation in networks that are not obviously overfitting. Although the increases in performance shown are slight, I am confident that further increasing the complexity of the network and increasing training times can lead to further increases.
+These experiments conclude with a small yet significant increase in accuracy, precision and recall scores from the final experiment, with the results being collated in Table \ref{cifar-results}. These experiments were focused mainly upon the effects of network architecture rather than the effects of parameter tuning. Empirical studies in later sections will focus more on the effects of parameter tuning. Adding just extra layers of convolution and pooling without adding extra fully-connected layers did not result in improvements, and vice versa. Upon creation of a more complex network architecture with dropout layers results actually went down slightly. However, observation of the metric graphs showed that the network was possibly underlearning, and a drastic increase in training steps led to positive results. Accuracy, precision and recall all seemed to increase in proportion with one another for these experiments, however this is generally not guaranteed for all networks. Datasets containing more classes or high levels of class imbalance would typically not result in such regular accuracy, precision and recall metrics. If there is anything to take from these experiments moving forward with this project, it is that simply adding one or two extra layers is not sufficient to gain satisfactory results - adding multiple layers of convolution, pooling and fully-connected layers should be investigated in conjunction with each other in future experiments. As the unusual accuracy and recall results also demonstrate, it may also be beneficial to introduce dropout or some other form of regularisation in networks that are not obviously overfitting. Although the increases in performance shown are slight, I am confident that further increasing the complexity of the network and increasing training times can lead to further increases.
 \end{flushleft}
+
+\begin{table}[th!]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Experiment no. & Peak Top-1 Accuracy & Training Time & Precision & Recall  \\ \hline
+1              & 70.46\%             & 466s          & 70.71\%   & 70.46\% \\ \hline
+2              & 70.38\%             & 192s          & 70.82\%   & 70.38\% \\ \hline
+3              & 69.52\%             & 161s          & 69.67\%   & 69.52\% \\ \hline
+4              & 67.3\%              & 276s          & 68.56\%   & 67.3\%  \\ \hline
+5              & 60.47\%             & 425s          & 60.6\%    & 60.57\% \\ \hline
+6              & 73.54\%             & 1778s         & 74.03\%   & 73.48\% \\ \hline
+\end{tabular}
+\caption{Collated results from CIFAR-10 experiments}
+\label{cifar-results}
+\end{table}
 
 \newpage
 \chapter{Empirical Studies}
@@ -849,17 +849,17 @@ The SSD MobileNet V1 architecture was selected for the first experiments, with t
 \end{flushleft}
 
 \subsection{Experiment 1: Full Dataset Retraining}
-\subsubsection{Objectives}
+\subsubsection*{Objectives}
 \begin{flushleft}
 Initial attempts at retraining the SSD MobileNet V1 were carried out using the full 10k subset of the bdd100k dataset, containing 10,000 images annotated with 10 classes. The objective for this experiment was to retrain the MobileNet model with the new BDD100K data. With training times being a concern when dealing with large datasets, the MobileNet architecture was selected to be retrained first due to its quick training times. This main objective for this first experiment was to investigate how models would handle the large amount of data presented by the BDD100K dataset and to gain some understanding of how the object detection API works. 
 \end{flushleft}
 
-\subsubsection{Setup}
+\subsubsection*{Setup}
 \begin{flushleft}
 The tensorflow object detection API only accepts datasets in the tfrecord format, a binary file format for data storage. This requires parsing the images and their labels and writing them into tfrecord format. Luckily, an open source parser for the BDD100K dataset has been made available on GitHub (\cite{parser}). This tool was used to parse all images within the 10k section of the BDD100K dataset, resulting in a tfrecord file containing the data for the full 10,000 images and their annotations.
 \end{flushleft}
 
-\subsubsection{Results}
+\subsubsection*{Results}
 \begin{flushleft}
 After 5000 training steps, the results for this experiment were disappointing albeit not unexpected. As can be seen in Fig \ref{fig:mobilenet-full-dataset-loss}, loss values were extremely high, and did not follow any steady downward trend. Total training time to 10,000 steps took 2 hours and 48 minutes. These poor results were expected due to the very large and highly complex dataset. Fig \ref{fig:noisy} provides an example of this - the nighttime conditions combined with slight motion blur creates a highly variable image on which to make predictions with the classes present within the image being very hard to make out clearly. Notwithstanding dataset variance created by time of day or weather conditions, many of the images in the dataset are complex simply due to the scenes depicted within them. For example, in city scenes rows of cars cause occlusion and people are hard to pick out between the cars. With the dataset consisting in large part of images with similar levels of variance, training times for the full dataset would likely be untenable if a CNN was to be trained to a point where it performed close to the results presented in (\cite{yu2018bdd100k}). A more powerful GPU accelerated machine may have potentially cut down on these training times drastically, however these machines were simply out of budget for this project. As such, investigation into a different approach was required.
 \end{flushleft}
@@ -882,17 +882,17 @@ After 5000 training steps, the results for this experiment were disappointing al
 
 \newpage
 \subsection{Experiment 2: Partial Dataset Retraining}
-\subsubsection{Objectives}
+\subsubsection*{Objectives}
 \begin{flushleft}
 Following the failure to produce adequate results on the full dataset, it was determined that an approach of drastic data reduction was required in order to investigate training on a problem domain of reduced complexity. The objective for this experiment was therefore to retrain the MobileNet V1 architecture again, this time with a much simpler dataset and with less classes required for detection. In order to achieve this, a subgroup of images would need to be extracted from the dataset and labelled manually.
 \end{flushleft}
 
-\subsubsection{Setup}
+\subsubsection*{Setup}
 \begin{flushleft}
-It was determined that 200 total images would be selected to be manually labelled from the bdd100k dataset, with 160 being utilised for training and 40 for testing. Classes labelled for detection were reduced in number to just 3 - cars, traffic lights and people. These classes were chosen as they are commonly present in most images in the dataset and are all unrelated to each other. The images selected were all images taken with good lighting, no motion blur and no inclement weather present. The scenes depicted by the selected images were semi-urban - all three classes were present albeit in lesser numbers for traffic lights and people. Fully urban scenes were avoided due to the potential for occlusion and noise within the images. The images were annotated using the open source LabelImg tool, before being converted to tfrecord format. Training was then carried out exactly the same as the above experiment, this time with the reduced dataset.
+It was determined that 200 total images would be selected to be manually labelled from the bdd100k dataset, with 160 being utilised for training and 40 for testing. Classes labelled for detection were reduced in number to just 3 - cars, traffic lights and people. These classes were chosen as they are commonly present in most images in the dataset and are all unrelated to each other. The images selected were all images taken with good lighting, no motion blur and no inclement weather present. The scenes depicted by the selected images were semi-urban - all three classes were present albeit in lesser numbers for traffic lights and people. Fully urban scenes were avoided due to the potential for extreme levels of class occlusion within the images. The images were annotated using the open source LabelImg tool, before being converted to tfrecord format. Training was then carried out exactly the same as the above experiment, this time with the reduced dataset.
 \end{flushleft}
 
-\subsubsection{Results}
+\subsubsection*{Results}
 \begin{flushleft}
 Although far from perfect, results from this experiment were much more encouraging. As evidenced in Fig \ref{fig:loss-smalldata-5k}, loss quickly declined before settling to values just below 2, with the minimum value being 1.788 and a total training time of just 1hr 25min. Mean average precision (\ref{fig:map-smalldata-5k}) and average recall (\ref{fig:ar-smalldata-5k}), although slighly erratic, appeared to settle into an upward trend as training progressed. Maximum precision reached was 0.1995 and maximum recall reached was 0.2812. The model can be seen in action at 500 training steps in Fig \ref{fig:class-smalldata-500} and then at 5000 training steps in Fig \ref{fig:class-smalldata-5k}. The improvement in the model is clearly apparent in these two images. Please note however that these images appear blurred due to the fact that this MobileNet architecture was initially trained on images of size 300x300 pixels in order to reduce training times. This means that the BDD100K images that it has been retrained on have been scaled down to size 300x300. Scaling the images back up to full size results in the distortion present in the example images. These results are far from perfect however, and will need to be improved upon. Although the model at 5000 steps detects far more than it did at 500 steps, there are still several of the more occluded cars present in the image not being detected. As mentioned, mean average precision and recall did seem to be improving, however neither value increased to above 0.3, which is comparatively poor results. As such, further experimentation is required.
 \end{flushleft}
@@ -939,19 +939,19 @@ Although far from perfect, results from this experiment were much more encouragi
 
 \clearpage
 \subsection{Experiment 3: Expanded Partial Dataset Retraining}
-\subsubsection{Objectives}
+\subsubsection*{Objectives}
 \begin{flushleft}
 Following the more encouraging results from the previous experiment, it was decided that the easiest way to boost performance was to simply increase the amount of training data. A further 200 images were hand annotated, with 120 being added to the training data and the final 80 being added to the validation data. This brought the size of the manually annotated dataset to 400 images. Although this is a comparitively small amount, the relatively close relationship between the COCO dataset and the BDD100K dataset was a mitigating factor that allowed a smaller dataset.
 \end{flushleft}
 
-\subsubsection{Setup}
+\subsubsection*{Setup}
 \begin{flushleft}
 Setup was carried out almost exactly the same as the previous experiment. 200 total images were annotated manually using LabelImg across the three classes - car, traffic light and person. Images were selected from the same semi-urban scenes without inclement weather or poor lighting. As the dataset had now doubled in size, the number of training steps was increased. The CNN was trained for 14,000 steps, at which point the loss values appeared to not be dropping signicantly.
 \end{flushleft}
 
-\subsubsection{Results}
+\subsubsection*{Results}
 \begin{flushleft}
-Results over the previous experiment were much improved. Over a total training time of 3hr and 50mins to reach 14,000 steps, the loss value fell to a lowest value of 1.356. Precision reaced a maximum value of 0.2389 and recall reached a maximum value of 0.3402. Although these results are a significant improvement over the initial experiments, they are still inadequate. Although the MobileNet architecture proved valuable to carry out some initial experiments and highlight the issues presented by the BDD100K dataset it is still unsuitable for this project for several reasons. The requirement to resize the images down to 300x300 pixels in order to provide training images of the same dimensions of the initial COCO training data means that the pretrained MobileNet models provided by tensorflow will never be suitable for achieving acceptable results on the larger BDD100K images. Moreover, the MobileNet architecture is simply not complex enough to perform well on a highly complex and variable dataset. As such, a more complex CNN architecture will need to be investigated in order to obtain a trained model that can reliably carry out object detection on the BDD100K dataset.
+Results over the previous experiment were much improved. Over a total training time of 3hr and 50mins to reach 14,000 steps, the loss value fell to a lowest value of 1.356. Precision reaced a maximum value of 0.2389 and recall reached a maximum value of 0.3402. Although these results are a significant improvement over the initial experiments, they are still inadequate. Although the MobileNet architecture proved valuable to carry out some initial experiments and highlight the issues presented by the BDD100K dataset it is still unsuitable for this project for several reasons. The requirement to resize the images down to 300x300 pixels in order to provide training images of the same dimensions of the initial COCO training data means that the pretrained MobileNet models provided by tensorflow will never be suitable for achieving acceptable results on the larger BDD100K images, although the MobileNet architecture itself does achieve similar performance to other more complex networks (\cite{howard2017mobilenets}). As such, a different CNN architecture will need to be investigated in order to obtain a trained model that can reliably carry out object detection on the BDD100K dataset.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -991,17 +991,17 @@ Following the relatively poor results of the MobileNet experiments, the Faster R
 \end{flushleft}
 
 \subsection{Experiment 1: Pretrained Model Experiment}
-\subsubsection{Objectives}
+\subsubsection*{Objectives}
 \begin{flushleft}
 The objective for this experiment was to retrain the Inception V2 architecture using all of the subsampled data from the BDD100K dataset. As the Inception V2 architecture is a much more complex architecture than the MobileNet architecture, it was expected that the results obtained from this experiment would be much closer to those presented in (\cite{yu2018bdd100k}).
 \end{flushleft}
 
-\subsubsection{Setup}
+\subsubsection*{Setup}
 \begin{flushleft}
 Setup for this experiment was minimal as the training data for this experiment had already been annotated. The pretrained Inception V2 model was simply downloaded and the steps presented by (\cite{tutorial}) were once again followed, this time for the new model.
 \end{flushleft}
 
-\subsubsection{Results}
+\subsubsection*{Results}
 \begin{flushleft}
 Results for this experiment were far better than the MobileNet experiments. Over 10,000 training steps taking a total time of 1d 3hr and 25min, loss fell to a minimum value of 0.1253. Precision reached a maximum value of 0.4392 and recall reached a maximum value of 0.2170. The precision score of 0.4392 was a very encouraging result, as this is not drastically different from the results obtained in (\cite{yu2018bdd100k}). These metrics are graphed in Fig \ref{fig:loss-inception}, Fig \ref{fig:precision-inception} and Fig \ref{fig:recall-inception}. As these metrics did not seem to be improving significantly at the 10,000 steps mark, training was halted at this point.
 \end{flushleft}
@@ -1032,18 +1032,17 @@ Results for this experiment were far better than the MobileNet experiments. Over
 
 \clearpage
 \subsection{Experiment 2: No Pretraining Experiment}
-\subsubsection{Objectives}
+\subsubsection*{Objectives}
 \begin{flushleft}
 As every experiment prior to this experiment was carried out on a pretrained model provided by tensorflow, it was decided to train a model using the Inception V2 architecture that had received no pretraining whatsoever. Results for this experiment were expected to be extremely poor - with a dataset consisting of a meager 400 images overfitting was almost guaranteed.
 \end{flushleft}
 
-\subsubsection{Setup}
+\subsubsection*{Setup}
 \begin{flushleft}
 Setup for this experiment was consistent with the previous experiment with one exception - no pretrained model checkpoint was loaded in at the beginning of training.
 \end{flushleft}
 
-\newpage
-\subsubsection{Results}
+\subsubsection*{Results}
 \begin{flushleft}
 As expected, results for this experiment were extremely poor over 3500 training steps totalling 5hr 35 minutes. Although Fig \ref{fig:no-ckpt-loss} may appear to be indicative of positive results, note the fact that this metric is simply the \textit{training} loss. Training any CNN will lead to a lower training loss over time as the CNN adapts and learns the parameters of the training dataset. Observation of the validation loss in Fig \ref{fig:no-ckpt-val-loss}, precision in Fig \ref{fig:no-ckpt-precision} and recall in Fig \ref{fig:no-ckpt-recall} clearly illustrate that this model is severely overfitting. The validation loss does not appear to be following any clear downward trend and although the precision and recall values appear to be following an upward trend, their values are extremely low. This implies that while the model is steadily getting better at detecting objects within the training data, it is failing to achieve these results upon the validation data - a sure sign of a model that is overfitting. Training was halted at 3500 steps as it was clearly apparent that overfitting was taking place and further training would simply be a waste of resources.
 \end{flushleft}
@@ -1083,7 +1082,7 @@ As expected, results for this experiment were extremely poor over 3500 training 
 \clearpage
 \subsection{Real-time Detection}
 \begin{flushleft}
-In attempt to discover how suitable the Faster RCNN Inception architecture was for performing real-time detection, the model from Experiment 1 of this section was utilised for performing video annotation. Although this experiment had achieved much better results than any of the MobileNet experiments, annotation took approximately 3 seconds per frame - a significant increase over the MobileNet experiments. This level of performance would be entirely unacceptable for any potential real-world solution, and it appears that a middle-ground should be investigated, with a solution retaining some of the speed of the SSD MobileNet experiments whilst also retaining some of the evaluation metrics of the Faster-RCNN Inception experiments.
+In attempt to discover how suitable the Faster RCNN Inception architecture was for performing real-time detection, the model from Experiment 1 of this section was utilised for performing video annotation. Although this experiment had achieved much better results than any of the MobileNet experiments, annotation took approximately 3 seconds per frame - a significant increase over the MobileNet experiments. This level of performance would be entirely unacceptable for any potential real-world solution, and it appears that a middle-ground should be investigated, with a solution retaining some of the speed of the SSD MobileNet experiments whilst also retaining some of the evaluation metrics of the Faster-RCNN Inception experiments. A sample video has been uploaded to YouTube to demonstrate how the model behaves in the context of a video and can be viewed at: \href{https://youtu.be/vLHHTuWw1Vw}{https://youtu.be/vLHHTuWw1Vw}
 \end{flushleft}
 
 \newpage
@@ -1177,16 +1176,50 @@ The primary purpose behind this project has been an investigation into how CNN's
 This project has very much served to foster a passion for the field of Computer Vision and object detection tasks specifically. This has been one of the very few projects for me where I have a genuine desire to continue work upon related projects after completion. I have several ideas as to how I am going to go about work upon future personal projects in this field.
 \end{flushleft}
 
-\subsection{This Project}
+\subsection*{This Project}
 \begin{flushleft}
-With AWS costs forcing experimentation to stop for this project, there are several potential areas of future work that could be worth pursuing. With the Faster-RCNN Inception architecture producing good results albeit at the cost of annotation speed, I would like to investigate the possibility of using SSD or YOLO based Inception architectures, as I feel that this would help decrease annotation times and create a model more suited to performing accurate object detection in real-time. If I am to continue work on this project in future, opting for a more powerful AWS machine instance would also be a priority in order to aid detection in real-time.
+With AWS costs forcing experimentation to stop for this project, there are several potential areas of future work that could be worth pursuing. With the Faster-RCNN Inception architecture producing good results albeit at the cost of annotation speed, I would like to investigate the possibility of using SSD or YOLO based Inception architectures, as I feel that this would help decrease annotation times and create a model more suited to performing accurate object detection in real-time. If I am to continue work on this project in future, opting for a more powerful AWS machine instance would also be a priority in order to aid detection in real-time. I would also like to investigate training a MobileNet architecture myself on the COCO dataset without image resizing, and then retrain this model using the BDD100K dataset. As mentioned above, the MobileNet architecture can produce similar results to other more complex architectures at a fraction of the computational costs (\cite{howard2017mobilenets}), so I feel that this solution could be a good trade off between performance and computation times.
 \end{flushleft}
 
-\subsection{Future Projects}
+\subsection*{Future Projects}
 \begin{flushleft}
 One avenue that I am definitely going to be exploring is applying my experience gained from this project to my initial choice of project, a fish detector. With time constraints no longer an issue and a graduate salary allowing the purchase of camera equipment, I intend to begin the collation of a dataset for this project. Although the issue still remains of gaining the required domain knowledge to annotate species for training data, I am confident that with enough research I will be able to annotate some basic easily-identifiable species. Thus far, I have not been able to find any models that have been pretrained on a fish species dataset. I have however found some publically available datasets such as (\cite{fish}), which contains species of fish found in European waters, upon which it may be possible to train a model myself. I believe that then retraining this model using my collated dataset may potentially lead to positive results. This is going to be my primary personal project going forward.
 \end{flushleft}
 
 \printbibliography
+\begin{appendices}
+\chapter{Project Plan}
+\begin{flushleft}
+The following table outlines the delivery dates agreed upon with my supervisor for the sections of this report along with the implementation of the demo day product. Athough it was not followed strictly, it provides a general overview of how this project progressed over time.
+\end{flushleft}
 
+\begin{table}[ht!]
+\begin{tabular}{|l|l|l|}
+\hline
+Chapter                   & Section                  & Est. Completion Date \\ \hline
+Introduction              & Overview of Problem Area & 12/10/2018           \\ \hline
+                          & Motivations              & 12/10/2018           \\ \hline
+                          & Objectives               & 05/10/2018           \\ \hline
+                          & Contribution             & 05/04/2019           \\ \hline
+                          & Methodologies            & 05/04/2019           \\ \hline
+                          & Project Plan             & 05/10/2018           \\ \hline
+Background Research       & Intro to ML              & 19/10/2018           \\ \hline
+                          & Intro to Neural Networks & 26/10/2018           \\ \hline
+                          & Intro to CNN's           & 26/10/2018           \\ \hline
+                          & Intro to Computer Vision & 03/11/2018           \\ \hline
+                          & Tensorflow Tutorial      & 19/10/2018           \\ \hline          
+Empirical Studies         & MobileNet Architecture   & 25/01/2019           \\ \hline
+                          & Inception Architecture   & 25/02/2019           \\ \hline                   
+Application Impl.         & Flask App                & 28/03/2019           \\ \hline
+                          & Object Detector Script   & 28/03/2019           \\ \hline         
+Final Conclusion          & Summary                  & 08/04/2019           \\ \hline
+                          & Reflections              & 08/04/2019           \\ \hline
+                          & Future Work              & 08/04/2019           \\ \hline                          
+\end{tabular}
+\caption{Delivery dates for project milestones}
+\end{table}
+
+\chapter{Poster}
+\includepdf{poster}
+\end{appendices}
 \end{document}
