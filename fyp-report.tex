@@ -167,7 +167,7 @@ I am also very interested in self-driving cars due to the far-reaching safety im
 \chapter{Background Research}
 \section{Autonomous Vehicles Overview}
 \begin{flushleft}
-Before the areas of Machine Learning and CNN's are discussed, it is important to first put into context why these areas matter to an autonomous vehicle. Although driver assistance features such as lane assist, parking assist etc. are prevalent in much of the luxury car market today, a truly self-driving car has yet to be brought to market. A truly self-driving car is a wheeled, autonomous robot that is capable of travelling between destinations without human intervention based on information received from automotive sensors, regardless of road or weather conditions (\cite{zhao2018key}). Autonomous vehicles are discussed in the context of levels of autonomy, with each level representing a step closer to fully autonomous capabilities. The most widely accepted definition for the differing levels of autonomy was published by SAE international, with six distinct levels being distinguised by the level of driver attentiveness and involvement required (\cite{sae2016taxonomy}). This publication breaks down the levels of autonomy as follows:
+Before the areas of Machine Learning and CNN's are discussed, it is important to first put into context why these areas matter to an autonomous vehicle. Although driver assistance features such as lane assist, parking assist etc. are prevalent in much of the luxury car market today, a truly self-driving car has yet to be brought to market. A truly self-driving car is a wheeled, autonomous robot that is capable of traveling between destinations without human intervention based on information received from automotive sensors, regardless of road or weather conditions (\cite{zhao2018key}). Autonomous vehicles are discussed in the context of levels of autonomy, with each level representing a step closer to fully autonomous capabilities. The most widely accepted definition for the differing levels of autonomy was published by SAE international, with six distinct levels being distinguised by the level of driver attentiveness and involvement required (\cite{sae2016taxonomy}). This publication breaks down the levels of autonomy as follows:
 
 \begin{itemize}
 \item Level 0: System may issue warnings, however no sustained vehicle control is present.
@@ -185,7 +185,7 @@ The technologies present within a self-driving car can be split into four distin
 \begin{itemize}
 \item Camera: Standard camera units, typically producing 30 or 60 frames per second.
 \item Radar: Standing for Radio Detection and Ranging, it works by generating high-frequency radio waves which bounce back off objects and are then processed. The Doppler effect allows radar units to measure the speed of objects, allowing a self-driving car to calculate the relative velocities of other vehicles (\cite{kocic2018sensors}).
-\item LIDAR: Standing for Light Detection and Ranging, LIDAR is a relatively new form of sensor. Operates in a broadly similar manner to a radar unit, however it uses an infared laser beam in the place of radio waves. Most LIDAR units consist of a swivelling device, allowing them to create a 3D map of objects around the vehicle.
+\item LIDAR: Standing for Light Detection and Ranging, LIDAR is a relatively new form of sensor. Operates in a broadly similar manner to a radar unit, however it uses an infrared laser beam in the place of radio waves. Most LIDAR units consist of a swivelling device, allowing them to create a 3D map of objects around the vehicle.
 \end{itemize}
 
 \vspace{0.5cm}
@@ -377,68 +377,99 @@ So, it should now be clear that the manner in which MLP's handle image related t
 
 \section{Introduction to Convolutional Neural Networks}
 \begin{flushleft}
-When humans look at an image of say, a dog, we automatically extract the features that make a dog unique in order to allow us to recognise it. For example, we may see a tail, fur and a snout and recognise that we are looking at a dog. At an extremely high level this what a CNN will do - it will look for certain low-level features such as curves and edges and build these up into more abstract concepts such as a leg or a tail in order to classify the object (\cite{lecun1995convolutional}).
+When humans look at an image of say, a dog, we automatically extract the things we have learned that make a dog unique in order to allow us to recognise it. For example we may see a tail, fur and a snout and recognise that we are looking at a dog. At an extremely high level this what a CNN will do - it will look for certain low-level aspects of the object known as "features" such as curves and edges, building these up into more abstract concepts such as a leg or a tail in order to determine what features the object is comprised of, thus allowing it classify the object (\cite{lecun1995convolutional}).
 \end{flushleft}
 
 \begin{flushleft}
-Interestingly enough, CNN's do take some inspiration from how the brain processes images. The visual cortex of the brain contains many fields that are sensitive to different specific elements of the input. Some groups of neurons will only respond when certain elements of the input are present, for example certain vertical edges, and other groups of neurons will respond to different elements, such as horizontal edges (\cite{youtube}). The concept of distinct groups of neurons looking for certain features is one that has translated very well into Computer Vision through the use of CNN's. The most important aspect of CNN's that improve their suitability for image related problems is the manner in which they detect classes regardless of their position within an image (\cite{albawi2017understanding}) ie. a CNN trained to detect faces does not pay any regard to where instances of faces are located within an image, it simply recognises them. The main point of note when trying to understand what distinguises CNN's from traditional Machine Learning approaches is that they preserve the matrices that the images are represented as, preserving the relationships between pixels rather than simply unpacking the images into long vectors. Instead, they observe groups of pixel values within the matrices in order to process the data contained within them. They do this through special types of layers known as Convolution and Pooling layers.
-\end{flushleft}
-
-\begin{flushleft}
-CNN's have recently become the standard Neural Network used within the field of image-based Machine Learning tasks (\cite{o2015introduction}). They follow essentially the same architecture as a standard MLP, except that they include extra layers of Convolution and Pooling. When these layers of Convolution and Pooling are stacked with the Fully-Connected layers of the MLP, a CNN architecture has been formed. Once Convolution and Pooling has been performed a fully-connected layer will compute the overall class scores, resulting in a final output of 1x1xn, where n is the number of possible classes.
+Interestingly enough, CNN's do take some inspiration from how the brain processes images. The visual cortex of the brain contains many fields that are sensitive to different specific elements of the input. Some groups of neurons will only respond when certain elements of the input are present, for example certain vertical edges, and other groups of neurons will respond to different elements, such as horizontal edges (\cite{youtube}). The concept of distinct groups of neurons looking for certain features is one that has translated very well into Computer Vision through the use of CNN's. The most important aspect of CNN's that improve their suitability for image related problems is the manner in which they detect classes regardless of their position within an image (\cite{albawi2017understanding}) ie. a CNN trained to detect faces does not pay any regard to where instances of faces are located within an image, it simply recognises them. The main point of note when trying to understand what distinguises CNN's from traditional Machine Learning approaches is that they preserve the matrices that the images are represented as, preserving the relationships between pixels rather than simply unpacking the images into long vectors (\cite{lecun1995convolutional}). Instead, they observe groups of pixel values within the matrices in order to process the data contained within them. They do this through special types of layers known as Convolution and Pooling layers.
 \end{flushleft}
 
 \subsection{Convolution Layer}
 \begin{flushleft}
-There are three important points of note regarding the Convolution layer. These are the input image, the feature detector and the feature map. The input image is the image which the CNN is given. The feature detector is a matrix (usually 3x3 or 7x7), also called the kernel or filter, which is multiplied against matrix values of regions within the input image to create what is known as a feature map, with the aim of capturing only important features of the input image. The way this works is the feature detector slides or "convolves" over the whole image. The particular point on the image that the feature detector is analysing is known as the receptive field. The parameter known as the stride is the value of the number of pixels by which the feature detector convolves over the input image. For example, a stride of 2 will convolve the feature detector over the input image jumping 2 pixels at a time. As the feature detector convolves around the input image, the pixel values of the feature detector are multiplied against the pixel values of the receptive field. These multiplications are all summed to give a single value, as shown in Figure \ref{fig:conv}. The higher the value, the higher the likelihood that the particular feature represented in the feature detector is present in the receptive field. The feature detector then continues to carry out this process for every section of the input image. The output of this process is a new 2D array of potentially important features of the input image. A benefit of this process is that the layers of a CNN do not need to be fully-connected, rather they need only connected to neurons close to them in a principle known as local connectivity - the input of a neuron is received from a small local group of pixels. Local connectivity is made possible due to the fact that the CNN does not alter the structure of the image as in an MLP, instead related pixels remain close together.
+There are three important points of note regarding the Convolution layer. These are the input image, the feature detector and the feature map. The input image is the image which the CNN is given. The feature detector is a matrix (usually 3x3 or 7x7), also called the kernel or filter, which is multiplied against matrix values of regions within the input image to create what is known as a feature map, with the aim of capturing only important features of the input image. The way this works is the feature detector slides or "convolves" over the whole image (\cite{o2015introduction}). The particular point on the image that the feature detector is analysing is known as the receptive field. 
+\linebreak
+\linebreak
+The parameter known as the stride is the value of the number of pixels by which the feature detector convolves over the input image. For example, a stride of 2 will convolve the feature detector over the input image jumping 2 pixels at a time. As the feature detector convolves around the input image, the pixel values of the feature detector are multiplied against the pixel values of the receptive field. These multiplications are all summed to give a single value, as shown in Figure \ref{fig:conv}. The higher the value, the higher the likelihood that the particular feature represented in the feature detector is present in the receptive field. The feature detector then continues to carry out this process for every section of the input image. The output of this process is a range of new 2D arrays of potentially important features of the input image known as feature maps (\cite{zhao2019object}). As multiple filters are applied at each layers, images are "deepened" ie. an image that is 32x32x32 (a 32x32 image with 3 colour channels) that has 9 filters applied will result in a matrix of dimensions 32x32x9. Each of these 9 layers represents the original image, however they now contain feature information rather than colour values (\cite{lecun1995convolutional}).
+\linebreak
+\linebreak
+A benefit of this process is that the layers of a CNN do not need to be fully-connected as in an MLP, rather they need only be connected to neurons close to them in a principle known as local connectivity - the input of a neuron is received from a small local group of pixels (\cite{lecun1995convolutional}). Local connectivity is made possible due to the fact that the CNN does not alter the structure of the image as in an MLP, instead related pixels remain close together. Due to the fact that neurons are only connected to a small number of other neurons, the number of parameters required to be computed by the network is reduced, and therefore the overall computation time is reduced.
 \end{flushleft}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=12cm]{conv}
-	\caption{Convolution Layer}
+	\caption{Convolution taking place}
 	\label{fig:conv}
 \end{figure}
 
 \newpage
 \subsection{Pooling Layer}
 \begin{flushleft}
-The pooling layer performs downsampling to extract key important features and reducing the number of parameters. The pooling layer operates over every feature map and by pacing a matrix over the feature map and selecting the min value, max value or mean value, depending on the type of pooling being utilised, as shown in Figure \ref{fig:pool}. These extracted values form the pooled feature map. Pooling helps to reduce image size while also extracting important features.
+The pooling layer performs downsampling to extract key important features and reducing the number of parameters in the network. The pooling layer operates over every feature map by placing a matrix over the feature map and selecting the min value, max value or mean value, depending on the type of pooling being utilised, as shown in Figure \ref{fig:pool}. These extracted values form the pooled feature map (\cite{o2015introduction}). Thus, pooling layers serve to reduce the width and height of an image while preserving only the most important features that have been extracted by the filters in the convolution layer (\cite{zhao2019object}).
 \end{flushleft}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=12cm]{pool}
-	\caption{Pooling Layer}
+	\caption{Pooling}
 	\label{fig:pool}
 \end{figure}
+
+\begin{flushleft}
+The architecture of a CNN follows essentially the same architecture as a standard MLP, with the addition of these extra layers of Convolution and Pooling. When these layers of Convolution and Pooling are stacked with a fully-connected layer, a CNN architecture has been formed. Once all of the Convolution and Pooling steps have been performed, a fully-connected layer will compute the overall class scores, resulting in a final output of 1x1xn, where n is the number of possible classes. The fully-connected layer does this by looking at the output of the Convolution and Pooling layers, which takes the form of activation maps of features, and attempts to determine which features represent a particular class. 
+\linebreak
+\linebreak
+CNN's learn in the same manner as any other Neural Network - initially the filter values are randomised, but after each training iteration an error is calculated and backpropagation is used to step back through the network and adjust weights until an optimal solution is reached and the filters represent features that correspond to the correct classes. Fig \ref{fig:convo} shows a basic view of how these unique layers are combined to form a CNN architecture.
+\end{flushleft}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=12cm]{convo}
-	\caption{CNN Architecture}
+	\caption{CNN Architecture source: \cite{lecun1995convolutional}}
 	\label{fig:convo}
 \end{figure}
 
 \newpage
 \subsection{Relevant Architectures}
 \begin{flushleft}
-This section will outline some important CNN architectures that are commonly used. These architectures will later be implemented and investigated during the Empirical Studies section.
+There are many different ways by which to structure the different layers of a CNN, and this section will serve to outline some important CNN architectures that are commonly used. These architectures will later be implemented and investigated during the Empirical Studies section.
 \end{flushleft}
 
 \subsubsection{MobileNet}
 \begin{flushleft}
-Following the success of AlexNet in 2012, CNNs followed a general trend towards deeper and more computationally expensive architectures. However, increased network complexity does not guarantee increased network performance (\cite{szegedy2016rethinking}), and in computationally limited platforms such as smartphones and self-driving cars tasks need to be carried out quickly with a low computational overhead. The MobileNet architecture arose out of this demand for more lightweight and efficient architectures (\cite{howard2017mobilenets}). MobileNet differs from conventional CNN architectures in that it makes use of depthwise seperable convolutions in the place of regular convolutions. A depthwise seperable convolution consists of two operations - a depthwise convolution followed by a pointwise convolution.
-
-A standard convolution works on the spatial dimension of the feature maps as well as the input and output channels.
+Following the success of AlexNet in 2012, CNN's followed a general trend towards deeper and more computationally expensive architectures. However, increased network complexity does not guarantee increased network performance (\cite{szegedy2016rethinking}), and in computationally limited platforms such as smartphones and self-driving cars tasks need to be carried out quickly with a low computational overhead. The MobileNet architecture arose out of this demand for more lightweight and efficient architectures (\cite{howard2017mobilenets}). MobileNet differs from conventional CNN architectures in that it makes use of depthwise seperable convolutions in the place of regular convolutions. A depthwise seperable convolution consists of two operations - a depthwise convolution that filters through the input image followed by a pointwise (simply 1x1) convolution which combines the outputs of the former. This depthwise seperable convolution serves the same purpose as a traditional convolution, however it is much faster (\cite{howard2017mobilenets}).
 \end{flushleft}
 
 \subsubsection{Inception}
 \begin{flushleft}
-In a similar vein to the MobileNet architecture, the Inception architecture arose from a desire to create more complex networks to increase performance, without leading to the issues presented by simply stacking more layers into a  network. At the current time there are four main versions of the Inception architecture, with each improving slightly over the preceding version. The core concept behind the creation of this network was that important objects or regions within a given image can vary greatly depending on the distance between the object and the camera. Due to this variance, selection of the correct kernel size is difficult. A larger kernel size is suitable for the larger objects, however this will not suffice for the smaller objects. Rather than simply adding extra layers, a possible solution is to have multiple filters operate on the same level, creating a "wider" rather than "deeper" architecture. This was the driving concept behind the creation of the Inception v1 (also known as GoogLeNet) architecture.
+In a similar vein to the MobileNet architecture, the Inception architecture arose from a desire to create more complex networks to increase performance, without leading to the issues presented by simply stacking more layers into a  network. At the current time there are four main versions of the Inception architecture, with each improving slightly over the preceding version. The core concept behind the creation of this network was that important objects or regions within a given image can vary greatly depending on the differing distances between the object instances and the camera. Due to this variance, selection of the correct kernel size is difficult (\cite{szegedy2016rethinking}). A larger kernel size is suitable for the larger objects, however this will not suffice for the smaller objects. Rather than simply adding extra layers, a possible solution is to have multiple filters operate on the same level, creating a "wider" rather than "deeper" architecture (\cite{szegedy2016rethinking}). This was the driving concept behind the creation of the first Inception architecture (also known as GoogLeNet).
+\end{flushleft}
+
+\subsection{Detection Algorithms}
+\begin{flushleft}
+An integral part of the performance of any CNN is the particular detection algorithm that the CNN utilises. These algorithms are necessary in order to reduce target images into regions that likely contain instances of objects, rather than attempt object detection upon all regions of the images (\cite{girshick2014rich}). This is required in order to reduce the computational requirements of the CNN. Base networks such as Inception or MobileNet perform high-level detection of objects, while detection algorithms are used to find potential occurences of objects to be detected - thus the two work in tandem. 
+\end{flushleft}
+\subsubsection{R-CNN}
+\begin{flushleft}
+To avoid the problem of simply selecting a huge number of regions (\cite{girshick2014rich}) proposed a method whereby 2000 distinct regions of interest (ROI's) were identified in the input image in what are known as "region proposals", with these being identified based on a selective search algorithm. The CNN then acts upon these ROI's in order to detect objects within the region proposals.
+\end{flushleft}
+
+\subsubsection{Faster R-CNN}
+\begin{flushleft}
+Following advancements made upon the R-CNN algorithm, the Faster-RCNN algorithm was proposed by (\cite{ren2015faster}). This algorithm involves the target image being provided to a CNN which produces a feature map. The predicted ROI's are then reshaped using a particular pooling layer, following which object detection can take place upon the ROI's. This advancement upon earlier R-CNN algorithms produced an algorithm much faster than previous versions of the algorithm.
+\end{flushleft}
+
+\subsubsection{YOLO}
+\begin{flushleft}
+YOLO (You Only Look Once) does not utilise regions in an attempt to localise objects. Instead, this algorithm utilises a network that attempts to predict classes and their bounding boxes in a single evaluation (\cite{redmon2016you}), creating a search algorithm that is extremely fast, albeit one that struggles with objects at smaller scales.
+\end{flushleft}
+
+\subsubsection{SSD}
+\begin{flushleft}
+SSD (Single Shot Detection) operates in a similar manner to YOLO, with ROI's being avoided in favour of a single evaluation. SSD has six feature maps at different sizes, making it more capable than YOLO of detecting objects at differing levels of scale.
 \end{flushleft}
 
 \subsection{Evaluating the Classifier}
@@ -454,7 +485,7 @@ First, the CNN makes a classification. Then in the case of Top-1, the class of t
 \subsubsection{Accuracy Issues}
 
 \begin{flushleft}
-Generally speaking using accuracy alone (number of correctly labelled classes) is not a very reliable metric for an object detection classifer. For example, if there were 95 dogs and 5 cats to be classified a classifier may label all objects present as dogs. This would lead to an overall accuracy score of 95\%, however this classifier is obviously quite flawed. This is known as class imbalance, and in real life scenarios tends to be the norm. The decisions reached by the classifier can be explained as follows:
+Generally speaking using accuracy alone (number of correctly labelled classes) is not a very reliable metric for an object detection algorithm. For example, if there were 95 dogs and 5 cats to be classified a classifier may label all objects present as dogs. This would lead to an overall accuracy score of 95\%, however this classifier is obviously quite flawed. This is known as class imbalance, and in real life scenarios tends to be the norm. The decisions reached by the classifier can be explained as follows:
 
 \begin{enumerate}
   \item True positive: a positive example classified as positive
@@ -506,7 +537,7 @@ $F = 2. \frac{precision - recall}{precision + recall}$. The F-score can be thoug
 
 \subsubsection{AUC-ROC Curve}
 \begin{flushleft}
-The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is another method of classifier evaluation, enabling the visualisation of results from a classification problem. The ROC curve is used to plot the true positve rate against the false positive rate, resulting in a probability curve, while the AUC represents how well the model distinguishes between classes. The higher the AUC, the better the model is. This is visualised in Fig \ref{fig:aucroc}.
+The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is another method of classifier evaluation, enabling the visualisation of results from a classification problem. The ROC curve is used to plot the true positive rate against the false positive rate, resulting in a probability curve, while the AUC represents how well the model distinguishes between classes. The higher the AUC, the better the model is. This is visualised in Fig \ref{fig:aucroc}.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -564,7 +595,7 @@ The first experiment carried out was the implementation of a very simple CNN. Th
 \subsubsection*{Code Breakdown}
 
 \begin{flushleft}
-The functions displayed in Figure \ref{fig:helpers} are all helper functions. The init\_weights function initialises the random weights for fully connected or convolution layers, with the shaper of the layer passed in as a parameter. The init\_bias function performs the same operation for the bias. The conv2d function creates a convolution using a built in function from tensorflow. The max\_pool\_2by2 function creates a max pooling layer, also using built in tensorflow functions. The convolutional\_layer function uses the conv2d function to return an actual convolutional layer with a ReLu activation function. Lastly, the normal\_full\_layer returns a normal fully connected layer.
+The functions displayed in Figure \ref{fig:helpers} are all helper functions. The init\_weights function initialises the random weights for fully connected or convolution layers, with the shape of the layer passed in as a parameter. The init\_bias function performs the same operation for the bias. The conv2d function creates a convolution using a built in function from tensorflow. The max\_pool\_2by2 function creates a max pooling layer, also using built in tensorflow functions. The convolutional\_layer function uses the conv2d function to return an actual convolutional layer with a ReLu activation function. Lastly, the normal\_full\_layer returns a normal fully connected layer.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -951,7 +982,7 @@ Setup was carried out almost exactly the same as the previous experiment. 200 to
 
 \subsubsection*{Results}
 \begin{flushleft}
-Results over the previous experiment were much improved. Over a total training time of 3hr and 50mins to reach 14,000 steps, the loss value fell to a lowest value of 1.356. Precision reaced a maximum value of 0.2389 and recall reached a maximum value of 0.3402. Although these results are a significant improvement over the initial experiments, they are still inadequate. Although the MobileNet architecture proved valuable to carry out some initial experiments and highlight the issues presented by the BDD100K dataset it is still unsuitable for this project for several reasons. The requirement to resize the images down to 300x300 pixels in order to provide training images of the same dimensions of the initial COCO training data means that the pretrained MobileNet models provided by tensorflow will never be suitable for achieving acceptable results on the larger BDD100K images, although the MobileNet architecture itself does achieve similar performance to other more complex networks (\cite{howard2017mobilenets}). As such, a different CNN architecture will need to be investigated in order to obtain a trained model that can reliably carry out object detection on the BDD100K dataset.
+Results over the previous experiment were much improved. Over a total training time of 3hr and 50mins to reach 14,000 steps, the loss value fell to a lowest value of 1.356. Precision reached a maximum value of 0.2389 and recall reached a maximum value of 0.3402. Although these results are a significant improvement over the initial experiments, they are still inadequate. Although the MobileNet architecture proved valuable to carry out some initial experiments and highlight the issues presented by the BDD100K dataset it is still unsuitable for this project for several reasons. The requirement to resize the images down to 300x300 pixels in order to provide training images of the same dimensions of the initial COCO training data means that the pretrained MobileNet models provided by tensorflow will never be suitable for achieving acceptable results on the larger BDD100K images, although the MobileNet architecture itself does achieve similar performance to other more complex networks (\cite{howard2017mobilenets}). As such, a different CNN architecture will need to be investigated in order to obtain a trained model that can reliably carry out object detection on the BDD100K dataset.
 \end{flushleft}
 
 \vspace{0.5cm}
