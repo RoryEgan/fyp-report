@@ -1,19 +1,19 @@
 [0] Config.pm:340> INFO - This is Biber 2.4
-[1] Config.pm:343> INFO - Logfile is 'fyp-report.blg'
-[52] biber:287> INFO - === Sun Apr  7, 2019, 21:28:32
-[261] Biber.pm:348> INFO - Reading 'fyp-report.bcf'
-[485] Biber.pm:742> INFO - Found 37 citekeys in bib section 0
-[492] Biber.pm:3151> INFO - Processing section 0
-[531] Biber.pm:3308> INFO - Looking for bibtex format file 'references.bib' for section 0
-[598] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
-[655] bibtex.pm:974> INFO - Found BibTeX data source 'references.bib'
-[1764] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1764] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1764] Biber.pm:3028> INFO - Sorting list 'nyt/global' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[1764] Biber.pm:3032> INFO - No sort tailoring available for locale 'en-US'
-[1909] bbl.pm:519> INFO - Writing 'fyp-report.bbl' with encoding 'ascii'
-[1996] Utils.pm:147> WARN - The entry 'geron2017hands' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[2075] Utils.pm:147> WARN - The entry 'kocic2018sensors' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[2165] Utils.pm:147> WARN - The entry 'lin2014microsoft' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[2439] bbl.pm:615> INFO - Output to fyp-report.bbl
-[2440] Biber.pm:109> INFO - WARNINGS: 3
+[0] Config.pm:343> INFO - Logfile is 'fyp-report.blg'
+[45] biber:287> INFO - === Mon Apr  8, 2019, 11:49:45
+[156] Biber.pm:348> INFO - Reading 'fyp-report.bcf'
+[329] Biber.pm:742> INFO - Found 40 citekeys in bib section 0
+[335] Biber.pm:3151> INFO - Processing section 0
+[368] Biber.pm:3308> INFO - Looking for bibtex format file 'references.bib' for section 0
+[447] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[518] bibtex.pm:974> INFO - Found BibTeX data source 'references.bib'
+[1402] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1402] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1402] Biber.pm:3028> INFO - Sorting list 'nyt/global' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[1402] Biber.pm:3032> INFO - No sort tailoring available for locale 'en-US'
+[1519] bbl.pm:519> INFO - Writing 'fyp-report.bbl' with encoding 'ascii'
+[1572] Utils.pm:147> WARN - The entry 'geron2017hands' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[1629] Utils.pm:147> WARN - The entry 'kocic2018sensors' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[1685] Utils.pm:147> WARN - The entry 'lin2014microsoft' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[1854] bbl.pm:615> INFO - Output to fyp-report.bbl
+[1854] Biber.pm:109> INFO - WARNINGS: 3

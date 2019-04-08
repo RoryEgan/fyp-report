@@ -260,6 +260,35 @@
       \field{pages}{860}
       \range{pages}{1}
     \endentry
+    \entry{gupta2013sobel}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=7e26615e33bd8b0e1baa05c5c934177d}{%
+           family={Gupta},
+           family_i={G\bibinitperiod},
+           given={Samta},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=e00897367ee245f790d1a578af83de77}{%
+           family={Mazumdar},
+           family_i={M\bibinitperiod},
+           given={Susmita\bibnamedelima Ghosh},
+           given_i={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d2781f79ab8111737bbdc0444da8b8b9}
+      \strng{fullhash}{d2781f79ab8111737bbdc0444da8b8b9}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International journal of computer science and management Research}
+      \field{number}{2}
+      \field{title}{Sobel edge detection algorithm}
+      \field{volume}{2}
+      \field{year}{2013}
+      \field{pages}{1578\bibrangedash 1583}
+      \range{pages}{6}
+    \endentry
     \entry{harris2015cheaper}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=fc01a4ee7c149fd7053ae32206165f0f}{%
@@ -491,6 +520,22 @@
       \field{year}{2012}
       \field{pages}{1097\bibrangedash 1105}
       \range{pages}{9}
+    \endentry
+    \entry{aws}{online}{}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{2018}
+      \field{labelmonth}{05}
+      \field{labelday}{02}
+      \field{datelabelsource}{url}
+      \field{labeltitlesource}{title}
+      \field{title}{Launching and Configuring a DLAMI}
+      \field{urlday}{02}
+      \field{urlmonth}{05}
+      \field{urlyear}{2018}
+      \verb{url}
+      \verb https://docs.aws.amazon.com/dlami/latest/devguide/launch-config.html/
+      \endverb
     \endentry
     \entry{lecun1989backpropagation}{article}{}
       \name{author}{7}{uniquelist=2}{%
@@ -725,6 +770,36 @@
       \field{journaltitle}{arXiv preprint arXiv:1511.08458}
       \field{title}{An introduction to convolutional neural networks}
       \field{year}{2015}
+    \endentry
+    \entry{fish}{online}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=2a84b72a3e4c6cbc17cf4cfe93f193b0}{%
+           family={Phoenix\bibnamedelimb X.\bibnamedelimi Huang},
+           family_i={P\bibinitperiod\bibinitdelim X\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Bastiaan\bibnamedelimb B.\bibnamedelimi Boom},
+           given_i={B\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{uniquename=0,hash=6a68807b89a7542151dc620ffe16e232}{%
+           family={Fisher},
+           family_i={F\bibinitperiod},
+           given={Robert\bibnamedelima B.},
+           given_i={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Fish4Knowledge project}%
+      }
+      \strng{namehash}{262be617663a06daf684d591441b4bd1}
+      \strng{fullhash}{262be617663a06daf684d591441b4bd1}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fish Recognition Ground-Truth data}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://groups.inf.ed.ac.uk/f4k/GROUNDTRUTH/RECOG/
+      \endverb
     \endentry
     \entry{ghaith}{thesis}{}
       \name{author}{1}{}{%

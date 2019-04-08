@@ -22,7 +22,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.5}Project Plan}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.1}Table}{14}
+\contentsline {subsection}{\numberline {1.5.1}Project Target Dates}{14}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.6}Motivations}{15}
 \defcounter {refsection}{0}\relax 
@@ -84,6 +84,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{AUC-ROC Curve}{35}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Loss}{35}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.5}Transfer Learning}{36}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.6}Berkeley Deep Drive}{37}
@@ -94,100 +96,108 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.7}Overfitting}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.8}Tensorflow Introduction}{39}
+\contentsline {section}{\numberline {2.8}Tensorflow Introduction}{40}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8.1}MNIST Experiment}{39}
+\contentsline {subsection}{\numberline {2.8.1}MNIST Experiment}{40}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Code Breakdown}{39}
+\contentsline {subsubsection}{Code Breakdown}{40}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8.2}CIFAR-10 Experiment}{41}
+\contentsline {subsection}{\numberline {2.8.2}CIFAR-10 Experiment}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8.3}Initial Findings}{42}
+\contentsline {subsection}{\numberline {2.8.3}Initial Findings}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8.4}Experiment Environments}{42}
+\contentsline {subsection}{\numberline {2.8.4}Experiment Environments}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Tensorflow Install}{42}
+\contentsline {subsubsection}{Tensorflow Install}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Memory Issues}{43}
+\contentsline {subsubsection}{Memory Issues}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{AWS Setup}{44}
+\contentsline {subsubsection}{AWS Setup}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Cifar-10 Further Experimentation}{45}
+\contentsline {chapter}{\numberline {3}Cifar-10 Further Experimentation}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Experiment 1: Training Steps}{46}
+\contentsline {section}{\numberline {3.1}Experiment 1: Training Steps}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Experiment 2: Convolution and Pooling Layers}{47}
+\contentsline {section}{\numberline {3.2}Experiment 2: Convolution and Pooling Layers}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Experiment 3: Fully Connected Layers}{48}
+\contentsline {section}{\numberline {3.3}Experiment 3: Fully Connected Layers}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Experiment 4: Convolution, Pooling and Fully Connected Layers}{49}
+\contentsline {section}{\numberline {3.4}Experiment 4: Convolution, Pooling and Fully Connected Layers}{50}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Experiment 5: Extra Dropout Layers}{50}
+\contentsline {section}{\numberline {3.5}Experiment 5: Extra Dropout Layers}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Experiment 6: Increased Training Steps}{51}
+\contentsline {section}{\numberline {3.6}Experiment 6: Increased Training Steps}{53}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Conclusions}{52}
+\contentsline {section}{\numberline {3.7}Conclusions}{54}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Empirical Studies}{54}
+\contentsline {chapter}{\numberline {4}Empirical Studies}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}SSD MobileNet V1 Experiments}{54}
+\contentsline {section}{\numberline {4.1}SSD MobileNet V1 Experiments}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Full Dataset Retraining Experiment}{55}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Objectives}{55}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup}{55}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Results}{55}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Partial Dataset Retraining Experiment 1}{56}
+\contentsline {subsection}{\numberline {4.1.1}Experiment 1: Full Dataset Retraining}{56}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Objectives}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup}{57}
+\contentsline {subsubsection}{Setup}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Results}{58}
+\contentsline {subsubsection}{Results}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Partial Dataset Retraining Experiment 2}{59}
+\contentsline {subsection}{\numberline {4.1.2}Experiment 2: Partial Dataset Retraining}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Objectives}{59}
+\contentsline {subsubsection}{Objectives}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup}{61}
+\contentsline {subsubsection}{Setup}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Results}{61}
+\contentsline {subsubsection}{Results}{59}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Faster RCNN Inception V2 Experiments}{63}
+\contentsline {subsection}{\numberline {4.1.3}Experiment 3: Expanded Partial Dataset Retraining}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Initial Experiment}{64}
+\contentsline {subsubsection}{Objectives}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Objectives}{64}
+\contentsline {subsubsection}{Setup}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup}{64}
+\contentsline {subsubsection}{Results}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Results}{64}
+\contentsline {subsection}{\numberline {4.1.4}Real-time Detection}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}No Pretraining Experiment}{65}
+\contentsline {section}{\numberline {4.2}Faster RCNN Inception V2 Experiments}{67}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Objectives}{65}
+\contentsline {subsection}{\numberline {4.2.1}Experiment 1: Pretrained Model Experiment}{67}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup}{66}
+\contentsline {subsubsection}{Objectives}{67}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Setup}{67}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Results}{67}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Empirical Studies Results}{68}
+\contentsline {subsection}{\numberline {4.2.2}Experiment 2: No Pretraining Experiment}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Application Implementation}{70}
+\contentsline {subsubsection}{Objectives}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}AWS Instance}{70}
+\contentsline {subsubsection}{Setup}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Implementation}{70}
+\contentsline {subsubsection}{Results}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Code Snippets}{71}
+\contentsline {subsection}{\numberline {4.2.3}Real-time Detection}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Final Conclusion and Discussion}{73}
+\contentsline {section}{\numberline {4.3}Empirical Studies Cost and Results}{75}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Summary}{73}
+\contentsline {chapter}{\numberline {5}Application Implementation}{77}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Reflections}{74}
+\contentsline {section}{\numberline {5.1}AWS Instance}{77}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Future Work}{74}
+\contentsline {section}{\numberline {5.2}Implementation}{77}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Code Snippets}{78}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Final Conclusion and Discussion}{80}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Summary}{80}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Reflections}{81}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Future Work}{81}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.1}This Project}{81}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.2}Future Projects}{81}

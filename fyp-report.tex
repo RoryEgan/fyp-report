@@ -1,5 +1,6 @@
 \documentclass[12pt]{report}
 \usepackage{graphicx}
+\usepackage{tabularx}
 \usepackage[backend=biber, style=authoryear, natbib=true]{biblatex}
 \addbibresource{references.bib}
 \DeclareCiteCommand{\parencite}
@@ -46,6 +47,27 @@
 \begin{abstract}
 This project will be a research-oriented project centred around the use of Convolutional Neural Networks (CNN's) for object detection in images from the perspective of a self-driving car. The area of self-driving cars is a rapidly expanding field, with significant investments having taken place over the past several years. Many companies have chosen to use cameras as one of the primary sensors deployed on their prototype cars in conjunction with several other sensors to allow a vehicle to understand its environment and orient itself appropriately. This project will focus on the way these cameras can allow the vehicle to detect different objects in its environment. An important challenge within the field of machine vision in self-driving cars is reliably classifying multiple objects at once within an image. The current standard Machine Learning class of algorithms for object classification are CNN’s. This project will investigate the use of CNN's to analyse colourised 2D images that depict typical scenes presented to a self-driving car and classify the different objects within them. The initial goal is to research and outline the basics of how CNN's operate, then choose a particular CNN paradigm and train an object detector using this paradigm. The CNN should be able to reliably classify major obstacles that are important to the function of a self-driving car such as other vehicles, pedestrians etc. The classifier should aim to be robust to adverse conditions creating variation within the images such as rain, snow etc. This project will also investigate several different types of CNN and document the differences in the ensuing results.
 \end{abstract}
+
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+First and foremost, I would like to thank my project supervisor, J.J. Collins. I initially came to him in 3rd year with a plan to base my final year project around the subject of Object Detection and Convolutional Neural Networks, and his guidance and knowledge have been instrumental in shaping this project ever since. He has been an exemplary project supervisor, making himself available whenever possible to help.
+\linebreak
+\linebreak
+Secondly, I would like to thank Jamie Mac Manus for the four years of university we have spent together. Without his unwavering discipline and work ethic serving as an example to myself, I can honestly say that my grades would be nowhere near the levels they are at now.
+\linebreak
+\linebreak
+Special thanks are also due to Tom Barrett. His final year project served as the inspiration for this project, and it was him who first set me on the path of investigating self-driving car related datasets.
+\linebreak
+\linebreak
+I would also like to thank Kevin Moynihan and Dan Noonan for all the projects we have worked on together, with them proving to be exemplary teammates.
+\linebreak
+\linebreak
+I have many thanks due to my family and girlfriend, without their continued support and backing I would never have come to the end of my degree. Particular thanks are due to my father for first setting me on the path of Software Development.
+\linebreak
+\linebreak
+Lastly, I would like to thank all of the CSIS staff who have provided guidance and support to me during my time at UL. Without them, none of this would have been possible.
+\end{abstract}
+
  
 \newpage
 \tableofcontents
@@ -135,7 +157,7 @@ With these issues present for my initial choice of problem domain, I decided to 
 \item Background Research: The next step was to carry out a literature review around the topic of Neural Computing, specifically CNN's. Papers dealing specifically with the challenges presented during object detection were the main focus of the literature review. In an attempt to demonstrate an understanding of how CNN's operate, the literature review has been summarised in the following sections of this report.
 \item Gain a hands-on knowledge of tensorflow: As tensorflow was the tool utilised to implement CNN's during this project, a Udemy tutorial was first followed in an attempt to gain an understanding of using tensorflow in a hands-on manner (\cite{udemy}).
 \item Carry out Empirical Studies: Empirical Studies were a major point of focus for this project. Experimentation was carried out on the Berkeley Deep Drive dataset using a range of different types of CNN. Results from these experiments were documented and investigated in order to gain an understanding of what techniques work best for the dataset. The results from the experiments were then compared to results carried out in (\cite{yu2018bdd100k}).
-\item Build an application: Once Empirical Studies have been carried out and CNN's have been trained on the Berkeley Deep Drive dataset to a satisfactory degree, a prototype application should be built to allow users to observe the Object Detection taking place.
+\item Build an application: Once Empirical Studies had been carried out and CNN's had been trained on the Berkeley Deep Drive dataset to a satisfactory degree, a prototype application was built to allow users to observe the Object Detection taking place.
 \end{enumerate}
 \end{flushleft}
 
@@ -144,9 +166,8 @@ With these issues present for my initial choice of problem domain, I decided to 
 \begin{flushleft}
 The following table outlines the delivery dates agreed upon with my supervisor for the sections of this report along with the implementation of the demo day product. Athough it was not followed strictly, it provides a general overview of how this project progressed over time.
 \end{flushleft}
-\subsection{Table}
-\vspace{1.5cm}
-
+\subsection{Project Target Dates}
+\begin{table}[ht!]
 \begin{tabular}{|l|l|l|}
 \hline
 Chapter                   & Section                  & Est. Completion Date \\ \hline
@@ -169,7 +190,8 @@ Final Conclusion          & Summary                  & 08/04/2019           \\ \
                           & Reflections              & 08/04/2019           \\ \hline
                           & Future Work              & 08/04/2019           \\ \hline                          
 \end{tabular}
-
+\caption{Delivery dates for project milestones}
+\end{table}
 
 \newpage
 \section{Motivations}
@@ -314,7 +336,7 @@ Images are represented as matrices of values, with each value corresponding to a
 \newpage
 \subsection{Noise and Occlusion}
 \begin{flushleft}
-Within any image dataset that contains images extracted from real-life scenarios, two commonly used terms are noise and variance. Image noise is the presence of random variation in pixel colour and intensity within images, typically produced by the sensor taking the image. Within the Berkeley Deep Drive dataset, a common source of noise is motion blur produced by the camera taking a picture while the test car is in motion. This type of image noise can be observed in Fig \ref{fig:noiseimg}. A proliferance of noisy images within a dataset should be avoided if possible, as an overly noisy dataset will cause classifier performance to suffer (\cite{xiao2015learning}).
+Within any image dataset that contains images extracted from real-life scenarios, two commonly used terms are noise and occlusion. Image noise is the presence of random variation in pixel colour and intensity within images, typically produced by the sensor taking the image. Within the Berkeley Deep Drive dataset, a common source of noise is motion blur produced by the camera taking a picture while the test car is in motion. This type of image noise can be observed in Fig \ref{fig:noiseimg}. A proliferance of noisy images within a dataset should be avoided if possible, as an overly noisy dataset will cause classifier performance to suffer (\cite{xiao2015learning}).
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -346,7 +368,7 @@ Edge detection is the ability to recognise object boundaries within an image, wi
 
 \subsubsection{Approaches}
 \begin{flushleft}
-There is a multitude of different techniques used for edge detection that can be split into two categories, search based and zero-crossing based. Search based techniques work by computing gradient edge strength, then searching for the direction of the edge by computing the gradient orientation. The Sobel operator, mentioned below in the explanation of the Canny edge detector, is an example of this type of technique. Zero-crossing based techniques differ in that they search for zero-crossing points on a second-order derivative function calculated from the image. Generally smoothing is applied to the image prior to any of these technques (\cite{ziou1998edge}).
+There is a multitude of different techniques used for edge detection that can be split into two categories, search based and zero-crossing based. Search based techniques work by computing gradient edge strength, then searching for the direction of the edge by computing the gradient orientation. The Sobel operator is an example of this type of technique (\cite{gupta2013sobel}). Zero-crossing based techniques differ in that they search for zero-crossing points on a second-order derivative function calculated from the image. Generally smoothing is applied to the image prior to any of these technques (\cite{ziou1998edge}).
 \end{flushleft}
 
 \section{Multilayer Perceptron for Image Tasks}
@@ -463,7 +485,7 @@ False negatives are particularly an issue for the field of self-driving cars, wh
 \begin{flushleft}
 A Confusion Matrix, also referred to as an Error Matrix, is a relatively simple technique for classifier evaluation. It is essentially a table that plots the number of correct and incorrect predictions for all of the different classes. The false positives, false negatives, true positives and true negatives are plotted then the average value for all classes combined is calculated, as demonstrated in the confusion matrix below.
 
-\begin{table}[]
+\begin{table}[ht!]
 \begin{tabular}{lllllll}
           &                        & \multicolumn{1}{r}{Actual}           &                                      &  &  &  \\
           &                        & \multicolumn{1}{c}{+}                & \multicolumn{1}{c}{-}                &  &  &  \\ \cline{3-4}
@@ -472,6 +494,7 @@ Predicted & \multicolumn{1}{l|}{Y} & \multicolumn{1}{l|}{True Positives}  & \mul
           &                        &                                      &                                      &  &  &  \\
           &                        &                                      &                                      &  &  & 
 \end{tabular}
+\caption{Confusion matrix visualised}
 \end{table}
 \end{flushleft}
 
@@ -509,6 +532,11 @@ The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is ano
 	\label{fig:aucroc}
 \end{figure}
 
+\subsubsection{Loss}
+\begin{flushleft}
+As mentioned above, Neural Networks utilise a loss function in order to evaluate the predictions the network makes in relation the known values in the training data. The loss of a network can be graphed to infer how well the model is adjusting to learn the parameters of the training data, with the loss generally lowering over each training iteration.
+\end{flushleft}
+
 \newpage
 \subsection{Transfer Learning}
 \begin{flushleft}
@@ -531,7 +559,7 @@ As mentioned previously in this report, the dataset utilised for this project is
 
 \subsubsection{Related Results}
 \begin{flushleft}
-The paper released with the BDD100K dataset contains a list of results from experiments carried out on the dataset. The experiments focused on the performance of a CNN on different domains within the dataset. For example, a Faster-RCNN was trained on daytime images and then its performance on nighttime images was tested and the discrepancies recorded. The performance metrics recorded from these experiments allow some basis upon which the CNN's trained in this project can be evaluated against.
+The paper released with the BDD100K dataset contains a list of results from experiments carried out on the dataset. The experiments focused on the performance of a CNN on different domains within the dataset. For example, a Faster-RCNN was trained on daytime images and then its performance on nighttime images was tested and the discrepancies recorded. The performance metrics recorded from these experiments allow some basis upon which the CNN's trained in this project can be evaluated against. Across the three main classes that will be focused upon in later sections of this report - car, traffic light and person - Yu et al. achieved a mean average precision (mAP) of 0.53. Unfortunately, this is the only metric by which their model was evaluated, however this still provides a rough estimation of how classifiers implemented in later sections should aim to perform.
 \end{flushleft}
 
 \section{Overfitting}
@@ -620,12 +648,12 @@ Although the first two experiments ran without issues, problems were quickly enc
 
 \subsubsection{AWS Setup}
 \begin{flushleft}
-One of the many services offered by the AWS platform is Amazon Machine Images (AMI) for Deep Learning. These are virtual machine instances that launch with pre-installed pip deep learning frameworks such as tensorflow, keras etc. in different environments, as well as GPU acceleration. This allows development of models remotely from a client machine which can be then trained using the available GPU resources on the deep learning instance. These instances can be deployed and the desired environment (tensorflow in this case) activated. Jupyter notebooks can be run as normal on the AWS instance, and a rule is set up on the client machine to forward all requests on a certain port to the AWS instance. This allows the user to write code in a Jupyter notebook remotely on the AWS instance. The instance type chosen for this project was the p2.xlarge instance which contains 122GiB of memory, 16 virtual CPU cores and a Nvidia K80 GPU. The steps followed was from the official AWS documentation.
+One of the many services offered by the AWS platform are Amazon Machine Images (AMI) for Deep Learning. These are virtual machine instances that launch with pre-installed pip deep learning frameworks such as tensorflow, keras etc. in different environments, as well as GPU acceleration. This allows development of models remotely from a client machine which can be then trained using the available GPU resources on the deep learning instance. These instances can be deployed and the desired environment (tensorflow in this case) activated. Jupyter notebooks can be run as normal on the AWS instance, and a rule is set up on the client machine to forward all requests on a certain port to the AWS instance. This allows the user to write code in a Jupyter notebook remotely on the AWS instance. The instance type chosen for this project was the p2.xlarge instance which contains 122GiB of memory, 16 virtual CPU cores and a Nvidia K80 GPU. This instance is the cheapest GPU accelerated instance type available, as this project has been funded out of pocket on a tight budget. Costs for these machines are based on usage, so every hour that the machine is running costs are incurred. Much more computationally powerful instances are available, however the costs for these increase dramatically and were not within budget for this project. The steps followed for setting up the instance were from the official AWS documentation (\cite{aws}).
 \end{flushleft}
 
 \chapter{Cifar-10 Further Experimentation}
 \begin{flushleft}
-As mentioned above, further experiments were carried out on the Cifar-10 dataset in an attempt to improve the disappointing initial results. The base code provided as part of the tutorial (\cite{udemy}) was modified in a range of different ways in order to maximise results. In order to evaluate the network properly the following metrics were recorded:
+Once an AWS Deep Learning machine had been set up to enable investigation into more complex CNN architectures, further experiments were carried out on the Cifar-10 dataset in an attempt to improve the disappointing initial results from the experiments carried out as part of the (\cite{udemy}) tutorial. The base code provided as part of the tutorial was modified in a range of different ways in order to maximise results. In order to evaluate the network properly the following metrics were recorded:
 
 \begin{enumerate}
   \item Peak Top-1 accuracy
@@ -638,11 +666,14 @@ The baseline of these metrics achieved by the simple network provided from the t
 \end{flushleft}
 
 \vspace{0.5cm}
+\begin{table}[ht!]
 \begin{tabular}{llll}
-                                          & Initial Experiment                 &                                &                              \\ \hline
+\\ \hline
 \multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
 \multicolumn{1}{|l|}{70.16\%}             & \multicolumn{1}{l|}{220s}          & \multicolumn{1}{l|}{71.67\%}   & \multicolumn{1}{l|}{70.16\%} \\ \hline
 \end{tabular}
+\caption{Results from Initial Experiment}
+\end{table}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
@@ -658,11 +689,14 @@ The baseline of these metrics achieved by the simple network provided from the t
 Before investigating the effects of altering the network architecture, the optimal number of training steps was investigated. This parameter was investigated first as it has a large effect on training time. A network that does not have enough training steps will underlearn, whereby it does not learn all possible parameters. However having too many training steps will lead to increased training time with no increase in accuracy. The initial experiment carried out 5000 training steps, so this was doubled to 10,000 steps in an attempt to see if this would boost accuracy, precision and recall. The results are displayed in the table below and plotted in Fig \ref{fig:experiment-1}. All three metrics levelled off at around the 5000 step mark, with no significant increases reported. It would therefore appear that 5000 training steps is the optimal value.
 
 \vspace{0.5cm}
+\begin{table}[ht!]
 \begin{tabular}{llll}
-                                           & Experiment 1                       &                                                             \\ \hline
+\\ \hline
 \multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
 \multicolumn{1}{|l|}{70.46\%}             & \multicolumn{1}{l|}{466s}          & \multicolumn{1}{l|}{70.71\%}   & \multicolumn{1}{l|}{70.46\%} \\ \hline
 \end{tabular}
+\caption{Results from Experiment 1}
+\end{table}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
@@ -679,11 +713,14 @@ Before investigating the effects of altering the network architecture, the optim
 The next experiment undertaken was to increase the number of convolution and pooling layers. For this experiment only one extra layer of convolution and pooling was added. As can be shown in the results displayed in the table below as well in Fig \ref{fig:experiment-2}, this did not yield any significant results.
 
 \vspace{0.5cm}
+\begin{table}[ht!]
 \begin{tabular}{llll}
-                                          & Experiment 2                       &                                &                              \\ \hline
+\\ \hline
 \multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
 \multicolumn{1}{|l|}{70.38\%}             & \multicolumn{1}{l|}{192s}          & \multicolumn{1}{l|}{70.82\%}   & \multicolumn{1}{l|}{70.38\%} \\ \hline
 \end{tabular}
+\caption{Results from Experiment 2}
+\end{table}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
@@ -700,11 +737,14 @@ The next experiment undertaken was to increase the number of convolution and poo
 As the extra layers of convolution and pooling had failed to yield any benefits, the next step taken was to increase the number of fully connected layers in the network. One extra fully connected layer was added as well as a dropout layer. The reasoning behind this experiment was to investigate the possibility that the network was performing poorly with the class predictions. The images in the Cifar-10 dataset consist of non-occluded blurred objects with one class of object present per image. As such it was reasoned that only a small number of convolution and pooling layers were required to extract feature maps from the images, and increased numbers of fully-connected layers would be more important. Dissapointingly, the results of this experiment were a marginal drop in accuracy, precision and recall.
 
 \vspace{0.5cm}
+\begin{table}[ht!]
 \begin{tabular}{llll}
-                                          & Experiment 3                       &                                &                              \\ \hline
+\\ \hline
 \multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
 \multicolumn{1}{|l|}{69.52\%}             & \multicolumn{1}{l|}{161s}          & \multicolumn{1}{l|}{69.67\%}   & \multicolumn{1}{l|}{69.52\%} \\ \hline
 \end{tabular}
+\caption{Results from Experiment 3}
+\end{table}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
@@ -722,11 +762,14 @@ As the extra layers of convolution and pooling had failed to yield any benefits,
 As Experiments 2 and 3 had failed to yield better results, 2 extra layers of convolution and pooling were added in conjunction with an extra fully-connected layer. As can be seen from the results table and Fig \ref{fig:experiment-4}, results actually went down marginally.
 
 \vspace{0.5cm}
+\begin{table}[ht!]
 \begin{tabular}{llll}
-                                          & \multicolumn{1}{c}{Experiment 4}   &                                &                             \\ \hline
+\\ \hline
 \multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall} \\ \hline
 \multicolumn{1}{|l|}{67.3\%}              & \multicolumn{1}{l|}{276s}          & \multicolumn{1}{l|}{68.56\%}   & \multicolumn{1}{l|}{67.3\%} \\ \hline
 \end{tabular}
+\caption{Results from Experiment 4}
+\end{table}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
@@ -744,11 +787,14 @@ As Experiments 2 and 3 had failed to yield better results, 2 extra layers of con
 Following the failure of experiment 4 to improve results, 2 extra layers of dropout with a probability of 0.25 were added to the experiment 4 architecture after the 2nd and 4th pooling layers in an attempt to tale any potential overfitting. Although the results summarised in the table below and Fig \ref{fig:experiment-5} do not show any meaningful increase in accuracy either, the accuracy curve from this experiment as well as experiment 4 suggest that the network is underlearning as the curves do not level off as much as in previous results. This implied that the network may simply need more time to train. Interestingly, during this experiment the accuracy and recall metrics diverged from one another, as can be observed in Fig \ref{fig:experiment-5}. This would seem to imply that the network may have been overfitting slightly.
 
 \vspace{0.5cm}
+\begin{table}[ht!]
 \begin{tabular}{llll}
-                                          & \multicolumn{1}{c}{Experiment 5}   &                                &                              \\ \hline
+\\ \hline
 \multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
 \multicolumn{1}{|l|}{60.47\%}             & \multicolumn{1}{l|}{425s}          & \multicolumn{1}{l|}{60.60\%}   & \multicolumn{1}{l|}{60.57\%} \\ \hline
 \end{tabular}
+\caption{Results from Experiment 5}
+\end{table}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
@@ -759,18 +805,21 @@ Following the failure of experiment 4 to improve results, 2 extra layers of drop
 \end{figure}
 \end{flushleft}
 
-\newpage
+\clearpage
 \begin{flushleft}
 \vspace{0.5cm}
 \section{Experiment 6: Increased Training Steps}
 The observations in experiments 4 and 5 suggested that the network might simply need more time to train. In experiment 1 it was concluded that 5000 training steps would be sufficient, however this experiment was carried out using the simple baseline network architecture. It was therefore a mistake to assume that 5000 training steps would be sufficient for all following experiments. The number of training steps was increased drastically to 25,000, with the architecture remaining the same as in experiment 5. Although training time was significantly increased, all metrics gained a slight increase with accuracy peaking at 73.25\%, a decent improvement from the initial results.
 
 \vspace{0.5cm}
+\begin{table}[ht!]
 \begin{tabular}{llll}
-                                          & \multicolumn{1}{c}{Experiment 6}   &                                &                              \\ \hline
+\\ \hline
 \multicolumn{1}{|l|}{Peak Top-1 accuracy} & \multicolumn{1}{l|}{Training Time} & \multicolumn{1}{l|}{Precision} & \multicolumn{1}{l|}{Recall}  \\ \hline
 \multicolumn{1}{|l|}{73.54\%}             & \multicolumn{1}{l|}{1778s}         & \multicolumn{1}{l|}{74.03\%}   & \multicolumn{1}{l|}{73.48\%} \\ \hline
 \end{tabular}
+\caption{Results from Experiment 6}
+\end{table}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
@@ -791,15 +840,15 @@ These experiments conclude with a small yet significant increase in accuracy, pr
 \newpage
 \chapter{Empirical Studies}
 \begin{flushleft}
-The following sections will primarily investigate the effects of retraining various different network architectures using transfer learning. Models were retrained using the Tensorflow Object Detection API, with the steps followed being from a tutorial made available on GitHub (\cite{tutorial}). All of the pretrained models utilised in the following sections have been trained on the COCO (Common Objects in Context) dataset, a dataset provided by Microsoft. Although the COCO dataset is updated every year, it currently consists of 164,000 images populated with 90 classes of objects. The dataset was chosen for this project as it contains 8 different classes of vehicle and displays objects in real-life contexts, with potential for occlusion and general noise in the images (\cite{lin2014microsoft}). Many other datasets instead provide an "iconic" view of objects, whereby the object appears centrally and unobstructed in the image. As the BDD100K dataset images are drawn from real-world scenarios from the perspective of a car, using the COCO dataset as the initial training dataset should allow the retrained models to generalise better to the BDD100K data than datasets with less variance in the images.
+The following sections will primarily investigate the effects of retraining various different network architectures using transfer learning. Models were retrained using the Tensorflow Object Detection API, with the steps followed being from a tutorial made available on GitHub (\cite{tutorial}). The main point of note for the Tensorflow Object Detection API is the main config file for each of the experiments. This file defines what type of architecture is used, what pretrained model (if any) is loaded in for retraining and what dataset the model is to be retrained upon. All of the pretrained models utilised in the following sections have been trained on the COCO (Common Objects in Context) dataset, a dataset provided by Microsoft. Although the COCO dataset is updated every year, it currently consists of 164,000 images populated with 90 classes of objects. The dataset was chosen for this project as it contains 8 different classes of vehicle and displays objects in real-life contexts, with potential for occlusion and general variance in the images (\cite{lin2014microsoft}). Many other datasets instead provide an "iconic" view of objects, whereby the object appears centrally and unobstructed in the image. As the BDD100K dataset images are drawn from real-world scenarios from the perspective of a car, using the COCO dataset as the initial training dataset should allow the retrained models to generalise better to the BDD100K data than datasets with less variance in the images. As mentioned above in the section related to transfer learning above, it is important that the original training dataset is as close as possible to the target dataset (\cite{tan2018survey}).
 \end{flushleft}
 
 \section{SSD MobileNet V1 Experiments}
 \begin{flushleft}
-The SSD MobileNet V1 architecture was selected for the first experiments due to its speed.
+The SSD MobileNet V1 architecture was selected for the first experiments, with the pretrained model available from tensorflow.
 \end{flushleft}
 
-\subsection{Full Dataset Retraining Experiment}
+\subsection{Experiment 1: Full Dataset Retraining}
 \subsubsection{Objectives}
 \begin{flushleft}
 Initial attempts at retraining the SSD MobileNet V1 were carried out using the full 10k subset of the bdd100k dataset, containing 10,000 images annotated with 10 classes. The objective for this experiment was to retrain the MobileNet model with the new BDD100K data. With training times being a concern when dealing with large datasets, the MobileNet architecture was selected to be retrained first due to its quick training times. This main objective for this first experiment was to investigate how models would handle the large amount of data presented by the BDD100K dataset and to gain some understanding of how the object detection API works. 
@@ -812,23 +861,15 @@ The tensorflow object detection API only accepts datasets in the tfrecord format
 
 \subsubsection{Results}
 \begin{flushleft}
-After 5000 training steps, the results for this experiment were disappointing albeit not unexpected. As can be seen in Fig \ref{fig:mobilenet-full-dataset-loss}, loss values were extremely high, and did not follow any steady downward trend. Total training time to 10,000 steps took 2 hours and 48 minutes. These poor results were expected due to the very large and highly complex dataset. Fig \ref{fig:noisy} provides an example of this - the nighttime conditions combined with slight motion blur creates a very noisy image on which to make predictions. Notwithstanding dataset noise created by time of day or weather conditions, many of the images in the dataset are extremely noisy simply due to the scenes depicted within them. For example, in city scenes such as the example in Fig \ref{fig:street}, rows of cars cause occlusion and people are hard to pick out between the cars. With the dataset consisting in large part of images with similar levels of variance and noise, training times for the full dataset would likely be untenable if a CNN was to be trained to a point where it performed close to the results presented in (\cite{yu2018bdd100k}).. As such, investigation into a different approach was required.
+After 5000 training steps, the results for this experiment were disappointing albeit not unexpected. As can be seen in Fig \ref{fig:mobilenet-full-dataset-loss}, loss values were extremely high, and did not follow any steady downward trend. Total training time to 10,000 steps took 2 hours and 48 minutes. These poor results were expected due to the very large and highly complex dataset. Fig \ref{fig:noisy} provides an example of this - the nighttime conditions combined with slight motion blur creates a highly variable image on which to make predictions with the classes present within the image being very hard to make out clearly. Notwithstanding dataset variance created by time of day or weather conditions, many of the images in the dataset are complex simply due to the scenes depicted within them. For example, in city scenes rows of cars cause occlusion and people are hard to pick out between the cars. With the dataset consisting in large part of images with similar levels of variance, training times for the full dataset would likely be untenable if a CNN was to be trained to a point where it performed close to the results presented in (\cite{yu2018bdd100k}). A more powerful GPU accelerated machine may have potentially cut down on these training times drastically, however these machines were simply out of budget for this project. As such, investigation into a different approach was required.
 \end{flushleft}
 
 \vspace{0.5cm}
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=12cm]{noisy}
-	\caption{Example of an extremely noisy image}
+	\caption{Example of an image that is very hard to annotate}
 	\label{fig:noisy}
-\end{figure}
-
-\vspace{0.5cm}
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=12cm]{street}
-	\caption{Example of the image noise caused by city streets}
-	\label{fig:street}
 \end{figure}
 
 \vspace{0.5cm}
@@ -839,7 +880,8 @@ After 5000 training steps, the results for this experiment were disappointing al
 	\label{fig:mobilenet-full-dataset-loss}
 \end{figure}
 
-\subsection{Partial Dataset Retraining Experiment 1}
+\newpage
+\subsection{Experiment 2: Partial Dataset Retraining}
 \subsubsection{Objectives}
 \begin{flushleft}
 Following the failure to produce adequate results on the full dataset, it was determined that an approach of drastic data reduction was required in order to investigate training on a problem domain of reduced complexity. The objective for this experiment was therefore to retrain the MobileNet V1 architecture again, this time with a much simpler dataset and with less classes required for detection. In order to achieve this, a subgroup of images would need to be extracted from the dataset and labelled manually.
@@ -887,7 +929,6 @@ Although far from perfect, results from this experiment were much more encouragi
 	\label{fig:class-smalldata-500}
 \end{figure}
 
-\newpage
 \vspace{0.5cm}
 \begin{figure}[ht!]
 	\centering
@@ -896,8 +937,8 @@ Although far from perfect, results from this experiment were much more encouragi
 	\label{fig:class-smalldata-5k}
 \end{figure}
 
-\newpage
-\subsection{Partial Dataset Retraining Experiment 2}
+\clearpage
+\subsection{Experiment 3: Expanded Partial Dataset Retraining}
 \subsubsection{Objectives}
 \begin{flushleft}
 Following the more encouraging results from the previous experiment, it was decided that the easiest way to boost performance was to simply increase the amount of training data. A further 200 images were hand annotated, with 120 being added to the training data and the final 80 being added to the validation data. This brought the size of the manually annotated dataset to 400 images. Although this is a comparitively small amount, the relatively close relationship between the COCO dataset and the BDD100K dataset was a mitigating factor that allowed a smaller dataset.
@@ -937,13 +978,19 @@ Results over the previous experiment were much improved. Over a total training t
 	\label{fig:recall-mobilenet-2}
 \end{figure}
 
+\clearpage
+\subsection{Real-time Detection}
+\begin{flushleft}
+In attempt to discover how suitable the SSD MobileNet model was for detecting objects in real time, the model was applied to video sequences from the BDD100K dataset. As Experiment 3 of this section had produced the best results, the model produced from this experiment was selected. Video sequences were selected from driving conditions that matched those present in the training data. Video sequences were fed into the model frame by frame, where annotation took place frame by frame, producing an output video with objects annotated. Annotation for the model took approximately 0.5 seconds per frame.
+\end{flushleft}
+
 \newpage
 \section{Faster RCNN Inception V2 Experiments}
 \begin{flushleft}
 Following the relatively poor results of the MobileNet experiments, the Faster RCNN Inception V2 architecture was utilised.
 \end{flushleft}
 
-\subsection{Initial Experiment}
+\subsection{Experiment 1: Pretrained Model Experiment}
 \subsubsection{Objectives}
 \begin{flushleft}
 The objective for this experiment was to retrain the Inception V2 architecture using all of the subsampled data from the BDD100K dataset. As the Inception V2 architecture is a much more complex architecture than the MobileNet architecture, it was expected that the results obtained from this experiment would be much closer to those presented in (\cite{yu2018bdd100k}).
@@ -956,7 +1003,7 @@ Setup for this experiment was minimal as the training data for this experiment h
 
 \subsubsection{Results}
 \begin{flushleft}
-Results for this experiment were far better than the MobileNet experiments. Over 10,000 training steps taking a total time of 1d 3hr and 25min, loss fell to a minimum value of 0.1253. Precision reached a maximum value of 0.4392 and recall reached a maximum value of 0.2170. These metrics are graphed in Fig \ref{fig:loss-inception}, Fig \ref{fig:precision-inception} and Fig \ref{fig:recall-inception}. As these metrics did not seem to be improving significantly at the 10,000 steps mark, training was halted at this point.
+Results for this experiment were far better than the MobileNet experiments. Over 10,000 training steps taking a total time of 1d 3hr and 25min, loss fell to a minimum value of 0.1253. Precision reached a maximum value of 0.4392 and recall reached a maximum value of 0.2170. The precision score of 0.4392 was a very encouraging result, as this is not drastically different from the results obtained in (\cite{yu2018bdd100k}). These metrics are graphed in Fig \ref{fig:loss-inception}, Fig \ref{fig:precision-inception} and Fig \ref{fig:recall-inception}. As these metrics did not seem to be improving significantly at the 10,000 steps mark, training was halted at this point.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -983,19 +1030,22 @@ Results for this experiment were far better than the MobileNet experiments. Over
 	\label{fig:recall-inception}
 \end{figure}
 
-\newpage
-\subsection{No Pretraining Experiment}
+\clearpage
+\subsection{Experiment 2: No Pretraining Experiment}
 \subsubsection{Objectives}
 \begin{flushleft}
 As every experiment prior to this experiment was carried out on a pretrained model provided by tensorflow, it was decided to train a model using the Inception V2 architecture that had received no pretraining whatsoever. Results for this experiment were expected to be extremely poor - with a dataset consisting of a meager 400 images overfitting was almost guaranteed.
 \end{flushleft}
 
 \subsubsection{Setup}
+\begin{flushleft}
+Setup for this experiment was consistent with the previous experiment with one exception - no pretrained model checkpoint was loaded in at the beginning of training.
+\end{flushleft}
 
 \newpage
 \subsubsection{Results}
 \begin{flushleft}
-As expected, results for this experiment were extremely poor over 3500 training steps totalling 5hr 35 minutes. Although Fig \ref{fig:no-ckpt-loss} may appear to be indicative of positive results, note the fact that this metric is simply the \textit{training} loss. Training any CNN will lead to a lower training loss over time as the CNN adapts and learns the parameters of the training dataset. Observation of the validation loss in Fig \ref{fig:no-ckpt-val-loss}, precision in Fig \ref{fig:no-ckpt-precision} and recall in Fig \ref{fig:no-ckpt-recall} clearly illustrate that this model is severely overfitting. The validation loss does not appear to be following any clear downward trend and although the precision and recall values appear to be following an upward trend, their values are extremely low. Training was halted at 3500 steps as it was clearly apparent that overfitting was taking place and further training would simply be a waste of resources.
+As expected, results for this experiment were extremely poor over 3500 training steps totalling 5hr 35 minutes. Although Fig \ref{fig:no-ckpt-loss} may appear to be indicative of positive results, note the fact that this metric is simply the \textit{training} loss. Training any CNN will lead to a lower training loss over time as the CNN adapts and learns the parameters of the training dataset. Observation of the validation loss in Fig \ref{fig:no-ckpt-val-loss}, precision in Fig \ref{fig:no-ckpt-precision} and recall in Fig \ref{fig:no-ckpt-recall} clearly illustrate that this model is severely overfitting. The validation loss does not appear to be following any clear downward trend and although the precision and recall values appear to be following an upward trend, their values are extremely low. This implies that while the model is steadily getting better at detecting objects within the training data, it is failing to achieve these results upon the validation data - a sure sign of a model that is overfitting. Training was halted at 3500 steps as it was clearly apparent that overfitting was taking place and further training would simply be a waste of resources.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -1030,21 +1080,43 @@ As expected, results for this experiment were extremely poor over 3500 training 
 	\label{fig:no-ckpt-recall}
 \end{figure}
 
-\newpage
-\section{Empirical Studies Results}
+\clearpage
+\subsection{Real-time Detection}
 \begin{flushleft}
-The results from the Emprirical Studies are shown in the below table along with the results provided in (\cite{yu2018bdd100k}):
+In attempt to discover how suitable the Faster RCNN Inception architecture was for performing real-time detection, the model from Experiment 1 of this section was utilised for performing video annotation. Although this experiment had achieved much better results than any of the MobileNet experiments, annotation took approximately 3 seconds per frame - a significant increase over the MobileNet experiments. This level of performance would be entirely unacceptable for any potential real-world solution, and it appears that a middle-ground should be investigated, with a solution retaining some of the speed of the SSD MobileNet experiments whilst also retaining some of the evaluation metrics of the Faster-RCNN Inception experiments.
 \end{flushleft}
 
-\begin{tabular}{|l|l|l|l|l|}
+\newpage
+\newpage
+\section{Empirical Studies Cost and Results}
+\begin{flushleft}
+At this point in the Empirical Studies, the bills from AWS had run up to a point where it was no longer feasible for further experimentation to take place. Even though the EC2 instance type being utilised was the cheapest GPU accelerated option, the total bill across the months of February and March totalled \$192.53, with a further \$12.48 estimated bill for April across a total of 123.530 total hours of active instance time. The bill for March, during which the bulk of training was carried out, is shown in Fig \ref{fig:bill}. Due to this project being funded by a very tight student budget, this regrettably forced a halt to any further work using AWS resources. However, at this point enough experimentation had been carried out to form some final conclusions.
+\end{flushleft}
+
+\vspace{0.5cm}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=15cm]{bill}
+	\caption{AWS Bill for March}
+	\label{fig:bill}
+\end{figure}
+
+\begin{flushleft}
+The results from the Empirical Studies are shown in the below table along with the results provided in (\cite{yu2018bdd100k}). The results from the MobileNet experiment 1 have been omitted as no meaningful results were gleaned from this experiment.
+\end{flushleft}
+
+\begin{table}[]
+\begin{tabular}[ht]{|p{3cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
 \hline
-Experiment                  & Training Steps & Training Time   & Precision  & Recall    \\ \hline
-Yu et al.                   & -              & -               & 0.53       & -         \\ \hline
-MobileNet V1 200 Images     & 5000           & 1 hr 25 min     & 0.1995     & tbd       \\ \hline
-MobileNet V1 400 Images     & 14000          & 3 hr 50 min     & 0.2389     & tbd       \\ \hline
-Inception V2 Pretrained     & 10000          & 1 d 3 hr 25 min & 0.4392     & 0.2170    \\ \hline
-Inception V2 Not Pretrained & 3500           & 5 hr 35 min     & 1.7800 e-3 & 2.500 e-3 \\ \hline
+Experiment                & Training Steps & Training Time   & Precision  & Recall    & Per-frame annotation \\ \hline
+Yu et al.                 & -              & -               & 0.53       & -         & -                    \\ \hline
+MobileNet Experiment 2    & 5000           & 1 hr 25 min     & 0.1995     & tbd       & 0.5s                 \\ \hline
+MobileNet Experiment 3    & 14000          & 3 hr 50 min     & 0.2389     & tbd       & 0.5s                 \\ \hline
+Inception Experiment 1    & 10000          & 1 d 3 hr 25 min & 0.4392     & 0.2170    & 3s                   \\ \hline
+Inception V2 Experiment 2 & 3500           & 5 hr 35 min     & 1.7800 e-3 & 2.500 e-3 & 3s                   \\ \hline
 \end{tabular}
+\caption{Results from Empirical Studies}
+\end{table}
 
 \newpage
 \chapter{Application Implementation}
@@ -1101,6 +1173,19 @@ The primary purpose behind this project has been an investigation into how CNN's
 \section{Reflections}
 
 \section{Future Work}
+\begin{flushleft}
+This project has very much served to foster a passion for the field of Computer Vision and object detection tasks specifically. This has been one of the very few projects for me where I have a genuine desire to continue work upon related projects after completion. I have several ideas as to how I am going to go about work upon future personal projects in this field.
+\end{flushleft}
+
+\subsection{This Project}
+\begin{flushleft}
+With AWS costs forcing experimentation to stop for this project, there are several potential areas of future work that could be worth pursuing. With the Faster-RCNN Inception architecture producing good results albeit at the cost of annotation speed, I would like to investigate the possibility of using SSD or YOLO based Inception architectures, as I feel that this would help decrease annotation times and create a model more suited to performing accurate object detection in real-time. If I am to continue work on this project in future, opting for a more powerful AWS machine instance would also be a priority in order to aid detection in real-time.
+\end{flushleft}
+
+\subsection{Future Projects}
+\begin{flushleft}
+One avenue that I am definitely going to be exploring is applying my experience gained from this project to my initial choice of project, a fish detector. With time constraints no longer an issue and a graduate salary allowing the purchase of camera equipment, I intend to begin the collation of a dataset for this project. Although the issue still remains of gaining the required domain knowledge to annotate species for training data, I am confident that with enough research I will be able to annotate some basic easily-identifiable species. Thus far, I have not been able to find any models that have been pretrained on a fish species dataset. I have however found some publically available datasets such as (\cite{fish}), which contains species of fish found in European waters, upon which it may be possible to train a model myself. I believe that then retraining this model using my collated dataset may potentially lead to positive results. This is going to be my primary personal project going forward.
+\end{flushleft}
 
 \printbibliography
 
