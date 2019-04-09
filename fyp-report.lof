@@ -12,7 +12,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Linearly Separable vs Inseperable (adapted from \cite {mohamed2017comparative})}}{14}{figure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Activation Functions Visualised (adapted from https://towardsdatascience.com/activation-functions-in-neural-networks-58115cda9c96}}{15}{figure.2.3}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Activation Functions Visualised (adapted from https://towardsdatascience.com/activation-functions-in-neural-networks-58115cda9c96}}{14}{figure.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Multilayer Perceptron Architecture}}{17}{figure.2.4}
 \defcounter {refsection}{0}\relax 
@@ -20,9 +20,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Image containing occluded cars}}{19}{figure.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Convolution taking place}}{24}{figure.2.7}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Convolution taking place (source: https://www.superdatascience.com/blogs/convolutional-neural-networks-cnn-step-1-convolution-operation/)}}{24}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Pooling}}{24}{figure.2.8}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Pooling (adapted from: http://www.peculiar-coding-endeavours.com/2018/mlp\_vs\_cnn/)}}{25}{figure.2.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.9}{\ignorespaces CNN Architecture source: \cite {lecun1995convolutional}}}{25}{figure.2.9}
 \defcounter {refsection}{0}\relax 

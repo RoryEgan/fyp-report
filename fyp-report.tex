@@ -56,6 +56,17 @@ citecolor=black,
  \end{titlepage}
  
 \clearpage
+\begin{flushleft}
+“DECLARATION
+\linebreak
+\linebreak
+The work described in this document is, except where otherwise stated, entirely that of the author and has not been submitted in any part for a degree at this or any other University.
+\linebreak
+\linebreak
+Signed: \_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\linebreak
+Dated: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_”
+\end{flushleft}
 
 \begin{abstract}
 This project will be a research-oriented project centred around the use of Convolutional Neural Networks (CNN's) for object detection in images from the perspective of a self-driving car. The area of self-driving cars is a rapidly expanding field, with significant investments having taken place over the past several years. Many companies have chosen to use cameras as one of the primary sensors deployed on their prototype cars in conjunction with several other sensors to allow a vehicle to understand its environment and orient itself appropriately. This project will focus on the way these cameras can allow the vehicle to detect different objects in its environment. An important challenge within the field of machine vision in self-driving cars is reliably classifying multiple objects at once within an image. The current standard Machine Learning class of algorithms for object classification are CNN’s. This project will investigate the use of CNN's to analyse colourised 2D images that depict typical scenes presented to a self-driving car and classify the different objects within them. The initial goal is to research and outline the basics of how CNN's operate, then choose a particular CNN paradigm and train an object detector using this paradigm. The CNN should be able to reliably classify major obstacles that are important to the function of a self-driving car such as other vehicles, pedestrians etc. The classifier should aim to be robust to adverse conditions creating variation within the images such as rain, snow etc. This project will also investigate several different types of CNN and document the differences in the ensuing results.
@@ -93,7 +104,7 @@ Lastly, I would like to thank all of the CSIS staff who have provided guidance a
 \chapter{Introduction}
 \section{Overview of Problem Area}
 \begin{flushleft}
-Object detection is the process of locating and identifying different types of objects within images (\cite{verschae2015object}), and is an area of much research in the field of Computer Vision. To gain an understanding of what makes this a difficult task for a computer, one must first understand how images are interpreted by computers. Images are represented as matrices of values, with each value corresponding to a pixel in the image (\cite{learned2011introduction}). Images can be broadly broken down into two groups, grayscale and colour. A grayscale image will be represented as a 2D array of values ranging from 0 to 255, with each value representing the intensity of that pixel, as seen in Figure \ref{fig:pixels}. A value of 0 represents black and a value of 255 represents white. In grayscale images, each pixel therefore represents one colour channel (gray). In colour images however we have multiple different channels for red, green and blue. In order to represent this, a colour image will be represented as a 3D array of pixel values, with each pixel having 3 values between 0 and 255 associated with it. These three values represent the intensity of the three colour channels at that pixel.
+Object detection is the process of locating and identifying different types of objects within images (\cite{verschae2015object}), and is a highly researched area in the field of Computer Vision. To gain an understanding of what makes this a difficult task for a computer, one must first understand how images are interpreted by computers. Images are represented as matrices of values, with each value corresponding to a pixel in the image (\cite{learned2011introduction}). Images can be broadly broken down into two groups, grayscale and colour. A grayscale image will be represented as a 2D array of values ranging from 0 to 255, with each value representing the intensity of that pixel, as seen in Figure \ref{fig:pixels}. A value of 0 represents a fully black colour and a value of 255 represents a fully white colour. In grayscale images, each pixel therefore represents one colour channel (gray). In colour images however we have multiple different channels for red, green and blue. In order to represent this, a colour image will be represented as a 3D array of pixel values, with each pixel having 3 values between 0 and 255 associated with it. These three values represent the intensity of the three colour channels at that pixel.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -235,7 +246,7 @@ Neural Networks are not a new concept - they were first proposed in 1943 by neur
 \section{Introduction to Neural Networks and Deep Learning}
 
 \begin{flushleft}
-Artificial Neural Networks (ANN's) are a particular Supervised Machine Learning paradigm modelled after the neural pathways present in the brain. The building blocks for every Neural Network are called perceptrons or nodes, and can be thought of as artificial neurons. A perceptron receives inputs with weights associated with them that show the importance of each input relative to the others. The perceptron applies a particular activation function with a bias attached to the weighted sums of the input, and an output is generated, as shown in Figure \ref{fig:neuron} (\cite{geron2017hands}). The Perceptron Training Algorithm determines what weights are selected in order to produce the correct output.
+Artificial Neural Networks (ANN's) are a particular Supervised Machine Learning paradigm modelled after the neural pathways present in the brain. The building blocks for every Neural Network are called perceptrons or nodes, and can be thought of as artificial neurons. A perceptron receives inputs with weights associated with them that show the importance of each input relative to the others. The perceptron applies a particular activation function with a bias attached to the weighted sums of the input, and an output is generated, as shown in Figure \ref{fig:neuron} (\cite{geron2017hands}).
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -247,7 +258,7 @@ Artificial Neural Networks (ANN's) are a particular Supervised Machine Learning 
 \end{figure}
 
 \begin{flushleft}
-A single Perceptron is only able to classify linearly separable data (\cite{kotsiantis2007supervised}). In order to classify data that is not linearly separable, techniques such as Multilayer Perceptrons must be used. These will be explained in a following section. Linear separability refers to the ability for a single line to separate all members of a given class A from all members of a given class B. This is illustrated in Figure \ref{fig:linear}. The two classes present in the diagram can be easily seperated by finding an ideal line between the two classes.
+A single Perceptron is only able to classify linearly separable data (\cite{kotsiantis2007supervised}). In order to classify data that is not linearly separable, techniques such as Multilayer Perceptrons must be used. These will be explained in a following section. Linear separability refers to the ability for a single line to separate all members of a given class A from all members of a given class B. This is illustrated in Figure \ref{fig:linear}.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -296,12 +307,12 @@ In the paper mentioned above, "Perceptrons: An Introduction to Computational Geo
 
 \subsection{Multilayer Perceptron}
 \begin{flushleft}
-A Multilayer Perceptron (MLP) consists of an input layer, an output layer and one or more hidden layers, as seen in \ref{fig:mlp}. MLP's are feedforward neural networks, with the output of each node in the network serving as the input for every single node in the next layer. This concept of having each node taking inputs from every single node in the preceding layer is referred to as "fully-connected" layers.
-
- The MLP architecture solves the Xor problem by introducing linear seperability (\cite{Singh2016MinimumCM}).
-
-Deep Learning is when there is more than one hidden layer present in a network (\cite{o2015introduction}). 
-
+A Multilayer Perceptron (MLP) consists of an input layer, an output layer and one or more hidden layers, as seen in \ref{fig:mlp}. MLP's are feedforward neural networks, with the output of each node in the network serving as the input for every single node in the next layer. This concept of having each node taking inputs from every single node in the preceding layer is referred to as "fully-connected" layers. "Deep Learning" is when there is more than one hidden layer present in a network (\cite{o2015introduction}). 
+\linebreak
+\linebreak
+The MLP architecture solves the Xor problem by introducing linear seperability (\cite{Singh2016MinimumCM}) through the addition of these extra layers of perceptrons. The purpose of the extra layers is to provide an input for the next perceptrons in the next layer in the network until the output layer - resulting in a linearly seperable problem.
+\linebreak
+\linebreak
 Learning takes place in a MLP through changing the connection weights for each perceptron in the network based on the error between the expected and true output of each perceptron. This is carried out through a concept known as backpropagation.
 \end{flushleft}
 
@@ -313,9 +324,10 @@ Learning takes place in a MLP through changing the connection weights for each p
 	\label{fig:mlp}
 \end{figure}
 
+\newpage
 \subsection{Gradient Descent and Backpropagation}
 \begin{flushleft}
-Gradient descent is an algorithm used to optimise the weights between neurons in such a manner that creates the least possible amount of error. When the network is training, a cost function is used to keep track of how the network is performing. The cost function looks at the discrepancies between the training output and the true values to determine an error. When the network trains, the goal is to therefore get this cost function as low as possible to ensure the lowest possible error. The way the cost function is minimised in an MLP is through gradient descent and backpropagation.
+Gradient descent is an algorithm used to optimise the weights between neurons in such a manner that creates the least possible amount of error. When the network is training, a cost function is used to keep track of how the network is performing. The cost function looks at the discrepancies between the training output and the true values to determine an error. When the network trains, the goal is to therefore get this cost function as low as possible to ensure the lowest possible error (\cite{rumelhart1985learning}). The way the cost function is minimised in an MLP is through gradient descent and backpropagation.
 
 Every time the weights must be updated, the derivative of the cost function with regards to the weight itself scaled to a learning rate is subtracted. As the network trains the derivative should decrease with each training iteration. This is known as gradient descent. When the cost function cannot be reduced any more, it has converged.
 
@@ -355,9 +367,9 @@ Occlusions within an image are when a particular object is covered in some way, 
 Edge detection is the ability to recognise object boundaries within an image, with most edge detection techniques using changes in pixel intensities to identify potential edges (\cite{arbelaez2011contour}). Although edge detection may appear straightforward in concept, in practice it can be a difficult task. Input images typically suffer from noise due to focal blur, as well as blur caused by shadows. This can cause smoothing in the variations in pixel intensity at edge points, and make it difficult to define what actually is an edge (\cite{ziou1998edge}). The magnitude of a gradient will determine if a point in the image is an edge or not - a high gradient implies that an edge is likely present. The direction of a gradient shows how the edge is oriented within the image.
 \end{flushleft}
 
-\subsubsection{Approaches}
+\subsubsection*{Approaches}
 \begin{flushleft}
-There is a multitude of different techniques used for edge detection that can be split into two categories, search based and zero-crossing based. Search based techniques work by computing gradient edge strength, then searching for the direction of the edge by computing the gradient orientation. The Sobel operator is an example of this type of technique (\cite{gupta2013sobel}). Zero-crossing based techniques differ in that they search for zero-crossing points on a second-order derivative function calculated from the image. Generally smoothing is applied to the image prior to any of these technques (\cite{ziou1998edge}).
+There are a multitude of different techniques used for edge detection that can be split into two categories, search based and zero-crossing based. Search based techniques work by computing gradient edge strength, then searching for the direction of the edge by computing the gradient orientation. The Sobel operator is an example of this type of technique (\cite{gupta2013sobel}). Zero-crossing based techniques differ in that they search for zero-crossing points on a second-order derivative function calculated from the image. Generally smoothing is applied to the image prior to any of these technques (\cite{ziou1998edge}).
 \end{flushleft}
 
 \subsection{Multilayer Perceptron for Image Tasks}
@@ -389,7 +401,7 @@ Interestingly enough, CNN's do take some inspiration from how the brain processe
 There are three important points of note regarding the Convolution layer. These are the input image, the feature detector and the feature map. The input image is the image which the CNN is given. The feature detector is a matrix (usually 3x3 or 7x7), also called the kernel or filter, which is multiplied against matrix values of regions within the input image to create what is known as a feature map, with the aim of capturing only important features of the input image. The way this works is the feature detector slides or "convolves" over the whole image (\cite{o2015introduction}). The particular point on the image that the feature detector is analysing is known as the receptive field. 
 \linebreak
 \linebreak
-The parameter known as the stride is the value of the number of pixels by which the feature detector convolves over the input image. For example, a stride of 2 will convolve the feature detector over the input image jumping 2 pixels at a time. As the feature detector convolves around the input image, the pixel values of the feature detector are multiplied against the pixel values of the receptive field. These multiplications are all summed to give a single value, as shown in Figure \ref{fig:conv}. The higher the value, the higher the likelihood that the particular feature represented in the feature detector is present in the receptive field. The feature detector then continues to carry out this process for every section of the input image. The output of this process is a range of new 2D arrays of potentially important features of the input image known as feature maps (\cite{zhao2019object}). As multiple filters are applied at each layers, images are "deepened" ie. an image that is 32x32x32 (a 32x32 image with 3 colour channels) that has 9 filters applied will result in a matrix of dimensions 32x32x9. Each of these 9 layers represents the original image, however they now contain feature information rather than colour values (\cite{lecun1995convolutional}).
+The parameter known as the stride is the value of the number of pixels by which the feature detector convolves over the input image. For example, a stride of 2 will convolve the feature detector over the input image jumping 2 pixels at a time. As the feature detector convolves around the input image, the pixel values of the feature detector are multiplied against the pixel values of the receptive field. These multiplications are all summed to give a single value. The higher the value, the higher the likelihood that the particular feature represented in the feature detector is present in the receptive field. The feature detector then continues to carry out this process for every section of the input image. The output of this process is a range of new 2D arrays of potentially important features of the input image known as feature maps (\cite{zhao2019object}), as shown in Figure \ref{fig:conv}. As multiple filters are applied at each layers, images are "deepened" ie. an image that is 32x32x32 (a 32x32 image with 3 colour channels) that has 9 filters applied will result in a matrix of dimensions 32x32x9. Each of these 9 layers represents the original image, however they now contain feature information rather than colour values (\cite{lecun1995convolutional}).
 \linebreak
 \linebreak
 A benefit of this process is that the layers of a CNN do not need to be fully-connected as in an MLP, rather they need only be connected to neurons close to them in a principle known as local connectivity - the input of a neuron is received from a small local group of pixels (\cite{lecun1995convolutional}). Local connectivity is made possible due to the fact that the CNN does not alter the structure of the image as in an MLP, instead related pixels remain close together. Due to the fact that neurons are only connected to a small number of other neurons, the number of parameters required to be computed by the network is reduced, and therefore the overall computation time is reduced.
@@ -399,7 +411,7 @@ A benefit of this process is that the layers of a CNN do not need to be fully-co
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=12cm]{conv}
-	\caption{Convolution taking place}
+	\caption{Convolution taking place (source: https://www.superdatascience.com/blogs/convolutional-neural-networks-cnn-step-1-convolution-operation/)}
 	\label{fig:conv}
 \end{figure}
 
@@ -413,7 +425,7 @@ The pooling layer performs downsampling to extract key important features and re
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=12cm]{pool}
-	\caption{Pooling}
+	\caption{Pooling (adapted from: http://www.peculiar-coding-endeavours.com/2018/mlp\_vs\_cnn/)}
 	\label{fig:pool}
 \end{figure}
 
@@ -438,12 +450,12 @@ CNN's learn in the same manner as any other Neural Network - initially the filte
 There are many different ways by which to structure the different layers of a CNN, and this section will serve to outline some important CNN architectures that are commonly used. These architectures will later be implemented and investigated during the Empirical Studies section.
 \end{flushleft}
 
-\subsubsection{MobileNet}
+\subsubsection*{MobileNet}
 \begin{flushleft}
 Following the success of AlexNet in 2012, CNN's followed a general trend towards deeper and more computationally expensive architectures. However, increased network complexity does not guarantee increased network performance (\cite{szegedy2016rethinking}), and in computationally limited platforms such as smartphones and self-driving cars tasks need to be carried out quickly with a low computational overhead. The MobileNet architecture arose out of this demand for more lightweight and efficient architectures (\cite{howard2017mobilenets}). MobileNet differs from conventional CNN architectures in that it makes use of depthwise seperable convolutions in the place of regular convolutions. A depthwise seperable convolution consists of two operations - a depthwise convolution that filters through the input image followed by a pointwise (simply 1x1) convolution which combines the outputs of the former. This depthwise seperable convolution serves the same purpose as a traditional convolution, however it is much faster (\cite{howard2017mobilenets}).
 \end{flushleft}
 
-\subsubsection{Inception}
+\subsubsection*{Inception}
 \begin{flushleft}
 In a similar vein to the MobileNet architecture, the Inception architecture arose from a desire to create more complex networks to increase performance, without leading to the issues presented by simply stacking more layers into a  network. At the current time there are four main versions of the Inception architecture, with each improving slightly over the preceding version. The core concept behind the creation of this network was that important objects or regions within a given image can vary greatly depending on the differing distances between the object instances and the camera. Due to this variance, selection of the correct kernel size is difficult (\cite{szegedy2016rethinking}). A larger kernel size is suitable for the larger objects, however this will not suffice for the smaller objects. Rather than simply adding extra layers, a possible solution is to have multiple filters operate on the same level, creating a "wider" rather than "deeper" architecture (\cite{szegedy2016rethinking}). This was the driving concept behind the creation of the first Inception architecture (also known as GoogLeNet).
 \end{flushleft}
@@ -452,22 +464,22 @@ In a similar vein to the MobileNet architecture, the Inception architecture aros
 \begin{flushleft}
 An integral part of the performance of any CNN is the particular detection algorithm that the CNN utilises. These algorithms are necessary in order to reduce target images into regions that likely contain instances of objects, rather than attempt object detection upon all regions of the images (\cite{girshick2014rich}). This is required in order to reduce the computational requirements of the CNN. Base networks such as Inception or MobileNet perform high-level detection of objects, while detection algorithms are used to find potential occurences of objects to be detected - thus the two work in tandem. 
 \end{flushleft}
-\subsubsection{R-CNN}
+\subsubsection*{R-CNN}
 \begin{flushleft}
 To avoid the problem of simply selecting a huge number of regions (\cite{girshick2014rich}) proposed a method whereby 2000 distinct regions of interest (ROI's) were identified in the input image in what are known as "region proposals", with these being identified based on a selective search algorithm. The CNN then acts upon these ROI's in order to detect objects within the region proposals.
 \end{flushleft}
 
-\subsubsection{Faster R-CNN}
+\subsubsection*{Faster R-CNN}
 \begin{flushleft}
 Following advancements made upon the R-CNN algorithm, the Faster-RCNN algorithm was proposed by (\cite{ren2015faster}). This algorithm involves the target image being provided to a CNN which produces a feature map. The predicted ROI's are then reshaped using a particular pooling layer, following which object detection can take place upon the ROI's. This advancement upon earlier R-CNN algorithms produced an algorithm much faster than previous versions of the algorithm.
 \end{flushleft}
 
-\subsubsection{YOLO}
+\subsubsection*{YOLO}
 \begin{flushleft}
 YOLO (You Only Look Once) does not utilise regions in an attempt to localise objects. Instead, this algorithm utilises a network that attempts to predict classes and their bounding boxes in a single evaluation (\cite{redmon2016you}), creating a search algorithm that is extremely fast, albeit one that struggles with objects at smaller scales.
 \end{flushleft}
 
-\subsubsection{SSD}
+\subsubsection*{SSD}
 \begin{flushleft}
 SSD (Single Shot Detection) operates in a similar manner to YOLO, with ROI's being avoided in favour of a single evaluation. SSD has six feature maps at different sizes, making it more capable than YOLO of detecting objects at differing levels of scale.
 \end{flushleft}
@@ -477,12 +489,12 @@ SSD (Single Shot Detection) operates in a similar manner to YOLO, with ROI's bei
 There are various techniques which can be used to evaluate the operation of a classifier. Some of the more prevalent ones, many of which will be seen throughout the rest of this report, are explained below.
 \end{flushleft}
 
-\subsubsection{Top-1 and Top-5 Accuracy}
+\subsubsection*{Top-1 and Top-5 Accuracy}
 \begin{flushleft}
 First, the CNN makes a classification. Then in the case of Top-1, the class of the highest probability is checked against the target label. In the case of Top-5, the target label is compared with the top five highest probability predictions. Following this, in both cases the classifier score is calculated as the number of times that the prediction matched in either Top-1 or Top-5, divided by the total number of data points.
 \end{flushleft}
 
-\subsubsection{Accuracy Issues}
+\subsubsection*{Accuracy Issues}
 
 \begin{flushleft}
 Generally speaking using accuracy alone (number of correctly labelled classes) is not a very reliable metric for an object detection algorithm. For example, if there were 95 dogs and 5 cats to be classified a classifier may label all objects present as dogs. This would lead to an overall accuracy score of 95\%, however this classifier is obviously quite flawed. This is known as class imbalance, and in real life scenarios tends to be the norm. The decisions reached by the classifier can be explained as follows:
@@ -497,7 +509,7 @@ Generally speaking using accuracy alone (number of correctly labelled classes) i
 False negatives are particularly an issue for the field of self-driving cars, where this result could have potentially fatal ramifications. An example of a false negative classification was seen during a fatal crash of a Tesla model S in May 2016, whereby the autopilot system failed to recognise a white truck against a clear, brightly lit sky. Thus, we need to do more than just measure accuracy in order to properly evaluate the classifier (\cite{rogers2016first}).
 \end{flushleft}
 
-\subsubsection{Confusion Matrix}
+\subsubsection*{Confusion Matrix}
 \begin{flushleft}
 A Confusion Matrix, also referred to as an Error Matrix, is a relatively simple technique for classifier evaluation. It is essentially a table that plots the number of correct and incorrect predictions for all of the different classes. The false positives, false negatives, true positives and true negatives are plotted then the average value for all classes combined is calculated, as demonstrated in the confusion matrix below.
 
@@ -514,7 +526,7 @@ Predicted & \multicolumn{1}{l|}{Y} & \multicolumn{1}{l|}{True Positives}  & \mul
 \end{table}
 \end{flushleft}
 
-\subsubsection{Other Evaluation Metrics}
+\subsubsection*{Other Evaluation Metrics}
 \begin{flushleft}
 There are a number of different metrics of evaluation that can be used other than accuracy alone, with the major ones being summarised in the section. An important point to note is that each of these metrics is derived from the confusion matrix explained above, and can be thought of as different ways of summarising the matrix.
 
@@ -535,7 +547,7 @@ Another metric can be derived from precision and recall, known as F-score. F-sco
 $F = 2. \frac{precision - recall}{precision + recall}$. The F-score can be thought of as representing the balance between the precision and the recall. Although this is an important metric overall, it does not take precedence in this project, where a good recall score is of utmost importance.
 \end{flushleft}
 
-\subsubsection{AUC-ROC Curve}
+\subsubsection*{AUC-ROC Curve}
 \begin{flushleft}
 The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is another method of classifier evaluation, enabling the visualisation of results from a classification problem. The ROC curve is used to plot the true positive rate against the false positive rate, resulting in a probability curve, while the AUC represents how well the model distinguishes between classes. The higher the AUC, the better the model is. This is visualised in Fig \ref{fig:aucroc}.
 \end{flushleft}
@@ -549,7 +561,7 @@ The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is ano
 \end{figure}
 
 \newpage
-\subsubsection{Loss}
+\subsubsection*{Loss}
 \begin{flushleft}
 As mentioned above, Neural Networks utilise a loss function in order to evaluate the predictions the network makes in relation the known values in the training data. The loss of a network can be graphed to infer how well the model is adjusting to learn the parameters of the training data, with the loss generally lowering over each training iteration.
 \end{flushleft}
@@ -653,7 +665,7 @@ Initial environment setup to carry out the above experiments proved quite challe
 
 \subsubsection{Tensorflow Install}
 \begin{flushleft}
-The initial attempts to setup tensorflow were carried out on a machine running Windows 7. Several versioning issues were encountered due to Bazel, the build tool used to compile tensorflow. These issues were solved via downgrading to an earlier version of Bazel, however new versioning issues were then encountered due to CUDNN, Nvidias GPU-accelerated library for deep learning. Several different versions were installed without success. Due to these issues seemingly being exclusive to Windows, it was decided to attempt an install on a different machine running Ubuntu. The tensorflow install for the Ubuntu machine was carried out without issue. All neccessary Nvidia drivers were installed on the system, and tensorflow was then installed and the experiments were rerun. The training times for running the two experiments with GPU acceleration were 12 and 16 minutes respectively, a vast improvement over the initial times. The GPU on the Ubuntu machine was an Nvidia Geforce GTX 650 with 2GB memory.
+The initial attempts to setup tensorflow were carried out on a machine running Windows 7. These attempts failed due to a broken version of Bazel, the build tool used to compile tensorflow. These issues were solved via downgrading to an earlier version of Bazel, however new versioning issues were then encountered due to CUDNN, Nvidias GPU-accelerated library for deep learning. Several different versions were installed without success. Due to these issues seemingly being exclusive to Windows, it was decided to attempt an install on a different machine running Ubuntu. The tensorflow install for the Ubuntu machine was carried out without issue. All neccessary Nvidia drivers were installed on the system, and tensorflow was then installed and the experiments were carried out again. The training times for running the two experiments with GPU acceleration were 12 and 16 minutes respectively, a vast improvement over the initial times. The GPU on the Ubuntu machine was an Nvidia Geforce GTX 650 with 2GB memory.
 \end{flushleft}
 
 \subsubsection{Memory Issues}
@@ -677,7 +689,7 @@ Once an AWS Deep Learning machine had been set up to enable investigation into m
   \item Training time
 \end{enumerate}
 
-The baseline of these metrics achieved by the simple network provided from the tutorial are shown in the table below, with the accuracy, precision and recall being graphed in Fig \ref{fig:baseline}. Interestingly enough, the accuracy and recall values for this experiment were identical throughout all of the training steps. This does not necessarily mean that there is an issue, however it is very unusual. A focus for the following experiments was to investigate what changes, if any, would cause these values to diverge.
+The baseline of these metrics achieved by the simple network provided from the tutorial are shown in the table below, with the accuracy, precision and recall being graphed in Fig \ref{fig:baseline}. Interestingly enough, the accuracy and recall values for this experiment were identical throughout all of the training steps. This means that the model is somehow "balanced", in that it correctly classifies positive examples at the exact rate that it classifies negative examples. This does not necessarily mean that there is an issue, however it is very unusual. A focus for the following experiments was to investigate what changes, if any, would cause these values to diverge.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -870,12 +882,12 @@ Experiment no. & Peak Top-1 Accuracy & Training Time & Precision & Recall  \\ \h
 \newpage
 \chapter{Empirical Studies}
 \begin{flushleft}
-The following sections will primarily investigate the effects of retraining various different network architectures using transfer learning. Models were retrained using the Tensorflow Object Detection API, with the steps followed being from a tutorial made available on GitHub (\cite{tutorial}). The main point of note for the Tensorflow Object Detection API is the main config file for each of the experiments. This file defines what type of architecture is used, what pretrained model (if any) is loaded in for retraining and what dataset the model is to be retrained upon. All of the pretrained models utilised in the following sections have been trained on the COCO (Common Objects in Context) dataset, a dataset provided by Microsoft. Although the COCO dataset is updated every year, it currently consists of 164,000 images populated with 90 classes of objects. The dataset was chosen for this project as it contains 8 different classes of vehicle and displays objects in real-life contexts, with potential for occlusion and general variance in the images (\cite{lin2014microsoft}). Many other datasets instead provide an "iconic" view of objects, whereby the object appears centrally and unobstructed in the image. As the BDD100K dataset images are drawn from real-world scenarios from the perspective of a car, using the COCO dataset as the initial training dataset should allow the retrained models to generalise better to the BDD100K data than datasets with less variance in the images. As mentioned above in the section related to transfer learning above, it is important that the original training dataset is as close as possible to the target dataset (\cite{tan2018survey}).
+The following sections will primarily investigate the effects of retraining various different network architectures using transfer learning. Models were retrained using the Tensorflow Object Detection API, with the steps followed being from a tutorial made available on GitHub (\cite{tutorial}). The main point of note for the Tensorflow Object Detection API is the main config file for each of the experiments. This file defines what type of architecture is used, what pretrained model (if any) is loaded in for retraining and what dataset the model is to be retrained upon. All of the pretrained models utilised in the following sections have been trained on the COCO (Common Objects in Context) dataset, a dataset provided by Microsoft. Although the COCO dataset is updated every year, it currently consists of 164,000 images populated with 90 classes of objects. The dataset was chosen for this project as it contains 8 different classes of vehicle and displays objects in real-life contexts, with potential for occlusion and general variance in the images (\cite{lin2014microsoft}). Many other datasets instead provide an "iconic" view of objects, whereby the object appears centrally and unobstructed in the image. As the BDD100K dataset images are drawn from real-world scenarios from the perspective of a car, using the COCO dataset as the initial training dataset should allow the retrained models to generalise better to the BDD100K data than datasets with less variance in the images. As mentioned in the section related to transfer learning above, it is important that the original training dataset be as closely related as possible to the target dataset (\cite{tan2018survey}).
 \end{flushleft}
 
 \section{SSD MobileNet V1 Experiments}
 \begin{flushleft}
-The SSD MobileNet V1 architecture was selected for the first experiments, with the pretrained model available from tensorflow.
+The MobileNet architecture utilising a SSD detection algorithm was the first architecture selected due to the low computational requirements of this setup.
 \end{flushleft}
 
 \subsection{Experiment 1: Full Dataset Retraining}
@@ -924,7 +936,7 @@ It was determined that 200 total images would be selected to be manually labelle
 
 \subsubsection*{Results}
 \begin{flushleft}
-Although far from perfect, results from this experiment were much more encouraging. As evidenced in Fig \ref{fig:loss-smalldata-5k}, loss quickly declined before settling to values just below 2, with the minimum value being 1.788 and a total training time of just 1hr 25min. Mean average precision (\ref{fig:map-smalldata-5k}) and average recall (\ref{fig:ar-smalldata-5k}), although slighly erratic, appeared to settle into an upward trend as training progressed. Maximum precision reached was 0.1995 and maximum recall reached was 0.2812. The model can be seen in action at 500 training steps in Fig \ref{fig:class-smalldata-500} and then at 5000 training steps in Fig \ref{fig:class-smalldata-5k}. The improvement in the model is clearly apparent in these two images. Please note however that these images appear blurred due to the fact that this MobileNet architecture was initially trained on images of size 300x300 pixels in order to reduce training times. This means that the BDD100K images that it has been retrained on have been scaled down to size 300x300. Scaling the images back up to full size results in the distortion present in the example images. These results are far from perfect however, and will need to be improved upon. Although the model at 5000 steps detects far more than it did at 500 steps, there are still several of the more occluded cars present in the image not being detected. As mentioned, mean average precision and recall did seem to be improving, however neither value increased to above 0.3, which is comparatively poor results. As such, further experimentation is required.
+Although far from perfect, results from this experiment were much more encouraging. As evidenced in Fig \ref{fig:loss-smalldata-5k}, loss quickly declined before settling to values just below 2, with the minimum value being 1.788 and a total training time of just 1hr 25min. Mean average precision (\ref{fig:map-smalldata-5k}) and average recall (\ref{fig:ar-smalldata-5k}), although slighly erratic, appeared to settle into an upward trend as training progressed. Maximum precision reached was 0.1995 and maximum recall reached was just 0.1268. The model can be seen in action at 500 training steps in Fig \ref{fig:class-smalldata-500} and then at 5000 training steps in Fig \ref{fig:class-smalldata-5k}. The improvement in the model is clearly apparent in these two images. Please note however that these images appear blurred due to the fact that this MobileNet architecture was initially trained on images of size 300x300 pixels in order to reduce training times. This means that the BDD100K images that it has been retrained on have been scaled down to size 300x300. Scaling the images back up to full size results in the distortion present in the example images. These results are far from perfect however, and will need to be improved upon. Although the model at 5000 steps detects far more than it did at 500 steps, there are still several of the more occluded cars present in the image not being detected. As mentioned, mean average precision and recall did seem to be improving, however neither value increased to above 0.3, which is comparatively poor results. As such, further experimentation is required.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -981,7 +993,7 @@ Setup was carried out almost exactly the same as the previous experiment. 200 to
 
 \subsubsection*{Results}
 \begin{flushleft}
-Results over the previous experiment were much improved. Over a total training time of 3hr and 50mins to reach 14,000 steps, the loss value fell to a lowest value of 1.356. Precision reached a maximum value of 0.2389 and recall reached a maximum value of 0.3402. Although these results are a significant improvement over the initial experiments, they are still inadequate. Although the MobileNet architecture proved valuable to carry out some initial experiments and highlight the issues presented by the BDD100K dataset it is still unsuitable for this project for several reasons. The requirement to resize the images down to 300x300 pixels in order to provide training images of the same dimensions of the initial COCO training data means that the pretrained MobileNet models provided by tensorflow will never be suitable for achieving acceptable results on the larger BDD100K images, although the MobileNet architecture itself does achieve similar performance to other more complex networks (\cite{howard2017mobilenets}). As such, a different CNN architecture will need to be investigated in order to obtain a trained model that can reliably carry out object detection on the BDD100K dataset.
+Results over the previous experiment were much improved. Over a total training time of 3hr and 50mins to reach 14,000 steps, the loss value fell to a lowest value of 1.356. Precision reached a maximum value of 0.2389 and recall reached a maximum value of 0.1554. Although these results are a significant improvement over the initial experiments, they are still inadequate. Although the MobileNet architecture proved valuable to carry out some initial experiments and highlight the issues presented by the BDD100K dataset it is still unsuitable for this project for several reasons. The requirement to resize the images down to 300x300 pixels in order to provide training images of the same dimensions of the initial COCO training data means that the pretrained MobileNet models provided by tensorflow will never be suitable for achieving acceptable results on the larger BDD100K images, although the MobileNet architecture itself does achieve similar performance to other more complex networks (\cite{howard2017mobilenets}). As such, a different CNN architecture will need to be investigated in order to obtain a trained model that can reliably carry out object detection on the BDD100K dataset.
 \end{flushleft}
 
 \vspace{0.5cm}
@@ -1017,7 +1029,7 @@ In attempt to discover how suitable the SSD MobileNet model was for detecting ob
 \newpage
 \section{Faster RCNN Inception V2 Experiments}
 \begin{flushleft}
-Following the relatively poor results of the MobileNet experiments, the Faster RCNN Inception V2 architecture was utilised.
+Following the relatively poor results of the MobileNet experiments, the Inception V2 architecture was utilised with a Faster RCNN detection algorithm.
 \end{flushleft}
 
 \subsection{Experiment 1: Pretrained Model Experiment}
@@ -1139,8 +1151,8 @@ The results from the Empirical Studies are shown in the below table along with t
 \hline
 Experiment                & Training Steps & Training Time   & Precision  & Recall    & Per-frame annotation \\ \hline
 Yu et al.                 & -              & -               & 0.53       & -         & -                    \\ \hline
-MobileNet Experiment 2    & 5000           & 1 hr 25 min     & 0.1995     & tbd       & 0.5s                 \\ \hline
-MobileNet Experiment 3    & 14000          & 3 hr 50 min     & 0.2389     & tbd       & 0.5s                 \\ \hline
+MobileNet Experiment 2    & 5000           & 1 hr 25 min     & 0.1995     & 0.1268    & 0.5s                 \\ \hline
+MobileNet Experiment 3    & 14000          & 3 hr 50 min     & 0.2389     & 0.1554    & 0.5s                 \\ \hline
 Inception Experiment 1    & 10000          & 1 d 3 hr 25 min & 0.4392     & 0.2170    & 3s                   \\ \hline
 Inception V2 Experiment 2 & 3500           & 5 hr 35 min     & 1.7800 e-3 & 2.500 e-3 & 3s                   \\ \hline
 \end{tabular}
@@ -1198,8 +1210,6 @@ Some interesting snippets of code from the application implementation have been 
 \begin{flushleft}
 The primary purpose behind this project has been an investigation into how CNN's perform object detection and the issues encountered during this process. Once the research area for this project had been defined, a comprehsive literature review of the subject material was undertaken. One of the main objectives for the literature review was to develop and document an expansive knowledge of CNN's. A working knowledge of using tensorflow was also developed through a Udemy tutorial (\cite{udemy}). Once this knowledge had been gained, several experiments were undertaken in an attempt to replicate the results published in (\cite{yu2018bdd100k}). Although the full BDD100K dataset quickly proved far too complex to use in its entirety, a subsampled version of the dataset was sufficient for training instead. Although the results provided by Yu et al. were not replicated perfectly, results that were within an acceptable margin of error were obtained. Unfortunately financial constraints related to using AWS services did not allow for further experimentation, however I am satisfied with the results obtained throughout the experimentation phase of this project. Finally, a lightweight Flask application was built and deployed in order to allow users to interact with the models trained during the experimentation phase.
 \end{flushleft}
-
-\section{Reflections}
 
 \section{Future Work}
 \begin{flushleft}

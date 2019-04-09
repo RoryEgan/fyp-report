@@ -40,15 +40,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.5}Multilayer Perceptron}{16}{subsection.2.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.6}Gradient Descent and Backpropagation}{16}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.6}Gradient Descent and Backpropagation}{17}{subsection.2.3.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Computer Vision}{18}{section.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.1}Noise and Occlusion}{18}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Edge Detection}{20}{subsection.2.4.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Approaches}{20}{section*.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.3}Multilayer Perceptron for Image Tasks}{20}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
@@ -60,33 +58,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.3}Relevant Architectures}{26}{subsection.2.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{MobileNet}{26}{section*.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Inception}{26}{section*.10}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.4}Detection Algorithms}{27}{subsection.2.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{R-CNN}{27}{section*.11}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Faster R-CNN}{27}{section*.12}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{YOLO}{27}{section*.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{SSD}{28}{section*.14}
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.5}Evaluating the Classifier}{28}{subsection.2.5.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Top-1 and Top-5 Accuracy}{28}{section*.15}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Accuracy Issues}{28}{section*.16}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Confusion Matrix}{29}{section*.17}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Other Evaluation Metrics}{29}{section*.18}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{AUC-ROC Curve}{30}{section*.19}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Loss}{31}{section*.20}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.6}Transfer Learning}{31}{subsection.2.5.6}
 \defcounter {refsection}{0}\relax 
@@ -118,13 +92,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Experiment 1: Training Steps}{41}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Experiment 2: Convolution and Pooling Layers}{42}{section.3.2}
+\contentsline {section}{\numberline {3.2}Experiment 2: Convolution and Pooling Layers}{43}{section.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Experiment 3: Fully Connected Layers}{43}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Experiment 4: Convolution, Pooling and Fully Connected Layers}{44}{section.3.4}
+\contentsline {section}{\numberline {3.4}Experiment 4: Convolution, Pooling and Fully Connected Layers}{45}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Experiment 5: Extra Dropout Layers}{45}{section.3.5}
+\contentsline {section}{\numberline {3.5}Experiment 5: Extra Dropout Layers}{46}{section.3.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.6}Experiment 6: Increased Training Steps}{47}{section.3.6}
 \defcounter {refsection}{0}\relax 
@@ -164,9 +138,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.1}Summary}{73}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Reflections}{74}{section.6.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Future Work}{74}{section.6.3}
+\contentsline {section}{\numberline {6.2}Future Work}{74}{section.6.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Project Plan}{80}{Appendix.a.A}
 \defcounter {refsection}{0}\relax 
