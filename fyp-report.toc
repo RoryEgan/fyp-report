@@ -48,98 +48,98 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Edge Detection}{20}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}Multilayer Perceptron for Image Tasks}{20}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}Multilayer Perceptron for Image Tasks}{21}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Introduction to Convolutional Neural Networks}{21}{section.2.5}
+\contentsline {section}{\numberline {2.5}Introduction to Convolutional Neural Networks}{22}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}Convolution Layer}{22}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.1}Convolution Layer}{23}{subsection.2.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Pooling Layer}{24}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.2}Pooling Layer}{25}{subsection.2.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.3}Relevant Architectures}{26}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.3}Relevant Architectures}{27}{subsection.2.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.4}Detection Algorithms}{27}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.4}Detection Algorithms}{28}{subsection.2.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.5}Evaluating the Classifier}{28}{subsection.2.5.5}
+\contentsline {subsection}{\numberline {2.5.5}Evaluating the Classifier}{29}{subsection.2.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.6}Transfer Learning}{31}{subsection.2.5.6}
+\contentsline {subsection}{\numberline {2.5.6}Transfer Learning}{32}{subsection.2.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Berkeley Deep Drive}{32}{section.2.6}
+\contentsline {section}{\numberline {2.6}Berkeley Deep Drive}{33}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Dataset}{32}{section*.21}
+\contentsline {subsubsection}{Dataset}{33}{section*.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Related Results}{32}{section*.22}
+\contentsline {subsubsection}{Related Results}{33}{section*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Overfitting}{33}{section.2.7}
+\contentsline {section}{\numberline {2.7}Overfitting}{34}{section.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.8}Tensorflow Introduction and Environment Setup}{34}{section.2.8}
+\contentsline {section}{\numberline {2.8}Tensorflow Introduction and Environment Setup}{35}{section.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8.1}MNIST Experiment}{34}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.1}MNIST Experiment}{35}{subsection.2.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8.2}CIFAR-10 Experiment}{37}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.2}CIFAR-10 Experiment}{38}{subsection.2.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8.3}Initial Findings}{37}{subsection.2.8.3}
+\contentsline {subsection}{\numberline {2.8.3}Initial Findings}{38}{subsection.2.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8.4}Environment Setup and Issues}{37}{subsection.2.8.4}
+\contentsline {subsection}{\numberline {2.8.4}Environment Setup and Issues}{38}{subsection.2.8.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Tensorflow Install}{38}{section*.24}
+\contentsline {subsubsection}{Tensorflow Install}{39}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Memory Issues}{38}{section*.25}
+\contentsline {subsubsection}{Memory Issues}{39}{section*.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{AWS Setup}{39}{section*.26}
+\contentsline {subsubsection}{AWS Setup}{40}{section*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Cifar-10 Further Experimentation}{40}{chapter.3}
+\contentsline {chapter}{\numberline {3}Cifar-10 Further Experimentation}{41}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Experiment 1: Training Steps}{41}{section.3.1}
+\contentsline {section}{\numberline {3.1}Experiment 1: Training Steps}{42}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Experiment 2: Convolution and Pooling Layers}{43}{section.3.2}
+\contentsline {section}{\numberline {3.2}Experiment 2: Convolution and Pooling Layers}{44}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Experiment 3: Fully Connected Layers}{43}{section.3.3}
+\contentsline {section}{\numberline {3.3}Experiment 3: Fully Connected Layers}{44}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Experiment 4: Convolution, Pooling and Fully Connected Layers}{45}{section.3.4}
+\contentsline {section}{\numberline {3.4}Experiment 4: Convolution, Pooling and Fully Connected Layers}{46}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Experiment 5: Extra Dropout Layers}{46}{section.3.5}
+\contentsline {section}{\numberline {3.5}Experiment 5: Extra Dropout Layers}{47}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Experiment 6: Increased Training Steps}{47}{section.3.6}
+\contentsline {section}{\numberline {3.6}Experiment 6: Increased Training Steps}{48}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Conclusions}{48}{section.3.7}
+\contentsline {section}{\numberline {3.7}Conclusions}{49}{section.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Empirical Studies}{49}{chapter.4}
+\contentsline {chapter}{\numberline {4}Empirical Studies}{50}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}SSD MobileNet V1 Experiments}{50}{section.4.1}
+\contentsline {section}{\numberline {4.1}SSD MobileNet V1 Experiments}{51}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Experiment 1: Full Dataset Retraining}{50}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}Experiment 1: Full Dataset Retraining}{51}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Experiment 2: Partial Dataset Retraining}{52}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.2}Experiment 2: Partial Dataset Retraining}{53}{subsection.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Experiment 3: Expanded Partial Dataset Retraining}{57}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.3}Experiment 3: Expanded Partial Dataset Retraining}{58}{subsection.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.4}Real-time Detection}{60}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.4}Real-time Detection}{61}{subsection.4.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Faster RCNN Inception V2 Experiments}{61}{section.4.2}
+\contentsline {section}{\numberline {4.2}Faster RCNN Inception V2 Experiments}{62}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Experiment 1: Pretrained Model Experiment}{61}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Experiment 1: Pretrained Model Experiment}{62}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Experiment 2: No Pretraining Experiment}{64}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Experiment 2: No Pretraining Experiment}{65}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Real-time Detection}{67}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}Real-time Detection}{68}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Empirical Studies Cost and Results}{68}{section.4.3}
+\contentsline {section}{\numberline {4.3}Empirical Studies Cost and Results}{69}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Application Implementation}{70}{chapter.5}
+\contentsline {chapter}{\numberline {5}Application Implementation}{71}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}AWS Instance}{70}{section.5.1}
+\contentsline {section}{\numberline {5.1}AWS Instance}{71}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Implementation}{70}{section.5.2}
+\contentsline {section}{\numberline {5.2}Implementation}{71}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Code Snippets}{71}{section.5.3}
+\contentsline {section}{\numberline {5.3}Code Snippets}{72}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Final Conclusion and Discussion}{73}{chapter.6}
+\contentsline {chapter}{\numberline {6}Final Conclusion and Discussion}{74}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Summary}{73}{section.6.1}
+\contentsline {section}{\numberline {6.1}Summary}{74}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Future Work}{74}{section.6.2}
+\contentsline {section}{\numberline {6.2}Future Work}{75}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Project Plan}{80}{Appendix.a.A}
+\contentsline {chapter}{\numberline {A}Project Plan}{81}{Appendix.a.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Poster}{82}{Appendix.a.B}
+\contentsline {chapter}{\numberline {B}Poster}{83}{Appendix.a.B}
