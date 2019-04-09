@@ -6,7 +6,8 @@
 \usepackage[backend=biber, style=authoryear, natbib=true]{biblatex}
 \usepackage[colorlinks]{hyperref}
 \hypersetup{
-colorlinks=true,
+colorlinks=false,
+pdfborder={0 0 0},
 linktoc=all,
 linkcolor=black,
 citecolor=black,
@@ -99,7 +100,7 @@ Object detection is the process of locating and identifying different types of o
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=12cm]{pixels}
-	\caption{Pixel Representation of Grayscale Image}
+	\caption{Pixel Representation of Grayscale Image (adapted from https://nrsyed.com/2018/02/17/kernels-in-image-processing/)}
 	\label{fig:pixels}
 \end{figure}
 
@@ -158,12 +159,11 @@ With these issues present for my initial choice of problem domain, I decided to 
 
 \section{Motivations}
 \begin{flushleft}
-The main motivation behind this project for me is working within the field of self-driving cars. I find this particular area fascinating due to the broad range of technologies present within these cars. I have previously worked a summer internship at Jaguar Land Rover in Shannon working within the ADAS (driver assistance) team. I was exposed to a broad range of different technologies, from Computer Vision and Machine Learning based teams to Big Data pipelines concerned with offboarding data from test cars. This internship and the receipt of an offer to return to the company as a graduate has motivated me to further my study within this field. I have found that these technologies are much more interesting to me than many more conventional potential areas of work. With ever increasing amounts of automotive manufacturers investigating this field, I feel like a final year project focusing on self-driving cars could be very beneficial to my career going forward.
+The main motivation behind this project for me is working within the field of self-driving cars. I have previously worked a summer internship at Jaguar Land Rover in Shannon working within the ADAS (driver assistance) team. I was exposed to a broad range of different technologies, from Computer Vision and Machine Learning based teams to Big Data pipelines concerned with offboarding data from test cars. This internship and the receipt of an offer to return to the company as a graduate has motivated me to further my study within this field. I have found that these technologies are much more interesting to me than many more conventional potential areas of work. With ever increasing amounts of automotive manufacturers investigating this field, I feel like a final year project focusing on self-driving cars could be very beneficial to my career going forward.
 
 I am also very interested in self-driving cars due to the far-reaching safety implications of the technology. Hundreds of people die on Irish roads every year, with driver error being the primary cause of fatalities. Driver distraction has been reported as the cause of one in seven accidents that take place in Ireland (\cite{rsadistraction}). Self-driving cars have the potential to significantly increase road safety once fully autonomous capability has been reached (\cite{milakis2017policy}), and I find it very motivating to work within a field that genuinely has the potential to save lives. Outside of the direct safety implications of self-driving cars, they have also shown the potential to have positive environmental effects through a reduction of fuel wastage (\cite{greenblatt2015autonomous}). I believe that this technology is certainly a field in which I can leave a positive and lasting impression on the world.
 \end{flushleft}
 
-\newpage
 \chapter{Background Research}
 \section{Autonomous Vehicles Overview}
 \begin{flushleft}
@@ -241,8 +241,8 @@ Artificial Neural Networks (ANN's) are a particular Supervised Machine Learning 
 \vspace{0.5cm}
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=12cm]{neuron}
-	\caption{An Artificial Neuron}
+	\includegraphics[width=10cm]{neuron}
+	\caption{An Artificial Neuron (adapted from https://ujjwalkarn.me/2016/08/09/quick-intro-neural-networks/)}
 	\label{fig:neuron}
 \end{figure}
 
@@ -253,8 +253,8 @@ A single Perceptron is only able to classify linearly separable data (\cite{kots
 \vspace{0.5cm}
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=8cm]{linear}
-	\caption{Linearly Separable Data}
+	\includegraphics[width=10cm]{seperable}
+	\caption{Linearly Separable vs Inseperable (adapted from \cite{mohamed2017comparative})}
 	\label{fig:linear}
 \end{figure}
 
@@ -266,7 +266,7 @@ There are several different types of activation function, however every activati
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=12cm]{functions}
-	\caption{Activation Functions Visualised}
+	\caption{Activation Functions Visualised (adapted from https://towardsdatascience.com/activation-functions-in-neural-networks-58115cda9c96}
 	\label{fig:functions}
 \end{figure}
 
@@ -543,12 +543,12 @@ The AUC (Area Under Curve) ROC (Receiver Operating Characteristics) curve is ano
 \vspace{0.5cm}
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=12cm]{aucroc}
-	\caption{AUC-ROC Visualised}
+	\includegraphics[width=8cm]{aucroc}
+	\caption{AUC-ROC Curve (adapted from https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)}
 	\label{fig:aucroc}
 \end{figure}
 
-\clearpage
+\newpage
 \subsubsection{Loss}
 \begin{flushleft}
 As mentioned above, Neural Networks utilise a loss function in order to evaluate the predictions the network makes in relation the known values in the training data. The loss of a network can be graphed to infer how well the model is adjusting to learn the parameters of the training data, with the loss generally lowering over each training iteration.
@@ -583,7 +583,6 @@ The paper released with the BDD100K dataset contains a list of results from expe
 An important point to consider when training any Machine Learning model is how well the model generalises to new data (\cite{domingos2012few}). An algorithm should be able to apply concepts learned from the training data to any previously unseen data in the problem domain in order to make accurate predictions. Overfitting is the concept of a model learning the details and noise in the training domain too well, and thus failing to provide accurate predictions on new data. Overfitting tends to occur when a model learns noise and randomness in the training data as concepts that it attempts to apply to data in the problem domain. These concepts will not apply to the new data however, and poor accuracy generally results. Although a noisy dataset will increase the severity of overfitting, it is not simply a result of a noisy dataset and can occur in any dataset (\cite{domingos2012few}). Within the field of Neural Networks, a common approach to avoid severe overfitting is to keep the network architecture relatively simple. The less parameters required to train the model, the lower the overall chance that the network will overfit and fail to generalise (\cite{o2015introduction}). However, this approach is not always feasible when dealing with large and complex datasets, and other approaches must also be taken. Another popular method to reduce overfitting is the introduction of dropout in the network. Dropout is when nodes are randomly dropped from the network along with their connections (\cite{srivastava2014dropout}). This serves to constrain the adaptation of the network while it trains in order to prevent the model from over-learning the training data.
 \end{flushleft}
 
-\newpage
 \section{Tensorflow Introduction and Environment Setup}
 
 This section is dedicated to the background work done in order to gain an understanding of how to implement CNN's using tensorflow. The experiments illustrated in this section were carried out during the completion of the Complete Guide to TensorFlow for Deep Learning with Python course on Udemy (\cite{udemy}). This section consists of two experiments carried out on the MNIST and CIFAR-10 datasets. The first experiment is sample code provided as part of the course to illustrate the concepts learned during the course. The second experiment is an exercise for the course carried out to implement an understanding of these concepts.

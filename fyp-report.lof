@@ -2,101 +2,101 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Pixel Representation of Grayscale Image}}{2}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Pixel Representation of Grayscale Image (adapted from https://nrsyed.com/2018/02/17/kernels-in-image-processing/)}}{2}{figure.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Object Detector in action}}{3}{figure.1.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces An Artificial Neuron}}{14}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces An Artificial Neuron (adapted from https://ujjwalkarn.me/2016/08/09/quick-intro-neural-networks/)}}{13}{figure.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Linearly Separable Data}}{15}{figure.2.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Linearly Separable vs Inseperable (adapted from \cite {mohamed2017comparative})}}{14}{figure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Activation Functions Visualised}}{16}{figure.2.3}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Activation Functions Visualised (adapted from https://towardsdatascience.com/activation-functions-in-neural-networks-58115cda9c96}}{15}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Multilayer Perceptron Architecture}}{18}{figure.2.4}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Multilayer Perceptron Architecture}}{17}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Image noise produced by motion blur}}{19}{figure.2.5}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Image noise produced by motion blur}}{18}{figure.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Image containing occluded cars}}{20}{figure.2.6}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Image containing occluded cars}}{19}{figure.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Convolution taking place}}{25}{figure.2.7}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Convolution taking place}}{24}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Pooling}}{25}{figure.2.8}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Pooling}}{24}{figure.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.9}{\ignorespaces CNN Architecture source: \cite {lecun1995convolutional}}}{26}{figure.2.9}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces CNN Architecture source: \cite {lecun1995convolutional}}}{25}{figure.2.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.10}{\ignorespaces AUC-ROC Visualised}}{32}{figure.2.10}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces AUC-ROC Curve (adapted from https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)}}{31}{figure.2.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.11}{\ignorespaces source: https://bair.berkeley.edu/blog/2018/05/30/bdd/}}{34}{figure.2.11}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces source: https://bair.berkeley.edu/blog/2018/05/30/bdd/}}{33}{figure.2.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Creating Helper Functions}}{37}{figure.2.12}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Creating Helper Functions}}{35}{figure.2.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Creating Layers}}{38}{figure.2.13}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Creating Layers}}{36}{figure.2.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Training the Model}}{38}{figure.2.14}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Baseline Plot}}{43}{figure.3.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 10,000 Training Steps}}{44}{figure.3.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Experiment 2}}{45}{figure.3.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Experiment 3}}{46}{figure.3.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Experiment 4}}{47}{figure.3.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Experiment 5}}{48}{figure.3.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Experiment 6}}{49}{figure.3.7}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Training the Model}}{36}{figure.2.14}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of an image that is very hard to annotate}}{53}{figure.4.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Baseline Plot}}{41}{figure.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Loss values for full dataset}}{54}{figure.4.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 10,000 Training Steps}}{42}{figure.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Loss values for reduced dataset}}{56}{figure.4.3}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Experiment 2}}{43}{figure.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Mean average precision (mAP) values for reduced dataset}}{56}{figure.4.4}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Experiment 3}}{44}{figure.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Average recall (ar) values for reduced dataset}}{57}{figure.4.5}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Experiment 4}}{45}{figure.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Object detector in action at 500 steps}}{57}{figure.4.6}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Experiment 5}}{46}{figure.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Object detector in action at 5000 steps}}{58}{figure.4.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Loss values for MobileNet with 400 training images}}{60}{figure.4.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Precision values for MobileNet with 400 training images}}{61}{figure.4.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Recall values for MobileNet with 400 training images}}{61}{figure.4.10}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Loss values for Inception V2}}{64}{figure.4.11}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Precision values for Inception V2}}{64}{figure.4.12}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Recall values for Inception V2}}{65}{figure.4.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Training Loss with no Pretraining}}{67}{figure.4.14}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Validation Loss with no Pretraining}}{67}{figure.4.15}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Precision with no Pretraining}}{68}{figure.4.16}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Recall with no Pretraining}}{68}{figure.4.17}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.18}{\ignorespaces AWS Bill for March}}{70}{figure.4.18}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Experiment 6}}{47}{figure.3.7}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Simple Webpage to allow Image Upload}}{73}{figure.5.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of an image that is very hard to annotate}}{51}{figure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Flask Application Code, calls Annotation Code}}{74}{figure.5.2}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Loss values for full dataset}}{52}{figure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Method called by Flask Application, accepts and returns image}}{74}{figure.5.3}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Loss values for reduced dataset}}{54}{figure.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mean average precision (mAP) values for reduced dataset}}{54}{figure.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Average recall (ar) values for reduced dataset}}{55}{figure.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Object detector in action at 500 steps}}{55}{figure.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Object detector in action at 5000 steps}}{56}{figure.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Loss values for MobileNet with 400 training images}}{58}{figure.4.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Precision values for MobileNet with 400 training images}}{59}{figure.4.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Recall values for MobileNet with 400 training images}}{59}{figure.4.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Loss values for Inception V2}}{62}{figure.4.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Precision values for Inception V2}}{62}{figure.4.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Recall values for Inception V2}}{63}{figure.4.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Training Loss with no Pretraining}}{65}{figure.4.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Validation Loss with no Pretraining}}{65}{figure.4.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Precision with no Pretraining}}{66}{figure.4.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Recall with no Pretraining}}{66}{figure.4.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.18}{\ignorespaces AWS Bill for March}}{68}{figure.4.18}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Simple Webpage to allow Image Upload}}{71}{figure.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Flask Application Code, calls Annotation Code}}{72}{figure.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Method called by Flask Application, accepts and returns image}}{72}{figure.5.3}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

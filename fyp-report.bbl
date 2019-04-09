@@ -825,6 +825,28 @@
       \field{title}{An introduction to computational geometry}
       \field{year}{1969}
     \endentry
+    \entry{mohamed2017comparative}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=150705238da75d941a310fdd22fd2b69}{%
+           family={Mohamed},
+           family_i={M\bibinitperiod},
+           given={Amr\bibnamedelima E},
+           given_i={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{150705238da75d941a310fdd22fd2b69}
+      \strng{fullhash}{150705238da75d941a310fdd22fd2b69}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelyear}{2017}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Applied}
+      \field{number}{2}
+      \field{title}{Comparative study of four supervised machine learning techniques for classification}
+      \field{volume}{7}
+      \field{year}{2017}
+    \endentry
     \entry{o2015introduction}{article}{}
       \name{author}{2}{}{%
         {{uniquename=0,hash=f92af5765968c6de4c1e42d397224c9c}{%
